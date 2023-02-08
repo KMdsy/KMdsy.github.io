@@ -1,0 +1,1174 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smileyan</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css">
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    
+<link rel="stylesheet" href="../../css/prism.css">
+ 
+    
+<script src="../../js/prism.js"></script>
+
+    
+    
+<link rel="stylesheet" href="../../css/index.css">
+ 
+    
+<script src="../../js/search.js"></script>
+
+
+
+     
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+        </script>
+     
+
+     
+        <script src="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js"> </script>
+        
+<script src="../../js/fancybox.js"></script>
+
+    
+
+    <script type="text/javascript">
+        var search_path = "search.xml";
+        if (search_path.length == 0) {
+            search_path = "search.xml";
+        }
+        var path = "/" + search_path;
+        searchFunc(path, 'local-search-input', 'local-search-result');
+    </script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+ 
+ 
+<body>
+    <!-- 导航栏 -->
+    <!-- 导航栏 -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4 pt-2 pb-2">
+    <div class="container">
+        <!-- 标题 --> 
+        <a class="navbar-brand navbar-expand-sm" href="/">
+            <img class="nofancybox" src="/logo.png" style="width: 75px;"  alt="笑颜网">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- 左边右边导航按钮 --> 
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto">
+                <!-- 左右两侧的导航栏 -->
+
+ 
+ 
+
+    <li class="nav-item">
+        <a class="nav-link" href="../../">
+           <big> <i class="fa fa-home ps-1" ></i> 主页</big>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="../../archives">
+           <big> <i class="fa fa-archive ps-1" ></i> 归档</big>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="../../about">
+           <big> <i class="fa fa-user ps-1" ></i> 关于</big>
+        </a>
+    </li>
+ 
+ 
+            </ul>
+
+            
+            <form class="">
+                <div class="d-flex">
+                    <button class="btn text-muted fa fa-search d-none d-md-block d-lg-block" disabled></button>
+                    <input id="local-search-input" class="form-control me-2 pe-4" type="search"
+                            placeholder="搜索 " aria-label="Search">
+                </div>
+                <div id="local-search-result" style="position:absolute; padding-top: 8px; max-height: 960px; width: 480px;overflow-y: scroll; z-index: 1050;"></div>
+            </form>
+            
+            <ul class="navbar-nav">
+                <!-- 左右两侧的导航栏 -->
+
+ 
+ 
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+    <main class="container">
+        <!-- 主页 -->
+<div class="row pt-1">
+    <!-- 文章 -->
+    <div id="blog-content" class="col-md-8 col-sm-12" >
+        <div class="markdown-section">
+            <div class="">
+                <!-- 主页 -->
+ 
+
+
+    <!-- 标题 -->
+    <div class="pb-4 tag-hover">
+        <p class="tag-hover h3">
+            <a href="../../uncategorized/notes/graph_model_probability/" class="link-dark text-decoration-none title">
+                Probabilistic Graphical Model 
+            </a>
+        </p>
+
+        <div class="pb-0">
+            <!--
+            <i class="fa fa-calendar p-1"></i>
+            2022/05/16 10:28:00 
+            -->
+
+            <i class="fa fa-pencil"> </i>
+            2023/02/08 15:34:27 
+
+            <!--
+            <i class="fa fa-folder-open p-1"> </i> 
+            <span class="tag-hover">
+                 
+            </span>
+            -->
+
+            <i class="fa fa-tag p-1"> </i>
+            <span class="tag-hover">
+                
+                    <a href="../../tags/Bayesian/" class="link-dark text-decoration-none title"> 
+                        Bayesian 
+                    </a>
+                
+                    <a href="../../tags/Belief-Propagation/" class="link-dark text-decoration-none title"> 
+                        Belief Propagation 
+                    </a>
+                
+                    <a href="../../tags/Markov-Random-Field/" class="link-dark text-decoration-none title"> 
+                        Markov Random Field 
+                    </a>
+                
+            </span>
+        </div>
+
+        <div class="pt-3 pe-1">
+            <!-- 如果有摘要则显示摘要，没有就自己截取 -->
+            
+                <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>本文主要梳理建立在概率图模型上的多种概念，及其相关的算法。目前包含的概念/算法如下：</p>
+<p><strong>概念</strong>：</p>
+<ul>
+<li>概率图模型<ul>
+<li>贝叶斯网络 (Bayes Model) </li>
+<li>马尔可夫随机场 (Markov Random Field) </li>
+<li>因子图 (Factor Graph) </li>
+</ul>
+</li>
+</ul>
+<p><strong>算法</strong>：</p>
+<ul>
+<li>消息传递算法 (message passing algorithm) <ul>
+<li>置信传播 (Belief propagation) </li>
+</ul>
+</li>
+</ul> 
+             
+        </div>
+    </div>
+
+    <!-- 标题 -->
+    <div class="pb-4 tag-hover">
+        <p class="tag-hover h3">
+            <a href="../../uncategorized/notes/linux_server_notes/" class="link-dark text-decoration-none title">
+                linux服务器常用配置 
+            </a>
+        </p>
+
+        <div class="pb-0">
+            <!--
+            <i class="fa fa-calendar p-1"></i>
+            2022/01/01 18:00:00 
+            -->
+
+            <i class="fa fa-pencil"> </i>
+            2023/02/08 15:34:27 
+
+            <!--
+            <i class="fa fa-folder-open p-1"> </i> 
+            <span class="tag-hover">
+                 
+            </span>
+            -->
+
+            <i class="fa fa-tag p-1"> </i>
+            <span class="tag-hover">
+                
+                    <a href="../../tags/note/" class="link-dark text-decoration-none title"> 
+                        note 
+                    </a>
+                
+                    <a href="../../tags/linux/" class="link-dark text-decoration-none title"> 
+                        linux 
+                    </a>
+                
+            </span>
+        </div>
+
+        <div class="pt-3 pe-1">
+            <!-- 如果有摘要则显示摘要，没有就自己截取 -->
+            
+                <p>仅记录不常用的命令，可能会不全哦👐🏻</p> 
+             
+        </div>
+    </div>
+
+    <!-- 标题 -->
+    <div class="pb-4 tag-hover">
+        <p class="tag-hover h3">
+            <a href="../../uncategorized/surveys/rca_in_cellular/" class="link-dark text-decoration-none title">
+                Root Cause Analysis and Diagnosis in Cellular Network 
+            </a>
+        </p>
+
+        <div class="pb-0">
+            <!--
+            <i class="fa fa-calendar p-1"></i>
+            2022/04/18 11:05:00 
+            -->
+
+            <i class="fa fa-pencil"> </i>
+            2023/02/08 15:34:27 
+
+            <!--
+            <i class="fa fa-folder-open p-1"> </i> 
+            <span class="tag-hover">
+                 
+            </span>
+            -->
+
+            <i class="fa fa-tag p-1"> </i>
+            <span class="tag-hover">
+                
+                    <a href="../../tags/survey/" class="link-dark text-decoration-none title"> 
+                        survey 
+                    </a>
+                
+                    <a href="../../tags/root-cause-analysis/" class="link-dark text-decoration-none title"> 
+                        root cause analysis 
+                    </a>
+                
+                    <a href="../../tags/diagnosis/" class="link-dark text-decoration-none title"> 
+                        diagnosis 
+                    </a>
+                
+            </span>
+        </div>
+
+        <div class="pt-3 pe-1">
+            <!-- 如果有摘要则显示摘要，没有就自己截取 -->
+            
+                <p>本文主要调研了，LTE场景下的异常根因分析（RCA）方法，用于支持在4G LTE/5G场景下的用户投诉分析。</p>
+<p>2022-04-18: 以“root cause analysis, cellular network”为关键词，调研了google scholar中top 2 pages的相关工作，TODO: 完善某些论文的可借鉴点总结。</p> 
+             
+        </div>
+    </div>
+
+    <!-- 标题 -->
+    <div class="pb-4 tag-hover">
+        <p class="tag-hover h3">
+            <a href="../../uncategorized/surveys/aiops_micro-service/" class="link-dark text-decoration-none title">
+                微服务框架下的多源异构数据异常检测 - 调研 
+            </a>
+        </p>
+
+        <div class="pb-0">
+            <!--
+            <i class="fa fa-calendar p-1"></i>
+            2021/04/13 12:00:00 
+            -->
+
+            <i class="fa fa-pencil"> </i>
+            2023/02/08 15:34:27 
+
+            <!--
+            <i class="fa fa-folder-open p-1"> </i> 
+            <span class="tag-hover">
+                 
+            </span>
+            -->
+
+            <i class="fa fa-tag p-1"> </i>
+            <span class="tag-hover">
+                
+                    <a href="../../tags/AIOps/" class="link-dark text-decoration-none title"> 
+                        AIOps 
+                    </a>
+                
+                    <a href="../../tags/survey/" class="link-dark text-decoration-none title"> 
+                        survey 
+                    </a>
+                
+                    <a href="../../tags/micro-service/" class="link-dark text-decoration-none title"> 
+                        micro-service 
+                    </a>
+                
+                    <a href="../../tags/cloud-native/" class="link-dark text-decoration-none title"> 
+                        cloud native 
+                    </a>
+                
+                    <a href="../../tags/dataset/" class="link-dark text-decoration-none title"> 
+                        dataset 
+                    </a>
+                
+            </span>
+        </div>
+
+        <div class="pt-3 pe-1">
+            <!-- 如果有摘要则显示摘要，没有就自己截取 -->
+            
+                <p>2021-04-13: 整理了微服务框架下，做异常检测的大体思路，分别调研“多源异构数据融合”，以及分别基于“时间序列”“日志”“调用链”数据的异常检测方法。</p>
+<p>2022-04-18: 补充了“异常根因分析”相关的工作，这些工作大多是基于图的，可以为4G LTE种的根因分析提供思路。</p> 
+             
+        </div>
+    </div>
+
+    <!-- 标题 -->
+    <div class="pb-4 tag-hover">
+        <p class="tag-hover h3">
+            <a href="../../uncategorized/paperlistfile/ICLR2022/" class="link-dark text-decoration-none title">
+                Related Papers in ICLR 2022 (2022.04.25) 
+            </a>
+        </p>
+
+        <div class="pb-0">
+            <!--
+            <i class="fa fa-calendar p-1"></i>
+            2022/02/25 00:00:00 
+            -->
+
+            <i class="fa fa-pencil"> </i>
+            2023/02/08 15:34:27 
+
+            <!--
+            <i class="fa fa-folder-open p-1"> </i> 
+            <span class="tag-hover">
+                 
+            </span>
+            -->
+
+            <i class="fa fa-tag p-1"> </i>
+            <span class="tag-hover">
+                
+                    <a href="../../tags/paper-list/" class="link-dark text-decoration-none title"> 
+                        paper list 
+                    </a>
+                
+            </span>
+        </div>
+
+        <div class="pt-3 pe-1">
+            <!-- 如果有摘要则显示摘要，没有就自己截取 -->
+            
+                <p><a target="_blank" rel="noopener" href="https://openreview.net/group?id=ICLR.cc/2022/Conference">Accept paper list</a></p> 
+             
+        </div>
+    </div>
+
+    <!-- 标题 -->
+    <div class="pb-4 tag-hover">
+        <p class="tag-hover h3">
+            <a href="../../uncategorized/notes/markdown_notes/" class="link-dark text-decoration-none title">
+                Markdown常用语法 
+            </a>
+        </p>
+
+        <div class="pb-0">
+            <!--
+            <i class="fa fa-calendar p-1"></i>
+            2022/01/01 18:00:00 
+            -->
+
+            <i class="fa fa-pencil"> </i>
+            2023/02/08 15:34:27 
+
+            <!--
+            <i class="fa fa-folder-open p-1"> </i> 
+            <span class="tag-hover">
+                 
+            </span>
+            -->
+
+            <i class="fa fa-tag p-1"> </i>
+            <span class="tag-hover">
+                
+                    <a href="../../tags/note/" class="link-dark text-decoration-none title"> 
+                        note 
+                    </a>
+                
+                    <a href="../../tags/markdown/" class="link-dark text-decoration-none title"> 
+                        markdown 
+                    </a>
+                
+            </span>
+        </div>
+
+        <div class="pt-3 pe-1">
+            <!-- 如果有摘要则显示摘要，没有就自己截取 -->
+            
+                <p><a target="_blank" rel="noopener" href="http://www.w3chtml.com/html/html-basic-grammar.html">Remark: HTML常用语法</a></p> 
+             
+        </div>
+    </div>
+
+    <!-- 标题 -->
+    <div class="pb-4 tag-hover">
+        <p class="tag-hover h3">
+            <a href="../../uncategorized/notes/5G_NR/" class="link-dark text-decoration-none title">
+                5G NR（New Radio）规范 
+            </a>
+        </p>
+
+        <div class="pb-0">
+            <!--
+            <i class="fa fa-calendar p-1"></i>
+            2022/01/23 18:00:00 
+            -->
+
+            <i class="fa fa-pencil"> </i>
+            2023/02/08 15:34:27 
+
+            <!--
+            <i class="fa fa-folder-open p-1"> </i> 
+            <span class="tag-hover">
+                 
+            </span>
+            -->
+
+            <i class="fa fa-tag p-1"> </i>
+            <span class="tag-hover">
+                
+                    <a href="../../tags/note/" class="link-dark text-decoration-none title"> 
+                        note 
+                    </a>
+                
+                    <a href="../../tags/5G/" class="link-dark text-decoration-none title"> 
+                        5G 
+                    </a>
+                
+                    <a href="../../tags/4G/" class="link-dark text-decoration-none title"> 
+                        4G 
+                    </a>
+                
+                    <a href="../../tags/5G-NR/" class="link-dark text-decoration-none title"> 
+                        5G NR 
+                    </a>
+                
+            </span>
+        </div>
+
+        <div class="pt-3 pe-1">
+            <!-- 如果有摘要则显示摘要，没有就自己截取 -->
+            
+                <h2 id="基础概念解析"><a href="#基础概念解析" class="headerlink" title="基础概念解析"></a>基础概念解析</h2><h3 id="LTE与NR"><a href="#LTE与NR" class="headerlink" title="LTE与NR"></a>LTE与NR</h3><ul>
+<li>LTE是4G时代的主要技术，且保留向后兼容的特性</li>
+<li>NR是针对5G的新无线接入技术，全称为New Radio（新空口），NR借用了许多LTE的结构与功能，但作为新的无线接入技术，无需考虑向后兼容的问题</li>
+</ul> 
+             
+        </div>
+    </div>
+
+    <!-- 标题 -->
+    <div class="pb-4 tag-hover">
+        <p class="tag-hover h3">
+            <a href="../../uncategorized/notes/alarm_in_4GWAN/" class="link-dark text-decoration-none title">
+                4GWAN中的告警（alarm）分析 
+            </a>
+        </p>
+
+        <div class="pb-0">
+            <!--
+            <i class="fa fa-calendar p-1"></i>
+            2022/01/04 14:00:00 
+            -->
+
+            <i class="fa fa-pencil"> </i>
+            2023/02/08 15:34:27 
+
+            <!--
+            <i class="fa fa-folder-open p-1"> </i> 
+            <span class="tag-hover">
+                 
+            </span>
+            -->
+
+            <i class="fa fa-tag p-1"> </i>
+            <span class="tag-hover">
+                
+                    <a href="../../tags/note/" class="link-dark text-decoration-none title"> 
+                        note 
+                    </a>
+                
+                    <a href="../../tags/5G/" class="link-dark text-decoration-none title"> 
+                        5G 
+                    </a>
+                
+                    <a href="../../tags/4G/" class="link-dark text-decoration-none title"> 
+                        4G 
+                    </a>
+                
+            </span>
+        </div>
+
+        <div class="pt-3 pe-1">
+            <!-- 如果有摘要则显示摘要，没有就自己截取 -->
+            
+                <h1 id="告警与性能指标之间的关系"><a href="#告警与性能指标之间的关系" class="headerlink" title="告警与性能指标之间的关系"></a>告警与性能指标之间的关系</h1><p>本文主要以case为单位，分析每个告警可能对性能指标造成的影响，回顾专家在判定告警对流量损失时的思路: </p>
+<ol>
+<li>以expert label中标注的<code>Time of Interest (TOI)</code>确定case中的target alarm: target alarm为TOI中发生过的告警、仍未清除的告警</li>
+<li>以alarm为中心，分析与告警相关的上下游知识（如物理层、链路层等）是否发生异常（评价所用的参考指标: 环比KPI - 一天环比或一周环比）</li>
+<li>分析异常链路是否完整，包括: （1）告警所影响的KPI是否发生异常（2）目标KPI（一般为流量）是否发生异常</li>
+</ol> 
+             
+        </div>
+    </div>
+
+    <!-- 标题 -->
+    <div class="pb-4 tag-hover">
+        <p class="tag-hover h3">
+            <a href="../../uncategorized/notes/self_supervised_learning_survey/" class="link-dark text-decoration-none title">
+                Self-supervised learning survey 
+            </a>
+        </p>
+
+        <div class="pb-0">
+            <!--
+            <i class="fa fa-calendar p-1"></i>
+            2020/07/30 15:00:00 
+            -->
+
+            <i class="fa fa-pencil"> </i>
+            2023/02/08 15:34:27 
+
+            <!--
+            <i class="fa fa-folder-open p-1"> </i> 
+            <span class="tag-hover">
+                 
+            </span>
+            -->
+
+            <i class="fa fa-tag p-1"> </i>
+            <span class="tag-hover">
+                
+                    <a href="../../tags/note/" class="link-dark text-decoration-none title"> 
+                        note 
+                    </a>
+                
+                    <a href="../../tags/self-supervised-learning/" class="link-dark text-decoration-none title"> 
+                        self-supervised learning 
+                    </a>
+                
+            </span>
+        </div>
+
+        <div class="pt-3 pe-1">
+            <!-- 如果有摘要则显示摘要，没有就自己截取 -->
+            
+                <h1 id="Survey-Self-supervised-learning-Generative-or-Contrastive"><a href="#Survey-Self-supervised-learning-Generative-or-Contrastive" class="headerlink" title="Survey: Self-supervised learning: Generative or Contrastive"></a>Survey: Self-supervised learning: Generative or Contrastive</h1><p>清华唐杰团队的工作，比较完整。</p>
+<p><a target="_blank" rel="noopener" href="https://www.aliyundrive.com/s/Hf99EegM1pd">PDF FILE (包含一些笔记)</a></p> 
+             
+        </div>
+    </div>
+
+    <!-- 标题 -->
+    <div class="pb-4 tag-hover">
+        <p class="tag-hover h3">
+            <a href="../../uncategorized/surveys/interpretability/" class="link-dark text-decoration-none title">
+                Post-hoc interpretability 
+            </a>
+        </p>
+
+        <div class="pb-0">
+            <!--
+            <i class="fa fa-calendar p-1"></i>
+            2020/12/29 12:00:00 
+            -->
+
+            <i class="fa fa-pencil"> </i>
+            2023/02/08 15:34:27 
+
+            <!--
+            <i class="fa fa-folder-open p-1"> </i> 
+            <span class="tag-hover">
+                 
+            </span>
+            -->
+
+            <i class="fa fa-tag p-1"> </i>
+            <span class="tag-hover">
+                
+                    <a href="../../tags/paper-list/" class="link-dark text-decoration-none title"> 
+                        paper list 
+                    </a>
+                
+                    <a href="../../tags/survey/" class="link-dark text-decoration-none title"> 
+                        survey 
+                    </a>
+                
+                    <a href="../../tags/interpretability/" class="link-dark text-decoration-none title"> 
+                        interpretability 
+                    </a>
+                
+            </span>
+        </div>
+
+        <div class="pt-3 pe-1">
+            <!-- 如果有摘要则显示摘要，没有就自己截取 -->
+            
+                <h2 id="研究问题描述"><a href="#研究问题描述" class="headerlink" title="研究问题描述"></a>研究问题描述</h2><p>深度学习模型的事后（post-hoc）可解释方法：给定一个已训练的深度神经网络模型，如何对其输出进行解释。</p> 
+             
+        </div>
+    </div>
+ 
+
+
+            </div>
+            <!--  页码 -->
+<nav class="pt-1 mt-1">
+    <ul class="pagination justify-content-center new-pagination">
+        <a class="extend prev" rel="prev" href="../../"><i class="fa fa-angle-double-left"></i></a><a class="page-number" href="../../">1</a><span class="page-number current">2</span><a class="page-number" href="../3/">3</a><a class="page-number" href="../4/">4</a><a class="page-number" href="../5/">5</a><a class="page-number" href="../6/">6</a><a class="extend next" rel="next" href="../3/"><i class="fa fa-angle-double-right"></i></a>
+    </ul>
+</nav>
+
+
+ 
+        </div>
+    </div>
+    <!-- 侧边栏 -->
+    <div class="col-md-4 d-none d-md-block ps-0" id='blog-siderbar'>
+        <div class="markdown-section ps-3 pb-3 pt-3 border-start">
+            <!-- 侧边栏 分类 -->
+<div class="card mb-3">
+    <div class="card-header card-header-dark">
+        <i class="fa fa-folder-open pe-2"></i> 分类
+    </div>
+    <nav class="nav flex-column">
+        
+        
+    </nav>
+</div>
+ 
+            <!-- 侧边栏 标签 -->
+<div class="card mb-3">
+    <div class="card-header card-header-dark">
+        <i class="fa fa-tag pe-2"></i> 标签
+    </div>
+    <nav class="nav flex-column">
+        
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/transformers/">
+                    transformers
+                    <span class="badge bg-secondary float-end me-2">2</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/transfer-learning/">
+                    transfer learning
+                    <span class="badge bg-secondary float-end me-2">1</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/toolbox/">
+                    toolbox
+                    <span class="badge bg-secondary float-end me-2">1</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/time-series/">
+                    time series
+                    <span class="badge bg-secondary float-end me-2">5</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/survey/">
+                    survey
+                    <span class="badge bg-secondary float-end me-2">18</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/structural-causal-model/">
+                    structural causal model
+                    <span class="badge bg-secondary float-end me-2">1</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/simulator/">
+                    simulator
+                    <span class="badge bg-secondary float-end me-2">1</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/similarity-learning/">
+                    similarity learning
+                    <span class="badge bg-secondary float-end me-2">1</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/sim2real/">
+                    sim2real
+                    <span class="badge bg-secondary float-end me-2">1</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/self-supervised-learning/">
+                    self-supervised learning
+                    <span class="badge bg-secondary float-end me-2">1</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/root-cause-analysis/">
+                    root cause analysis
+                    <span class="badge bg-secondary float-end me-2">1</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/python/">
+                    python
+                    <span class="badge bg-secondary float-end me-2">1</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/presentation/">
+                    presentation
+                    <span class="badge bg-secondary float-end me-2">1</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/paper-list/">
+                    paper list
+                    <span class="badge bg-secondary float-end me-2">34</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/ns3/">
+                    ns3
+                    <span class="badge bg-secondary float-end me-2">1</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/note/">
+                    note
+                    <span class="badge bg-secondary float-end me-2">14</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/neural-network/">
+                    neural network
+                    <span class="badge bg-secondary float-end me-2">1</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/mixed-sampling-rate/">
+                    mixed sampling rate
+                    <span class="badge bg-secondary float-end me-2">1</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/missing-value/">
+                    missing value
+                    <span class="badge bg-secondary float-end me-2">1</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/micro-service/">
+                    micro-service
+                    <span class="badge bg-secondary float-end me-2">1</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/markdown/">
+                    markdown
+                    <span class="badge bg-secondary float-end me-2">1</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/linux/">
+                    linux
+                    <span class="badge bg-secondary float-end me-2">1</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/interpretability/">
+                    interpretability
+                    <span class="badge bg-secondary float-end me-2">2</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/hugging-face/">
+                    hugging face
+                    <span class="badge bg-secondary float-end me-2">1</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/hexo/">
+                    hexo
+                    <span class="badge bg-secondary float-end me-2">1</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/foundation-models/">
+                    foundation models
+                    <span class="badge bg-secondary float-end me-2">1</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/extreme-large/">
+                    extreme-large
+                    <span class="badge bg-secondary float-end me-2">1</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/diagnosis/">
+                    diagnosis
+                    <span class="badge bg-secondary float-end me-2">1</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/dataset/">
+                    dataset
+                    <span class="badge bg-secondary float-end me-2">4</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/data-augmentation/">
+                    data augmentation
+                    <span class="badge bg-secondary float-end me-2">1</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/covid19/">
+                    covid19
+                    <span class="badge bg-secondary float-end me-2">2</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/correlation-analysis/">
+                    correlation analysis
+                    <span class="badge bg-secondary float-end me-2">1</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/cloud-native/">
+                    cloud native
+                    <span class="badge bg-secondary float-end me-2">1</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/causal-discovery/">
+                    causal discovery
+                    <span class="badge bg-secondary float-end me-2">2</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/big-models/">
+                    big models
+                    <span class="badge bg-secondary float-end me-2">1</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/activation/">
+                    activation
+                    <span class="badge bg-secondary float-end me-2">1</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/Quasi-periodic/">
+                    Quasi-periodic
+                    <span class="badge bg-secondary float-end me-2">1</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/NLP/">
+                    NLP
+                    <span class="badge bg-secondary float-end me-2">1</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/Monte-Carlo/">
+                    Monte Carlo
+                    <span class="badge bg-secondary float-end me-2">1</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/Markov-Random-Field/">
+                    Markov Random Field
+                    <span class="badge bg-secondary float-end me-2">1</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/Markov/">
+                    Markov
+                    <span class="badge bg-secondary float-end me-2">1</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/Belief-Propagation/">
+                    Belief Propagation
+                    <span class="badge bg-secondary float-end me-2">1</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/Bayesian/">
+                    Bayesian
+                    <span class="badge bg-secondary float-end me-2">2</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/AIOps/">
+                    AIOps
+                    <span class="badge bg-secondary float-end me-2">2</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/5G-NR/">
+                    5G NR
+                    <span class="badge bg-secondary float-end me-2">1</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/5G/">
+                    5G
+                    <span class="badge bg-secondary float-end me-2">4</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/4G/">
+                    4G
+                    <span class="badge bg-secondary float-end me-2">4</span>
+                </a>
+            
+        
+            
+                <a class="nav-link ps-3 border-bottom" aria-current="page" href="../../tags/3GPP/">
+                    3GPP
+                    <span class="badge bg-secondary float-end me-2">1</span>
+                </a>
+            
+        
+    </nav>
+</div> 
+            <div class="card mb-3">
+    <div class="card-header card-header-dark">
+        <i class="fa fa-clock-o pe-2"></i> 最近文章
+    </div>
+    <div class="p-2 tag-hover">
+        <ul class="list-group border-0">
+            
+            
+                <a class="list-group-item border-0 pt-0 pb-0 ps-1 fs-6" href="../../uncategorized/notes/3GPP%E4%BD%93%E7%B3%BB/ ">
+                    <small> 3GPP体系 </small>
+                </a>
+            
+            
+                <a class="list-group-item border-0 pt-0 pb-0 ps-1 fs-6" href="../../uncategorized/notes/5G_NR/ ">
+                    <small> 5G NR（New Radio）规范 </small>
+                </a>
+            
+            
+                <a class="list-group-item border-0 pt-0 pb-0 ps-1 fs-6" href="../../uncategorized/notes/AIOps2021%E6%8C%91%E6%88%98%E8%B5%9B/ ">
+                    <small> AIOps 2021挑战赛答辩记录 </small>
+                </a>
+            
+            
+                <a class="list-group-item border-0 pt-0 pb-0 ps-1 fs-6" href="../../uncategorized/notes/alarm_in_4GWAN/ ">
+                    <small> 4GWAN中的告警（alarm）分析 </small>
+                </a>
+            
+            
+                <a class="list-group-item border-0 pt-0 pb-0 ps-1 fs-6" href="../../uncategorized/notes/NS3/ ">
+                    <small> NS3无线网络仿真器 </small>
+                </a>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+             
+        </ul>
+    </div>
+</div>
+
+
+ 
+            <!-- 友情链接 -->
+<div class="card">
+    <div class="card-header card-header-dark">
+        <i class="fa fa-link pe-2"></i> 友情链接
+    </div>
+    <div class="p-2 tag-hover">
+        <ul class="list-group border-0">
+            
+                <a class="list-group-item border-0 pt-0 pb-0 ps-1" target="_blank" rel="noopener" href="https://blog.csdn.net/smileyan9 ">
+                    <small> csdn </small>
+                </a>
+            
+                <a class="list-group-item border-0 pt-0 pb-0 ps-1" target="_blank" rel="noopener" href="https://smileyan.cn ">
+                    <small> 笑颜网 </small>
+                </a>
+            
+                <a class="list-group-item border-0 pt-0 pb-0 ps-1" target="_blank" rel="noopener" href="https://hexo.io ">
+                    <small> Hexo </small>
+                </a>
+             
+        </ul>
+    </div>
+</div>
+
+
+ 
+        </div>
+    </div>
+</div>
+
+
+ 
+    </main>
+
+    <!-- 底部栏 -->
+    <footer class="bg-dark pt-1 pb-0 mt-5">
+    <div class="container pb-3 pt-3 text-center">
+        <p class="text-muted tag-hover">
+            All Rights Reserved <i class="fa fa-copyright"></i> 2017-2022 笑颜网 smileyan.cn <br> 
+            Powered by 
+             <a class="link-secondary text-decoration-none" target="_blank" rel="noopener" href="https://hexo.io">
+                 Hexo.io
+            </a> &  <a class="link-secondary text-decoration-none" target="_blank" rel="noopener" href="https://github.com/smile-yan/hexo-theme-heyan">
+               heyan
+            </a>
+            <br>
+            <a class="link-secondary text-decoration-none" target="_blank" rel="noopener" href="https://beian.miit.gov.cn/#/Integrated/index">
+                <img src="/police.png" style="width: 18px; height: 18px; margin-top: -4px" class="nofancybox">
+                湘ICP备 17012851号 
+            </a>
+        </p>
+    </div>
+</footer>
+</body> 
+</html>
