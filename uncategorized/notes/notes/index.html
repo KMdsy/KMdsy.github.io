@@ -1,0 +1,310 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smileyan</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css">
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    
+<link rel="stylesheet" href="../../../css/prism.css">
+ 
+    
+<script src="../../../js/prism.js"></script>
+
+    
+    
+<link rel="stylesheet" href="../../../css/index.css">
+ 
+    
+<script src="../../../js/search.js"></script>
+
+
+
+     
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+        </script>
+     
+
+     
+        <script src="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js"> </script>
+        
+<script src="../../../js/fancybox.js"></script>
+
+    
+
+    <script type="text/javascript">
+        var search_path = "search.xml";
+        if (search_path.length == 0) {
+            search_path = "search.xml";
+        }
+        var path = "/" + search_path;
+        searchFunc(path, 'local-search-input', 'local-search-result');
+    </script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+ 
+ 
+<body>
+    <!-- 导航栏 -->
+    <!-- 导航栏 -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4 pt-2 pb-2">
+    <div class="container">
+        <!-- 标题 --> 
+        <a class="navbar-brand navbar-expand-sm" href="/">
+            <img class="nofancybox" src="/logo.png" style="width: 75px;"  alt="笑颜网">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- 左边右边导航按钮 --> 
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto">
+                <!-- 左右两侧的导航栏 -->
+
+ 
+ 
+
+    <li class="nav-item">
+        <a class="nav-link" href="../../../">
+           <big> <i class="fa fa-home ps-1" ></i> 主页</big>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="../../../archives">
+           <big> <i class="fa fa-archive ps-1" ></i> 归档</big>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="../../../about">
+           <big> <i class="fa fa-user ps-1" ></i> 关于</big>
+        </a>
+    </li>
+ 
+ 
+            </ul>
+
+            
+            <form class="">
+                <div class="d-flex">
+                    <button class="btn text-muted fa fa-search d-none d-md-block d-lg-block" disabled></button>
+                    <input id="local-search-input" class="form-control me-2 pe-4" type="search"
+                            placeholder="搜索 " aria-label="Search">
+                </div>
+                <div id="local-search-result" style="position:absolute; padding-top: 8px; max-height: 960px; width: 480px;overflow-y: scroll; z-index: 1050;"></div>
+            </form>
+            
+            <ul class="navbar-nav">
+                <!-- 左右两侧的导航栏 -->
+
+ 
+ 
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+    <main class="container">
+        
+<div class="container-fluid markdown-section">
+<div class="row">
+    <div class="col-md-2 d-none d-sm-none d-md-block">
+        <div class="">
+            <!-- 同一类型的文件 -->
+<!-- 尽可能做到每篇文章只有一个类
+    1. 获得 post 的类别 categories
+     2.1 如果 categories.length === 0，啥也不做
+     2.2 如果 categories === 1，渲染这个类的所有文章
+     2.3 如果 categories.length > 1 ，则以第一个类为准渲染所有文章
+-->
+
+
+ 
+        </div>
+    </div>
+    <div class="col-md-8 col-sm-12">
+        <!-- 博客详情 -->
+        <div class="">
+            <!-- ps-4 pe-4 pt-2 -->
+            <p class="h2">
+                <span class="post-title">
+                    Some Notes
+                </span>   
+            </p>
+
+            <div class="pb-3 pt-1 pe-3">
+                <i class="fa fa-calendar p-1"></i>
+                2021/03/30 18:00:00 
+
+                <i class="fa fa-folder-open p-1"> </i> 
+                <span class="tag-hover">
+                     
+                </span>
+
+                <i class="fa fa-tag p-1"> </i>
+                <span class="tag-hover">
+                    
+                        <a href="../../../tags/note/" class="link-dark text-decoration-none"> 
+                            note 
+                        </a>
+                    
+                </span>
+            </div>
+
+            <div class="border-bottom pb-2">
+                <ol>
+<li><strong>posterior collapse</strong>: where the latents are ignored when they are paired with a powerful autoregressive decoder — typically observed in the VAE framework, i.e., the latents are ignored as the decoder is powerful enough to model x perfectly.个人理解是某些VAE的decoder的重建能力过于好导致重建误差很小，最后模型不能很好的最小化prior相关的loss item。</li>
+</ol>
+<span id="more"></span>
+
+<ol start="2">
+<li>关于self-supervised learning中的附加任务：<ol>
+<li>一种常用且简单的任务：对原始数据$x$做一定的transformation($t$)，即$t(x)$，然后训练一个附加任务，即区分这些transformation的种类。<br> <strong>目的</strong>：训练神经网络辨别图片是否为自然的。(To predict such transformations, a model should distinguish between what is semantically natural or not, and consequently, it<br> learns high-level semantic representations of inputs.)</li>
+<li>当仅使用了transformation后的数据$t(x)$而没有将对应的self-supervised learning task加入到loss中，则该方法退化为<strong>数据增强</strong>。 <strong>目的</strong>：提高网络的通用性，即对多种变化后的样本，都能够提取出差不多的语义信息<blockquote>
+<p>This conventional data augmentation aims to improve upon<br>the generalization ability of the target neural network f by<br>leveraging certain transformations that can preserve their semantics,<br>e.g., cropping, contrast enhancement, and flipping.</p>
+</blockquote>
+ <strong>缺点</strong>：另一方面，如果transformation修改了数据中的语义，则转换的不变属性可能会干扰语义表示学习（请参阅第3.2节中的表1）。<blockquote>
+<p>On the other hands, if a transformation modifies the semantics,<br>the invariant property with respect to the transformation<br>could interfere with semantic representation learning</p>
+</blockquote>
+</li>
+</ol>
+</li>
+<li><strong>mode collapse</strong>: meaning that GANs have the tendency to only generate a subset of the original dataset.</li>
+</ol>
+<ol start="4">
+<li><p>Tensorflow1中关于TensorArray的用法</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 改动TensorFlow源码的时候，使用以下语句</span>
+i_list <span class="token operator">=</span> tensor_array_ops<span class="token punctuation">.</span>TensorArray<span class="token punctuation">(</span>size<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span>dtype<span class="token punctuation">,</span> dynamic_size<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token string">'i_list'</span><span class="token punctuation">,</span> clear_after_read<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+<span class="token comment"># 当在其他环境中时，tensor_array_ops -> tf</span>
+
+<span class="token comment"># 使用</span>
+self<span class="token punctuation">.</span>j_list<span class="token punctuation">.</span>write<span class="token punctuation">(</span>_step<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">.</span>mark_used<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">'''
+def write(self, index, value, name=None):
+  """Write `value` into index `index` of the TensorArray.
+
+  Args:
+  index: 0-D.  int32 scalar with the index to write to.
+  value: N-D.  Tensor of type `dtype`.  The Tensor to write to this index.
+  name: A name for the operation (optional).
+
+  Returns:
+  A new TensorArray object with flow that ensures the write occurs.
+  Use this object all for subsequent operations.
+'''</span>
+<span class="token comment"># 上述语句的返回需要被使用，当没有被使用的时候会在log中生成一个warning，解决方案是在write()后使用方法：mark_used()</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>在对LSTM/GRU的更新过程做数学上的推导的时候，遇到问题，$W * [h_{t-1}, x_t] + b$中的$concat$操作如何在数学上分析？其中：</p>
+<ul>
+<li>shape of W: [hidden_dim, hidden_dim + data_dim](10, 11)</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>shape of h: [hidden_dim, 1](10, 1)<ul>
+<li>shape of x: [data_dim, 1](1,1)</li>
+<li>shape of b: [hidden_dim, 1](10, 1)</li>
+</ul>
+在代码中，向量为行向量，因此上述公式在代码中的实现为：$[h_{t-1}, x_t] * W + b$, 其中：<ul>
+<li>shape of W: [hidden_dim + data_dim, hidden_dim](11, 10)</li>
+<li>shape of h: [1, hidden_dim](1, 10)</li>
+<li>shape of x: [1, data_dim](1,1)</li>
+<li>shape of b: [1, hidden_dim](10, 1)</li>
+</ul>
+上述的式子$W * [h_{t-1}, x_t] + b$由于存在$concat$操作，而难以使用数学分析，此时可以使用$W’ * h_{t-1} + u * x_t + b$代替，其中W’: [hidden_dim, hidden_dim], u: [hidden_dim, 1], W = [W’, u]</li>
+</ul>
+  <pre class="line-numbers language-python" data-language="python"><code class="language-python">h <span class="token operator">=</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token comment"># [1, 10]</span>
+<span class="token builtin">input</span> <span class="token operator">=</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment"># [1, 1]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'h shape &#123;&#125;, input shape: &#123;&#125;, concat shape: &#123;&#125;'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>h<span class="token punctuation">.</span>shape<span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">.</span>shape<span class="token punctuation">,</span> np<span class="token punctuation">.</span>concatenate<span class="token punctuation">(</span><span class="token punctuation">[</span>h<span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">]</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span>shape<span class="token punctuation">)</span><span class="token punctuation">)</span>
+res <span class="token operator">=</span> np<span class="token punctuation">.</span>matmul<span class="token punctuation">(</span>np<span class="token punctuation">.</span>concatenate<span class="token punctuation">(</span><span class="token punctuation">[</span>h<span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">]</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> w_i<span class="token punctuation">)</span> <span class="token operator">+</span> b_i
+res1 <span class="token operator">=</span> np<span class="token punctuation">.</span>matmul<span class="token punctuation">(</span>h<span class="token punctuation">,</span> w_i<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">+</span> np<span class="token punctuation">.</span>matmul<span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">,</span> w_i<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> b_i
+pprint<span class="token punctuation">(</span>res<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>res1<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>res <span class="token operator">==</span> res1<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>  output<br>  <pre class="line-numbers language-console" data-language="console"><code class="language-console">h shape (1, 10), input shape: (1, 1), concat shape: (1, 11)
+array([[ 1.61824865, -4.07500279,  1.56455836,  1.2925876 , -2.16892738,
+        -2.38041244, -2.28631814,  2.84973208, -4.34229152, -1.44608608]])
+array([[ 1.61824865, -4.07500279,  1.56455836,  1.2925876 , -2.16892738,
+        -2.38041244, -2.28631814,  2.84973208, -4.34229152, -1.44608608]])
+array([[ True,  True,  True,  True,  True,  True,  True,  True,  True,
+         True]])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></p>
+ 
+            </div>
+        </div>
+        
+        <div class="mt-3">
+            <!-- 前一页后一页 -->
+<div class="previous-next-links">
+     
+    <div class="previous-design-link">
+        <a href="../../surveys/aiops_micro-service/">
+            <i style="font-size:16px;" class="fa fa-arrow-left" aria-hidden="true"></i>
+            微服务框架下的多源异构数据异常检测 - 调研
+        </a>
+    </div>
+     
+
+     
+    <div class="next-design-link">
+        <a href="../../paperlistfile/AAAI2021/">
+            Related Papers in AAAI 2021 (Feb 02-09 2021)
+            <i style="font-size:16px;" class="fa fa-arrow-right" aria-hidden="true"></i>
+        </a>
+    </div>
+ 
+</div> 
+             
+        </div>
+
+    </div>
+    <div class="col-2">
+        <div class="d-none d-sm-none d-md-block sticky-top border-start">
+             
+    
+ 
+
+        </div>
+    </div>
+</div>
+</div>
+ 
+    </main>
+
+    <!-- 底部栏 -->
+    <footer class="bg-dark pt-1 pb-0 mt-5">
+    <div class="container pb-3 pt-3 text-center">
+        <p class="text-muted tag-hover">
+            All Rights Reserved <i class="fa fa-copyright"></i> 2017-2022 笑颜网 smileyan.cn <br> 
+            Powered by 
+             <a class="link-secondary text-decoration-none" target="_blank" rel="noopener" href="https://hexo.io">
+                 Hexo.io
+            </a> &  <a class="link-secondary text-decoration-none" target="_blank" rel="noopener" href="https://github.com/smile-yan/hexo-theme-heyan">
+               heyan
+            </a>
+            <br>
+            <a class="link-secondary text-decoration-none" target="_blank" rel="noopener" href="https://beian.miit.gov.cn/#/Integrated/index">
+                <img src="/police.png" style="width: 18px; height: 18px; margin-top: -4px" class="nofancybox">
+                湘ICP备 17012851号 
+            </a>
+        </p>
+    </div>
+</footer>
+</body> 
+</html>

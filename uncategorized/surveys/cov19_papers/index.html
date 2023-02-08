@@ -1,0 +1,661 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smileyan</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css">
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    
+<link rel="stylesheet" href="../../../css/prism.css">
+ 
+    
+<script src="../../../js/prism.js"></script>
+
+    
+    
+<link rel="stylesheet" href="../../../css/index.css">
+ 
+    
+<script src="../../../js/search.js"></script>
+
+
+
+     
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+        </script>
+     
+
+     
+        <script src="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js"> </script>
+        
+<script src="../../../js/fancybox.js"></script>
+
+    
+
+    <script type="text/javascript">
+        var search_path = "search.xml";
+        if (search_path.length == 0) {
+            search_path = "search.xml";
+        }
+        var path = "/" + search_path;
+        searchFunc(path, 'local-search-input', 'local-search-result');
+    </script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+ 
+ 
+<body>
+    <!-- 导航栏 -->
+    <!-- 导航栏 -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4 pt-2 pb-2">
+    <div class="container">
+        <!-- 标题 --> 
+        <a class="navbar-brand navbar-expand-sm" href="/">
+            <img class="nofancybox" src="/logo.png" style="width: 75px;"  alt="笑颜网">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- 左边右边导航按钮 --> 
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto">
+                <!-- 左右两侧的导航栏 -->
+
+ 
+ 
+
+    <li class="nav-item">
+        <a class="nav-link" href="../../../">
+           <big> <i class="fa fa-home ps-1" ></i> 主页</big>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="../../../archives">
+           <big> <i class="fa fa-archive ps-1" ></i> 归档</big>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="../../../about">
+           <big> <i class="fa fa-user ps-1" ></i> 关于</big>
+        </a>
+    </li>
+ 
+ 
+            </ul>
+
+            
+            <form class="">
+                <div class="d-flex">
+                    <button class="btn text-muted fa fa-search d-none d-md-block d-lg-block" disabled></button>
+                    <input id="local-search-input" class="form-control me-2 pe-4" type="search"
+                            placeholder="搜索 " aria-label="Search">
+                </div>
+                <div id="local-search-result" style="position:absolute; padding-top: 8px; max-height: 960px; width: 480px;overflow-y: scroll; z-index: 1050;"></div>
+            </form>
+            
+            <ul class="navbar-nav">
+                <!-- 左右两侧的导航栏 -->
+
+ 
+ 
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+    <main class="container">
+        
+<div class="container-fluid markdown-section">
+<div class="row">
+    <div class="col-md-2 d-none d-sm-none d-md-block">
+        <div class="">
+            <!-- 同一类型的文件 -->
+<!-- 尽可能做到每篇文章只有一个类
+    1. 获得 post 的类别 categories
+     2.1 如果 categories.length === 0，啥也不做
+     2.2 如果 categories === 1，渲染这个类的所有文章
+     2.3 如果 categories.length > 1 ，则以第一个类为准渲染所有文章
+-->
+
+
+ 
+        </div>
+    </div>
+    <div class="col-md-8 col-sm-12">
+        <!-- 博客详情 -->
+        <div class="">
+            <!-- ps-4 pe-4 pt-2 -->
+            <p class="h2">
+                <span class="post-title">
+                    调研：美国COVID19感染/死亡、历史流感感染/死亡
+                </span>   
+            </p>
+
+            <div class="pb-3 pt-1 pe-3">
+                <i class="fa fa-calendar p-1"></i>
+                2020/06/11 12:00:00 
+
+                <i class="fa fa-folder-open p-1"> </i> 
+                <span class="tag-hover">
+                     
+                </span>
+
+                <i class="fa fa-tag p-1"> </i>
+                <span class="tag-hover">
+                    
+                        <a href="../../../tags/paper-list/" class="link-dark text-decoration-none"> 
+                            paper list 
+                        </a>
+                    
+                        <a href="../../../tags/survey/" class="link-dark text-decoration-none"> 
+                            survey 
+                        </a>
+                    
+                        <a href="../../../tags/covid19/" class="link-dark text-decoration-none"> 
+                            covid19 
+                        </a>
+                    
+                </span>
+            </div>
+
+            <div class="border-bottom pb-2">
+                <h2 id="调研-关于流感预测"><a href="#调研-关于流感预测" class="headerlink" title="调研: 关于流感预测"></a>调研: 关于流感预测</h2><h3 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h3><ul>
+<li><p><a target="_blank" rel="noopener" href="https://predict.cdc.gov/post/59973fe26f7559750d84a843">CDC关于2017-18流感季节预测比赛的数据与官方指导文件</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.cdc.gov/flu/weekly/flusight/index.html">CDC上关于流感预测的方法介绍</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://aminer.cn/data-covid19/?lang=zh">学术网站Aminer整理的COVID19数据、信息、知识</a></p>
+</li>
+</ul>
+<span id="more"></span>
+
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://covid-19.aminer.cn/kg/?lang=zh">COVID19的相关知识图谱</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/CSSEGISandData/COVID-19">COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="http://www.dxy.cn/">丁香园</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/">WHO</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.worldometers.info/coronavirus/country/hungary/">Statistical reports of COVID-19 cases and mortality rate of Hungary</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/CSSEGISandData/COVID-19">Novel Coronavirus (COVID-19) Cases</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.kaggle.com/jcyzag/covid19-lockdown-dates-by-country">COVID-19 Lockdown dates by country</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://ourworldindata.org/coronavirus-source-data">Hannah Ritchie</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.kaggle.com/sudalairajkumar/covid19-in-india">Covid-19 in India</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://ieee-dataport.org/open-access/coronavirus-covid-19-geo-tagged-tweets-dataset">CORONAVIRUS (COVID-19) GEO-TAGGED TWEETS DATASET</a></p>
+</li>
+</ul>
+<h3 id="论文"><a href="#论文" class="headerlink" title="论文"></a>论文</h3><h4 id="SURVEY"><a href="#SURVEY" class="headerlink" title="SURVEY"></a>SURVEY</h4><ul>
+<li><p>Artificial Intelligence Against Covid-19: An Early Review, IZA Discussion Paper. cite: 22</p>
+</li>
+<li><p>Role of intelligent computing in COVID-19 prognosis: A state-of-the-art review，Chaos, Solitons &amp; Fractals. cite: 3</p>
+</li>
+<li><p>Applications of machine learning and artificial intelligence for Covid-19 (SARS-CoV-2) pandemic: A review，Chaos, Solitons &amp; Fractals. cite: 3</p>
+</li>
+<li><p>Forecasting Models for Coronavirus (COVID-19): A Survey of the State-of-the-Art, teahrXiv. cite: 2</p>
+</li>
+<li><p>Automated Detection and Forecasting of COVID-19 using Deep Learning Techniques: A Review，arXiv. cite: 1</p>
+</li>
+<li><p>Deep learning methods for forecasting COVID-19 time-Series data: A Comparative study, Chaos, Solitons &amp; Fractals. cite: 0</p>
+</li>
+<li><p>Review of Big Data Analytics, Artificial Intelligence and Nature-Inspired Computing Models towards Accurate Detection of COVID-19 Pandemic Cases and Contact Tracing, International Journal of Environmental Research and Public Health. cite: 0</p>
+</li>
+<li><p>COVID-19 Open Source Data Sets: A Comprehensive Survey, medRxiv. cite: 0</p>
+</li>
+</ul>
+<h4 id="paper"><a href="#paper" class="headerlink" title="paper"></a>paper</h4><p>做疫情预测的工作主要有三大类方法：</p>
+<ol>
+<li>基于经典的传染病模型的方法，或基于这些模型进行改动，此类方法考虑了传染病的多种因素，例如R0、人口流动等。经典传染病模型包括：sub-epidemic wave model，extended susceptible-infected-removed model(eSIR)， Susceptible-Infectious-Recovered-Dead model(SIDR), SEIRD model(susceptible individuals, asymptomatic infected, symptomatic infected, recovered, and deceased)</li>
+<li>经典的时间序列方法、机器学习方法或变体，包括：logistic growth model，ARIMA，Wavelet-based model等</li>
+<li>基于循环神经网络等方法，输入网路的数据为时间序列，包括：LSTM, GRU, RNN 及其变种，如stacked-RNN(LSTM/GRU), multi-layer RNN(LSTM/GRU)</li>
+<li>基于外部知识/信息的方法，外部信息包括：社交网络信息，搜索引擎指数如baidu search index，地区气候信息，空间信息（某地区距离疫情震中的距离等），智能表中的人体健康数据等。此类方法结合了外部信息，能够更精确的刻画疫情的发展态势，且在官方数字滞后的情况下，还能做出比较准确的预测。此类信息还应用了基于RNN等结构，提取时间序列的动态。部分论文提出将深度学习方法与传统传染病模型结合，刻画疫情传播态势。</li>
+</ol>
+<h5 id="Traditional-models-ARIMA-logistic-regression-epidemic-model-and-so-on"><a href="#Traditional-models-ARIMA-logistic-regression-epidemic-model-and-so-on" class="headerlink" title="Traditional models (ARIMA, logistic regression, epidemic model and so on)"></a>Traditional models (ARIMA, logistic regression, epidemic model and so on)</h5><p>本节中的论文大致按照 “基于传染病模型的方法” -&gt; “基于传统时间序列与机器学习方法” 的顺序排列。由于相关工作中包含了大量在预印本网站上发表的论文，因此将正式发表与未正式发表的论文分开了。</p>
+<h6 id="peer-reviewed-papers"><a href="#peer-reviewed-papers" class="headerlink" title="peer-reviewed papers"></a>peer-reviewed papers</h6><p>Real-time forecasts of the COVID-19 epidemic in China from February 5th to February 24th, 2020, Infectious Disease Modelling</p>
+<ul>
+<li>数据：daily reported cumulative confirmed cases for the 2019-nCoV outbreak for each Chinese province from the National Health Commission of China.</li>
+<li>模型：generalized logistic growth model, the Richards growth model, and a sub-epidemic wave model.</li>
+<li>cite: 182</li>
+</ul>
+<p>Short-term Forecasts of the COVID-19 Epidemic in Guangdong and Zhejiang, China: February 13–23, 2020，J Clin Med</p>
+<ul>
+<li>数据：the cumulative cases for 34 provinces, including municipalities, autonomous regions, and special administrative regions， reported case data each day at 12 pm (GMT-5) from the initial date of reporting, 22 January 2020, to 13 February 2020.</li>
+<li>模型：<strong>The generalized logistic growth model (GLM)</strong> and the <strong>Richards model extend the simple logistic growth model</strong> with an additional scaling parameter， <strong>sub-epidemic model</strong></li>
+<li>cite: 61</li>
+</ul>
+<p>Extended SIR Prediction of the Epidemics Trend of COVID-19 in Italy and Compared With Hunan, China，Frontiers in medicine</p>
+<ul>
+<li>数据：publicly available dataset of COVID-19 provided by the Johns Hopkins University. This dataset includes many countries’ daily count of confirmed cases, recovered cases, and deaths. As time-series data, it is available from 22 January 2020.</li>
+<li>模型：An <strong>infectious disease dynamic extended susceptible-infected-removed (eSIR) model</strong>， The basic reproductive number was estimated using <strong>Markov Chain Monte Carlo methods</strong></li>
+<li>cite: 24</li>
+</ul>
+<p>Data-based analysis, modelling and forecasting of the COVID-19 outbreak,  PloS one</p>
+<ul>
+<li>数据：publicly available data from the 11th of January 2020 to the 10th of February 2020.</li>
+<li>模型：Susceptible-Infectious-Recovered-Dead (SIDR) model</li>
+<li>cite: 148</li>
+</ul>
+<p>A fractional-order model for the novel coronavirus (COVID-19) outbreak，Nonlinear Dynamics，Springer.</p>
+<ul>
+<li>数据：Italy’s data from February 24 to April 7, reported by WHO. We consider the number of the infected (I) and deceased (D) individuals</li>
+<li>模型：<strong>fractional-order</strong> susceptible individuals, asymptomatic infected, symptomatic infected, recovered, and deceased <strong>(SEIRD)</strong> model.</li>
+<li>cite: 3</li>
+</ul>
+<p>Reconstructing and forecasting the COVID-19 epidemic in the United States using a 5-parameter logistic growth model, Global health research and policy, pp. 252020.</p>
+<ul>
+<li>数据：mulative cases of COVID-19 in the U.S. from January 22 to April 6, 2020</li>
+<li>模型：5-parameter logistic growth model</li>
+<li>cite: 2</li>
+</ul>
+<p>Estimation of COVID-19 prevalence in Italy, Spain, and France, Science of The Total Environment, Volume 729, 10 August 2020, 138817, ELSEVIER</p>
+<ul>
+<li>数据：The prevalence data of COVID-19 was taken from the </li>
+<li>模型：ARIMA</li>
+<li>cite: 43</li>
+</ul>
+<p>Real-time forecasts and risk assessment of novel coronavirus (COVID-19) cases: A data-driven analysis, Chaos, Solitons &amp; Fractals, Volume 135, June 2020, 109850, ELSEVIER</p>
+<ul>
+<li>数据：the daily figures of confirmed cases for five different countries, namely Canada, France, India, South Korea, and the UK. The datasets are retrieved by the Global Change Data Lab1).</li>
+<li>模型：hybrid ARIMA-WBF(Wavelet-based forecasting model) model</li>
+<li>cite: 40</li>
+</ul>
+<p>COVID-19 virus outbreak forecasting of registered and recovered cases after sixty day lockdown in Italy: A data driven model approach，Journal of Microbiology, Immunology and Infection.</p>
+<ul>
+<li>数据：COVID-19 infected patient data has extracted from the Italian Health Ministry website includes registered and recovered cases from mid February to end March.</li>
+<li>模型：seasonal ARIMA</li>
+<li>cite: 34</li>
+</ul>
+<p>Prediction of Number of Cases of 2019 Novel Coronavirus (COVID-19) Using Social Media Search Index，IJERPH</p>
+<ul>
+<li>数据：Baidu Search Index in Social Media，Number of New Suspected Infection Cases</li>
+<li>模型：一个函数模型，自变量为Baidu Search Index，因变量为确诊数量，该函数的参数通过Subset selection，Forward selection，Ridge regression，Lasso regression和Elastic net来估计</li>
+<li>cite: 16</li>
+</ul>
+<p>Time series modelling to forecast the confirmed and recovered cases of COVID-19, Travel Medicine and Infectious Disease, ELSEVIER</p>
+<ul>
+<li>数据： the number of confirmed and recovered COVID-19 cases in the world from 21-Apr-2020 up to 30-Apr-2020,</li>
+<li>模型：<strong>Autoregressive time series models</strong> based on <strong>two-piece scale mixture normal distributions</strong>, called TP–SMN–AR models(includes the symmetric Gaussian and asymmetric heavy-tailed non-Gaussian autoregressive time series models. )</li>
+<li>cite: 10</li>
+</ul>
+<p>Prediction of the COVID-19 Pandemic for the Top 15 Affected Countries: Advanced Autoregressive Integrated Moving Average (ARIMA) Model, JMIR public health and surveillance</p>
+<ul>
+<li>数据：We have collected the case data for each day at given stipulated times, from January 21, 2020, to April 24, 2020. </li>
+<li>模型：ARIMA</li>
+<li>cite: 10</li>
+</ul>
+<p>ALGORITHM OF HYBRID GMDH-NETWORK CONSTRUCTION FOR TIME SERIES FORECAST，Electronics and Control Systems</p>
+<ul>
+<li>数据： the data of the COVID-19 pandemic, collected by Johns Hopkins University.</li>
+<li>模型：Hybridization is achieved through the use of various neurons: <strong>classical, nonlinearAdaline, R-neuron, W-neuron, Wavelet-neuron</strong>.</li>
+<li>cite: 0</li>
+</ul>
+<h6 id="preprint-paper-not-peer-reviewed"><a href="#preprint-paper-not-peer-reviewed" class="headerlink" title="preprint paper (not peer-reviewed)"></a>preprint paper (not peer-reviewed)</h6><p>Prediction of COVID-19 Spreading Profiles in South Korea, Italy and Iran by Data-Driven Coding, medRxiv, 2020.</p>
+<ul>
+<li>数据：the  number  of  infected  cases,  thecumulative  number  of  infected  cases,  the  number  of  recovered  cases,  and  death  tolls,  forindividual cities and regions in South Korea, Italy and Mazandran, from February 19, 2020,to March 6, 2020. </li>
+<li>模型：the set of parameters of the augmented Susceptible-Exposed-Infected-Removed <strong>(SEIR)</strong> model</li>
+<li>cite: 3</li>
+</ul>
+<p>Evaluation of the incidence of COVID-19 and of the efficacy of contention measures in Spain: a data-driven approach, medRxiv, 2020.</p>
+<ul>
+<li>数据：we  feed  the  model  with  the  available  data  as  of  February  28th,  2020. We consider that each province (there are 52 in Spain, see appendix B) is represented by a subpopulation.</li>
+<li>模型：Stochastic  SEIR-meta population  models  </li>
+<li>cite: 1</li>
+</ul>
+<p>Epidemic analysis of COVID-19 in China by dynamical modeling, MedRxiv，2020</p>
+<ul>
+<li>数据：01/20到02/09的NHC的公开数据，我们预测了5个不同区域的流行高峰和可能的结束时间。</li>
+<li>模型：generalized SEIR model </li>
+<li>cite: 154</li>
+</ul>
+<p>Explicit Modeling of 2019-nCoV Epidemic Trend based on Mobile Phone Data in Mainland China， medRxiv, 2020</p>
+<ul>
+<li>数据：daily outbreak data of 2019-nCoV Pneumonia in 334 prefecture-level cities in mainland China from January 11to February 2,2020. China Unicom mobile phone database is used to obtainthe inter-city  human  mobility.Household Registered Population at 2017 year-end derived from census data wasused to approximate  the number of local residentsineach city during 2020 Spring Festival</li>
+<li>模型：the proposed modification of SIR model</li>
+<li>cite: 5</li>
+</ul>
+<p>AutoSEIR: Accurate Forecasting from Real-time Epidemic Data Using Machine Learning, medRxiv, 2020</p>
+<ul>
+<li>数据：各个地区的疫情数据，以及多个地区的封锁日期信息。</li>
+<li>模型： In this paper we propose a novel approach to epidemiological parameter fitting and epidemic forecasting, based on an <strong>extended version of the SEIR compartmental model</strong> and on <strong>an auto-differentiation technique for partially observable ODEs</strong> (Ordinary Differential Equations). </li>
+<li>cite: 0</li>
+</ul>
+<p>An epidemiological forecast model and software assessing interventions on COVID-19 epidemic in China [R software], medRxiv, 2020</p>
+<ul>
+<li>数据：the COVID-19 data collected from the public website DXY.cn</li>
+<li>模型：Markov SIR infectious disease process</li>
+<li>cite: 18</li>
+</ul>
+<p>Covid-19 spread: Reproduction of data and prediction using a SIR model on Euclidean network， arXiv, 2020</p>
+<ul>
+<li>数据：the COVID-19 data，the distance from the epicenter.</li>
+<li>模型： Susceptible-Infected-Removed (SIR) model，Euclidean network</li>
+<li>cite: 16</li>
+</ul>
+<p>Forecasting the Worldwide Spread of COVID-19 based on Logistic Model and SEIR Model，medRxiv, 2020</p>
+<ul>
+<li>数据：Coronavirus COVID-19 Global Cases published by the Center for Systems Science and Engineering (CSSE) of Johns Hopkins University</li>
+<li>模型：Logistic Model and SEIR Model</li>
+<li>cite: 9</li>
+</ul>
+<p>Analysis and Prediction of COVID-19 Pandemic in Pakistan using Time-dependent SIR Model，arXiv, 2020</p>
+<ul>
+<li>数据：The data used in this paper is taken from the John Hopkins University dashboard</li>
+<li>模型：The <strong>time-dependent Susceptible-Infected-Recovered (SIR)</strong> model</li>
+<li>cite: 5</li>
+</ul>
+<p>A data driven analysis and forecast of an SEIARD epidemic model for COVID-19 in Mexico, arXiv, 2020</p>
+<ul>
+<li>数据：COVID-19 data in Mexico(infected, asymptomatic, recovered)</li>
+<li>模型：<strong>SEIARD mathematical model</strong>(susceptible (S(t)), exposed (E(t)), infected (I(t)), asymptomatic (A(t)), recovered (R(t)) and dead (D(t)).)</li>
+<li>cite: 5</li>
+</ul>
+<p>Simple model for Covid-19 epidemics - back-casting in China and forecasting in the US, medRxiv, 2020</p>
+<ul>
+<li>数据：mulative cases of COVID-19 in the U.S. from January 22 to April 6, 2020</li>
+<li>模型：Logistic Model</li>
+<li>cite: 0</li>
+</ul>
+<p>Application of ARIMA and Holt-Winters forecasting model to predict the spreading of COVID-19 for India and its states， medRxiv</p>
+<ul>
+<li>数据： the publicly available dataset from Kaggle as a perspective to India and its five states such as Odisha, Delhi, Maharashtra, Andhra Pradesh and West Bengal.</li>
+<li>模型： In this paper, the <strong>ARIMA</strong> (Auto regressive integrated moving average) and <strong>Holt-Winters time series exponential smoothing</strong> are used to develop an efficient 20- days ahead short-term forecast model to predict the effect of COVID-19 epidemic.</li>
+<li>cite: 0</li>
+</ul>
+<p>Data-driven Simulation and Optimization for Covid-19 Exit Strategies， arXiv, 2020</p>
+<ul>
+<li>数据</li>
+<li>模型： We have therefore built a pandemic simulation and forecasting toolkit that combines a <strong>deep learning estimation of the epidemiological parameters</strong> of the disease in order to predict the cases and deaths, and a <strong>genetic algorithm</strong> component searching for optimal trade-offs/policies between constraints and objectives set by decision-makers. </li>
+<li>cite: 1</li>
+</ul>
+<p>Kalman Filter Based Short Term Prediction Model for COVID-19 Spread， medRxiv, 2020</p>
+<ul>
+<li>数据：this article is written after various studies and analysis on the latest data on COVID-19 spread, which also includes the demographic and environmental factors. </li>
+<li>模型：After gathering data from various resources, all data are integrated and passed into different <strong>Machine Learning Models</strong> to check the fit. <strong>Ensemble Learning Technique,Random Forest</strong>, gives a good evaluation score on the test data.</li>
+<li>cite: 1</li>
+</ul>
+<p>Spatiotemporal Dynamics, Nowcasting and Forecasting of COVID-19 in the United States，arXiv，2020</p>
+<ul>
+<li>数据：data from the reported confirmed COVID-19 infections and deaths at the county level，Health Department Website in each state or region, the New York Times (NYT, 2020), the COVID-19 Data Repository by the Center for Systems Science and Engineering at Johns Hopkins University (CSSE, 2020), and the COVID Tracking Project (Atlantic, 2020).</li>
+<li>模型：a class of nonparametric <strong>space-time models</strong>，we consider the exponential families of distributions</li>
+<li>cite: 4</li>
+</ul>
+<hr>
+<h5 id="Deep-learning-and-other-methods"><a href="#Deep-learning-and-other-methods" class="headerlink" title="Deep learning and other methods"></a>Deep learning and other methods</h5><p>本章大致按照 “融合模型（深度学习与传统传染病模型/时间序列模型的结合  或  时间序列信息与其他信息的结合，其他信息包括：气候信息、社交媒体信息、人体健康数据等）” -&gt; “仅利用时间序列信息的深度学习模型” 来排列。 </p>
+<h6 id="peer-reviewed-papers-1"><a href="#peer-reviewed-papers-1" class="headerlink" title="peer-reviewed papers"></a>peer-reviewed papers</h6><p>Forecasting Brazilian and American COVID-19 cases based on artificial intelligence coupled with climatic exogenous variables， Chaos, Solitons &amp; Fractals，Volume 139, October 2020, 110027， ELSEVIER</p>
+<ul>
+<li>数据：收集的数据集涉及到2020年4月28日在巴西和美国五个州发生的COVID-19累积案例。对于巴西语境，该数据集是从API（应用程序接口）[37]中收集的，该API 检索来自巴西所有27个州卫生局的有关COVID-19病例的每日信息。美国而言，该数据集是从约翰·霍普金斯大学系统科学与工程中心（CSSE）提供的Github上的“ COVID-19数据存储库”中收集的[38]。</li>
+<li>模型：此外，本文还结合了气候外源输入，以多日预报策略评估了AI模型。In this paper, <strong>Bayesian regression neural network, cubist regression, k-nearest neighbors, quantile random forest, and support vector regression</strong>, are used stand-alone, and coupled with the recent <strong>pre-processing variational mode decomposition (VMD)</strong> employed to decompose the time series into several intrinsic mode functions.</li>
+<li>cite: 1</li>
+</ul>
+<p>Time Series Analysis and Forecast of the COVID-19 Pandemic in India using Genetic Programming， Chaos, Solitons &amp; Fractals Volume 138, September 2020, 109945。ELSEVIER</p>
+<ul>
+<li>数据：印度的COVID19数据</li>
+<li>模型： it has been found that the proposed <strong>GEP(Genetic Evolutionary Programming )-based models</strong> use simple linkage functions and are highly reliable for time series prediction of COVID-19 cases in India.</li>
+<li>cite: 7</li>
+</ul>
+<p>Modified SEIR and AI prediction of the epidemics trend of COVID-19 in China under public health interventions, Journal of Thoracic Dosease</p>
+<ul>
+<li>数据：Migration index based on the daily number of inbound and outbound events by rail, air and road traffic，most updated COVID-19 epidemiological data， The 2003 SARS epidemic data between April and June 2003 across the whole of China retrieved from an archived news-site</li>
+<li>模型：Modified SEIR model，artificial intelligence (AI) approach, trained on the 2003 SARS data (LSTM)</li>
+<li>cite: 199</li>
+</ul>
+<p>Predicting COVID-19 in China Using Hybrid AI Model， IEEE Transactions on Cybernetics，IEEE</p>
+<ul>
+<li>数据：most of the data mainly come from the national and provincial health commissions and include the numbers of people who are infected, suspected, cured, and have died. data for NLP are obtained from dxy.com [36], social media, and news media.</li>
+<li>模型：<strong>improved susceptible-infected (ISI) model</strong> ，the <strong>natural language processing (NLP) module</strong> and the <strong>long short-term memory (LSTM) network</strong> are embedded into the ISI model to build the hybrid AI model for COVID-19 prediction.</li>
+<li>cite: 7</li>
+</ul>
+<p>Learning from Large-Scale Wearable Device Data for Predicting Epidemics Trend of COVID-19，Discrete Dynamics in Nature and Society，Hindawi</p>
+<ul>
+<li>数据：日常测量包括RHR，活动和睡眠时间，这是生理异常检测的基础。</li>
+<li>模型：we propose a framework, which is based on the <strong>heart rate and sleep data collected from wearable devices</strong>, to predict the epidemic trend of COVID-19 in different countries and cities. In addition to a physiological anomaly detection algorithm defined based on data from wearable devices, <strong>an online neural network</strong> prediction modelling methodology combining both detected physiological anomaly rate and historical COVID-19 infection rate is explored.</li>
+<li>cite: 4</li>
+</ul>
+<p>COVID-19 Pandemic Prediction for Hungary; A Hybrid Machine Learning Approach， Mathematics, MDPI</p>
+<ul>
+<li>数据：The actual dataset includes the daily cases and the number of deaths from 4 March to 28 April. </li>
+<li>模型： The hybrid machine learning methods of <strong>adaptive network-based fuzzy inference system (ANFIS)</strong> and <strong>multi-layered perceptron-imperialist competitive algorithm (MLP-ICA)</strong> are proposed to predict time series of infected individuals and mortality rate. </li>
+<li>cite: 4</li>
+</ul>
+<p>Forecasting the prevalence of COVID-19 outbreak in Egypt using nonlinear autoregressive artificial neural networks, Process Safety and Environmental Protection, ELSEVIER</p>
+<ul>
+<li>数据：埃及卫生和人口部报告的关于COVID-19确诊病例的官方数据被用于本研究，研究时间为2020年3月1日至5月10日</li>
+<li>模型：ARIMA，NARANN（非线性自回归人工神经网络）</li>
+<li>cite: 2</li>
+</ul>
+<p>Multiple Ensemble Neural Network Models with Fuzzy Response Aggregation for Predicting COVID-19 Time Series: The Case of Mexico, Healthcare, dblp, 2020</p>
+<ul>
+<li>数据：我们有一个来自COVID-19确诊病例和死亡病例的数据集，其中包括墨西哥的12个州和该国的总数据</li>
+<li>模型：a multiple <strong>ensemble neural network</strong> model with fuzzy response aggregation for the COVID-19 time series is presented. Ensemble neural networks are composed of a set of modules, which are used to produce several predictions under different conditions. The modules are simple neural networks. <strong>Fuzzy logic</strong> is then used to aggregate the responses of several predictor modules</li>
+<li>cite: 1</li>
+</ul>
+<p>Predicting the growth and trend of COVID-19 pandemic using <strong>machine learning and cloud computing</strong>, Internet of Things, Elsevier</p>
+<ul>
+<li>数据：Hannah Ritchie, https：//ourworldindata.org/coronavirus-source-data。</li>
+<li>模型：We show that using iterative weighting for fitting Generalized Inverse Weibull distribution, a better fit can be obtained to develop a prediction framework. </li>
+<li>cite: 15</li>
+</ul>
+<p>COVID-19 Outbreak Prediction with Machine Learning, SSRN</p>
+<ul>
+<li>数据： Data were collected from <a target="_blank" rel="noopener" href="https://www.worldometers.info/coronavirus/country">https://www.worldometers.info/coronavirus/country</a> for five countries, including Italy, Germany, Iran, USA, and China on total cases over 30 days.</li>
+<li>模型：Among a wide range of machine learning models investigated, two models showed promising results (i.e., <strong>multi-layered perceptron, MLP, and adaptive network-based fuzzy inference system, ANFIS</strong>).Paper further suggests that real novelty in outbreak prediction can be realized through integrating machine learning and SEIR models.</li>
+<li>cite: 11</li>
+</ul>
+<p>A Methodological Approach for Predicting COVID-19 Epidemic Using EEMD-ANN Hybrid Model，Internet of Things，Elsevier, 2020</p>
+<ul>
+<li>数据：The cumulative global data of daily level information by country were retrieved from the Center for Systems Science and Engineering (CSSE) at the Johns Hopkins University GitHub repository (<a target="_blank" rel="noopener" href="https://github.com/CSSEGISandData/COVID-19">https://github.com/CSSEGISandData/COVID-19</a>) accessed on 19/05/2020. This study focuses only on the number of global cumulative confirm cases of COVID-19, the number of cumulative death and recover cases from the period January 22, 2020, to May 18, 2020,</li>
+<li>模型： The primary objective of this study is to propose <strong>a hybrid model that incorporates ensemble empirical mode decomposition (EEMD) and artificial neural network (ANN) for predicting the COVID-19 epidemic</strong>. A real-time COVID-19 time series data has been used on the window periods January 22, 2020, to May 18, 2020. The time-series data first decomposed using EEMD to produce sub-signals and make original data denoised, and ANN architecture has built to train the denoised data.</li>
+<li>cite: 0</li>
+</ul>
+<p>Partial derivative Nonlinear Global Pandemic Machine Learning prediction of COVID 19，Chaos, Solitons &amp; Fractals，Volume 139, October 2020, 110056，ELSEVIER</p>
+<ul>
+<li>数据：benchmark dataset Indian COVID-19 dataset obtained from <a target="_blank" rel="noopener" href="https://www.kaggle.com/sudalairajkumar/covid19-in-india">https://www.kaggle.com/sudalairajkumar/covid19-in-india</a>. </li>
+<li>模型：we propose <strong>a partial derivative regression and nonlinear machine learning (PDR-NML)</strong> method for global pandemic prediction of COVID-19. We used a Progressive Partial Derivative Linear Regression model to search for the best parameters in the dataset in a computationally efficient manner. Next, a Nonlinear Global Pandemic Machine Learning model was applied to the normalized features for making accurate predictions. </li>
+<li>cite: 1</li>
+</ul>
+<p>Prediction and analysis of COVID-19 positive cases using deep learning models: A descriptive case study of India，Chaos, Solitons &amp; Fractals, Volume 139, October 2020, 110017，ELSEVIER</p>
+<ul>
+<li>数据： Ministry of Health and Family Welfare (Government of India) [9]. </li>
+<li>模型：Recurrent neural network (RNN) based long-short term memory (LSTM) variants such as <strong>Deep LSTM, Convolutional LSTM and Bi-directional LSTM</strong> are applied on Indian dataset to predict the number of positive cases. </li>
+<li>cite: 3</li>
+</ul>
+<p>Composite Monte Carlo decision making under high uncertainty of novel coronavirus epidemic using hybridized deep learning and fuzzy rule induction, Applied Soft Computing, Volume 93, August 2020, 106282, ELSEVIER</p>
+<ul>
+<li>数据：The data come from mainly two sources: one source is known to be deterministic in nature which is harvested from CDCP in the form of time-series starting from 25 Jan 2020 to 25 Feb 2020.</li>
+<li>模型：  <strong>Composite Monte-Carlo (CMC) simulation</strong> is a forecasting method which extrapolates available data which are broken down from multiple correlated/casual micro-data sources into many possible future outcomes by drawing random samples from some probability distributions. In this paper, a case study of using <strong>CMC that is enhanced by deep learning network and fuzzy rule induction</strong> for gaining better stochastic insights about the epidemic development is experimented. Instead of applying simplistic and uniform assumptions for a MC which is a common practice, a deep learning-based CMC is used in conjunction of fuzzy rule induction techniques. </li>
+<li>cite: 25</li>
+</ul>
+<p>Statistical Explorations and Univariate Timeseries Analysis on COVID-19 Datasets to Understand the Trend of Disease Spreading and Death，Sensors Volume 20  Issue 11, MDPI</p>
+<ul>
+<li>数据： we used datasets from 1 January 2020, to 22 April 2020. </li>
+<li>模型：vanilla, stacked, and bidirectional LSTM models，  multilayer LSTM models</li>
+<li>cite: 0</li>
+</ul>
+<p>Covid-19 Predictions Using a Gauss Model, Based on Data from April 2，  Physics  Volume 2  Issue 2， MDPI</p>
+<ul>
+<li>数据：多个国家的感染曲线</li>
+<li>模型：We study a <strong>Gauss model (GM)</strong>, a map from time to the bell-shaped Gaussian function to model the deaths per day and country, as a simple, analytically tractable model to make predictions on the coronavirus epidemic. <strong>Justified by the sigmoidal nature of a pandemic</strong>, i.e., initial exponential spread to eventual saturation, and an agent-based model，we apply the GM to existing data, as of 2 April 2020, from 25 countries during first corona pandemic wave and study the model’s predictions. </li>
+<li>cite: 6</li>
+</ul>
+<p>Artificial Neural Network Modeling of Novel Coronavirus (COVID-19) Incidence Rates across the Continental United States,  IJERPH  Volume 17  Issue 12, MDPI</p>
+<ul>
+<li>数据：In this study, we compiled a database of 57 candidate variables that may predict county-level cumulative disease incidence as a dependent variable. From January 22 to April 25, 2020, cumulative numbers of confirmed cases of COVID-19 across the continental United States were collected at the county level from USAFacts (usafacts.org) and normalized by populations. The counties (n = 3109) were considered as samples that represent the status of the disease in the US. In this study, socioeconomic (such as household income, income inequalities, and unemployment rate), behavioral (such as smoking), environmental (such as temperature, precipitation, and air pollution), topographic (such as altitude, and terrain slope), and demographic (such as proportions of age groups, race, gender, and access to primary care) factors were prepared at the county level and were used as explanatory variables.</li>
+<li>模型：feature selection + ANN</li>
+<li>cite: 1</li>
+</ul>
+<p>Time series forecasting of COVID-19 transmission in Canada using LSTM networks, Chaos, Solitons &amp; Fractals Volume 135, June 2020, 109864, ELSEVIER</p>
+<ul>
+<li>数据：The data set also includes number of fatalities and recovered patients by the end of each day. The dataset is available in the time series format with date, month and year so that the temporal components are not neglected. </li>
+<li>模型：Bi-LSTM</li>
+<li>cite: 22</li>
+</ul>
+<p>Modeling and prediction of COVID-19 in Mexico applying mathematical and computational models，Chaos, Solitons &amp; Fractals，Volume 138, September 2020, 109946，ELSEVIER</p>
+<ul>
+<li>数据：The data used comes from the “Daily Technical Report” [18] issued by the Mexican Ministry of Health.</li>
+<li>模型：<strong>Gompertz and Logistic models</strong>，An <strong>ANN model</strong> with seven neurons in the hidden layer and using a TANSIG function</li>
+<li>cite: 9</li>
+</ul>
+<h6 id="preprint-paper-not-peer-reviewed-1"><a href="#preprint-paper-not-peer-reviewed-1" class="headerlink" title="preprint paper (not peer-reviewed)"></a>preprint paper (not peer-reviewed)</h6><p>A machine learning methodology for real-time forecasting of the 2019-2020 COVID-19 outbreak using Internet searches, news alerts, and estimates from mechanistic models，arXiv, 2020</p>
+<ul>
+<li>数据：(a) official health reports from Chinese Center Disease for Control and Prevention (China CDC), (b) COVID-19-related internet search activity from Baidu, (c) news media activity reported by Media Cloud, and (d) daily forecasts of COVID-19 activity from GLEAM</li>
+<li>模型：*<em><strong>Augmented ARGONet，</strong></em></li>
+<li>cite: 14</li>
+</ul>
+<p>Examining COVID-19 Forecasting using Spatio-Temporal Graph Neural Networks， arxiv, 2020</p>
+<ul>
+<li>数据：the NewYork Times (NYT)COVID-19 dataset1, the Google COVID-19 Aggregated Mobility Research Dataset, and the Google Community Mobility Reports2. The Aggregated Mobility Research Dataset helps us understand the quantity of movement, while the Community Mobility Reports helps us understand the dynamics of various types of movement.</li>
+<li>模型：the proposed approach learns from <strong>a single large-scale spatio-temporal graph</strong>, where nodes represent the region-level human mobility, spatial edges represent the human mobility based inter-region connectivity, and temporal edges represent node features through time.</li>
+<li>cite: 1</li>
+</ul>
+<p>Prediction of the COVID-19 Epidemic Trends Based on SEIR and AI Models， medRxiv, 2020</p>
+<ul>
+<li>数据：The epidemic data，The urban migration indexThe population density, per capita GDP and other urban data of all provinces in China，the distance from each province to Wuhan，The average temperature of each province</li>
+<li>模型： We proposed an <strong>SEIR(Susceptible-Exposed- Infectious-Removed) model</strong> to analyze the epidemic trend in Wuhan and use the <strong>AI model</strong> to analyze the epidemic trend in non-Wuhan areas. </li>
+<li>cite: 0</li>
+</ul>
+<p>Novel Spatiotemporal Feature Extraction Parallel Deep Neural Network for Forecasting Confirmed Cases of Coronavirus Disease 2019， medRxiv, 2020</p>
+<ul>
+<li>数据：Experimental data were collected from Germany, Italy, and Spain regarding six factors: the daily number of newly confirmed cases, deaths, and recovered cases and the accumulated number of confirmed cases, deaths, and recovered cases.</li>
+<li>模型： This study proposed a novel <strong>deep neural network framework, COVID-19Net</strong>, which parallelly combines a <strong>convolutional neural network (CNN) and bidirectional gated recurrent units (GRUs)</strong>. Three European countries with severe outbreaks were studied Germany, Italy, and Spain to extract spatiotemporal feature and predict the number of confirmed cases.</li>
+<li>cite: 0</li>
+</ul>
+<p>Hawkes process modeling of COVID-19 with mobility leading indicators and spatial covariates, medRxiv, 2020</p>
+<ul>
+<li>数据：Covid-19 daily cases and deaths reported by The New York Times， Google mobility index reports， County-level demographic covariates</li>
+<li>模型：<strong>Hawkes process</strong> with <strong>spatio-temporal</strong> covariates for modeling COVID-19 case and death data.</li>
+<li>cite: 0</li>
+</ul>
+<p>COVID-19 Epidemic Analysis using Machine Learning and Deep Learning Algorithms, medRxiv, 2020</p>
+<ul>
+<li>数据：The day to day prevalence data of COVID-2019 from January 22, 2020, to April 1, 2020,The dataset consists of daily case reports and daily time series summary tables.</li>
+<li>模型：polynomial regression (PR)，SVR，DNN，LSTM</li>
+<li>cite: 5</li>
+</ul>
+<p>An Improved Method for the Fitting and Prediction of the Number of COVID-19 Confirmed Cases Based on LSTM，arXiv 2020 </p>
+<ul>
+<li>数据：Novel Coronavirus (COVID-19) Cases：<a target="_blank" rel="noopener" href="https://github.com/CSSEGISandData/COVID-19%EF%BC%8C">https://github.com/CSSEGISandData/COVID-19，</a> COVID-19 Lockdown dates by country: <a target="_blank" rel="noopener" href="https://www.kaggle.com/jcyzag/covid19-lockdown-dates-by-country">https://www.kaggle.com/jcyzag/covid19-lockdown-dates-by-country</a>.</li>
+<li>模型：LSTM，然后根据standard deviation of last n days来调整预测的结果，以体现地区性的疫情发展趋势的差异性</li>
+<li>cite: 0</li>
+</ul>
+<p>Predicting the epidemic curve of the coronavirus (SARS-CoV-2) disease (COVID-19) using artificial intelligence，medRxiv, 2020</p>
+<ul>
+<li>数据：publicly available datasets of World Health Organization and Johns Hopkins University</li>
+<li>模型：then have used recurrent neural networks <strong>(RNNs)</strong> with gated recurring units <strong>(Long Short-Term Memory – LSTM units)</strong> to create 2 Prediction Models. Information collected in the first t time-steps were aggregated with a fully connected (dense) neural network layer and a consequent regression output layer to determine the next predicted value.</li>
+<li>cite: 1</li>
+</ul>
+<p>Worldwide and Regional Forecasting of Coronavirus (Covid-19) Spread using a Deep Learning Model, medRxiv, 2020</p>
+<ul>
+<li>数据：time series data of daily reports of Chinese Centre for Disease Control and Prevention from 10 January 2020 to 3 April 2020 [4]. The data includes the total number of daily new cases of Covid-19, the total number of deaths and the total number of recoveries in China. (Europe and Middle East, worldwide…)</li>
+<li>模型：The proposed deep learning architecture consists of <strong>Long Short Term Memory (LSTM) layer, dropout layer, and fully connected layers</strong> to predict regional and worldwide forecasts. </li>
+<li>cite: 0</li>
+</ul>
+<p>COVID-19 Pandemic Prediction for Hungary; a Hybrid Machine Learning Approach， medRxiv, 2020</p>
+<ul>
+<li>数据：Dataset is related to the statistical reports of COVID-19 cases and mortality rate of Hungary which is available at: <a target="_blank" rel="noopener" href="https://www.worldometers.info/coronavirus/country/hungary/">https://www.worldometers.info/coronavirus/country/hungary/</a>. Figure</li>
+<li>模型：this study proposes a hybrid machine learning approach to predict the COVID-19 and we exemplify its potential using data from Hungary. The hybrid machine learning methods of <strong>adaptive network-based fuzzy inference system (ANFIS)</strong> and <strong>multi-layered perceptron-imperialist competitive algorithm (MLP-ICA)</strong> are used to predict time series of infected individuals and mortality rate.</li>
+<li>cite: 4</li>
+</ul>
+<p>Forecasting Covid-19 dynamics in Brazil: a data driven approach， arXiv, 2020</p>
+<ul>
+<li>数据：covid-19 time series</li>
+<li>模型：Then, our main approach consists in <strong>an initial clustering of the world regions</strong> for which data is available and where the pandemic is at an advanced stage, based on a set of <strong>manually engineered features</strong> representing a country’s response to the early spread of the pandemic. A <strong>Modified Auto-Encoder network</strong> is then trained from these clusters and learns to predict future data for Brazilian states. These predictions are used to estimate important statistics about the disease, such as peaks.</li>
+<li>cite: 0</li>
+</ul>
+<p>Artificial Intelligence Forecasting of Covid-19 in China, arXiv, 2020</p>
+<ul>
+<li>数据：the confirmed cases of Covid-19 across China which were collected from January 11 to February 27, 2020 by WHO.</li>
+<li>模型：<strong>a modified stacked auto-encoder</strong> for modeling the transmission dynamics of the epidemics. We used the <strong>latent variables in the auto-encoder and clustering algorithms</strong> to group the provinces/cities for investigating the transmission structure.</li>
+<li>cite: 62</li>
+</ul>
+ 
+            </div>
+        </div>
+        
+        <div class="mt-3">
+            <!-- 前一页后一页 -->
+<div class="previous-next-links">
+     
+    <div class="previous-design-link">
+        <a href="../cov19_data/">
+            <i style="font-size:16px;" class="fa fa-arrow-left" aria-hidden="true"></i>
+            调研：美国COVID19感染/死亡、历史流感感染/死亡
+        </a>
+    </div>
+     
+
+     
+    <div class="next-design-link">
+        <a href="../../paperlistfile/ICLR2020/">
+            Related Papers in ICLR 2020 (2020.04.26)
+            <i style="font-size:16px;" class="fa fa-arrow-right" aria-hidden="true"></i>
+        </a>
+    </div>
+ 
+</div> 
+             
+        </div>
+
+    </div>
+    <div class="col-2">
+        <div class="d-none d-sm-none d-md-block sticky-top border-start">
+             
+    
+        <div>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B0%83%E7%A0%94-%E5%85%B3%E4%BA%8E%E6%B5%81%E6%84%9F%E9%A2%84%E6%B5%8B"><span class="toc-number">1.</span> <span class="toc-text">调研: 关于流感预测</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE"><span class="toc-number">1.1.</span> <span class="toc-text">数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BA%E6%96%87"><span class="toc-number">1.2.</span> <span class="toc-text">论文</span></a></li></ol></li></ol> 
+        </div>
+    
+ 
+
+        </div>
+    </div>
+</div>
+</div>
+ 
+    </main>
+
+    <!-- 底部栏 -->
+    <footer class="bg-dark pt-1 pb-0 mt-5">
+    <div class="container pb-3 pt-3 text-center">
+        <p class="text-muted tag-hover">
+            All Rights Reserved <i class="fa fa-copyright"></i> 2017-2022 笑颜网 smileyan.cn <br> 
+            Powered by 
+             <a class="link-secondary text-decoration-none" target="_blank" rel="noopener" href="https://hexo.io">
+                 Hexo.io
+            </a> &  <a class="link-secondary text-decoration-none" target="_blank" rel="noopener" href="https://github.com/smile-yan/hexo-theme-heyan">
+               heyan
+            </a>
+            <br>
+            <a class="link-secondary text-decoration-none" target="_blank" rel="noopener" href="https://beian.miit.gov.cn/#/Integrated/index">
+                <img src="/police.png" style="width: 18px; height: 18px; margin-top: -4px" class="nofancybox">
+                湘ICP备 17012851号 
+            </a>
+        </p>
+    </div>
+</footer>
+</body> 
+</html>

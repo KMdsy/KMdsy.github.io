@@ -1,0 +1,864 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smileyan</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css">
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    
+<link rel="stylesheet" href="../../../css/prism.css">
+ 
+    
+<script src="../../../js/prism.js"></script>
+
+    
+    
+<link rel="stylesheet" href="../../../css/index.css">
+ 
+    
+<script src="../../../js/search.js"></script>
+
+
+
+     
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+        </script>
+     
+
+     
+        <script src="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js"> </script>
+        
+<script src="../../../js/fancybox.js"></script>
+
+    
+
+    <script type="text/javascript">
+        var search_path = "search.xml";
+        if (search_path.length == 0) {
+            search_path = "search.xml";
+        }
+        var path = "/" + search_path;
+        searchFunc(path, 'local-search-input', 'local-search-result');
+    </script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+ 
+ 
+<body>
+    <!-- 导航栏 -->
+    <!-- 导航栏 -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4 pt-2 pb-2">
+    <div class="container">
+        <!-- 标题 --> 
+        <a class="navbar-brand navbar-expand-sm" href="/">
+            <img class="nofancybox" src="/logo.png" style="width: 75px;"  alt="笑颜网">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- 左边右边导航按钮 --> 
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto">
+                <!-- 左右两侧的导航栏 -->
+
+ 
+ 
+
+    <li class="nav-item">
+        <a class="nav-link" href="../../../">
+           <big> <i class="fa fa-home ps-1" ></i> 主页</big>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="../../../archives">
+           <big> <i class="fa fa-archive ps-1" ></i> 归档</big>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="../../../about">
+           <big> <i class="fa fa-user ps-1" ></i> 关于</big>
+        </a>
+    </li>
+ 
+ 
+            </ul>
+
+            
+            <form class="">
+                <div class="d-flex">
+                    <button class="btn text-muted fa fa-search d-none d-md-block d-lg-block" disabled></button>
+                    <input id="local-search-input" class="form-control me-2 pe-4" type="search"
+                            placeholder="搜索 " aria-label="Search">
+                </div>
+                <div id="local-search-result" style="position:absolute; padding-top: 8px; max-height: 960px; width: 480px;overflow-y: scroll; z-index: 1050;"></div>
+            </form>
+            
+            <ul class="navbar-nav">
+                <!-- 左右两侧的导航栏 -->
+
+ 
+ 
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+    <main class="container">
+        
+<div class="container-fluid markdown-section">
+<div class="row">
+    <div class="col-md-2 d-none d-sm-none d-md-block">
+        <div class="">
+            <!-- 同一类型的文件 -->
+<!-- 尽可能做到每篇文章只有一个类
+    1. 获得 post 的类别 categories
+     2.1 如果 categories.length === 0，啥也不做
+     2.2 如果 categories === 1，渲染这个类的所有文章
+     2.3 如果 categories.length > 1 ，则以第一个类为准渲染所有文章
+-->
+
+
+ 
+        </div>
+    </div>
+    <div class="col-md-8 col-sm-12">
+        <!-- 博客详情 -->
+        <div class="">
+            <!-- ps-4 pe-4 pt-2 -->
+            <p class="h2">
+                <span class="post-title">
+                    Related Papers in NeuralIPS 2020 (2020.12.08)
+                </span>   
+            </p>
+
+            <div class="pb-3 pt-1 pe-3">
+                <i class="fa fa-calendar p-1"></i>
+                2020/12/08 00:00:00 
+
+                <i class="fa fa-folder-open p-1"> </i> 
+                <span class="tag-hover">
+                     
+                </span>
+
+                <i class="fa fa-tag p-1"> </i>
+                <span class="tag-hover">
+                    
+                        <a href="../../../tags/paper-list/" class="link-dark text-decoration-none"> 
+                            paper list 
+                        </a>
+                    
+                </span>
+            </div>
+
+            <div class="border-bottom pb-2">
+                <p>Accept paper list: <a target="_blank" rel="noopener" href="https://neurips.cc/Conferences/2020/AcceptedPapersInitial">link</a></p>
+<span id="more"></span>
+
+<h2 id="anomaly-detection"><a href="#anomaly-detection" class="headerlink" title="anomaly detection"></a>anomaly detection</h2><ul>
+<li><p>Energy-based Out-of-distribution Detection</p>
+<p>  Weitang Liu (UC San Diego) · Xiaoyun Wang (University of California, Davis) · John Owens (University of California, Davis) · Sharon Yixuan Li (Stanford University)</p>
+</li>
+</ul>
+<ul>
+<li><p>Provable Worst Case Guarantees for the Detection of Out-of-distribution Data</p>
+<p>  Julian Bitterwolf (University of Tübingen) · Alexander Meinke (University of Tübingen) · Matthias Hein (University of Tübingen)</p>
+</li>
+</ul>
+<ul>
+<li><p>Likelihood Regret: An Out-of-Distribution Detection Score For Variational Auto-encoder</p>
+<p>  Zhisheng Xiao (The University of Chicago) · Qing Yan (University of Chicago) · Yali Amit (University of Chicago)</p>
+</li>
+</ul>
+<ul>
+<li><p>Why Normalizing Flows Fail to Detect Out-of-Distribution Data</p>
+<p>  Polina Kirichenko (New York University) · Pavel Izmailov (New York University) · Andrew Gordon Wilson (New York University)</p>
+</li>
+</ul>
+<ul>
+<li><p><strong>【看看5】</strong> Towards Maximizing the Representation Gap between In-Domain &amp; Out-of-Distribution Examples</p>
+<p>  Jay Nandy (National University of Singapore) · Wynne Hsu (National University of Singapore) · Mong Li Lee (National University of Singapore)</p>
+</li>
+</ul>
+<ul>
+<li><p>On the Value of Out-of-Distribution Testing: An Example of Goodhart’s Law</p>
+<p>  Damien Teney (University of Adelaide) · Ehsan Abbasnejad (University of Adelaide) · Kushal Kafle (Adobe Research) · Robik Shrestha (Rochester Institute of Technology) · Christopher Kanan (PAIGE.AI / RIT / CornellTech) · Anton van den Hengel (University of Adelaide)</p>
+</li>
+</ul>
+<ul>
+<li><p>Understanding Anomaly Detection with Deep Invertible Networks through Hierarchies of Distributions and Features</p>
+<p>  Robin T Schirrmeister (University Medical Center Freiburg) · Yuxuan Zhou (Stuttgart University) · Tonio Ball (Albert-Ludwigs-University) · Dan Zhang (Bosch Center for Artificial Intelligence)</p>
+</li>
+</ul>
+<ul>
+<li><p><strong>【看看1】</strong> Timeseries Anomaly Detection using Temporal Hierarchical One-Class Network</p>
+<p>  Lifeng Shen (The Hong Kong University of Science and Technology) · Zhuocong Li (Tencent) · James Kwok (Hong Kong University of Science and Technology)</p>
+</li>
+</ul>
+<ul>
+<li><p>CSI: Novelty Detection via Contrastive Learning on Distributionally Shifted Instances</p>
+<p>  Jihoon Tack (KAIST) · Sangwoo Mo (KAIST) · Jongheon Jeong (KAIST) · Jinwoo Shin (KAIST)</p>
+</li>
+<li><p><strong>【看看4】</strong> One Ring to Rule Them All: Certifiably Robust Geometric Perception with Outliers</p>
+<p>  Heng Yang · Luca Carlone</p>
+</li>
+<li><p><strong>【看看3】</strong> Outlier Robust Mean Estimation with Subgaussian Rates via Stability</p>
+<p>  Ilias Diakonikolas · Daniel M. Kane · Ankit Pensia</p>
+</li>
+<li><p><strong>【看看2】</strong> Further Analysis of Outlier Detection with Deep Generative Models</p>
+<p>  Ziyu Wang · Bin Dai · David P Wipf · Jun Zhu</p>
+</li>
+</ul>
+<h2 id="Time-series"><a href="#Time-series" class="headerlink" title="Time series"></a>Time series</h2><ul>
+<li><p>Probabilistic Time Series Forecasting with Shape and Temporal Diversity</p>
+<p>  Vincent LE GUEN (CNAM, Paris, France) · Nicolas THOME (Cnam (Conservatoire national des arts et métiers))</p>
+</li>
+<li><p><strong>【看看ts-5】</strong> Deep reconstruction of strange attractors from time series</p>
+<p>  William Gilpin (Harvard University)</p>
+</li>
+</ul>
+<ul>
+<li><p>Deep Energy-based Modeling of Discrete-Time Physics</p>
+<p>  Takashi Matsubara (Osaka University) · Ai Ishikawa (Kobe University) · Takaharu Yaguchi (Kobe University)</p>
+</li>
+<li><p><strong>【看看ts-3】</strong> Neural Controlled Differential Equations for Irregular Time Series</p>
+<p>  Patrick Kidger (University of Oxford) · James Morrill (University of Oxford) · James Foster (University of Oxford) · Terry Lyons (University of Oxford)</p>
+</li>
+</ul>
+<ul>
+<li><p><strong>【看看ts-4】</strong> Adversarial Sparse Transformer for Time Series Forecasting</p>
+<p>  Sifan Wu (Tsinghua University) · Xi Xiao (Tsinghua University) · Qianggang Ding (Tsinghua University) · Peilin Zhao (Tencent AI Lab) · Ying Wei (Tencent AI Lab) · Junzhou Huang (University of Texas at Arlington / Tencent AI Lab)</p>
+</li>
+<li><p><strong>【看看ts-2】</strong> Learning Long-Term Dependencies in Irregularly-Sampled Time Series</p>
+<p>  Mathias Lechner (IST Austria) · Ramin Hasani (MIT)</p>
+</li>
+<li><p><strong>【看看ts-1】</strong> Benchmarking Deep Learning Interpretability in Time Series Predictions</p>
+<p>  Aya Abdelsalam Ismail (University of Maryland) · Mohamed Gunady (University of Maryland) · Hector Corrada Bravo (University of Maryland) · Soheil Feizi (University of Maryland)</p>
+</li>
+<li><p>High-recall causal discovery for autocorrelated time series with latent confounders</p>
+<p>  Andreas Gerhardus (German Aerospace Center (DLR)) · Jakob Runge (Institute of Data Science, German Aerospace Center (DLR))</p>
+</li>
+</ul>
+<ul>
+<li><p>Deep Rao-Blackwellised Particle Filters for Time Series Forecasting</p>
+<p>  Richard Kurle (Volkswagen Group) · Syama Sundar Rangapuram (Amazon Research) · Emmanuel de Bézenac (Sorbonne Université) · Stephan Günnemann (Technical University of Munich) · Jan Gasthaus (Amazon.com)</p>
+</li>
+</ul>
+<ul>
+<li><p>Normalizing Kalman Filters for Multivariate Time Series Analysis</p>
+<p>  Emmanuel de Bézenac (Sorbonne Université) · Syama Sundar Rangapuram (Amazon Research) · Konstantinos Benidis (Amazon Research) · Michael Bohlke-Schneider (Amazon) · Lorenzo Stella (Amazon Research) · Hilaf Hasson (Amazon Research) · Richard Kurle (Volkswagen Group) · Tim Januschowski (Amazon Research) · Patrick Gallinari (Sorbonne University &amp; Criteo AI Lab, Paris)</p>
+</li>
+</ul>
+<ul>
+<li><p>User-Dependent Neural Sequence Models for Continuous-Time Event Data</p>
+<p>  Alex Boyd (UC Irvine) · Robert Bamler (University of California at Irvine) · Stephan Mandt (University of California, Irivine) · Padhraic Smyth (University of California, Irvine)</p>
+</li>
+</ul>
+<h2 id="About-distribution"><a href="#About-distribution" class="headerlink" title="About distribution"></a>About distribution</h2><ul>
+<li><p>Distribution-free binary classification: prediction sets, confidence intervals and calibration</p>
+<p>  Chirag Gupta (Carnegie Mellon University) · Aleksandr Podkopaev (Carnegie Mellon University) · Aaditya Ramdas (CMU)</p>
+</li>
+</ul>
+<ul>
+<li><p>Deep Diffusion-Invariant Wasserstein Distributional Classification</p>
+<p>  Sung Woo Park+ (Chung-Ang University) · Dong Wook Shu (Chung-Ang Univ., Korea) · Junseok Kwon (Chung-Ang Univ., Korea)</p>
+</li>
+</ul>
+<ul>
+<li><p>OOD-MAML: Meta-Learning for Few-Shot Out-of-Distribution Detection and Classification</p>
+<p>  Taewon Jeong (KAIST) · Heeyoung Kim (KAIST)</p>
+</li>
+</ul>
+<ul>
+<li><p>Understanding Anomaly Detection with Deep Invertible Networks through Hierarchies of Distributions and Features</p>
+<p>  Robin T Schirrmeister (University Medical Center Freiburg) · Yuxuan Zhou (Stuttgart University) · Tonio Ball (Albert-Ludwigs-University) · Dan Zhang (Bosch Center for Artificial Intelligence)</p>
+</li>
+</ul>
+<ul>
+<li><p>Measuring Robustness to Natural Distribution Shifts in Image Classification</p>
+<p>  Rohan Taori (University of California, Berkeley) · Achal Dave (Carnegie Mellon University) · Vaishaal Shankar (UC Berkeley) · Nicholas Carlini (Google) · Benjamin Recht (UC Berkeley) · Ludwig Schmidt (UC Berkeley)</p>
+</li>
+</ul>
+<ul>
+<li><p>Fast Epigraphical Projection-based Incremental Algorithms for Wasserstein Distributionally Robust Support Vector Machine</p>
+<p>  Jiajin Li (The Chinese University of Hong Kong) · Caihua Chen (Nanjing University) · Anthony Man-Cho So (CUHK)</p>
+</li>
+</ul>
+<ul>
+<li><p>Adversarial Distributional Training for Robust Deep Learning</p>
+<p>  Yinpeng Dong (Tsinghua University) · Zhijie Deng (Tsinghua University) · Tianyu Pang (Tsinghua University) · Hang Su (Tsinghua Univiersity) · Jun Zhu (Tsinghua University)</p>
+</li>
+</ul>
+<ul>
+<li><p>Mix and Match: An Optimistic Tree-Search Approach for Learning Models from Mixture Distributions</p>
+<p>  Matthew Faw (University of Texas at Austin) · Rajat Sen (Amazon) · Karthikeyan Shanmugam (IBM Research, NY) · Constantine Caramanis (UT Austin) · Sanjay Shakkottai (University of Texas at Austin)</p>
+</li>
+</ul>
+<ul>
+<li><p>Distributionally Robust Parametric Maximum Likelihood Estimation</p>
+<p>  Viet Anh Nguyen (Stanford University) · Xuhui Zhang (Stanford University) · Jose Blanchet (Stanford University) · Angelos Georghiou (University of Cyprus)</p>
+</li>
+</ul>
+<ul>
+<li><p>Distributionally Robust Local Non-parametric Conditional Estimation</p>
+<p>  Viet Anh Nguyen (Stanford University) · Fan Zhang (Stanford University) · Jose Blanchet (Stanford University) · Erick Delage (HEC Montréal) · Yinyu Ye (Standord)</p>
+</li>
+</ul>
+<ul>
+<li><p>Large-Scale Methods for Distributionally Robust Optimization</p>
+<p>  Daniel Levy (Stanford University) · Yair Carmon (Stanford University) · John Duchi (Stanford) · Aaron Sidford (Stanford)</p>
+</li>
+</ul>
+<ul>
+<li><p>Efficient Distance Approximation for Structured High-Dimensional Distributions via Learning</p>
+<p>  Arnab Bhattacharyya (National University of Singapore) · Sutanu Gayen (National University of SIngapore) · Kuldeep S Meel (National University of Singapore) · N. V.     Vinodchandran (University of Nebraska)</p>
+</li>
+</ul>
+<ul>
+<li><p>Analytical Probability Distributions and EM-Learning for Deep Generative Networks</p>
+<p>  Randall Balestriero (Rice University) · Sebastien PARIS (University of Toulon) · Richard Baraniuk (Rice University)</p>
+</li>
+</ul>
+<ul>
+<li><p><strong>【看看dis-1】</strong> Learning Structured Distributions From Untrusted Batches: Faster and Simpler</p>
+<p>  Sitan Chen (MIT) · Jerry Li (Microsoft) · Ankur Moitra (MIT)</p>
+</li>
+</ul>
+<ul>
+<li><p>Linear-Sample Learning of Low-Rank Distributions</p>
+<p>  Ayush Jain (UC San Diego) · Alon Orlitsky (University of California, San Diego)</p>
+</li>
+</ul>
+<ul>
+<li><p>Profile Entropy: A Fundamental Measure for the Learnability and Compressibility of Distributions</p>
+<p>  Yi Hao (University of California, San Diego) · Alon Orlitsky (University of California, San Diego)</p>
+</li>
+</ul>
+<ul>
+<li><p><strong>【看看dis-2】</strong> SURF: A Simple, Universal, Robust, Fast Distribution Learning Algorithm</p>
+<p>  Yi Hao (University of California, San Diego) · Ayush Jain (UC San Diego) · Alon Orlitsky (University of California, San Diego) · Vaishakh Ravindrakumar (UC San Diego)</p>
+</li>
+</ul>
+<ul>
+<li><p>Learning discrete distributions with infinite support</p>
+<p>  Doron Cohen (Ben-Gurion University of the Negev) · Aryeh Kontorovich (Ben Gurion University) · Geoﬀrey Wolfer (Ben-Gurion University of the Negev)</p>
+</li>
+</ul>
+<ul>
+<li><p>Optimal Private Median Estimation under Minimal Distributional Assumptions</p>
+<p>  Christos Tzamos (UW-Madison) · Emmanouil-Vasileios Vlatakis-Gkaragkounis (Columbia University) · Ilias Zadik (NYU)</p>
+</li>
+</ul>
+<h2 id="missing-value-amp-irregularly-sampled-time-series"><a href="#missing-value-amp-irregularly-sampled-time-series" class="headerlink" title="missing value &amp; irregularly sampled time series"></a>missing value &amp; irregularly sampled time series</h2><ul>
+<li><p>Estimation and Imputation in Probabilistic Principal Component Analysis with Missing Not At Random Data</p>
+<p>  Aude Sportisse (Sorbonne University, Ecole Polytechnique) · Claire Boyer (LPSM, Sorbonne Université) · Julie Josses (CMAP / CNRS)</p>
+</li>
+</ul>
+<ul>
+<li><p><strong>【看看missing-2】</strong> Learning Disentangled Representations of Videos with Missing Data</p>
+<p>  Armand Comas (Northeastern University) · Chi Zhang (Northeastern University) · Zlatan Feric (Northeastern University) · Octavia Camps (Northeastern University) · Rose Yu (University of California, San Diego)</p>
+</li>
+</ul>
+<ul>
+<li><p><strong>【看看missing-3】</strong> Debiasing Averaged Stochastic Gradient Descent to handle missing values</p>
+<p>  Aude Sportisse (Sorbonne University, Ecole Polytechnique) · Claire Boyer (LPSM, Sorbonne Université) · Aymeric Dieuleveut (Ecole Polytechnique, IPParis) · Julie Josses (CMAP / CNRS)</p>
+</li>
+</ul>
+<ul>
+<li><p>Handling Missing Data with Graph Representation Learning</p>
+<p>  Jiaxuan You (Stanford University) · Xiaobai Ma (Stanford University) · Yi Ding (Stanford University) · Mykel J Kochenderfer (Stanford University) · Jure Leskovec (Stanford University and Pinterest)</p>
+</li>
+</ul>
+<ul>
+<li><p>A Functional EM Algorithm for Panel Count Data with Missing Counts</p>
+<p>  Alexander Moreno (Georgia Institute of Technology) · Zhenke Wu (University of Michigan) · Jamie Roslyn Yap (University of Michigan) · Cho Lam (University of Utah) · David Wetter (University of Utah) · Inbal Nahum-Shani (University of Michigan) · Walter Dempsey (University of Michigan) · James M Rehg (Georgia Tech)</p>
+</li>
+</ul>
+<ul>
+<li><p>NeuMiss networks: differentiable programming for supervised learning with missing values.</p>
+<p>  Marine Le Morvan (INRIA) · Julie Josses (CMAP / CNRS) · Thomas Moreau (Inria) · Erwan Scornet (Ecole Polytechnique) · Gael Varoquaux (Parietal Team, INRIA)</p>
+</li>
+</ul>
+<ul>
+<li><p><strong>【看看missing-1】</strong> Learning Continuous System Dynamics from Irregularly-Sampled Partial Observations</p>
+<p>  Zijie Huang (University of California, Los Angeles) · Yizhou Sun (UCLA) · Wei Wang (UCLA)</p>
+</li>
+</ul>
+<h2 id="Recurrent-Neural-Network"><a href="#Recurrent-Neural-Network" class="headerlink" title="Recurrent Neural Network"></a>Recurrent Neural Network</h2><ul>
+<li><p>Convolutional Tensor-Train LSTM for Spatio-Temporal Learning</p>
+<p>  Jiahao Su (University of Maryland) · Wonmin Byeon (NVIDIA Research) · Jean Kossaifi (NVIDIA) · Furong Huang (University of Maryland) · Jan Kautz (NVIDIA) · Anima Anandkumar (NVIDIA / Caltech)</p>
+</li>
+</ul>
+<ul>
+<li><p>RNNPool: Efficient Non-linear Pooling for RAM Constrained Inference</p>
+<p>  Oindrila Saha (Microsoft Research) · Aditya Kusupati (University of Washington) · Harsha Vardhan Simhadri (Microsoft Research) · Manik Varma (Microsoft Research India) · Prateek Jain (Microsoft Research)</p>
+</li>
+</ul>
+<ul>
+<li><p><strong>【看看other-3】</strong> The interplay between randomness and structure during learning in RNNs</p>
+<p>  Friedrich Schuessler (Technion) · Francesca Mastrogiuseppe (UCL) · Alexis Dubreuil (ENS) · Srdjan Ostojic (Ecole Normale Superieure) · Omri Barak (Technion - Israeli institute of technology)</p>
+</li>
+</ul>
+<ul>
+<li><p><strong>【看看other-4】</strong> HiPPO: Recurrent Memory with Optimal Polynomial Projections</p>
+<p>  Albert Gu (Stanford) · Tri Dao (Stanford University) · Stefano Ermon (Stanford) · Atri Rudra (University at Buffalo, SUNY) · Christopher Ré (Stanford)</p>
+</li>
+</ul>
+<ul>
+<li><p>RATT: Recurrent Attention to Transient Tasks for Continual Image Captioning</p>
+<p>  Riccardo Del Chiaro (University of Florence) · Bartłomiej Twardowski (Computer Vision Center, UAB) · Andrew D Bagdanov (University of Florence) · Joost van de Weijer (Computer Vision Center Barcelona)</p>
+</li>
+</ul>
+<ul>
+<li><p>MomentumRNN: Integrating Momentum into Recurrent Neural Networks</p>
+<p>  Tan Nguyen (Rice University/UCLA) · Richard Baraniuk (Rice University) · Andrea Bertozzi (UCLA) · Stanley Osher (UCLA) · Bao Wang (UCLA)</p>
+</li>
+</ul>
+<ul>
+<li><p>Recurrent Random Networks as Optimized Kernel Machines</p>
+<p>  Sandra Nestler (Juelich Research Centre) · Christian Keup (Juelich Research Centre) · David Dahmen (Jülich Research Centre) · Matthieu Gilson (Juelich Forschungszentrum) · Holger Rauhut (RWTH Aachen University) · Moritz Helias (Juelich Research Centre)</p>
+</li>
+</ul>
+<ul>
+<li><p>Adaptive Graph Convolutional Recurrent Network for Traffic Forecasting</p>
+<p>  LEI BAI (UNSW, Sydney) · Lina Yao (University of New South Wales) · Can Li (University of New South Wales) · Xianzhi Wang (University of Technology Sydney) · Can Wang (Griffith University)</p>
+</li>
+</ul>
+<ul>
+<li><p>Using noise to probe recurrent neural network structure and prune synapses</p>
+<p>  Eli Moore (University of California, Davis) · Rishidev Chaudhuri (University of California, Davis)</p>
+</li>
+</ul>
+<ul>
+<li><p>Regularizing Towards Permutation Invariance In Recurrent Models</p>
+<p>  Edo Cohen-Karlik (Tel Aviv University) · Avichai Ben David (Tel Aviv University) · Amir Globerson (Tel Aviv University, Google)</p>
+</li>
+</ul>
+<ul>
+<li><p>STLnet: Signal Temporal Logic Enforced Multivariate Recurrent Neural Networks</p>
+<p>  Meiyi Ma (University of Virginia) · Ji Gao (University of Virginia) · Lu Feng (University of Virginia) · John A Stankovic (University of Virginia)</p>
+</li>
+</ul>
+<ul>
+<li><p>Organizing recurrent network dynamics by task-computation to enable continual learning</p>
+<p>  Lea Duncker (Gatsby Unit, UCL) · Laura N Driscoll (Stanford) · Krishna V Shenoy (Stanford University) · Maneesh Sahani (Gatsby Unit, UCL) · David Sussillo (Stanford University)</p>
+</li>
+</ul>
+<ul>
+<li><p>Recurrent Quantum Neural Networks</p>
+<p>  Johannes Bausch (University of Cambridge)</p>
+</li>
+</ul>
+<ul>
+<li><p>Reverse-engineering recurrent neural network solutions to a hierarchical inference task for mice</p>
+<p>  Rylan Schaeffer (Harvard University) · Mikail C Khona (MIT) · Leenoy Meshulam (Massachusetts Institute of Technology MIT) · Brain Laboratory International (International Brain Laboratory) · Ila Fiete (Massachusetts Institute of Technology)</p>
+</li>
+</ul>
+<ul>
+<li><p>Recurrent Switching Dynamical Systems Models for Multiple Interacting Neural Populations</p>
+<p>  Joshua Glaser (Columbia) · Matthew Whiteway (Columbia University) · John Cunningham (University of Columbia) · Liam Paninski (Columbia University) · Scott Linderman (Stanford University)</p>
+</li>
+</ul>
+<h2 id="sequence"><a href="#sequence" class="headerlink" title="sequence"></a>sequence</h2><ul>
+<li><p><strong>【看看other-1】</strong> Big Bird: Bert for Longer Sequences</p>
+<p>  Manzil Zaheer (Google Research) · Guru Guruganesh (Google Research) · Kumar Avinava Dubey (Carnegie Mellon University) · Joshua Ainslie (Google) · Chris Alberti (Google) · Santiago Ontanon (Google LLC) · Philip Pham (Google) · Anirudh Ravula (Google) · Qifan Wang (Google Research) · Li Yang (Google) · Amr Ahmed (Google Research)</p>
+</li>
+</ul>
+<h2 id="interpretable"><a href="#interpretable" class="headerlink" title="interpretable"></a>interpretable</h2><ul>
+<li><p>Explaining Naive Bayes and Other Linear Classifiers with Polynomial Time and Delay</p>
+<p>  Joao Marques-Silva (ANITI, Federal University of Toulouse Midi-Pyrénées) · Thomas Gerspacher (ANITI) · Martin Cooper (University of Toulouse 3) · Alexey Ignatiev (Monash University) · Nina Narodytska (VMmare Research)</p>
+</li>
+</ul>
+<ul>
+<li><p><strong>【看看interpre-3】</strong> Interpretable Sequence Learning for Covid-19 Forecasting</p>
+<p>  Sercan Arik (Google) · Chun-Liang Li (Google) · Martin Nikoltchev (Google) · Rajarishi Sinha (Google) · Arkady Epshteyn (Google) · Jinsung Yoon (Google) · Long Le (Google) · Vikas Menon (Google) · Shashank Singh (Google) · Yash Sonthalia (Google) · Hootan Nakhost (Google) · Leyou Zhang (Google) · Elli Kanal (Google) · Tomas Pfister (Google)</p>
+</li>
+</ul>
+<ul>
+<li><p>ICAM: Interpretable Classification via Disentangled Representations and Feature Attribution Mapping</p>
+<p>  Cher Bass (King’s College London) · Mariana da Silva (King’s College London) · Carole Sudre (King’s College London) · Petru-Daniel Tudosiu (King’s College London) · Stephen Smith (FMRIB Centre - University of Oxford) · Emma Robinson (King’s College)</p>
+</li>
+</ul>
+<ul>
+<li><p>How does this interaction affect me? Interpretable attribution for feature interactions</p>
+<p>  Michael Tsang (University of Southern California) · Sirisha Rambhatla (University of Southern California) · Yan Liu (University of Southern California)</p>
+</li>
+</ul>
+<ul>
+<li><p><strong>【看看interpre-1】</strong> Learning outside the Black-Box: The pursuit of interpretable models</p>
+<p>  Jonathan Crabbe (University of Cambridge) · Yao Zhang (University of Cambridge) · William Zame (UCLA) · Mihaela van der Schaar (University of Cambridge)</p>
+</li>
+</ul>
+<ul>
+<li><p>GANSpace: Discovering Interpretable GAN Controls</p>
+<p>  Erik Härkönen (Aalto University) · Aaron Hertzmann (Adobe) · Jaakko Lehtinen (Aalto University &amp; NVIDIA) · Sylvain Paris (Adobe)</p>
+</li>
+</ul>
+<ul>
+<li><p>Interpretable multi-timescale models for predicting fMRI responses to continuous natural speech</p>
+<p>  Shailee Jain (The University of Texas at Austin) · Vy Vo (Intel Corporation) · Shivangi Mahto (The University of Texas at Austin) · Amanda LeBel (The University of Texas at Austin) · Javier Turek (Intel Labs) · Alexander Huth (The University of Texas at Austin)</p>
+</li>
+</ul>
+<ul>
+<li><p>Learning identifiable and interpretable latent models of high-dimensional neural activity using pi-VAE</p>
+<p>  Ding Zhou (Columbia University) · Xue-Xin Wei (University of Pennsylvania)</p>
+</li>
+</ul>
+<ul>
+<li><p>Towards Interpretable Natural Language Understanding with Explanations as Latent Variables</p>
+<p>  Wangchunshu Zhou (Beihang University) · Jinyi Hu (Tsinghua University) · Hanlin Zhang (South China University of Technology) · Xiaodan Liang (Sun Yat-sen University) · Maosong Sun (Tsinghua University) · Chenyan Xiong (Microsoft Research AI) · Jian Tang (Mila)</p>
+</li>
+</ul>
+<ul>
+<li><p>Interpretable and Personalized Apprenticeship Scheduling: Learning Interpretable Scheduling Policies from Heterogeneous User Demonstrations</p>
+<p>  Rohan Paleja (Georgia Institute of Technology) · Andrew Silva (Georgia Institute of Technology) · Letian Chen (Georgia Institute of Technology) · Matthew Gombolay (Georgia Institute of Technology)</p>
+</li>
+</ul>
+<ul>
+<li><p>Incorporating Interpretable Output Constraints in Bayesian Neural Networks</p>
+<p>  Wanqian Yang (Harvard University) · Lars Lorch (Harvard) · Moritz Graule (Harvard University) · Himabindu Lakkaraju (Harvard) · Finale Doshi-Velez (Harvard)</p>
+</li>
+</ul>
+<ul>
+<li><p>Implicit Regularization in Deep Learning May Not Be Explainable by Norms</p>
+<p>  Noam Razin (Tel Aviv University) · Nadav Cohen (Tel Aviv University)</p>
+</li>
+</ul>
+<ul>
+<li><p>Parameterized Explainer for Graph Neural Network</p>
+<p>  Dongsheng Luo (The Pennsylvania State University) · Wei Cheng (NEC Labs America) · Dongkuan Xu (The Pennsylvania State University) · Wenchao Yu (UCLA) · Bo Zong (NEC Labs) · Haifeng Chen (NEC Labs America) · Xiang Zhang (The Pennsylvania State University)</p>
+</li>
+</ul>
+<ul>
+<li><p>PGM-Explainer: Probabilistic Graphical Model Explanations for Graph Neural Networks</p>
+<p>  Minh N Vu (University of Florida) · My T. Thai (University of Florida)</p>
+</li>
+</ul>
+<ul>
+<li><p>Can Implicit Bias Explain Generalization? Stochastic Convex Optimization as a Case Study</p>
+<p>  Assaf Dauber (Tel-Aviv University) · Meir Feder (Tel-Aviv University) · Tomer Koren (Tel Aviv University &amp; Google) · Roi Livni (Tel Aviv University)</p>
+</li>
+</ul>
+<ul>
+<li><p>Asymmetric Shapley values: incorporating causal knowledge into model-agnostic explainability</p>
+<p>  Christopher Frye (Faculty) · Colin Rowat (University of Birmingham) · Ilya Feige (Faculty)</p>
+</li>
+</ul>
+<ul>
+<li><p><strong>【看看interpre-2】</strong> How Can I Explain This to You? An Empirical Study of Deep Neural Network Explanation Methods</p>
+<p>  Jeya Vikranth Jeyakumar (University of California, Los Angeles) · Joseph Noor (University of California, Los Angeles) · Yu-Hsi Cheng (UCLA) · Luis Garcia (University of California, Los Angeles) · Mani Srivastava (UCLA)</p>
+</li>
+</ul>
+<ul>
+<li><p>Explainable Voting</p>
+<p>  Dominik Peters (Carnegie Mellon University) · Ariel Procaccia (Harvard University) · Alexandros Psomas (Purdue University) · Zixin Zhou (Peking University)</p>
+</li>
+</ul>
+<ul>
+<li><p>What Did You Think Would Happen? Explaining Agent Behaviour through Intended Outcomes</p>
+<p>  Herman Ho-Man Yau (University of Surrey) · Chris Russell (The Alan Turing Institute/ The University of Surrey) · Simon Hadfield (University of Surrey)</p>
+</li>
+</ul>
+<ul>
+<li><p>Margins are Insufficient for Explaining Gradient Boosting</p>
+<p>  Allan Grønlund (Aarhus University, MADALGO) · Lior Kamma (Aarhus University) · Kasper Green Larsen (Aarhus University)</p>
+</li>
+</ul>
+<ul>
+<li><p>Causal Shapley Values: Exploiting Causal Knowledge to Explain Individual Predictions of Complex Models</p>
+<p>  Tom Heskes (Radboud University Nijmegen) · Evi Sijben (Radboud University) · Ioan Gabriel Bucur (Radboud University Nijmegen) · Tom Claassen (Radboud University Nijmegen)</p>
+</li>
+</ul>
+<h2 id="Autoencoder"><a href="#Autoencoder" class="headerlink" title="Autoencoder"></a>Autoencoder</h2><ul>
+<li><p>Implicit Rank-Minimizing Autoencoder</p>
+<p>  Li Jing (Facebook AI Research) · Jure Zbontar (Facebook) · yann lecun (Facebook)</p>
+</li>
+</ul>
+<ul>
+<li><p>Swapping Autoencoder for Deep Image Manipulation</p>
+<p>  Taesung Park (UC Berkeley) · Jun-Yan Zhu (Adobe, CMU) · Oliver Wang (Adobe Research) · Jingwan Lu (Adobe Research) · Eli Shechtman (Adobe Research, US) · Alexei Efros (UC Berkeley) · Richard Zhang (Adobe)</p>
+</li>
+</ul>
+<ul>
+<li><p><strong>【看看other-5】</strong> Hierarchical Quantized Autoencoders</p>
+<p>  Will Williams (Speechmatics) · Sam Ringer (Speechmatics) · Tom Ash (Speechmatics) · David MacLeod (Speechmatics) · Jamie Dougherty (Speechmatics) · John Hughes (Speechmatics)</p>
+</li>
+</ul>
+<ul>
+<li><p>Regularized linear autoencoders recover the principal components, eventually</p>
+<p>  Xuchan Bao (University of Toronto) · James Lucas (University of Toronto) · Sushant Sachdeva (University of Toronto) · Roger Grosse (University of Toronto)</p>
+</li>
+</ul>
+<ul>
+<li><p>Dirichlet Graph Variational Autoencoder</p>
+<p>  Jia Li (The Chinese University of Hong Kong) · Jianwei Yu (CUHK) · Jiajin Li (The Chinese University of Hong Kong) · Honglei Zhang (Georgia Institute of Technology) · Kangfei Zhao (The Chinese University of Hong Kong) · Yu Rong (Tencent AI Lab) · Hong Cheng (The Chinese University of Hong Kong) · Junzhou Huang (University of Texas at Arlington / Tencent AI Lab)</p>
+</li>
+</ul>
+<ul>
+<li><p>NVAE: A Deep Hierarchical Variational Autoencoder</p>
+<p>  Arash Vahdat (NVIDIA) · Jan Kautz (NVIDIA)</p>
+</li>
+</ul>
+<ul>
+<li><p>Evidential Sparsification of Multimodal Latent Spaces in Conditional Variational Autoencoders</p>
+<p>  Masha Itkina (Stanford University) · Boris Ivanovic (Stanford University) · Ransalu Senanayake (Stanford University) · Mykel J Kochenderfer (Stanford University) · Marco Pavone (Stanford University)</p>
+</li>
+</ul>
+<ul>
+<li><p>Fully Convolutional Mesh Autoencoder using Efficient Spatially Varying Kernels</p>
+<p>  Yi Zhou (University of Southern California) · Chenglei Wu (Facebook) · Zimo Li (University of Southern California) · Chen Cao (Snap Inc.) · Yuting Ye (Facebook Reality Labs) · Jason Saragih (Facebook) · Hao Li (Pinscreen/University of Southern California/USC ICT) · Yaser Sheikh (Facebook Reality Labs)</p>
+</li>
+</ul>
+<ul>
+<li><p>Recursive Inference for Variational Autoencoders</p>
+<p>  Minyoung Kim (Samsung AI Center Cambridge) · Vladimir Pavlovic (Rutgers University)</p>
+</li>
+</ul>
+<ul>
+<li><p><strong>【看看other-2】</strong> The Autoencoding Variational Autoencoder</p>
+<p>  Taylan Cemgil (DeepMind) · Sumedh Ghaisas (DeepMind) · Krishnamurthy Dvijotham (DeepMind) · Sven Gowal (DeepMind) · Pushmeet Kohli (DeepMind)</p>
+</li>
+</ul>
+<ul>
+<li><p>Autoencoders that don’t overfit towards the Identity</p>
+<p>  Harald Steck (Netflix)</p>
+</li>
+</ul>
+<h2 id="clustering"><a href="#clustering" class="headerlink" title="clustering"></a>clustering</h2><ul>
+<li><p>Deep Subspace Clustering with Data Augmentation</p>
+<p>  Mahdi Abavisani (Rutgers, The State University of New Jersey) · Alireza Naghizadeh (Rutgers University) · Dimitris Metaxas (Rutgers University) · Vishal Patel (Johns Hopkins University)</p>
+</li>
+</ul>
+<ul>
+<li><p>Bandit-PAM: Almost Linear Time k-Medoids Clustering via Multi-Armed Bandits</p>
+<p>  Mo Tiwari (Stanford University) · Martin Zhang (Harvard University) · James J Mayclin (Stanford University) · Sebastian Thrun (Stanford University) · Chris Piech (Stanford) · Ilan Shomorony (University of Illinois at Urbana Champaign)</p>
+</li>
+</ul>
+<ul>
+<li><p>Self-Supervised Learning by Cross-Modal Audio-Video Clustering</p>
+<p>  Humam Alwassel (KAUST) · Dhruv Mahajan (Facebook) · Bruno Korbar (Facebook) · Lorenzo Torresani (Facebook AI) · Bernard Ghanem (KAUST) · Du Tran (Facebook AI)</p>
+</li>
+</ul>
+<ul>
+<li><p>Near-Optimal Comparison Based Clustering</p>
+<p>  Michaël Perrot (Max Planck Institute for Intelligent Systems) · Pascal Esser (Technical University of Munich) · Debarghya Ghoshdastidar (Technical University Munich)</p>
+</li>
+</ul>
+<ul>
+<li><p>Graduated Assignment for Joint Multi-Graph Matching and Clustering with Application to Unsupervised Graph Matching Network Learning</p>
+<p>  Runzhong Wang (Shanghai Jiao Tong University) · Junchi Yan (Shanghai Jiao Tong University) · Xiaokang Yang (Shanghai Jiao Tong University)</p>
+</li>
+</ul>
+<ul>
+<li><p>Scalable Approximation Algorithm for Fair k−center Clustering</p>
+<p>  Elfarouk Harb (Hong Kong University of Science and Technology) · Ho Shan Lam (The Hong Kong University of Science and Technology)</p>
+</li>
+</ul>
+<ul>
+<li><p>Deep Transformation-Invariant Clustering</p>
+<p>  Tom Monnier (École des ponts Paristech) · Thibault Groueix (École des ponts ParisTech) · Mathieu Aubry (École des ponts ParisTech)</p>
+</li>
+</ul>
+<ul>
+<li><p>Efficient Clustering for Stretched Mixtures: Landscape and Optimality</p>
+<p>  Kaizheng Wang (Columbia University) · Yuling Yan (Princeton University) · Mateo Diaz (Cornell University)</p>
+</li>
+</ul>
+<ul>
+<li><p>Efficient Clustering Based On A Unified View Of K-means And Ratio-cut</p>
+<p>  Shenfei Pei (Northwestern Polytechnical University) · Feiping Nie (University of Texas Arlington) · Rong Wang (Northwestern Polytechnical University) · Xuelong Li (Northwestern Polytechnical University)</p>
+</li>
+</ul>
+<ul>
+<li><p>Adversarial Learning for Robust Deep Clustering</p>
+<p>  Xu Yang (Xidian University) · Cheng Deng (Xidian University) · Kun Wei (Xidian University) · Junchi Yan (Shanghai Jiao Tong University) · Wei Liu (Tencent AI Lab)</p>
+</li>
+</ul>
+<ul>
+<li><p>Sliding Window Algorithms for k-Clustering Problems</p>
+<p>  Michele Borassi (Google Switzerland GmbH) · Alessandro Epasto (Google) · Silvio Lattanzi (Google Research) · Sergei Vassilvitskii (Google) · Morteza Zadimoghaddam (Google Research)</p>
+</li>
+</ul>
+<ul>
+<li><p>From Trees to Continuous Embeddings and Back: Hyperbolic Hierarchical Clustering</p>
+<p>  Ines Chami (Stanford University) · Albert Gu (Stanford) · Vaggos Chatziafratis (Stanford University, California) · Christopher Ré (Stanford)</p>
+</li>
+</ul>
+<ul>
+<li><p>Probabilistic Fair Clustering</p>
+<p>  Seyed Esmaeili (University of Maryland, College Park) · Brian Brubach (University of Maryland) · Leonidas Tsepenekas (University of Maryland) · John Dickerson (University of Maryland)</p>
+</li>
+</ul>
+<ul>
+<li><p>Strongly local p-norm-cut algorithms for semi-supervised learning and local graph clustering</p>
+<p>  Meng Liu (Purdue University) · David Gleich (Purdue University)</p>
+</li>
+</ul>
+<ul>
+<li><p>Fair Hierarchical Clustering</p>
+<p>  Sara Ahmadian (Google Research) · Alessandro Epasto (Google) · Marina Knittel (University of Maryland, College Park) · Ravi Kumar (Google) · Mohammad Mahdian (Google Research) · Benjamin Moseley (Carnegie Mellon University) · Philip Pham (Google) · Sergei Vassilvitskii (Google) · Yuyan Wang (Carnegie Mellon University)</p>
+</li>
+</ul>
+<ul>
+<li><p>Partially View-aligned Clustering</p>
+<p>  Zhenyu Huang (Sichuan University) · Peng Hu (Institute for Infocomm Research, A<em>STAR) · Joey Tianyi Zhou (IHPC, A</em>STAR) · Jiancheng Lv (Machine Intelligence Laboratory College of Computer Science, Sichuan University) · Xi Peng (Institute for Infocomm, Research Agency for Science, Technology and Research (A*STAR) Singapore)</p>
+</li>
+</ul>
+<ul>
+<li><p>Differentially Private Clustering: Tight Approximation Ratios</p>
+<p>  Badih Ghazi (Google) · Ravi Kumar (Google) · Pasin Manurangsi (Google)</p>
+</li>
+</ul>
+<ul>
+<li><p>On the Power of Louvain for Graph Clustering</p>
+<p>  Vincent Cohen-Addad (CNRS &amp; Sorbonne Université) · Adrian Kosowski (NavAlgo) · Frederik Mallmann-Trenn (King’s College London) · David Saulpic (Ecole normale supérieure)</p>
+</li>
+</ul>
+<ul>
+<li><p>SMYRF - Efficient attention using asymmetric clustering</p>
+<p>  Giannis Daras (National Technical University of Athens) · Nikita Kitaev (University of California, Berkeley) · Augustus Odena (Google Brain) · Alexandros Dimakis (University of Texas, Austin)</p>
+</li>
+</ul>
+<ul>
+<li><p>Higher-Order Spectral Clustering of Directed Graphs</p>
+<p>  Valdimar Steinar Ericsson Laenen (FiveAI) · He Sun (School of Informatics, The University of Edinburgh)</p>
+</li>
+</ul>
+<h1 id="data-augmentation"><a href="#data-augmentation" class="headerlink" title="data augmentation"></a>data augmentation</h1><ul>
+<li><p>Maximum-Entropy Adversarial Data Augmentation for Improved Generalization and Robustness</p>
+<p>  Long Zhao (Rutgers University) · Ting Liu (Google) · Xi Peng (University of Delaware) · Dimitris Metaxas (Rutgers University)</p>
+</li>
+</ul>
+<ul>
+<li><p>A Group-Theoretic Framework for Data Augmentation</p>
+<p>  Shuxiao Chen (University of Pennsylvania) · Edgar Dobriban (University of Pennsylvania) · Jane Lee (University of Pennsylvania)</p>
+</li>
+</ul>
+<ul>
+<li><p>Post-training Iterative Hierarchical Data Augmentation for Deep Networks</p>
+<p>  Adil Khan (Innopolis University) · Khadija Fraz (Hazara University)</p>
+</li>
+</ul>
+<ul>
+<li><p>Heavy-tailed Representations, Text Polarity Classification &amp; Data Augmentation</p>
+<p>  Hamid JALALZAI (Télécom ParisTech) · Pierre Colombo (Telecom ParisTech) · Chloé Clavel (Telecom-ParisTech, Paris, France) · Eric Gaussier (Université Joseph Fourier, Grenoble) · Giovanna Varni (Telecom ParisTec) · Emmanuel Vignon (IBM) · Anne Sabourin (LTCI, Telecom ParisTech, Université Paris-Saclay)</p>
+</li>
+</ul>
+<ul>
+<li><p>Unsupervised Data Augmentation for Consistency Training</p>
+<p>  Qizhe Xie (CMU, Google Brain) · Zihang Dai (Carnegie Mellon University) · Eduard Hovy (CMU) · Thang Luong (Google Brain) · Quoc V Le (Google)</p>
+</li>
+</ul>
+<ul>
+<li><p>Exemplar VAEs for Exemplar based Generation and Data Augmentation</p>
+<p>  Sajad Norouzi (University of Toronto / Vector Institute) · David J Fleet (University of Toronto) · Mohammad Norouzi (Google Brain)</p>
+</li>
+</ul>
+<ul>
+<li><p>Practical automated data augmentation with a reduced search space</p>
+<p>  Ekin Dogus Cubuk (Google Brain) · Barret Zoph (Google Brain) · Jon Shlens (Google Research) · Quoc V Le (Google)</p>
+</li>
+</ul>
+<ul>
+<li><p>Counterfactual Data Augmentation using Locally Factored Dynamics</p>
+<p>  Silviu Pitis (University of Toronto) · Elliot Creager (University of Toronto) · Animesh Garg (Univ. of Toronto, Vector Institute, Nvidia)</p>
+</li>
+</ul>
+<ul>
+<li><p>Deep Subspace Clustering with Data Augmentation</p>
+<p>  Mahdi Abavisani (Rutgers, The State University of New Jersey) · Alireza Naghizadeh (Rutgers University) · Dimitris Metaxas (Rutgers University) · Vishal Patel (Johns Hopkins University)</p>
+</li>
+</ul>
+<h2 id="有点意思"><a href="#有点意思" class="headerlink" title="有点意思"></a>有点意思</h2><ul>
+<li><p>Learning Loss for Test-Time Augmentation</p>
+<p>  Ildoo Kim (Kakao Brain) · Younghoon Kim (Sungshin Women’s University) · Sungwoong Kim (Kakao Brain)</p>
+</li>
+<li><p>Predicting Training Time Without Training</p>
+<p>  Luca Zancato (University of Padova) · Alessandro Achille (Amazon Web Services) · Avinash Ravichandran (AWS) · Rahul Bhotika (Amazon) · Stefano Soatto (UCLA)</p>
+</li>
+</ul>
+ 
+            </div>
+        </div>
+        
+        <div class="mt-3">
+            <!-- 前一页后一页 -->
+<div class="previous-next-links">
+     
+    <div class="previous-design-link">
+        <a href="../../surveys/interpretable_DNN/">
+            <i style="font-size:16px;" class="fa fa-arrow-left" aria-hidden="true"></i>
+            Self-explaining DNN
+        </a>
+    </div>
+     
+
+     
+    <div class="next-design-link">
+        <a href="../../surveys/monitoring_ts/">
+            监视时间序列（特别是针对运维的监控时间序列数据）
+            <i style="font-size:16px;" class="fa fa-arrow-right" aria-hidden="true"></i>
+        </a>
+    </div>
+ 
+</div> 
+             
+        </div>
+
+    </div>
+    <div class="col-2">
+        <div class="d-none d-sm-none d-md-block sticky-top border-start">
+             
+    
+        <div>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#anomaly-detection"><span class="toc-number">1.</span> <span class="toc-text">anomaly detection</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Time-series"><span class="toc-number">2.</span> <span class="toc-text">Time series</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#About-distribution"><span class="toc-number">3.</span> <span class="toc-text">About distribution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#missing-value-amp-irregularly-sampled-time-series"><span class="toc-number">4.</span> <span class="toc-text">missing value &amp; irregularly sampled time series</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Recurrent-Neural-Network"><span class="toc-number">5.</span> <span class="toc-text">Recurrent Neural Network</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sequence"><span class="toc-number">6.</span> <span class="toc-text">sequence</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#interpretable"><span class="toc-number">7.</span> <span class="toc-text">interpretable</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Autoencoder"><span class="toc-number">8.</span> <span class="toc-text">Autoencoder</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#clustering"><span class="toc-number">9.</span> <span class="toc-text">clustering</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#data-augmentation"><span class="toc-number"></span> <span class="toc-text">data augmentation</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%89%E7%82%B9%E6%84%8F%E6%80%9D"><span class="toc-number">1.</span> <span class="toc-text">有点意思</span></a></li></ol> 
+        </div>
+    
+ 
+
+        </div>
+    </div>
+</div>
+</div>
+ 
+    </main>
+
+    <!-- 底部栏 -->
+    <footer class="bg-dark pt-1 pb-0 mt-5">
+    <div class="container pb-3 pt-3 text-center">
+        <p class="text-muted tag-hover">
+            All Rights Reserved <i class="fa fa-copyright"></i> 2017-2022 笑颜网 smileyan.cn <br> 
+            Powered by 
+             <a class="link-secondary text-decoration-none" target="_blank" rel="noopener" href="https://hexo.io">
+                 Hexo.io
+            </a> &  <a class="link-secondary text-decoration-none" target="_blank" rel="noopener" href="https://github.com/smile-yan/hexo-theme-heyan">
+               heyan
+            </a>
+            <br>
+            <a class="link-secondary text-decoration-none" target="_blank" rel="noopener" href="https://beian.miit.gov.cn/#/Integrated/index">
+                <img src="/police.png" style="width: 18px; height: 18px; margin-top: -4px" class="nofancybox">
+                湘ICP备 17012851号 
+            </a>
+        </p>
+    </div>
+</footer>
+</body> 
+</html>

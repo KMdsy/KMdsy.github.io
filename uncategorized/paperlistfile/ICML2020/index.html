@@ -1,0 +1,512 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smileyan</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css">
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    
+<link rel="stylesheet" href="../../../css/prism.css">
+ 
+    
+<script src="../../../js/prism.js"></script>
+
+    
+    
+<link rel="stylesheet" href="../../../css/index.css">
+ 
+    
+<script src="../../../js/search.js"></script>
+
+
+
+     
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+        </script>
+     
+
+     
+        <script src="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js"> </script>
+        
+<script src="../../../js/fancybox.js"></script>
+
+    
+
+    <script type="text/javascript">
+        var search_path = "search.xml";
+        if (search_path.length == 0) {
+            search_path = "search.xml";
+        }
+        var path = "/" + search_path;
+        searchFunc(path, 'local-search-input', 'local-search-result');
+    </script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+ 
+ 
+<body>
+    <!-- 导航栏 -->
+    <!-- 导航栏 -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4 pt-2 pb-2">
+    <div class="container">
+        <!-- 标题 --> 
+        <a class="navbar-brand navbar-expand-sm" href="/">
+            <img class="nofancybox" src="/logo.png" style="width: 75px;"  alt="笑颜网">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- 左边右边导航按钮 --> 
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto">
+                <!-- 左右两侧的导航栏 -->
+
+ 
+ 
+
+    <li class="nav-item">
+        <a class="nav-link" href="../../../">
+           <big> <i class="fa fa-home ps-1" ></i> 主页</big>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="../../../archives">
+           <big> <i class="fa fa-archive ps-1" ></i> 归档</big>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="../../../about">
+           <big> <i class="fa fa-user ps-1" ></i> 关于</big>
+        </a>
+    </li>
+ 
+ 
+            </ul>
+
+            
+            <form class="">
+                <div class="d-flex">
+                    <button class="btn text-muted fa fa-search d-none d-md-block d-lg-block" disabled></button>
+                    <input id="local-search-input" class="form-control me-2 pe-4" type="search"
+                            placeholder="搜索 " aria-label="Search">
+                </div>
+                <div id="local-search-result" style="position:absolute; padding-top: 8px; max-height: 960px; width: 480px;overflow-y: scroll; z-index: 1050;"></div>
+            </form>
+            
+            <ul class="navbar-nav">
+                <!-- 左右两侧的导航栏 -->
+
+ 
+ 
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+    <main class="container">
+        
+<div class="container-fluid markdown-section">
+<div class="row">
+    <div class="col-md-2 d-none d-sm-none d-md-block">
+        <div class="">
+            <!-- 同一类型的文件 -->
+<!-- 尽可能做到每篇文章只有一个类
+    1. 获得 post 的类别 categories
+     2.1 如果 categories.length === 0，啥也不做
+     2.2 如果 categories === 1，渲染这个类的所有文章
+     2.3 如果 categories.length > 1 ，则以第一个类为准渲染所有文章
+-->
+
+
+ 
+        </div>
+    </div>
+    <div class="col-md-8 col-sm-12">
+        <!-- 博客详情 -->
+        <div class="">
+            <!-- ps-4 pe-4 pt-2 -->
+            <p class="h2">
+                <span class="post-title">
+                    Related Papers in ICML 2020 (2020.07.12)
+                </span>   
+            </p>
+
+            <div class="pb-3 pt-1 pe-3">
+                <i class="fa fa-calendar p-1"></i>
+                2020/07/12 00:00:00 
+
+                <i class="fa fa-folder-open p-1"> </i> 
+                <span class="tag-hover">
+                     
+                </span>
+
+                <i class="fa fa-tag p-1"> </i>
+                <span class="tag-hover">
+                    
+                        <a href="../../../tags/paper-list/" class="link-dark text-decoration-none"> 
+                            paper list 
+                        </a>
+                    
+                </span>
+            </div>
+
+            <div class="border-bottom pb-2">
+                <p><a target="_blank" rel="noopener" href="https://icml.cc/Conferences/2020/Schedule?type=Poster">Link</a></p>
+<p><a target="_blank" rel="noopener" href="https://icml.cc/Conferences/2020/Schedule">Schedule</a></p>
+<span id="more"></span>
+
+<h2 id="Anomaly"><a href="#Anomaly" class="headerlink" title="Anomaly"></a>Anomaly</h2><ul>
+<li><p><strong>[大概看了看，不太推荐]</strong> Interpretable, Multidimensional, Multimodal Anomaly Detection with Negative Sampling for Detection of Device Failure</p>
+<p>John Sipple</p>
+<p>CONTRIBUTIONS: </p>
+<ul>
+<li>a scalable approach to detecting multidimensional outliers, robust under multimodal conditions,</li>
+<li>an alternative to one-class anomaly detection using negative sampling, and</li>
+<li>a novel application of Integrated Gradients for anomaly interpretation.</li>
+</ul>
+</li>
+<li><p>Robust Outlier Arm Identification</p>
+<p>Yinglun Zhu · Sumeet Katariya · Robert Nowak</p>
+</li>
+</ul>
+<h2 id="Sequence"><a href="#Sequence" class="headerlink" title="Sequence"></a>Sequence</h2><ul>
+<li><p>Population-Based Black-Box Optimization for Biological Sequence Design</p>
+<p>Christof Angermueller · David Belanger · Andreea Gane · Zelda Mariet · David Dohan · Kevin Murphy · Lucy Colwell · D. Sculley</p>
+</li>
+<li><p>A Chance-Constrained Generative Framework for Sequence Optimization</p>
+<p>Xianggen Liu · Jian Peng · Qiang Liu · Sen Song</p>
+</li>
+<li><p>An EM Approach to Non-autoregressive Conditional Sequence Generation</p>
+<p>Zhiqing Sun · Yiming Yang</p>
+</li>
+<li><p>CAUSE: Learning Granger Causality from Event Sequences using Attribution Methods</p>
+<p>Wei Zhang · Thomas Panum · Somesh Jha · Prasad Chalasani · David Page</p>
+</li>
+<li><p>Imputer: Sequence Modelling via Imputation and Dynamic Programming</p>
+<p>William Chan · Chitwan Saharia · Geoffrey Hinton · Mohammad Norouzi · Navdeep Jaitly</p>
+</li>
+<li><p>Incremental Sampling Without Replacement for Sequence Models</p>
+<p>Kensen Shi · David Bieber · Charles Sutton</p>
+</li>
+<li><p>Sequence Generation with Mixed Representations</p>
+<p>Lijun Wu · Shufang Xie · Yingce Xia · Yang Fan · Jian-Huang Lai · Tao Qin · Tie-Yan Liu</p>
+</li>
+</ul>
+<h2 id="Time-Series"><a href="#Time-Series" class="headerlink" title="Time Series"></a>Time Series</h2><ul>
+<li><p><strong>[已读]</strong> Learning From Irregularly-Sampled Time Series: A Missing Data Perspective</p>
+<p>Steven Cheng-Xian Li · Benjamin M Marlin</p>
+</li>
+<li><p><strong>[已读]</strong> Set Functions for Time Series</p>
+<p>Max Horn · Michael Moor · Christian Bock · Bastian Rieck · Karsten Borgwardt</p>
+<p><em>所解决的问题：针对非规则采样的时间序列的分类问题，文中的大意是还可以进行其他下游任务，而非仅有分类（更换相应的loss函数即可）。Dataset: MIMIC-III Mortality Prediction, Physionet 2012 Mortality Prediction Challenge, Physionet 2019 Sepsis Early Prediction Challenge</em></p>
+<p><em>一个非常规的做法，其理论依据是differentiable set function learning, 具备可解释性是其优点，<br>在具体做法方面，pipeline如下：*<em>多维时间序列</em></em> -&gt; <strong>encoding</strong> (不使用类似seq2seq的深度学习方法，而是使用一种类似频率域分解的固定encodeing方式) -&gt; <strong>Embedding+Aggregation+Attention</strong> (这一步使用深度神经网络，attention为scaled dot-product attention with multiple heads) -&gt; <strong>classification</strong> (神经网络)。*</p>
+<p><em>在性能方面，所提出的方法分类精度并不能达到state-of-the-art，只是和baseline有竞争性，而在可解释性、内存占用、运行时间上有优异的性能。<br>BTW, baseline: GRU-D, GRU-SIMPLE, IP-NETS, PHASED-LSTM, TRANSFORMER, SEFT-ATTN</em></p>
+</li>
+<li><p>Spectral Subsampling MCMC for Stationary Time Series</p>
+<p>Robert Salomone · Matias Quiroz · Robert kohn · Mattias Villani · Minh-Ngoc Tran</p>
+</li>
+<li><p>Temporal Logic Point Processes</p>
+<p>Shuang Li · Lu Wang · Ruizhi Zhang · xiaofu Chang · Xuqin Liu · Yao Xie · Yuan Qi · Le Song</p>
+</li>
+<li><p>Gradient Temporal-Difference Learning with Regularized Corrections</p>
+<p>Sina Ghiassian · Andrew Patterson · Shivam Garg · Dhawal Gupta · Adam White · Martha White</p>
+</li>
+<li><p>Time Series Deconfounder: Estimating Treatment Effects over Time in the Presence of Hidden Confounders</p>
+<p>Ioana Bica · Ahmed Alaa · Mihaela van der Schaar</p>
+</li>
+</ul>
+<h2 id="missing-value"><a href="#missing-value" class="headerlink" title="missing value"></a>missing value</h2><ul>
+<li><p><strong>[已读]</strong> Learning from Irregularly-Sampled Time Series: A Missing Data Perspective</p>
+<p>Steven Cheng-Xian Li · Benjamin M Marlin</p>
+<p><em>解决的问题:</em> 不规则采样、有缺失时间序列建模问题、上述时间序列的分类问题。</p>
+<p><em>创新与独特:</em> 提出P-VAE与P-GAN（Partial – VAE/GAN）。 将缺失值补全问题转化为一个插值问题</p>
+<p><em>采用的方法:</em> </p>
+<ul>
+<li>在P-VAE中，将可观测到的点集合T视为从某个分布上采样的随机变量，将VAE中的关于x的概率分布转化为x.t的联合分布。并仅监督可观测部分的重建误差与生成误差</li>
+<li>在P-GAN中，分别向判别中送入（x, t, z）对，以使得有缺失的真实数据与生成的完整数据有相似的隐空间表达、相似的可观测数据。</li>
+</ul>
+<p><em>为何选择/如何应用:</em> 本文所提出的P-VAE中的理论推导部分值的后续工作借鉴</p>
+<p><em>数据集</em></p>
+<ul>
+<li>图像数据集：MNIST、CelebA</li>
+<li>时间序列数据集：MIMIC-II（分类任务）</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>Missing Data Imputation using Optimal Transport</p>
+<p>Boris Muzellec · Julie Josse · Claire Boyer · Marco Cuturi</p>
+</li>
+<li><p>Learning with Missing Values [workshop]</p>
+<p>Julie Josse · Jes Frellsen · Pierre-Alexandre Mattei · Gael Varoquaux</p>
+</li>
+<li><p>Full Law Identification in Graphical Models of Missing Data: Completeness Results</p>
+<p>Razieh Nabi · Rohit Bhattacharya · Ilya Shpitser</p>
+</li>
+</ul>
+<h2 id="Recurrent"><a href="#Recurrent" class="headerlink" title="Recurrent"></a>Recurrent</h2><ul>
+<li><p>A general recurrent state space framework for modeling neural dynamics during decision-making</p>
+<p>David Zoltowski · Jonathan Pillow · Scott Linderman</p>
+</li>
+<li><p>Improving the Gating Mechanism of Recurrent Neural Networks</p>
+<p>Albert Gu · Caglar Gulcehre · Thomas Paine · Matthew Hoffman · Razvan Pascanu</p>
+</li>
+<li><p>Approximating Stacked and Bidirectional Recurrent Architectures with the Delayed Recurrent Neural Network</p>
+<p>Javier Turek · Shailee Jain · Vy Vo · Mihai Capotă · Alexander Huth · Theodore Willke</p>
+</li>
+<li><p>Transformation of ReLU-based recurrent neural networks from discrete-time to continuous-time</p>
+<p>Zahra Monfared · Daniel Durstewitz</p>
+</li>
+<li><p>Learning to Combine Top-Down and Bottom-Up Signals in Recurrent Neural Networks with Attention over Modules</p>
+<p>Sarthak Mittal · Alex Lamb · Anirudh Goyal · Vikram Voleti · Murray Shanahan · Guillaume Lajoie · Michael Mozer · Yoshua Bengio</p>
+</li>
+<li><p>VideoOneNet: Bidirectional Convolutional Recurrent OneNet with Trainable Data Steps for Video Processing</p>
+<p>Zoltán Milacski · Barnabás Póczos · Andras Lorincz</p>
+</li>
+<li><p>Frequentist Uncertainty in Recurrent Neural Networks via Blockwise Influence Functions</p>
+<p>Ahmed Alaa · Mihaela van der Schaar</p>
+</li>
+</ul>
+<h2 id="Interpretable"><a href="#Interpretable" class="headerlink" title="Interpretable"></a>Interpretable</h2><ul>
+<li><p><strong>[已读]</strong> Interpretable, Multidimensional, Multimodal Anomaly Detection with Negative Sampling for Detection of Device Failure</p>
+<p>John Sipple</p>
+</li>
+<li><p><strong>[mark-interpre-2]</strong> The Many Shapley Values for Model Explanation</p>
+<p>Mukund Sundararajan · Amir Najmi</p>
+<ol>
+<li>Shapley Values是一种基于博弈论的机器学习归因方法（几个玩家消费一个服务，即产生cost，shapley value即为cost分配到每个玩家身上的量，联系——模型被视为cost function，输入样本的feature即为players，则分摊到每个player的cost（shapley value）即为归因的权重）</li>
+<li>Shapley Values有时会输出不唯一的解释，这使得解释不适用，本论文解决的是基于Shapley Values进行输入归因并使其保持<strong>解释唯一性</strong>的问题。</li>
+</ol>
+</li>
+<li><p><strong>[mark-interpre-1]</strong> Dispersed Exponential Family Mixture VAEs for Interpretable Text Generation</p>
+<p>Wenxian Shi · Hao Zhou · Ning Miao · Lei Li</p>
+<ol>
+<li>文章解决的是，当Exponential Family Mixture model作为隐空间的先验的时候可能出现的模式崩溃问题，用传统的VAE训练方法可能导致模式崩溃问题</li>
+<li>该文章的解决方法是，在loss函数中增加一个分散项，使得隐空间中的每一簇之间能够更分散。</li>
+</ol>
+<p>两个涉及到的概念：</p>
+<ul>
+<li>后验崩溃（posterior collapse）：尽管已有一个先验的隐空间分布，但模型生成的隐空间变量的后验分布远偏离于先验</li>
+<li>模式崩溃（mode collapse）：先验的在隐空间中有多个簇的分布，但模型训练后各个簇之间仅有微小的变化，使得多个簇最终坍缩到一个簇中</li>
+</ul>
+</li>
+<li><p><strong>[mark-interpre-1: 可以看看]</strong> Explaining Groups of Points in Low-Dimensional Representations</p>
+<p>Gregory Plumb · Jonathan Terhorst · Sriram Sankararaman · Ameet Talwalkar</p>
+<p>这篇文章主要探究一个问题：在数据集样本的低维表征空间中，每一簇之间到底有什么差异？具体来讲，研究两个具体的问题：1）groupA与groupB的隐空间表征到底有什么区别？即：我们能否找到一种在显空间的变换，使得样本从groupA变换到groupB？2）对于groupA中的所有点，我们能否找出一种通用的描述，以回答“满足什么条件的样本能够算作是groupA的”，并且，这种描述在每个group上都是成立的（原话：we want to find a explanation that works for all of the points in Group A and because we want the complete set of explanations to be consistent (i.e., symmetrical and transitive) among all the groups.）。</p>
+</li>
+<li><p><strong>[mark-interpre-3]</strong> DeepCoDA: personalized interpretability for compositional health data</p>
+<p>Thomas Quinn · Dang Nguyen · Santu Rana · Sunil Gupta · Svetha Venkatesh</p>
+<p>没太看懂讲了什么，但是大概就是基于self-explaining neural network构建了一种，在生物学上可解释的模型。并具有一些良好的性质。</p>
+<ul>
+<li>A model should select the best log-ratio transformation automatically.</li>
+<li>A model should have linear interpretability.</li>
+<li>A model should have personalized interpretability.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p>Proper Network Interpretability Helps Adversarial Robustness in Classification</p>
+<p>Akhilan Boopathy · Sijia Liu · Gaoyuan Zhang · Cynthia Liu · Pin-Yu Chen · Shiyu Chang · Luca Daniel</p>
+<p>开发一种解释方法，对输入上的微小扰动鲁棒，即即使有干扰，其生成的解释也不会大不一样，且使得网络的分类结果都对扰动鲁棒</p>
+</li>
+<li><p><strong>[简单看了看，参考意义不大]</strong> Robust and Stable Black Box Explanations</p>
+<p>Himabindu Lakkaraju · Nino Arsov · Osbert Bastani</p>
+<p>文章本身做的是：针对数据分布偏移后的数据集，如何生成的鲁棒的可解释方法，这种偏移直觉上来讲是：在输入数据上加一个微小的扰动，可解释方法不应当因为这些扰动而有巨大的变化（然而现有的方法对这些扰动并不鲁棒）</p>
+<ul>
+<li>we propose <strong>a novel minimax objective</strong> that can be used to construct <strong>robust black box explanations for a given family of interpretable models</strong>. This objective encodes the goal of returning the highest fidelity explanation with respect to the<br>worst-case over a set of distribution shifts.</li>
+<li>we propose <strong>a set of distribution shifts</strong> that captures our intuition about the kinds of shifts to which interpretations should be robust. In particular, this set includes shifts that contain <strong>perturbations to a small number of covariates</strong>.</li>
+<li>we propose algorithms for optimizing this objective in two settings: (i) explanations such as linear models with continuous parameters that can be optimized using gradient descent, in which case we use adversarial training (Goodfellow et al., 2015), and (ii) explanations such as decision sets with discrete parameters, in which case we use a sampling-based approximation in conjunction with submodular optimization (Lakkaraju et al., 2016).</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p><strong>[简单看了看，参考意义不大]</strong> Unsupervised Discovery of Interpretable Directions in the GAN Latent Space</p>
+<p>Andrey Voynov · Artem Babenko</p>
+<p>GAN的隐空间中通常包含有一些具有语义信息的方向，在这些方向上进行人类可以理解的隐空间表示的操控，可以生成受控的图像变换（在某个方向上的移动可能代表了图像的饿zooming或者recoloring，在隐空间中找到这些方向，并在这些方向上生成样本，有助于我们方便的进行样本变换。），但是目前为止，发现这些方向的过程一般都是“in a supervised manner, requiring human labels, pretrained models, or some form of self-supervision”，</p>
+<p>In this paper, we introduce an <strong>unsupervised method to identify interpretable directions in the latent space</strong> of a <strong>pretrained GAN model</strong>. By a simple <strong>model-agnostic</strong> procedure, we find directions corresponding to sensible semantic manipulations without any form of (self-)supervision. Furthermore, we reveal several <strong>non-trivial findings</strong>, which would be difficult to obtain by existing methods, e.g., a direction corresponding to background removal. (用于去除图片背景的方向)。</p>
+</li>
+<li><p>Interpretations are Useful: Penalizing Explanations to Align Neural Networks with Prior Knowledge</p>
+<p>Laura Rieger · Chandan Singh · William Murdoch · Bin Yu</p>
+<p>一个深度学习方法的解释，需要提供以下两种作用：1）provide insight into a model，2）suggest a corresponding action in order to achieve an objective。但一般的可解释方法做到第一步就停止了，即解释的内容并没有被用于提高网络的性能。在本文中，我们提出了上下文分解解释惩罚（CDEP），这是一种使从业人员能够利用现有解释方法来提高深度学习模型的预测准确性的方法。特别是，当显示出模型对某些feature的重要性分配不正确时，CDEP使从业人员可以通过解释将领域知识插入模型中来纠正这些错误。</p>
+</li>
+<li><p><strong>[简单看了看，参考意义不大]</strong> Interpreting Robust Optimization via Adversarial Influence Functions</p>
+<p>Zhun Deng · Cynthia Dwork · Jialiang Wang · Linjun Zhang</p>
+<p>主要是用adversarial influence function来理解鲁棒优化的过程的，不是广义的神经网络的。</p>
+</li>
+<li><p><strong>[讲Shapley-value-based explanations的缺点的，参考意义不大]</strong> Problems with Shapley-value-based explanations as feature importance measures</p>
+<p>Indra Kumar · Suresh Venkatasubramanian · Carlos Scheidegger · Sorelle Friedler</p>
+<p><em>摘要的翻译：</em> 通过博弈论的方式归因网络输出到feature上的方法已成为“解释”机器学习模型的一种流行方式。这些方法定义了模型特征之间的协作游戏，并使用某种形式的游戏唯一Shapley值在这些输入元素之间分配影响。这些方法的论据有两个支柱：它们理想的数学特性，以及它们对特定解释动机的适用性。我们表明，当Shapley值用于特征重要性时会出现数学问题，缓解这些问题的解决方案必然会导致进一步的复杂性，例如因果推理的必要性。我们还利用其他文献来论证，夏普利价值观并未提供适合以人为中心的可解释性目标的解释（<strong>Shapley values do not provide explanations which suit human-centric goals of explainability</strong>）。</p>
+</li>
+<li><p>Explainable k-Means and k-Medians Clustering</p>
+<p>Michal Moshkovitz · Sanjoy Dasgupta · Cyrus Rashtchian · Nave Frost</p>
+<p>聚类是几何数据无监督学习的一种流行形式。不幸的是，许多聚类算法导致难以解释的聚类分配，部分原因是因为它们以复杂的方式依赖于数据的所有特征。为了提高可解释性，我们考虑使用较小的决策树将数据集划分为聚类，以便可以以简单的方式对聚类进行表征。我们从理论的角度研究这个问题，通过ķ-表示和 ķ-中位数目标：是否必须存在一个树木诱导的聚类，其成本可与最佳无约束聚类的成本相媲美；如果是，那么如何找到它？在负面结果方面，我们表明，首先，流行的自上而下的决策树算法可能会导致以任意大的代价进行聚类；其次，任何由树引起的聚类通常都必须导致Ω （对数k ）与最佳聚类相比的近似因子。在积极方面，我们设计了一种有效的算法，该算法使用带有ķ树叶。对于两个均值/中位数，我们表明单个阈值削减足以实现常数因子近似，并且给出了几乎匹配的下限。对于一般ķ ≥ 2，我们的算法是 Ô （ķ ） 逼近最佳 ķ-中位数和 O （ķ2） 逼近最佳 ķ-手段。在我们进行工作之前，还没有任何算法能证明与尺寸和输入大小无关的保证。</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p>Multiresolution Tensor Learning for Efficient and Interpretable Spatial Analysis</p>
+<p>Jung Yeon Park · Kenneth Carr · Stephan Zheng · Yisong Yue · Rose Yu</p>
+</li>
+<li><p>Interpretable Off-Policy Evaluation in Reinforcement Learning by Highlighting Influential Transitions</p>
+<p>Omer Gottesman · Joseph Futoma · Yao Liu · Sonali Parbhoo · Leo Celi · Emma Brunskill · Finale Doshi-Velez</p>
+</li>
+<li><p>Explainable and Discourse Topic-aware Neural Language Understanding</p>
+<p>Yatin Chaudhary · Hinrich Schuetze · Pankaj Gupta</p>
+</li>
+<li><p>When Explanations Lie: Why Many Modified BP Attributions Fail</p>
+<p>Leon Sixt · Maximilian Granz · Tim Landgraf</p>
+</li>
+</ul>
+<ul>
+<li><p>Fairwashing explanations with off-manifold detergent</p>
+<p>Christopher Anders · Plamen Pasliev · Ann-Kathrin Dombrowski · Klaus-robert Mueller · Pan Kessel</p>
+</li>
+</ul>
+<ul>
+<li><p>XXAI: Extending Explainable AI Beyond Deep Models and Classifiers [workshop]</p>
+<p>Wojciech Samek · Andreas Holzinger · Ruth Fong · Taesup Moon · Klaus-robert Mueller</p>
+</li>
+</ul>
+<h2 id="Autoencoder"><a href="#Autoencoder" class="headerlink" title="Autoencoder"></a>Autoencoder</h2><ul>
+<li><p>Encoding Musical Style with Transformer Autoencoders</p>
+<p>Kristy Choi · Curtis Hawthorne · Ian Simon · Monica Dinculescu · Jesse Engel</p>
+</li>
+<li><p>Forecasting sequential data using Consistent Koopman Autoencoders</p>
+<p>Omri Azencot · N. Benjamin Erichson · Vanessa Lin · Michael Mahoney</p>
+</li>
+<li><p>Latent Bernoulli Autoencoder</p>
+<p>Jiri Fajtl · Vasileios Argyriou · Dorothy Monekosso · Paolo Remagnino</p>
+</li>
+<li><p>Perceptual Generative Autoencoders</p>
+<p>Zijun Zhang · Ruixiang ZHANG · Zongpeng Li · Yoshua Bengio · Liam Paull</p>
+</li>
+<li><p>Rate-distortion optimization guided autoencoder for isometric embedding in Euclidean latent space</p>
+<p>Keizo Kato · Jing Zhou · Tomotake Sasaki · Akira Nakagawa</p>
+</li>
+<li><p>Educating Text Autoencoders: Latent Representation Guidance via Denoising</p>
+<p>Tianxiao Shen · Jonas Mueller · Regina Barzilay · Tommi Jaakkola</p>
+</li>
+<li><p>Topological Autoencoders</p>
+<p>Michael Moor · Max Horn · Bastian Rieck · Karsten Borgwardt</p>
+</li>
+<li><p>ControlVAE: Controllable Variational Autoencoder</p>
+<p>Huajie Shao · Shuochao Yao · Dachun Sun · Aston Zhang · Shengzhong Liu · Dongxin Liu · Jun Wang · Tarek Abdelzaher</p>
+</li>
+<li><p>Learning Autoencoders with Relational Regularization</p>
+<p>Hongteng Xu · Dixin Luo · Ricardo Henao · Svati Shah · Lawrence Carin</p>
+</li>
+</ul>
+<h2 id="LSTM"><a href="#LSTM" class="headerlink" title="LSTM"></a>LSTM</h2><ul>
+<li><p>Do RNN and LSTM have Long Memory?</p>
+<p>Jingyu Zhao · Feiqing Huang · Jia Lv · Yanjie Duan · Zhen Qin · Guodong Li · Guangjian Tian</p>
+</li>
+</ul>
+<h2 id="Data-augmentation"><a href="#Data-augmentation" class="headerlink" title="Data augmentation"></a>Data augmentation</h2><ul>
+<li>On the Generalization Effects of Linear Transformations in Data AugmentationSen Wu · Hongyang Zhang · Gregory Valiant · Christopher Re</li>
+<li>Improving Molecular Design by Stochastic Iterative Target AugmentationKevin Yang · Wengong Jin · Kyle Swanson · Regina Barzilay · Tommi Jaakkola</li>
+</ul>
+<ul>
+<li> VFlow: More Expressive Generative Flows with Variational Data Augmentation</li>
+</ul>
+<p>  Jianfei Chen · Cheng Lu · Biqi Chenli · Jun Zhu · Tian Tian</p>
+<ul>
+<li><p><strong>[已读]</strong> Self-supervised Label Augmentation via Input Transformations</p>
+<p>Hankook Lee · Sung Ju Hwang · Jinwoo Shin</p>
+<p>一种在全监督的设定下，做数据增强的方案。所提出的方法：</p>
+<ol>
+<li>区别于传统的self-supervised learning task（multi-task leanring: 设定两个任务，一个原始任务一个附加任务，使用两个子网络进行实现，loss函数为两个任务的和），<br>本文提出的方法直接在同一个网络中同时进行原始任务+附加任务。</li>
+</ol>
+<p>即：对于一个图片分类任务，传统方法：子网络1用于分类，子网络2用于区分数据增强方法。本文方法：训练一个$N+M$分类的网络，前者为数据类别数，后者为增强方法数。然后对网络的输出进行融合，学习一个条件概率分布，然后将该概率的loss加入到总的loss中。</p>
+</li>
+<li><p>Distribution Augmentation for Generative Modeling</p>
+<p>Heewoo Jun · Rewon Child · Mark Chen · John Schulman · Aditya Ramesh · Alec Radford ·<br>Ilya Sutskever</p>
+</li>
+</ul>
+ 
+            </div>
+        </div>
+        
+        <div class="mt-3">
+            <!-- 前一页后一页 -->
+<div class="previous-next-links">
+     
+    <div class="previous-design-link">
+        <a href="../SIGIR2020/">
+            <i style="font-size:16px;" class="fa fa-arrow-left" aria-hidden="true"></i>
+            Related Papers in SIRIR 2020 (2020.07.25)
+        </a>
+    </div>
+     
+
+     
+    <div class="next-design-link">
+        <a href="../ACL2020/">
+            Related Papers in ACL 2020 (2020.07.06)
+            <i style="font-size:16px;" class="fa fa-arrow-right" aria-hidden="true"></i>
+        </a>
+    </div>
+ 
+</div> 
+             
+        </div>
+
+    </div>
+    <div class="col-2">
+        <div class="d-none d-sm-none d-md-block sticky-top border-start">
+             
+    
+        <div>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Anomaly"><span class="toc-number">1.</span> <span class="toc-text">Anomaly</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sequence"><span class="toc-number">2.</span> <span class="toc-text">Sequence</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Time-Series"><span class="toc-number">3.</span> <span class="toc-text">Time Series</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#missing-value"><span class="toc-number">4.</span> <span class="toc-text">missing value</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Recurrent"><span class="toc-number">5.</span> <span class="toc-text">Recurrent</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Interpretable"><span class="toc-number">6.</span> <span class="toc-text">Interpretable</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Autoencoder"><span class="toc-number">7.</span> <span class="toc-text">Autoencoder</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LSTM"><span class="toc-number">8.</span> <span class="toc-text">LSTM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Data-augmentation"><span class="toc-number">9.</span> <span class="toc-text">Data augmentation</span></a></li></ol> 
+        </div>
+    
+ 
+
+        </div>
+    </div>
+</div>
+</div>
+ 
+    </main>
+
+    <!-- 底部栏 -->
+    <footer class="bg-dark pt-1 pb-0 mt-5">
+    <div class="container pb-3 pt-3 text-center">
+        <p class="text-muted tag-hover">
+            All Rights Reserved <i class="fa fa-copyright"></i> 2017-2022 笑颜网 smileyan.cn <br> 
+            Powered by 
+             <a class="link-secondary text-decoration-none" target="_blank" rel="noopener" href="https://hexo.io">
+                 Hexo.io
+            </a> &  <a class="link-secondary text-decoration-none" target="_blank" rel="noopener" href="https://github.com/smile-yan/hexo-theme-heyan">
+               heyan
+            </a>
+            <br>
+            <a class="link-secondary text-decoration-none" target="_blank" rel="noopener" href="https://beian.miit.gov.cn/#/Integrated/index">
+                <img src="/police.png" style="width: 18px; height: 18px; margin-top: -4px" class="nofancybox">
+                湘ICP备 17012851号 
+            </a>
+        </p>
+    </div>
+</footer>
+</body> 
+</html>

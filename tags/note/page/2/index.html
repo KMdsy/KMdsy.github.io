@@ -1,0 +1,343 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smileyan</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css">
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    
+<link rel="stylesheet" href="../../../../css/prism.css">
+ 
+    
+<script src="../../../../js/prism.js"></script>
+
+    
+    
+<link rel="stylesheet" href="../../../../css/index.css">
+ 
+    
+<script src="../../../../js/search.js"></script>
+
+
+
+     
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+        </script>
+     
+
+     
+        <script src="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js"> </script>
+        
+<script src="../../../../js/fancybox.js"></script>
+
+    
+
+    <script type="text/javascript">
+        var search_path = "search.xml";
+        if (search_path.length == 0) {
+            search_path = "search.xml";
+        }
+        var path = "/" + search_path;
+        searchFunc(path, 'local-search-input', 'local-search-result');
+    </script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+ 
+ 
+<body>
+    <!-- 导航栏 -->
+    <!-- 导航栏 -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4 pt-2 pb-2">
+    <div class="container">
+        <!-- 标题 --> 
+        <a class="navbar-brand navbar-expand-sm" href="/">
+            <img class="nofancybox" src="/logo.png" style="width: 75px;"  alt="笑颜网">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- 左边右边导航按钮 --> 
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto">
+                <!-- 左右两侧的导航栏 -->
+
+ 
+ 
+
+    <li class="nav-item">
+        <a class="nav-link" href="../../../../">
+           <big> <i class="fa fa-home ps-1" ></i> 主页</big>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="../../../../archives">
+           <big> <i class="fa fa-archive ps-1" ></i> 归档</big>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="../../../../about">
+           <big> <i class="fa fa-user ps-1" ></i> 关于</big>
+        </a>
+    </li>
+ 
+ 
+            </ul>
+
+            
+            <form class="">
+                <div class="d-flex">
+                    <button class="btn text-muted fa fa-search d-none d-md-block d-lg-block" disabled></button>
+                    <input id="local-search-input" class="form-control me-2 pe-4" type="search"
+                            placeholder="搜索 " aria-label="Search">
+                </div>
+                <div id="local-search-result" style="position:absolute; padding-top: 8px; max-height: 960px; width: 480px;overflow-y: scroll; z-index: 1050;"></div>
+            </form>
+            
+            <ul class="navbar-nav">
+                <!-- 左右两侧的导航栏 -->
+
+ 
+ 
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+    <main class="container">
+        <!-- 某标签对应的所有post -->
+<div class="row pt-1">
+    <!-- sidebar -->
+    <div class="col-md-2 d-none d-sm-none d-md-block">
+        <div class="markdown-section">
+          
+        </div>
+    </div>
+    <!-- 文章 -->
+    <div id="blog-content" class="col-md-8 col-sm-12">
+        <p class="h3 border-bottom pb-2"><i class="p-1 fa fa-tag"></i>
+            note
+        </p> 
+        <div class="markdown-section">
+            <div class="">
+                <!-- 主页 -->
+ 
+
+
+    <!-- 标题 -->
+    <div class="pb-4 tag-hover">
+        <p class="tag-hover h3">
+            <a href="../../../../uncategorized/notes/notes/" class="link-dark text-decoration-none title">
+                Some Notes 
+            </a>
+        </p>
+
+        <div class="pb-0">
+            <i class="fa fa-calendar p-1"></i>
+            2021/03/30 18:00:00 
+
+            <i class="fa fa-folder-open p-1"> </i> 
+            <span class="tag-hover">
+                 
+            </span>
+
+            <i class="fa fa-tag p-1"> </i>
+            <span class="tag-hover">
+                
+                    <a href="../../" class="link-dark text-decoration-none title"> 
+                        note 
+                    </a>
+                
+            </span>
+        </div>
+
+        <div class="pt-3 pe-1">
+            <!-- 如果有摘要则显示摘要，没有就自己截取 -->
+            
+                <ol>
+<li><strong>posterior collapse</strong>: where the latents are ignored when they are paired with a powerful autoregressive decoder — typically observed in the VAE framework, i.e., the latents are ignored as the decoder is powerful enough to model x perfectly.个人理解是某些VAE的decoder的重建能力过于好导致重建误差很小，最后模型不能很好的最小化prior相关的loss item。</li>
+</ol> 
+             
+        </div>
+    </div>
+
+    <!-- 标题 -->
+    <div class="pb-4 tag-hover">
+        <p class="tag-hover h3">
+            <a href="../../../../uncategorized/notes/self_supervised_learning_survey/" class="link-dark text-decoration-none title">
+                Self-supervised learning survey 
+            </a>
+        </p>
+
+        <div class="pb-0">
+            <i class="fa fa-calendar p-1"></i>
+            2020/07/30 15:00:00 
+
+            <i class="fa fa-folder-open p-1"> </i> 
+            <span class="tag-hover">
+                 
+            </span>
+
+            <i class="fa fa-tag p-1"> </i>
+            <span class="tag-hover">
+                
+                    <a href="../../" class="link-dark text-decoration-none title"> 
+                        note 
+                    </a>
+                
+                    <a href="../../../self-supervised-learning/" class="link-dark text-decoration-none title"> 
+                        self-supervised learning 
+                    </a>
+                
+            </span>
+        </div>
+
+        <div class="pt-3 pe-1">
+            <!-- 如果有摘要则显示摘要，没有就自己截取 -->
+            
+                <h1 id="Survey-Self-supervised-learning-Generative-or-Contrastive"><a href="#Survey-Self-supervised-learning-Generative-or-Contrastive" class="headerlink" title="Survey: Self-supervised learning: Generative or Contrastive"></a>Survey: Self-supervised learning: Generative or Contrastive</h1><p>清华唐杰团队的工作，比较完整。</p>
+<p><a target="_blank" rel="noopener" href="https://www.aliyundrive.com/s/Hf99EegM1pd">PDF FILE (包含一些笔记)</a></p> 
+             
+        </div>
+    </div>
+
+    <!-- 标题 -->
+    <div class="pb-4 tag-hover">
+        <p class="tag-hover h3">
+            <a href="../../../../uncategorized/notes/nature/" class="link-dark text-decoration-none title">
+                如何在科学会议作报告 
+            </a>
+        </p>
+
+        <div class="pb-0">
+            <i class="fa fa-calendar p-1"></i>
+            2020/03/24 18:00:00 
+
+            <i class="fa fa-folder-open p-1"> </i> 
+            <span class="tag-hover">
+                 
+            </span>
+
+            <i class="fa fa-tag p-1"> </i>
+            <span class="tag-hover">
+                
+                    <a href="../../" class="link-dark text-decoration-none title"> 
+                        note 
+                    </a>
+                
+                    <a href="../../../presentation/" class="link-dark text-decoration-none title"> 
+                        presentation 
+                    </a>
+                
+            </span>
+        </div>
+
+        <div class="pt-3 pe-1">
+            <!-- 如果有摘要则显示摘要，没有就自己截取 -->
+            
+                <p><a target="_blank" rel="noopener" href="https://www.nature.com/articles/d41586-020-00838-3?utm_source=twitter&utm_medium=social&utm_content=organic&utm_campaign=NGMT_USG_JC01_GL_Nature">原文链接</a></p> 
+             
+        </div>
+    </div>
+
+    <!-- 标题 -->
+    <div class="pb-4 tag-hover">
+        <p class="tag-hover h3">
+            <a href="../../../../uncategorized/notes/python_notes/" class="link-dark text-decoration-none title">
+                Python语法查漏补缺 
+            </a>
+        </p>
+
+        <div class="pb-0">
+            <i class="fa fa-calendar p-1"></i>
+            2020/01/01 18:00:00 
+
+            <i class="fa fa-folder-open p-1"> </i> 
+            <span class="tag-hover">
+                 
+            </span>
+
+            <i class="fa fa-tag p-1"> </i>
+            <span class="tag-hover">
+                
+                    <a href="../../" class="link-dark text-decoration-none title"> 
+                        note 
+                    </a>
+                
+                    <a href="../../../python/" class="link-dark text-decoration-none title"> 
+                        python 
+                    </a>
+                
+            </span>
+        </div>
+
+        <div class="pt-3 pe-1">
+            <!-- 如果有摘要则显示摘要，没有就自己截取 -->
+            
+                <p>仅记录一些项目中常用但总记不住的语法，希望能早日记住👐🏻</p> 
+             
+        </div>
+    </div>
+ 
+
+
+            </div>
+            <!--  页码 -->
+<nav class="pt-1 mt-1">
+    <ul class="pagination justify-content-center new-pagination">
+        <a class="extend prev" rel="prev" href="../../"><i class="fa fa-angle-double-left"></i></a><a class="page-number" href="../../">1</a><span class="page-number current">2</span>
+    </ul>
+</nav>
+
+
+ 
+        </div>
+    </div>
+    <!-- sidebar -->
+    <div class="col-md-2  d-none d-sm-none d-md-block" id='blog-siderbar'>
+        <div class="markdown-section">
+           
+        </div>
+    </div>
+</div> 
+    </main>
+
+    <!-- 底部栏 -->
+    <footer class="bg-dark pt-1 pb-0 mt-5">
+    <div class="container pb-3 pt-3 text-center">
+        <p class="text-muted tag-hover">
+            All Rights Reserved <i class="fa fa-copyright"></i> 2017-2022 笑颜网 smileyan.cn <br> 
+            Powered by 
+             <a class="link-secondary text-decoration-none" target="_blank" rel="noopener" href="https://hexo.io">
+                 Hexo.io
+            </a> &  <a class="link-secondary text-decoration-none" target="_blank" rel="noopener" href="https://github.com/smile-yan/hexo-theme-heyan">
+               heyan
+            </a>
+            <br>
+            <a class="link-secondary text-decoration-none" target="_blank" rel="noopener" href="https://beian.miit.gov.cn/#/Integrated/index">
+                <img src="/police.png" style="width: 18px; height: 18px; margin-top: -4px" class="nofancybox">
+                湘ICP备 17012851号 
+            </a>
+        </p>
+    </div>
+</footer>
+</body> 
+</html>

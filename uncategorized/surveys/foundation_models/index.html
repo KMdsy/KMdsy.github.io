@@ -1,0 +1,508 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smileyan</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css">
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    
+<link rel="stylesheet" href="../../../css/prism.css">
+ 
+    
+<script src="../../../js/prism.js"></script>
+
+    
+    
+<link rel="stylesheet" href="../../../css/index.css">
+ 
+    
+<script src="../../../js/search.js"></script>
+
+
+
+     
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+        </script>
+     
+
+     
+        <script src="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js"> </script>
+        
+<script src="../../../js/fancybox.js"></script>
+
+    
+
+    <script type="text/javascript">
+        var search_path = "search.xml";
+        if (search_path.length == 0) {
+            search_path = "search.xml";
+        }
+        var path = "/" + search_path;
+        searchFunc(path, 'local-search-input', 'local-search-result');
+    </script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+ 
+ 
+<body>
+    <!-- 导航栏 -->
+    <!-- 导航栏 -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4 pt-2 pb-2">
+    <div class="container">
+        <!-- 标题 --> 
+        <a class="navbar-brand navbar-expand-sm" href="/">
+            <img class="nofancybox" src="/logo.png" style="width: 75px;"  alt="笑颜网">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- 左边右边导航按钮 --> 
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto">
+                <!-- 左右两侧的导航栏 -->
+
+ 
+ 
+
+    <li class="nav-item">
+        <a class="nav-link" href="../../../">
+           <big> <i class="fa fa-home ps-1" ></i> 主页</big>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="../../../archives">
+           <big> <i class="fa fa-archive ps-1" ></i> 归档</big>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="../../../about">
+           <big> <i class="fa fa-user ps-1" ></i> 关于</big>
+        </a>
+    </li>
+ 
+ 
+            </ul>
+
+            
+            <form class="">
+                <div class="d-flex">
+                    <button class="btn text-muted fa fa-search d-none d-md-block d-lg-block" disabled></button>
+                    <input id="local-search-input" class="form-control me-2 pe-4" type="search"
+                            placeholder="搜索 " aria-label="Search">
+                </div>
+                <div id="local-search-result" style="position:absolute; padding-top: 8px; max-height: 960px; width: 480px;overflow-y: scroll; z-index: 1050;"></div>
+            </form>
+            
+            <ul class="navbar-nav">
+                <!-- 左右两侧的导航栏 -->
+
+ 
+ 
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+    <main class="container">
+        
+<div class="container-fluid markdown-section">
+<div class="row">
+    <div class="col-md-2 d-none d-sm-none d-md-block">
+        <div class="">
+            <!-- 同一类型的文件 -->
+<!-- 尽可能做到每篇文章只有一个类
+    1. 获得 post 的类别 categories
+     2.1 如果 categories.length === 0，啥也不做
+     2.2 如果 categories === 1，渲染这个类的所有文章
+     2.3 如果 categories.length > 1 ，则以第一个类为准渲染所有文章
+-->
+
+
+ 
+        </div>
+    </div>
+    <div class="col-md-8 col-sm-12">
+        <!-- 博客详情 -->
+        <div class="">
+            <!-- ps-4 pe-4 pt-2 -->
+            <p class="h2">
+                <span class="post-title">
+                    Foundation models
+                </span>   
+            </p>
+
+            <div class="pb-3 pt-1 pe-3">
+                <i class="fa fa-calendar p-1"></i>
+                2022/11/21 12:00:00 
+
+                <i class="fa fa-folder-open p-1"> </i> 
+                <span class="tag-hover">
+                     
+                </span>
+
+                <i class="fa fa-tag p-1"> </i>
+                <span class="tag-hover">
+                    
+                        <a href="../../../tags/survey/" class="link-dark text-decoration-none"> 
+                            survey 
+                        </a>
+                    
+                        <a href="../../../tags/foundation-models/" class="link-dark text-decoration-none"> 
+                            foundation models 
+                        </a>
+                    
+                        <a href="../../../tags/big-models/" class="link-dark text-decoration-none"> 
+                            big models 
+                        </a>
+                    
+                        <a href="../../../tags/NLP/" class="link-dark text-decoration-none"> 
+                            NLP 
+                        </a>
+                    
+                </span>
+            </div>
+
+            <div class="border-bottom pb-2">
+                <p>这里列出一些近年来关于大模型的总结、调研，还有相关顶会论文。总结顶会论文主要因为，在我看来大模型（或基础模型）大多都是在工程领域的创新，如何利用工程创新，助力是科学创新。中间的桥梁应该被找到。</p>
+<p>注：有些调研直接截图了平日的工作汇报，注意与最新的工作进展及时同步。</p>
+<span id="more"></span>
+
+<h2 id="Big-Model-after-GPT-3"><a href="#Big-Model-after-GPT-3" class="headerlink" title="Big Model, after GPT-3"></a>Big Model, after GPT-3</h2><p>概括：<strong>超大参数规模</strong>的模型，并利用<strong>超大规模数据</strong>，大多以self-supervised方式进行训练，来学习数据的通用表征。后续通过prompt、fine-tune等迁移学习方法适应不同下游任务的通用模型范式。</p>
+<p><strong>目前foundation model的应用领域以及下游任务包括</strong></p>
+<ul>
+<li><p>NLP（成熟）</p>
+<ul>
+<li><p>下游任务：翻译、问答、语义总结，等</p>
+</li>
+<li><p>代表模型：GPT-3，LaMDA、PaLM、BLOOM，等</p>
+</li>
+</ul>
+</li>
+<li><p>CV</p>
+<ul>
+<li><p>下游任务：文生图、文生视频、图片描述、风格迁移，等</p>
+</li>
+<li><p>代表模型：DALL-E 2、Imagen、Parti，等</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/KMdsy/figurebed/master/img/image-20221121142447307.png" alt="image-20221121142447307"></p>
+<p><strong>Foundation model的特点：emergence, homogenization</strong></p>
+<ul>
+<li><p>Emergence：除“隐生性”，即模型学习到的表征是隐性的，而非人类指定的。还有一种解释为“<strong>涌现性</strong>”，即：模型参数规模上，由量变引起质变的过程，一些模型的特性在小模型上不具备，而当参数规模扩大后才会显露的特性。</p>
+</li>
+<li><p>Homogenization：foundation model的基础模型呈现同质化趋势，目前NLP大模型几乎都由transformer结构中改变而来。</p>
+</li>
+</ul>
+<p><strong>Foundation model对下游任务的适配</strong></p>
+<ul>
+<li><p>Fine-tune：针对特定的任务，利用特定的标签数据对模型参数进行fine-tune，得到的模型将只在<strong>特定任务</strong>上有较好性能，无法用于其他任务</p>
+</li>
+<li><p>Prompt：对输入的文本按照特定模板进行处理，通过恰当的方式<strong>重新定义下游任务</strong>，使之更适配预训练语言模型的形式，使之回忆起预训练时的知识</p>
+<ul>
+<li><p>Few-shot learning setting</p>
+</li>
+<li><p>Zero-shot learning setting</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="大模型调研"><a href="#大模型调研" class="headerlink" title="大模型调研"></a>大模型调研</h3><p><img src="https://raw.githubusercontent.com/KMdsy/figurebed/master/img/image-20221121143241729.png" alt="image-20221121143241729"></p>
+<p>上述模型的体量总结如下表</p>
+<table>
+<thead>
+<tr>
+<th align="center">模型</th>
+<th align="center">训练时间</th>
+<th align="center">训练空间</th>
+<th align="center">模型大小</th>
+<th align="center">优化器+模型大小</th>
+<th align="center">参数量</th>
+<th align="center">数据量</th>
+<th align="center">模型结构</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">GPT-3 (OpenAI)</td>
+<td align="center">3.14e11 TFLOPS</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">175B</td>
+<td align="center">45TB   (raw data)     570GB</td>
+<td align="center">Sparse Transformer</td>
+</tr>
+<tr>
+<td align="center">PanGu (Huawei, CN)</td>
+<td align="center"></td>
+<td align="center">2048   Ascend 910 AI processors</td>
+<td align="center"></td>
+<td align="center">750GB</td>
+<td align="center">200B</td>
+<td align="center">1.1T</td>
+<td align="center">Transformer</td>
+</tr>
+<tr>
+<td align="center">GPT-J (EleutherAI)</td>
+<td align="center">1.5e10 TFLOPs</td>
+<td align="center"></td>
+<td align="center">9GB</td>
+<td align="center">61GB</td>
+<td align="center">6B</td>
+<td align="center">825G (raw data)</td>
+<td align="center">Sparse Transformer      (like GPT-3)</td>
+</tr>
+<tr>
+<td align="center">Ernie 3.0 Titan (Baidu)</td>
+<td align="center">3.14e11 TFLOPS</td>
+<td align="center">Nvidia   V100 GPU and Ascend 910 NPU clusters      (分布式)</td>
+<td align="center"></td>
+<td align="center">2.1TB</td>
+<td align="center">260B</td>
+<td align="center"></td>
+<td align="center">Transformer-XL</td>
+</tr>
+<tr>
+<td align="center">GPT-NeoX (EleutherAI)</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">39GB</td>
+<td align="center">268GB</td>
+<td align="center">20B</td>
+<td align="center">825G (raw data)</td>
+<td align="center">Sparse Transformer      (like GPT-3)</td>
+</tr>
+<tr>
+<td align="center">OPT (Meta)</td>
+<td align="center">4.48e10   TFLOPs*</td>
+<td align="center">992   80GB A100 GPUs</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">175B</td>
+<td align="center">800GB   (raw data)</td>
+<td align="center">Transformer</td>
+</tr>
+<tr>
+<td align="center">BLOOM (BigScience)</td>
+<td align="center">3.5   month</td>
+<td align="center">384   A100 80GB GPUs (48 nodes)</td>
+<td align="center">0.33TB</td>
+<td align="center">2.3TB</td>
+<td align="center">176B</td>
+<td align="center"></td>
+<td align="center">Transformer     (like GPT-2)</td>
+</tr>
+<tr>
+<td align="center">GLM-130B (Tsinghua)</td>
+<td align="center">2 month</td>
+<td align="center">96   NVIDIA DGX-A100 (8*40G)     GPU   nodes</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">130B</td>
+<td align="center">2.3T (raw data)</td>
+<td align="center">Transformer     (like GLM)</td>
+</tr>
+</tbody></table>
+<p><strong>大模型基础架构</strong></p>
+<p>目前在NLP领域被成功训练并大规模应用的模型，都是基于Transformer的self-attention架构的：</p>
+<ol>
+<li><p>Autoregressive（仅包含decoder）：自回归模型的代表是GPT。本质上是一个从左到右的语言模型，训练目标是从左到右的文本生成。</p>
+<ul>
+<li>常用于<strong>无条件长文本生成</strong>（对话生成、故事生成等），但缺点是单向注意力机制，不利于NLU（自然语言理解）任务。</li>
+</ul>
+</li>
+<li><p>Autoencoding（仅包含encoder）：代表模型是BERT、ALBERT、DeBERTa 。自编码模型是通过去噪任务（如利用掩码语言模型）学习双向的上下文编码器，训练目标是对文本进行随机掩码，然后预测被掩码的词。</p>
+<ul>
+<li>常用于<strong>自然语言理解</strong>（事实推断、语法分析、分类等），缺点是不能直接用于文本生成。</li>
+</ul>
+</li>
+<li><p>Encoder-decoder（完整的Transformer结构）：代表模型是T5、BART。包含一个编码器和一个解码器，接受一段文本，从左到右的生成另一段文本。</p>
+<ul>
+<li>常用于<strong>有条件的生成任务</strong>（摘要生成、对话等）。缺点是比BERT-based模型在同性能下需要更多参数。</li>
+</ul>
+</li>
+<li><p>Hybird-model：GLM</p>
+</li>
+</ol>
+<p>还有一些模型结合了transformer-based模型，以及其他模型，用于改善transformer缺乏长期记忆的缺点。</p>
+<ul>
+<li><p>与GNN结合： CogQA [1]</p>
+</li>
+<li><p>与knowledge graph结合： OAG-BERT [2] </p>
+</li>
+</ul>
+<blockquote>
+<p>[1] Ding, M., Zhou, C., Chen, Q., Yang, H., &amp; Tang, J. (2019, July). Cognitive Graph for Multi-Hop Reading Comprehension at Scale. In <em>Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics</em> (pp. 2694-2703).</p>
+<p>[2] Liu, X., Yin, D., Zhang, X., Su, K., Wu, K., Yang, H., &amp; Tang, J. (2021). Oag-bert: Pre-train heterogeneous entity-augmented academic language models. <em>arXiv</em> <em>preprint arXiv:2103.02410</em>.</p>
+</blockquote>
+<h3 id="大模型复杂度分析"><a href="#大模型复杂度分析" class="headerlink" title="大模型复杂度分析"></a>大模型复杂度分析</h3><p>深度学习的保存模型里包含所有trainable variables的精确值。下文以sparse transformer为例，分析该模型的空间复杂度、计算复杂度。</p>
+<ul>
+<li><p>Self-attention的隐空间维度为$d_{model}$，head数目为$n_{head}$，则每个head的维度为$d_{head}=d_{model}/n_{head} $。Feed-forward的隐空间维度为$d_{ff}$</p>
+</li>
+<li><p>记输入到下述的一层sparse transformer的数据为$\mathbf{X} \in \mathbb{R}^{N × d_{model}}$，$N$为输入的句子长度。</p>
+</li>
+<li><p>记self-attention的层数为$n_{layer}$</p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/KMdsy/figurebed/master/img/image-20221121144017190.png" alt="image-20221121144017190"></p>
+<h2 id="How-to-train-a-big-model-from-zero-to-one"><a href="#How-to-train-a-big-model-from-zero-to-one" class="headerlink" title="How to train a big model, from zero to one"></a>How to train a big model, from zero to one</h2><p>在specific-domain构建一个大模型，首先需要</p>
+<ol>
+<li><p>确定下游任务</p>
+<ul>
+<li><p>下游任务决定了模型的预训练任务：预训练任务应当challenge，且贴近下游任务。分析下游任务主要分析token-wise还是sentence-wise relationship，可以按需选择预训练任务。</p>
+</li>
+<li><p>下游任务决定了模型骨架：模型注重NLU还是NLG？</p>
+</li>
+</ul>
+</li>
+<li><p>确定模型骨架：从Autoencoding / Autoregressive / Encoder-decoder中选择合适的框架</p>
+</li>
+<li><p>确定模型预训练任务</p>
+</li>
+<li><p>从下游任务和预训练任务出发，处理并准备语料</p>
+</li>
+</ol>
+<p>在确定了以上要素后，在specific-domain foundation model中存在“词表与通用领域不同”的问题，即可能某些词语在通用语料库中不存在，或具有歧义，因此模型的word embedding层需要替换为specific domain的词表。如下图所示采用skip-gram学习embedding。</p>
+<img src="https://raw.githubusercontent.com/KMdsy/figurebed/master/img/image-20221123161546624.png" alt="image-20221123161546624" style="zoom: 33%;" />
+
+
+
+
+
+
+
+<p><strong>主要参考文献</strong><br>Kalyan, K. S., Rajasekharan, A., &amp; Sangeetha, S. (2021). Ammus: A survey of transformer-based pretrained models in natural language processing. <em>arXiv preprint arXiv:2108.05542</em>.</p>
+<h2 id="Related-work-after-2020"><a href="#Related-work-after-2020" class="headerlink" title="Related work, after 2020"></a>Related work, after 2020</h2><p>这里列出了大模型的训练算法、应对大规模模型参数的解法，应对分布式数据、环境的训练方法。有标注会议名称的论文均为顶会/领域顶会论文。</p>
+<ul>
+<li><p>[ACL2022] BMInf: An Efficient Toolkit for Big Model Inference and Tuning</p>
+<p>Xu Han; Guoyang Zeng; Weilin Zhao; Zhiyuan Liu; Zhengyan Zhang; Jie Zhou; Jun Zhang; Jia Chao; Maosong Sun</p>
+</li>
+<li><p>[KDD2022] Beyond Traditional Characterizations in the Age of Data: Big Models, Scalable Algorithms, and Meaningful Solutions</p>
+<p>Shang-Hua Teng</p>
+</li>
+<li><p>[NIPS2022] Contrastive Adapters for Foundation Model Group Robustness</p>
+<p>Michael Zhang; Christopher Re</p>
+</li>
+<li><p>[NIPS2022] Decentralized Training of Foundation Models in Heterogeneous Environments</p>
+<p>Binhang Yuan; Yongjun He; Jared Quincy Davis; Tianyi Zhang; Tri Dao; Beidi Chen; Percy Liang; Christopher Re; Ce Zhang</p>
+</li>
+<li><p>[IMCL2021] PipeTransformer: Automated Elastic Pipelining for Distributed Training of Large-scale Models</p>
+<p>  Chaoyang He; Shen Li; Mahdi Soltanolkotabi; Salman Avestimehr</p>
+</li>
+<li><p>[IJCAI2022] Heterogeneous Ensemble Knowledge Transfer for Training Large Models in Federated Learning</p>
+</li>
+</ul>
+<p>​        Yae Jee Cho; Andre Manoel; Gauri Joshi; Robert Sim; Dimitrios Dimitriadis</p>
+<ul>
+<li>[MLSYS2021] Pipelined Backpropagation at Scale: Training Large Models without Batches</li>
+</ul>
+<p>​        Atli Kosson; Vitaliy Chiley; Abhinav Venigalla; Joel Hestness; Urs Koster</p>
+<h3 id="大模型在垂直领域（定义在文本领域）的构建"><a href="#大模型在垂直领域（定义在文本领域）的构建" class="headerlink" title="大模型在垂直领域（定义在文本领域）的构建"></a>大模型在垂直领域（定义在文本领域）的构建</h3><ul>
+<li><p>[RECSYS2021] Large-Scale Modeling of Mobile User Click Behaviors Using Deep Learning</p>
+<p>Xin ZhouYang Li</p>
+</li>
+<li><p>Lewis, P., Ott, M., Du, J., &amp; Stoyanov, V. (2020, November). Pretrained language models for biomedical and clinical tasks: Understanding and extending the state-of-the-art. In <em>Proceedings of the 3rd Clinical Natural Language Processing Workshop</em> (pp. 146-157).</p>
+</li>
+<li><p>Xiao, C., Hu, X., Liu, Z., Tu, C., &amp; Sun, M. (2021). Lawformer: A pre-trained language model for chinese legal long documents. <em>AI Open</em>, <em>2</em>, 79-84.【中国法律长文档，做法律判决预测、相似案例检索、法律阅读理解和法律问答】</p>
+</li>
+<li><p>Beltagy, I., Lo, K., &amp; Cohan, A. (2019). SciBERT: A pretrained language model for scientific text. <em>arXiv preprint arXiv:1903.10676</em>.【科学文本的语言模型】</p>
+</li>
+<li><p>Kierszbaum, S., Klein, T., &amp; Lapasset, L. (2022). ASRS-CMFS vs. RoBERTa: Comparing Two Pre-Trained Language Models to Predict Anomalies in Aviation Occurrence Reports with a Low Volume of In-Domain Data Available. <em>Aerospace</em>, <em>9</em>(10), 591.【航天事故文档，下游任务是关于故障种类的多分类问题】</p>
+</li>
+<li><p>Shen, J. T., Yamashita, M., Prihar, E., Heffernan, N., Wu, X., Graff, B., &amp; Lee, D. (2021). Mathbert: A pre-trained language model for general nlp tasks in mathematics education. <em>arXiv preprint arXiv:2106.07340</em>.【数学文本中的语言模型】</p>
+</li>
+</ul>
+<h3 id="大模型在垂直领域（定义在物理世界）的构建"><a href="#大模型在垂直领域（定义在物理世界）的构建" class="headerlink" title="大模型在垂直领域（定义在物理世界）的构建"></a>大模型在垂直领域（定义在物理世界）的构建</h3><ul>
+<li>Zheng, Z., Lu, X. Z., Chen, K. Y., Zhou, Y. C., &amp; Lin, J. R. (2022). Pretrained domain-specific language model for natural language processing tasks in the AEC domain. <em>Computers in Industry</em>, <em>142</em>, 103733. 【建筑施工标准领域的语言模型】</li>
+<li>Zhou, Y. C., Zheng, Z., Lin, J. R., &amp; Lu, X. Z. (2022). Integrating NLP and context-free grammar for complex rule interpretation towards automated compliance checking. <em>Computers in Industry</em>, <em>142</em>, 103746.【上一篇的延续，从复杂合规标准中提取规则以做合规检验】</li>
+<li>Webersinke, N., Kraus, M., Bingler, J. A., &amp; Leippold, M. (2021). Climatebert: A pretrained language model for climate-related text. <em>arXiv preprint arXiv:2110.12010</em>.【气候数据上的语言模型，其中有一个很有趣的例子是：<em>Fact-Checking</em>，即针对某个证据，由模型给出“该证据支持什么声明”的判断。】</li>
+<li>Berquand, A., Darm, P., &amp; Riccardi, A. (2021). SpaceTransformers: language modeling for space systems. <em>IEEE Access</em>, <em>9</em>, 133111-133122.【空间系统中的语言模型，根据空间标准制定，以concept recognization为最后的评估任务，这个任务应当被视为规范/标准类的基础任务】</li>
+</ul>
+<p>此外还有一些大模型在多模态数据、针对大模型的security issue（like backdoor attack, etc.）等议题；在此不列出。</p>
+ 
+            </div>
+        </div>
+        
+        <div class="mt-3">
+            <!-- 前一页后一页 -->
+<div class="previous-next-links">
+     
+    <div class="previous-design-link">
+        <a href="../../paperlistfile/ACL2022/">
+            <i style="font-size:16px;" class="fa fa-arrow-left" aria-hidden="true"></i>
+            Related Papers in ACL 2022
+        </a>
+    </div>
+     
+
+     
+    <div class="next-design-link">
+        <a href="../../notes/mcmc/">
+            Markov switching Model & Markov Chain Monte Carlo
+            <i style="font-size:16px;" class="fa fa-arrow-right" aria-hidden="true"></i>
+        </a>
+    </div>
+ 
+</div> 
+             
+        </div>
+
+    </div>
+    <div class="col-2">
+        <div class="d-none d-sm-none d-md-block sticky-top border-start">
+             
+    
+        <div>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Big-Model-after-GPT-3"><span class="toc-number">1.</span> <span class="toc-text">Big Model, after GPT-3</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%A7%E6%A8%A1%E5%9E%8B%E8%B0%83%E7%A0%94"><span class="toc-number">1.1.</span> <span class="toc-text">大模型调研</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90"><span class="toc-number">1.2.</span> <span class="toc-text">大模型复杂度分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#How-to-train-a-big-model-from-zero-to-one"><span class="toc-number">2.</span> <span class="toc-text">How to train a big model, from zero to one</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Related-work-after-2020"><span class="toc-number">3.</span> <span class="toc-text">Related work, after 2020</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%9C%A8%E5%9E%82%E7%9B%B4%E9%A2%86%E5%9F%9F%EF%BC%88%E5%AE%9A%E4%B9%89%E5%9C%A8%E6%96%87%E6%9C%AC%E9%A2%86%E5%9F%9F%EF%BC%89%E7%9A%84%E6%9E%84%E5%BB%BA"><span class="toc-number">3.1.</span> <span class="toc-text">大模型在垂直领域（定义在文本领域）的构建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%9C%A8%E5%9E%82%E7%9B%B4%E9%A2%86%E5%9F%9F%EF%BC%88%E5%AE%9A%E4%B9%89%E5%9C%A8%E7%89%A9%E7%90%86%E4%B8%96%E7%95%8C%EF%BC%89%E7%9A%84%E6%9E%84%E5%BB%BA"><span class="toc-number">3.2.</span> <span class="toc-text">大模型在垂直领域（定义在物理世界）的构建</span></a></li></ol></li></ol> 
+        </div>
+    
+ 
+
+        </div>
+    </div>
+</div>
+</div>
+ 
+    </main>
+
+    <!-- 底部栏 -->
+    <footer class="bg-dark pt-1 pb-0 mt-5">
+    <div class="container pb-3 pt-3 text-center">
+        <p class="text-muted tag-hover">
+            All Rights Reserved <i class="fa fa-copyright"></i> 2017-2022 笑颜网 smileyan.cn <br> 
+            Powered by 
+             <a class="link-secondary text-decoration-none" target="_blank" rel="noopener" href="https://hexo.io">
+                 Hexo.io
+            </a> &  <a class="link-secondary text-decoration-none" target="_blank" rel="noopener" href="https://github.com/smile-yan/hexo-theme-heyan">
+               heyan
+            </a>
+            <br>
+            <a class="link-secondary text-decoration-none" target="_blank" rel="noopener" href="https://beian.miit.gov.cn/#/Integrated/index">
+                <img src="/police.png" style="width: 18px; height: 18px; margin-top: -4px" class="nofancybox">
+                湘ICP备 17012851号 
+            </a>
+        </p>
+    </div>
+</footer>
+</body> 
+</html>

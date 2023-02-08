@@ -1,0 +1,388 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smileyan</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css">
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    
+<link rel="stylesheet" href="../../../css/prism.css">
+ 
+    
+<script src="../../../js/prism.js"></script>
+
+    
+    
+<link rel="stylesheet" href="../../../css/index.css">
+ 
+    
+<script src="../../../js/search.js"></script>
+
+
+
+     
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+        </script>
+     
+
+     
+        <script src="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js"> </script>
+        
+<script src="../../../js/fancybox.js"></script>
+
+    
+
+    <script type="text/javascript">
+        var search_path = "search.xml";
+        if (search_path.length == 0) {
+            search_path = "search.xml";
+        }
+        var path = "/" + search_path;
+        searchFunc(path, 'local-search-input', 'local-search-result');
+    </script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+ 
+ 
+<body>
+    <!-- 导航栏 -->
+    <!-- 导航栏 -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4 pt-2 pb-2">
+    <div class="container">
+        <!-- 标题 --> 
+        <a class="navbar-brand navbar-expand-sm" href="/">
+            <img class="nofancybox" src="/logo.png" style="width: 75px;"  alt="笑颜网">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- 左边右边导航按钮 --> 
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto">
+                <!-- 左右两侧的导航栏 -->
+
+ 
+ 
+
+    <li class="nav-item">
+        <a class="nav-link" href="../../../">
+           <big> <i class="fa fa-home ps-1" ></i> 主页</big>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="../../../archives">
+           <big> <i class="fa fa-archive ps-1" ></i> 归档</big>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="../../../about">
+           <big> <i class="fa fa-user ps-1" ></i> 关于</big>
+        </a>
+    </li>
+ 
+ 
+            </ul>
+
+            
+            <form class="">
+                <div class="d-flex">
+                    <button class="btn text-muted fa fa-search d-none d-md-block d-lg-block" disabled></button>
+                    <input id="local-search-input" class="form-control me-2 pe-4" type="search"
+                            placeholder="搜索 " aria-label="Search">
+                </div>
+                <div id="local-search-result" style="position:absolute; padding-top: 8px; max-height: 960px; width: 480px;overflow-y: scroll; z-index: 1050;"></div>
+            </form>
+            
+            <ul class="navbar-nav">
+                <!-- 左右两侧的导航栏 -->
+
+ 
+ 
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+    <main class="container">
+        
+<div class="container-fluid markdown-section">
+<div class="row">
+    <div class="col-md-2 d-none d-sm-none d-md-block">
+        <div class="">
+            <!-- 同一类型的文件 -->
+<!-- 尽可能做到每篇文章只有一个类
+    1. 获得 post 的类别 categories
+     2.1 如果 categories.length === 0，啥也不做
+     2.2 如果 categories === 1，渲染这个类的所有文章
+     2.3 如果 categories.length > 1 ，则以第一个类为准渲染所有文章
+-->
+
+
+ 
+        </div>
+    </div>
+    <div class="col-md-8 col-sm-12">
+        <!-- 博客详情 -->
+        <div class="">
+            <!-- ps-4 pe-4 pt-2 -->
+            <p class="h2">
+                <span class="post-title">
+                    Time series similarity learning
+                </span>   
+            </p>
+
+            <div class="pb-3 pt-1 pe-3">
+                <i class="fa fa-calendar p-1"></i>
+                2020/04/22 12:00:00 
+
+                <i class="fa fa-folder-open p-1"> </i> 
+                <span class="tag-hover">
+                     
+                </span>
+
+                <i class="fa fa-tag p-1"> </i>
+                <span class="tag-hover">
+                    
+                        <a href="../../../tags/paper-list/" class="link-dark text-decoration-none"> 
+                            paper list 
+                        </a>
+                    
+                        <a href="../../../tags/survey/" class="link-dark text-decoration-none"> 
+                            survey 
+                        </a>
+                    
+                        <a href="../../../tags/time-series/" class="link-dark text-decoration-none"> 
+                            time series 
+                        </a>
+                    
+                        <a href="../../../tags/similarity-learning/" class="link-dark text-decoration-none"> 
+                            similarity learning 
+                        </a>
+                    
+                </span>
+            </div>
+
+            <div class="border-bottom pb-2">
+                <h2 id="调研"><a href="#调研" class="headerlink" title="调研"></a>调研</h2><ul>
+<li>NIPS19 - Learning Representations for Time Series Clustering</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>本质上是在隐空间内学习一个利于分簇的表征，然后利用该表征结合传统的聚类方法，做聚类任务<ol>
+<li>使用auto-encoder的结构，求得时间序列在隐空间中的表达</li>
+<li>为了使得encoder出的结果更适合于执行聚类任务，使用k-means建模了隐空间中的数据（本质上是无监督的优化类间距离与类内距离），这个过程中使用了可微分的k-means loss</li>
+<li>为了使得encoder更具有表征能力，添加了一项任务，即分类任务，使用一个子网络来分类encoder编码的真实数据与假数据。</li>
+</ol>
+</li>
+<li>使用UCR聚类任务评估效果</li>
+</ol>
+<p><strong>我认为的缺点</strong></p>
+<ol>
+<li>K-means的隐空间建模能力远弱与GMM</li>
+</ol>
+<span id="more"></span>
+
+<hr>
+<ul>
+<li>KDD19 - NeuralWarp: Time-Series Similarity with Warping Networks</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>本质上是将DTW的思想引入到了隐空间，并将DTW中的dynamic programming搜索最优对齐的过程，替换为了一个可学习的矩阵，从而将DTW的思想融入深度学习中。<ol>
+<li>将显空间的时间序列X(T)用过auto-encoder映射到隐空间中的Z(N*T)，然后通过一个网络用于学习给定的一个时间序列对之间的对齐方式</li>
+<li>学习的目标函数是：最小化同类时间序列对的latent dtw距离，同时最大化不同类时间序列对的latent dtw距离。</li>
+<li>通过学习可得到一个用于在隐空间做对齐的神经网络，且网络的输出为给定的时间序列对的距离</li>
+</ol>
+</li>
+<li>通过分类任务评估性能</li>
+</ol>
+<p><strong>我认为的缺点</strong></p>
+<ol>
+<li>有监督学习</li>
+</ol>
+<hr>
+<ul>
+<li>ICLR19 - SOM-VAE: INTERPRETABLE DISCRETE REPRESENTATION LEARNING ON TIME SERIES [code]</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>本质上是在隐空间建立了一个SOM（self-organized map）并为SOM的节点建立了markov model，以提供可解释的表征（从概率与拓扑的角度，其中SOM提供了隐空间表达的拓扑结构，markov model提供了概率模型）<ol>
+<li>首先将时间序列使用auto-encoder重建</li>
+<li>然后在隐空间使用SOM进行拟合，将隐空间的数据点建模为具有K个节点的SOM</li>
+<li>将隐空间中的每个数据点归类到与其最近的SOM节点上，再依托数据建立Markov model</li>
+<li>网络通过重建误差/隐空间表达与SOM节点之间的距离/可观察数据的转移概率 共同优化</li>
+</ol>
+</li>
+<li>使用MNIST和FASION-MNIST做聚类任务</li>
+</ol>
+<p><strong>我认为的缺点</strong></p>
+<ol>
+<li>没想好</li>
+</ol>
+<hr>
+<ul>
+<li>ICML19 workshop - Warping Resilient Time Series Embeddings</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>本质上是通过神经网络来学习一种对显空间时间序列的翘曲不敏感的隐空间表达<ol>
+<li>首先定义了两种时间序列的翘曲方法，用于为原始的时间序列生成一些翘曲后的样本</li>
+<li>使用两个auto-encoder分别学习左翘曲后的时间序列的隐空间表达，和右翘曲后的时间序列隐空间表达。</li>
+<li>使用一项loss函数，使得在显空间做了翘曲的样本在隐空间的表达尽可能相近</li>
+<li>网络的输出就是一个对翘曲不敏感的embedding</li>
+</ol>
+</li>
+<li>使用一部分UCR做分类任务</li>
+</ol>
+<p><strong>我认为的缺点</strong></p>
+<ol>
+<li>仅对时间序列的翘曲不敏感，但对更复杂的时间序列的表征能力可能会很弱</li>
+</ol>
+<hr>
+<ul>
+<li>KDD19 workshop - A Formally Robust Time Series Distance Metric [code]</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>本质上是想寻求一种对数据污染更加鲁棒的显空间距离度量方法，聚焦于一个分类问题，<br>所谓小污染指：在class i的样本x上增加一个小的污染序列k，一种鲁棒的距离度量方法能够做到：d(x_i, x_i+k) &lt; d(x_i, x_j)，<br>其中x_j是class j的样本 </li>
+<li>通过将6中鲁棒性与精确性具有不同性质的距离度量方式统一到0-1的距离度量范围后，将6中距离方法结合起来，生成一种新的距离度量方式</li>
+<li>使用UCR做分类任务</li>
+</ol>
+<p>其实我们的方法一定程度上也在解决这种对污染序列的鲁棒性，而我们使用的是auto-encoder来过滤污染序列对原始序列在隐空间上的影响的。</p>
+<hr>
+<ul>
+<li>IJCAI19 - Similarity Preserving Representation Learning for Time Series Clustering [code]</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>本质上是提出一种能够保留时间序列在显空间相似度的embedding方法</li>
+<li>给定一个数据集D，包含N个样本，首先在显空间中利用DTW（或其他算法）建立其他们的距离矩阵（N*N）</li>
+<li>然而当N很大的时候，建立这样一个距离矩阵是费时的，所以他提出，部分观察的距离矩阵足以估计出完整的距离矩阵，因此在计算样本xi的时候，并不将其与其他N-1个样本进行距离计算，而是将其与随机采样的K个样本进行距离计算</li>
+<li>得到了距离度量矩阵的时候，通过解一个具有近似最优解的优化目标，从而获得样本的低维表示</li>
+</ol>
+<p><strong>我认为的缺点</strong>：</p>
+<ol>
+<li>当时间序列在显空间的相似度能够揭示数据的簇时，该方法有效，但当显空间的距离度量无法区分数据内在的性质的时候，该方法将会失效</li>
+</ol>
+<hr>
+<ul>
+<li>NIPS18 - Autowarp: Learning a Warping Distance from Unlabeled Time Series Using Sequence Autoencoders</li>
+</ul>
+<p><strong>流程</strong></p>
+<ol>
+<li>假设数据在auto-encoder映射下的隐空间中，能够embedding出时间序列的内在特性，并进行部分的分簇。</li>
+<li>将显空间中的四个常用的距离度量参数化为一个距离度量族，其参数为alpha/beta/gamma<ol>
+<li>首先将数据通过auto-encoder压缩到一个隐空间</li>
+<li>然后通过优化alpha/beta/gamma以在距离度量族里寻找一个恰当的距离度量，能够使得数据在显空间中的相似性关系与在隐空间中的近似。（这个过程通过latent betaCV——一种无需GT的聚类性能衡量方法，来评估显空间中的相似性与隐空间中的相似性关系是否近似）</li>
+</ol>
+</li>
+<li>本工作的目标还是求得一个显空间的恰当的距离度量方式，并以隐空间的欧氏距离度量生成的簇信息作为参考，以避免了没有GT的困境</li>
+<li>通过聚类任务评估性能</li>
+</ol>
+<p><strong>我认为的缺点</strong></p>
+<ol>
+<li>过于依赖隐空间所提供的分簇信息，当隐空间表达不足以支持分簇的时候，该方法近乎失效。</li>
+<li>两段式的算法，寻找距离度量的优化过程与auto-encoder的优化过程分离，可能会导致性能不佳</li>
+</ol>
+<hr>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
+<li><p>KDD 17 workshop - DECADE: A deep metric learning model for multivariate time series</p>
+<p>  主要解决多维时间序列计算DTW距离的问题，主要方法：先将高维数据映射到隐空间，然后在隐空间计算每一维数据对应所有其他维度的alignment path，然后定义了一种新的对齐方法expected alignment，其本质是对mdtw中所有可能的alignment path上的距离做平均。</p>
+<p>  该方法是有监督学习，最小化同类见的距离，最大化不同类之间的距离</p>
+</li>
+<li><p>NIPS 16 - Graphical Time Warping for Joint Alignment of Multiple Curves</p>
+<p>  DTW在图像等数据上的推广，本文提出DTW的dynamic programming过程可以视为graph上的network flow problem，并使用max flow algorithm进行求解。利用上述问题转换方法，解决了图像（可视为多维时间序列）上像素之间的距离度量问题。</p>
+</li>
+<li><p>KDD17 - Tripoles: A New Class of Relationships in Time Series Data</p>
+<p>  定义了一种在三个时间序列之间的关系，该关系有利于发现时间序列中的新特性（如新的全球气象类型等）</p>
+</li>
+<li><p>ICML17 - Soft-DTW: a Differentiable Loss Function for Time-Series</p>
+<p>  提出smoothed formulation of DTW，是一种可微分的DTW求解方式，这使得DTW能够嵌入到深度学习的框架中</p>
+</li>
+</ul>
+ 
+            </div>
+        </div>
+        
+        <div class="mt-3">
+            <!-- 前一页后一页 -->
+<div class="previous-next-links">
+     
+    <div class="previous-design-link">
+        <a href="../../paperlistfile/ICLR2020/">
+            <i style="font-size:16px;" class="fa fa-arrow-left" aria-hidden="true"></i>
+            Related Papers in ICLR 2020 (2020.04.26)
+        </a>
+    </div>
+     
+
+     
+    <div class="next-design-link">
+        <a href="../activations/">
+            激活函数
+            <i style="font-size:16px;" class="fa fa-arrow-right" aria-hidden="true"></i>
+        </a>
+    </div>
+ 
+</div> 
+             
+        </div>
+
+    </div>
+    <div class="col-2">
+        <div class="d-none d-sm-none d-md-block sticky-top border-start">
+             
+    
+        <div>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B0%83%E7%A0%94"><span class="toc-number">1.</span> <span class="toc-text">调研</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-number">2.</span> <span class="toc-text">其他</span></a></li></ol> 
+        </div>
+    
+ 
+
+        </div>
+    </div>
+</div>
+</div>
+ 
+    </main>
+
+    <!-- 底部栏 -->
+    <footer class="bg-dark pt-1 pb-0 mt-5">
+    <div class="container pb-3 pt-3 text-center">
+        <p class="text-muted tag-hover">
+            All Rights Reserved <i class="fa fa-copyright"></i> 2017-2022 笑颜网 smileyan.cn <br> 
+            Powered by 
+             <a class="link-secondary text-decoration-none" target="_blank" rel="noopener" href="https://hexo.io">
+                 Hexo.io
+            </a> &  <a class="link-secondary text-decoration-none" target="_blank" rel="noopener" href="https://github.com/smile-yan/hexo-theme-heyan">
+               heyan
+            </a>
+            <br>
+            <a class="link-secondary text-decoration-none" target="_blank" rel="noopener" href="https://beian.miit.gov.cn/#/Integrated/index">
+                <img src="/police.png" style="width: 18px; height: 18px; margin-top: -4px" class="nofancybox">
+                湘ICP备 17012851号 
+            </a>
+        </p>
+    </div>
+</footer>
+</body> 
+</html>

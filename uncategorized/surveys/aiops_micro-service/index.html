@@ -1,0 +1,539 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smileyan</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css">
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    
+<link rel="stylesheet" href="../../../css/prism.css">
+ 
+    
+<script src="../../../js/prism.js"></script>
+
+    
+    
+<link rel="stylesheet" href="../../../css/index.css">
+ 
+    
+<script src="../../../js/search.js"></script>
+
+
+
+     
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+        </script>
+     
+
+     
+        <script src="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js"> </script>
+        
+<script src="../../../js/fancybox.js"></script>
+
+    
+
+    <script type="text/javascript">
+        var search_path = "search.xml";
+        if (search_path.length == 0) {
+            search_path = "search.xml";
+        }
+        var path = "/" + search_path;
+        searchFunc(path, 'local-search-input', 'local-search-result');
+    </script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+ 
+ 
+<body>
+    <!-- 导航栏 -->
+    <!-- 导航栏 -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4 pt-2 pb-2">
+    <div class="container">
+        <!-- 标题 --> 
+        <a class="navbar-brand navbar-expand-sm" href="/">
+            <img class="nofancybox" src="/logo.png" style="width: 75px;"  alt="笑颜网">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- 左边右边导航按钮 --> 
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto">
+                <!-- 左右两侧的导航栏 -->
+
+ 
+ 
+
+    <li class="nav-item">
+        <a class="nav-link" href="../../../">
+           <big> <i class="fa fa-home ps-1" ></i> 主页</big>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="../../../archives">
+           <big> <i class="fa fa-archive ps-1" ></i> 归档</big>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="../../../about">
+           <big> <i class="fa fa-user ps-1" ></i> 关于</big>
+        </a>
+    </li>
+ 
+ 
+            </ul>
+
+            
+            <form class="">
+                <div class="d-flex">
+                    <button class="btn text-muted fa fa-search d-none d-md-block d-lg-block" disabled></button>
+                    <input id="local-search-input" class="form-control me-2 pe-4" type="search"
+                            placeholder="搜索 " aria-label="Search">
+                </div>
+                <div id="local-search-result" style="position:absolute; padding-top: 8px; max-height: 960px; width: 480px;overflow-y: scroll; z-index: 1050;"></div>
+            </form>
+            
+            <ul class="navbar-nav">
+                <!-- 左右两侧的导航栏 -->
+
+ 
+ 
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+    <main class="container">
+        
+<div class="container-fluid markdown-section">
+<div class="row">
+    <div class="col-md-2 d-none d-sm-none d-md-block">
+        <div class="">
+            <!-- 同一类型的文件 -->
+<!-- 尽可能做到每篇文章只有一个类
+    1. 获得 post 的类别 categories
+     2.1 如果 categories.length === 0，啥也不做
+     2.2 如果 categories === 1，渲染这个类的所有文章
+     2.3 如果 categories.length > 1 ，则以第一个类为准渲染所有文章
+-->
+
+
+ 
+        </div>
+    </div>
+    <div class="col-md-8 col-sm-12">
+        <!-- 博客详情 -->
+        <div class="">
+            <!-- ps-4 pe-4 pt-2 -->
+            <p class="h2">
+                <span class="post-title">
+                    微服务框架下的多源异构数据异常检测 - 调研
+                </span>   
+            </p>
+
+            <div class="pb-3 pt-1 pe-3">
+                <i class="fa fa-calendar p-1"></i>
+                2021/04/13 12:00:00 
+
+                <i class="fa fa-folder-open p-1"> </i> 
+                <span class="tag-hover">
+                     
+                </span>
+
+                <i class="fa fa-tag p-1"> </i>
+                <span class="tag-hover">
+                    
+                        <a href="../../../tags/AIOps/" class="link-dark text-decoration-none"> 
+                            AIOps 
+                        </a>
+                    
+                        <a href="../../../tags/survey/" class="link-dark text-decoration-none"> 
+                            survey 
+                        </a>
+                    
+                        <a href="../../../tags/micro-service/" class="link-dark text-decoration-none"> 
+                            micro-service 
+                        </a>
+                    
+                        <a href="../../../tags/cloud-native/" class="link-dark text-decoration-none"> 
+                            cloud native 
+                        </a>
+                    
+                        <a href="../../../tags/dataset/" class="link-dark text-decoration-none"> 
+                            dataset 
+                        </a>
+                    
+                </span>
+            </div>
+
+            <div class="border-bottom pb-2">
+                <p>2021-04-13: 整理了微服务框架下，做异常检测的大体思路，分别调研“多源异构数据融合”，以及分别基于“时间序列”“日志”“调用链”数据的异常检测方法。</p>
+<p>2022-04-18: 补充了“异常根因分析”相关的工作，这些工作大多是基于图的，可以为4G LTE种的根因分析提供思路。</p>
+<span id="more"></span>
+
+<p><a target="_blank" rel="noopener" href="https://netman.aiops.org/publications/">裴丹团队的主页</a></p>
+<p><a target="_blank" rel="noopener" href="https://aiopsworkshop.github.io/accepted_papers/index.html">2020 AIOPS workshop</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/FudanSELab/train-ticket/">Train Ticket – Test Bed</a></p>
+<p><a target="_blank" rel="noopener" href="https://microservices-demo.github.io/">Sock shop – Test bed</a></p>
+<h2 id="一些笔记"><a href="#一些笔记" class="headerlink" title="一些笔记"></a>一些笔记</h2><p>在相关工作<a href="#lundetecting2021">[1]</a>中：</p>
+<ol>
+<li><p>所要检测的异常如何定义，是一个关键的问题。本文提到”error messages”, “performance degradations”与”trace structure and response time anomalies”本身就是几种不同的异常类型，融合多种数据将有助于我们探测更多种类的异常。</p>
+</li>
+<li><p>本文所建立的调用树中包含了两种调用关系——本地调用（两个微服务位于同一个主机，彼此之间进行调用）、远程调用（两个微服务不在同一个主机，远程调用），但好像在分析的时候没什么区别。</p>
+</li>
+</ol>
+<p>在相关工作<a href="#multimodalsasho2019">[2]</a>中：</p>
+<ol>
+<li><p>trace数据具有多模态，即meta action之间的结构（因果关系模态，或sequential nature模态）、服务响应时间（实值序列）。</p>
+</li>
+<li><p>trace数据的一个有趣的特性在于，它是一种能够良好的反映服务层状态的数据，同时还包含有大量的底层信息。</p>
+</li>
+<li><p>tree结构的调用在实际调用的时候，存在高并发的特性，即：两个被同一组件同时调用的服务，在响应的时候可能出现先后的差异，这在使用序列作为trace表征方式中是非常常见的，但这种差异不代表异常。</p>
+</li>
+</ol>
+<h2 id="相关论文"><a href="#相关论文" class="headerlink" title="相关论文"></a>相关论文</h2><h4 id="根因分析"><a href="#根因分析" class="headerlink" title="根因分析"></a>根因分析</h4><h5 id="基于图的方法"><a href="#基于图的方法" class="headerlink" title="基于图的方法"></a>基于图的方法</h5><ol>
+<li><p><strong>Graph-based root cause analysis for service-oriented and microservice architectures</strong></p>
+<p> ÁlvaroBrandó, Marc Solé, Alberto Huélamo, David Solans, María S.Pérez, VictorMuntés-Mulero</p>
+<p> Journal of Systems and Software, Volume 159, January 2020, 110432</p>
+</li>
+<li><p><strong>GRANO: interactive graph-based root cause analysis for cloud-native distributed data platform</strong></p>
+<p> Hanzhang Wang, Phuong Nguyen, Jun Li, Selcuk Kopru, Gene Zhang, Sanjeev Katariya, Sami Ben-Romdhane</p>
+<p> Proceedings of the VLDB EndowmentVolume 12Issue 12August 2019</p>
+</li>
+</ol>
+<p>我们通过提供系统组件拓扑、警报和应用程序事件的整体视图，展示了 Grano，这是一个用于云原生分布式数据平台的端到端异常检测和根本原因分析（或简称 RCA）系统。Grano 提供： 一个<em>检测层</em>，用于处理大量时间序列监控数据，以检测逻辑和物理系统组件的异常情况；<em>Anomaly Graph Layer</em>具有新颖的图形建模和算法，用于利用系统拓扑数据和检测结果来识别系统组件级别的根本原因相关性；和<em>应用层</em>自动通知待命人员，并通过交互式图形界面提供实时和按需 RCA 支持。该系统使用 eBay 的生产数据进行部署和评估，以帮助值班人员将根本原因的识别时间从几小时缩短到几分钟。</p>
+<ol start="3">
+<li><p><strong>A Causality Mining and Knowledge Graph Based Method of Root Cause Diagnosis for Performance Anomaly in Cloud Application</strong>s</p>
+<p> Juan Qiu, Qingfeng Du, Kanglin Yin, Shuang-Li Zhang, and Chongshu Qian</p>
+<p> Applied Sciences, Volume 10, Issue 6</p>
+</li>
+</ol>
+<p>随着云计算技术的发展，微服务架构（MSA）已经成为云原生应用中流行的应用架构。很多面向用户的服务由很多微服务支持，服务之间的依赖比传统的单体架构应用更加复杂。在这种情况下，如果一个微服务的性能指标发生异常变化，就会导致其他相关服务降级甚至出现故障，这可能会给依赖的业务带来很大的损失。因此，在云应用的运维工作中，挖掘问题的因果关系，尽快找到根源至关重要。在本文中，我们提出了一种挖掘因果关系和诊断根本原因的方法，该方法使用知识图谱技术和因果搜索算法。我们在一个经典的云原生应用上验证了所提出的方法，发现该方法是有效的。将我们的方法应用于云原生应用程序的大部分服务后，准确率和召回率均超过 80%。</p>
+<ol start="4">
+<li><p><strong>Groot: An Event-graph-based Approach for Root Cause Analysis in Industrial Settings</strong></p>
+<p> Hanzhang Wang; Zhengkai Wu; Huai Jiang; Yichao Huang; Jiamu Wang; Selcuk Kopru; Tao Xie</p>
+<p> 2021 36th IEEE/ACM International Conference on Automated Software Engineering (ASE)</p>
+</li>
+</ol>
+<p>对于大型分布式系统，有效诊断事件的根本原因以保持系统的高可用性至关重要。微服务架构的最新发展为工业环境中的根本原因分析 (RCA) 带来了三大挑战（即操作的复杂性、系统规模和监控）。为了应对这些挑战，在本文中，我们提出了 Groot，一种基于事件图的 RCA 方法。 Groot 基于事件构建实时因果关系图，这些事件汇总了被分析系统中的各种类型的指标、日志和活动。此外，为了整合来自站点可靠性工程 (SRE) 工程师的领域知识，Groot 可以使用用户定义的事件和特定领域的规则进行定制。目前，Groot 在 5,000 项实际生产服务中支持 RCA，并被 eBay 的 SRE 团队积极使用，eBay 是一个全球电子商务系统，每年为超过 1.59 亿活跃买家提供服务。在 15 个月内，我们收集了一个数据集，其中包含 952 个实际生产事件的标记根本原因以进行评估。评估结果表明，Groot 能够达到 95% 的 top-3 准确率和 78% 的 top-1 准确率。为了分享我们在工业环境中部署和采用 RCA 的经验，我们进行了一项调查以表明 Groot 的用户发现它有用且易于使用。我们还分享了部署和采用 Groot 解决生产环境中的 RCA 问题的经验教训。</p>
+<ol start="5">
+<li><p><strong>Graph Based Root Cause Analysis in Cloud Data Center</strong></p>
+<p> Divyaansh Dandona; Mevlut Demir; John J. Prevost</p>
+<p> 2020 IEEE 15th International Conference of System of Systems Engineering (SoSE)</p>
+</li>
+</ol>
+<p>低成本计算的吸引力和云技术的按需扩展已导致许多软件应用程序迁移到云。这种对云的依赖增加转化为对云数据中心的直接依赖，这些云数据中心形成了现代云。这些数据中心是由许多系统组成的复杂建筑物，这些系统相互交互以托管最终应用程序。在这个系统系统中检测异常事件，然后及时确定其根本原因是一项艰巨的任务。在本文中，我们提出了一个图形模型来封装系统的云数据中心系统，并分享一种减少根本原因分析的搜索空间的方法。</p>
+<h3 id="关于多源数据融合的文章"><a href="#关于多源数据融合的文章" class="headerlink" title="关于多源数据融合的文章"></a>关于多源数据融合的文章</h3><ol>
+<li><strong>Multi-Source Anomaly Detection in Distributed IT Systems</strong></li>
+</ol>
+<p>Jasmin Bogatinovski, Sasho Nedelkoski</p>
+<p>知乎解析：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/347051870">link</a></p>
+<p>2020 AIOPS workshop</p>
+<ul>
+<li>本工作联合考虑了日志数据与trace数据，开发了一种span2vec的方法，用于将trace数据像log数据一样表示为一系列的模板数据，进一步的便于与日志数据进行融合。</li>
+<li>异常检测任务在本文中被转化为了一个“下一步模板预测”的<strong>有监督任务</strong>，可以分别对下一步可能出现的日志与模板进行预测，则偏离预测的trace/log模板即为异常。</li>
+<li>在本工作中，log与trace数据提供了不同角度的系统状态信息——日志数据可以在服务级别上有更丰富的描述，可以被视为服务运行的的指纹。Trace数据中则没有太多上述系统级的信息，但包含执行一次用户清请求的总流程图。但是从结果上来看，日志数据的加入，提升了预测trace异常的recall，但反之，trace数据的的加入并没有显著提升log数据的异常检测性能。可能的原因在于log的数据粒度比较大。</li>
+</ul>
+<blockquote>
+<p>One explanation of this behaviour is that the granularity of the information from the logs is truncated on the level of the data source with a lower frequency of generation – the trace is harder for the information in the trace to be transferred to the logs. The information that the multimodal method is receiving from the logs when it is aiming to predict the next relevant span complements the information as obtained just from the sequence of spans individually.</p>
+</blockquote>
+<p>​<br>2. <strong>Multi-source Distributed System Data for AI-Powered Analytics</strong></p>
+<pre><code>Sasho Nedelkoski, Jasmin Bogatinovski, Ajay Kumar Mandapati, Soeren Becker, Jorge Cardoso, Odej Kao
+
+European Conference on Service-Oriented and Cloud Computing, ESOCC 2020: Service-Oriented and Cloud Computing
+
+开发了一个用于捕捉多源（三种）数据的一个分析平台，对这个test bed做了描述
+</code></pre>
+<ol start="3">
+<li><p><strong>An Intelligent Anomaly Detection Scheme for Micro-Services Architectures With Temporal and Spatial Data Analysis</strong></p>
+<p> Yuan Zuo; Yulei Wu; Geyong Min; Chengqiang Huang; Ke Pei</p>
+<p> IEEE Transactions on Cognitive Communications and Networking ( Volume: 6, Issue: 2, June 2020)</p>
+<p> 联合使用日志（时间数据）和调用链数据query trace（空间数据）做特征提取与融合，并构建one-class classifier</p>
+</li>
+</ol>
+<h3 id="微服务架构下的异常检测"><a href="#微服务架构下的异常检测" class="headerlink" title="微服务架构下的异常检测"></a>微服务架构下的异常检测</h3><h4 id="基于调用链数据"><a href="#基于调用链数据" class="headerlink" title="基于调用链数据"></a>基于调用链数据</h4><ol>
+<li><p><strong>Observing and Controlling Performance in Microservices</strong></p>
+<p> 学术毕业论文：André Pascoal Bento</p>
+<p> 讲使用trace数据，建模系统中微服务之间的依赖关系，并建立为图模型，然后计算出每个依赖关系之间的应答响应时间</p>
+</li>
+<li><p><strong>Unsupervised Detection of Microservice Trace Anomalies through Service-Level Deep Bayesian Networks</strong></p>
+<p> Ping Liu; Haowen Xu; Qianyu Ouyang; Rui Jiao; Zhekang Chen; Shenglin Zhang; …</p>
+<p> 2020 IEEE 31st International Symposium on Software Reliability Engineering (ISSRE)</p>
+<p> <strong>基于微服务trace数据，检测意外的调用关系或者意外的调用响应时间</strong></p>
+</li>
+</ol>
+<ul>
+<li><p>本文与其他工作有显著的不同，别的工作的异常检测对象一般都是针对单个的调用meta action，而本工作是针对一整条tree状的trace。</p>
+</li>
+<li><p>本文使用精心设计的手工特征来表征trace数据，向量化的trace数据用一个容量很大的概率模型来学习他们的正常模式。其中之所以要用到容量大的模型，是因为要学习的模式是一整个application的trace，而非一个trace。</p>
+</li>
+<li><p>手工设计的trace数据使得异常检测后的结果可以快速定位异常类型与异常根因，自带可解释性。</p>
+</li>
+</ul>
+<ol start="3">
+<li> <a name="multimodalsasho2019"><sup>[2]</sup></a> <strong>Anomaly Detection from System Tracing Data Using Multimodal Deep Learning</strong></li>
+</ol>
+<p>Sasho Nedelkoski; Jorge Cardoso; Odej Kao</p>
+<p>2019 IEEE 12th International Conference on Cloud Computing (CLOUD)</p>
+<p>本文将trace数据视为了<strong>多模态数据</strong>，第一种模态为由事件序列组成的类似于NLP的序列数据（其实与日志模板序列是相似的），第二种模态是每个事件对应的响应时间。</p>
+<ul>
+<li><p>第一步将trace数据异常检测视为了单模态数据的异常检测。其本质是，将上述两种“文本序列”“实值序列”送进LSTM网络中，进行预测，当真实值不在TopK label（文本序列预测）或不在95%置信区间（实值序列预测）时，即为异常。</p>
+</li>
+<li><p>本文提到的多模态融合，其具体方案是，两种数据均通过单层的LSTM网络，然后在第二个隐层中进行融合（concat）。</p>
+</li>
+</ul>
+<p>本文的最大缺陷在于：</p>
+<ul>
+<li>虽然理论上event间的调用因果关系被视为了文本序列中的语法，交由LSTM学习，但是这种拓扑关系本身是已知的，而没有被利用，LSTM学习到的关系是什么，也是不可解释的</li>
+<li>本文实验中的异常全部都是人工生成的，而且有对照网络输出构造异常样本的嫌疑，实验结果存疑。</li>
+<li>本文在还提到，本文通过所学习的预测模型，对调用链中的并发与依赖事件进行了重建与识别，但是识别这些事件对异常检测的作用在哪，并发与否在trace数据的JSON文件中不应该是可以直接被解析的吗 </li>
+</ul>
+<ol start="4">
+<li><strong>Self-Supervised Anomaly Detection from Distributed Traces</strong></li>
+</ol>
+<p>Jasmin Bogatinovski; Sasho Nedelkoski; Jorge Cardoso; Odej Kao</p>
+<p>2020 IEEE/ACM 13th International Conference on Utility and Cloud Computing (UCC)</p>
+<ul>
+<li><p>这篇论文仍然将trace数据建模为<strong>模板序列</strong>，将异常检测问题视为下一模板预测问题。</p>
+</li>
+<li><p>不同之处在于引入了self-supervised learning，具体的，在训练的时候，遮蔽trace中的随机一个span，训练网络预测被遮蔽位置的span是什么。<br>具体的，网络学习到的是：trace中每一个位置的预测可能性列表</p>
+</li>
+<li><p>在异常检测的时候，统计待测样本中，span不在预测出饿top-k list中的比例，记为anomaly score</p>
+</li>
+</ul>
+<ol start="5">
+<li><strong>Anomaly Detection and Classification using Distributed Tracing and Deep Learning</strong></li>
+</ol>
+<p>Sasho Nedelkoski; Jorge Cardoso; Odej Kao</p>
+<p>2019 19th IEEE/ACM International Symposium on Cluster, Cloud and Grid Computing (CCGRID)</p>
+<ul>
+<li><p>本文本质上是对于时间序列提出了一种异常检测的方法，只是根据本文的检测目标——响应时间，将特定一组微服务的响应时间序列作为了研究对象。然而所提出的方法其实可以在广义的时间序列上进行评估。</p>
+</li>
+<li><p>本文着重说明了在正常序列具有多种模式的时候，我们该如何去建模正常，这里提出使用VAE的多维高斯分布来建模这种复杂分布，再利用重建误差作为异常得分。</p>
+</li>
+<li><p>后续，他还通过训练了一个基于1D-CNN的网路，做了异常分类，首先由用户预定义几种异常，然后训练一个有监督的分类器，以帮助将那些检测到的异常归类到已知的异常类型中去。</p>
+</li>
+<li><p>本文比较有用的点在于：在处理运维时间序列上，其实存在很多难点，需要我们使用一些预处理方法，如去噪、平滑、去离群值等方法来处理，以保证模型性能，且具备可解释性。</p>
+</li>
+</ul>
+<blockquote>
+<p>However, the large amount of events in the time series and the fact that proper training of neural networks <strong>requires normalization</strong>, leads to obligation of having an outlier removal technique. <strong>The presence of a strong outlier, will lead to values clamped to zero after the normalization</strong>. Therefore, events having response time greater than three standard deviations from the mean are removed from the training batch.</p>
+<p>Next, we normalize the values by using min-max scaling (0, 1) to ensure that we stay in the positive range of values for the response time. In contrast, <strong>using standardization might produce negative values that do not have natural meaning when we deal with response time (no negative time)</strong>. Normalization is required and makes the optimization function of the neural network well-conditioned, which is key for convergence.</p>
+<p>we apply <strong>smoothing for noise removal and robustness to small deviations</strong>. The time series is convolved with Hamming smoothing filter defined with its optimal parameters [35] and size M as…</p>
+</blockquote>
+<ol start="6">
+<li><strong>MicroRAS: Automatic Recovery in the Absence of Historical Failure Data for Microservice Systems</strong></li>
+</ol>
+<p>Li Wu; Johan Tordsson; Alexander Acker; Odej Kao</p>
+<p>2020 IEEE/ACM 13th International Conference on Utility and Cloud Computing (UCC)</p>
+<ul>
+<li><p>本文致力于提出一个故障自动恢复方法，指的是当系统已经异常后，我们如何评估某些操作所带来的正面/负面影响，并在恢复效果与恢复时间之间做权衡，选择有较高收益的动作。</p>
+</li>
+<li><p>本文将trace数据建模为一个属性图，属性图用于构建系统状态模型，分析动作的传播影响等。</p>
+</li>
+</ul>
+<ol start="7">
+<li><strong>MicroRCA: Root Cause Localization of Performance Issues in Microservices</strong></li>
+</ol>
+<p>Li Wu; Johan Tordsson; Erik Elmroth; Odej Kao</p>
+<p>NOMS 2020 - 2020 IEEE/IFIP Network Operations and Management Symposium</p>
+<ul>
+<li>我们提出了一种新的与应用无关的系统MicroRCA，用于定位基于容器的微服务中性能异常的根本原因。该方法构造了一个属性图模型，将服务异常性能症状与相应的资源利用率相关联，从而推断出异常微服务。</li>
+</ul>
+<ol start="8">
+<li><a name="lundetecting2021"><sup>[1]</sup></a> <strong>Detecting anomalies in microservices with execution trace comparison</strong></li>
+</ol>
+<p>Lun Meng, Feng Ji, Yao Sun, TaoWang</p>
+<p>Future Generation Computer Systems, Volume 116, March 2021, Pages 291-301</p>
+<p>本文提出了一种基于调用链数据的异常检测方法，拟检测的异常分为两种：1) 调用关系异常：调用关系本身并不是一成不变的，调用关系会因为调用时的参数而发生动态变化，但是某些异常会导致微服务调用不常见的异常的调用总是与已有的调用关系不同，因此可以被检测出来；2) 调用响应异常：这种异常不会破坏调用关系，但是会直接影响服务迟延，因此也是异常。</p>
+<p>为解决调用关系异常，本文<strong>首先</strong>收集软件测试期间的调用链数据用于合成应用运行时的tarce tree，注意由于trace tree会因为调用携带的参数不同而不同，因此在软件测试阶段收集（几乎）所有情况的调用关系数据是有必要的。<strong>然后</strong>将实时的调用链数据与刚才的baseline之间计算最小编辑距离（baseline中有多种调用baseline，因此需要与每一个baseline计算他们之间的距离，取距离最小的baseline作为正常模板，并计算anomaly score），以作为anomaly score。</p>
+<blockquote>
+<p> To construct a baseline execution trace set S, for every arrival execution trace T_i, if we<br> cannot match T_i with an execution trace C_i in S, we add T_i in S.</p>
+</blockquote>
+<p>调用时间在物理资源充分的情况下，一般是不会有大的波动的，因此，调用时间的激增就可以被视为一个调用时间异常。为了识别_激增_，本文使用coefficient of variation（CV）来表示一次请求的响应时间异常程度。此时的trace数据被用一个$M \times N$的metrix表示，其中第m行第n列表示，在第i次用户请求时，第j个组件（微服务）的响应情况。然后借助PCA对矩阵进行分解，用来识别导致异常的微服务。这里没太看懂。</p>
+<p><img src="https://user-images.githubusercontent.com/16149619/115550685-b9e17f00-a2dc-11eb-9094-980b220a86f3.png" alt="image"><br><img src="https://user-images.githubusercontent.com/16149619/115550693-bea63300-a2dc-11eb-8f08-d44732ca1b41.png" alt="image"></p>
+<p>​<br>9. <strong>Midiag: A Sequential Trace-Based Fault Diagnosis Framework for Microservices</strong></p>
+<pre><code>Lun Meng, Yao Sun, Shudong Zhang
+
+International Conference on Services Computing, SCC 2020: Services Computing – SCC 2020 pp 137-144
+</code></pre>
+<ul>
+<li>本文还是将异常检测问题转化为下一system call预测问题，这里的system call也是用模板来代替，与之前的不同的是，这里的模板是通过K-means+最长公共子序列搜索来得到的，这与日志相关的工作十分相似。</li>
+</ul>
+<hr>
+<h4 id="基于日志数据"><a href="#基于日志数据" class="headerlink" title="基于日志数据"></a>基于日志数据</h4><ul>
+<li><p>基于日志解析的大规模微服务架构软件系统异常检测</p>
+<p>  Anomaly Detection of Large Scale Microservice Architecture Software System Based on Log Parsing</p>
+<p>  邰丽媛, 田春岐 ：同济大学计算机科学与技术系，上海;<br>  王 伟 ：华东师范大学数据科学学院，上海;</p>
+</li>
+<li><p>Root-Cause Metric Location for Microservice Systems via Log Anomaly Detection</p>
+<p>  Lingzhi Wang; Nengwen Zhao; Junjie Chen; Pinnong Li; Wenchi Zhang; Kaixin Sui</p>
+<p>  2020 IEEE International Conference on Web Services (ICWS)    </p>
+</li>
+<li><p>Anomaly Detection of Large Scale Microservice Architecture Software System Based on Log Parsing</p>
+<p>  Liyuan Tai, Chun-qi Tian, W. Wang</p>
+</li>
+</ul>
+<hr>
+<h4 id="基于时间序列数据"><a href="#基于时间序列数据" class="headerlink" title="基于时间序列数据"></a>基于时间序列数据</h4><ul>
+<li>Localizing Failure Root Causes in a Microservice through Causality Inference   Yuan Meng; Shenglin Zhang; Yongqian Sun; Ruru Zhang; Zhilong Hu; Yiyin Zhang, …  2020 IEEE/ACM 28th International Symposium on Quality of Service (IWQoS)  <strong>基于微服务KPI数据的关联推断方法</strong>  我们设计了一种新的PCTS(路径条件时间序列)算法，在充分利用传播延迟的情况下学习监控指标的依赖图。在PCTS中，我们首先采用改进的PC[10]学习时间序列中每个点的因果图。然后生成两个时间序列之间的边，生成失效因果图。  我们提出了一种新的基于时间原因的随机漫步(TCORW)方法。在TCORW中，我们成功地整合了三种类型的信息:(1)监测指标的因果关系;(2)度量的异常信息，包括发生时间和异常程度;(3)基于领域知识获得的度量优先级  结合PCTS和TCORW，我们提出了一个新的框架——微原因，来推断微服务失败的前N个根本原因。据我们所知，这是在微服务中定位故障根源的第一个工作。</li>
+</ul>
+<ul>
+<li>Performance Diagnosis in Cloud Microservices using Deep Learning  Li Wu, Jasmin Bogatinovski, Sasho Nedelkoski, Johan Tordsson and Odej Kao  2020 AIOPS workshop  <strong>多源时间序列的异常检测与根因定位</strong>——我们从多个数据源收集数据，包括应用程序、操作系统和网络，以提供由不同根源(如软件bug、硬件问题、资源争用等)引起的性能问题的罪魁祸首。我们的系统被设计成<strong>与应用程序无关的</strong>，不需要应用程序使用仪器来获取数据。相反，我们收集应用程序和运行时系统本身报告的指标。  本文提出了一种应用不可知系统，以细粒度定位微服务性能下降的罪魁祸首，不仅包括产生性能问题的异常服务，还包括与服务异常相关的罪魁祸首指标。我们的方法首先通过构建服务依赖图来发现潜在的罪魁祸首服务，然后应用自动编码器根据重构错误的排序列表来识别异常服务指标。  我们采用两阶段方法进行异常检测和根本原因分析(系统概述在第3节中描述)。在第一阶段，我们根据基于图的方法[16]对导致故障的服务进行建模。这使我们能够通过识别导致错误服务性能下降的根本原因(异常度量)来查明引发性能下降的潜在错误服务。第二阶段，对潜在故障的推断，是基于以下假设:故障行为的最重要症状与正常运行时的值存在显著偏差。在任何时间点测量每个症状的个体贡献，从而导致观察到的行为与正常行为之间的差异，从而可以定位最可能反映故障的症状。有了这个假设，我们的目标是在正常系统行为下模拟症状值</li>
+</ul>
+<ul>
+<li><p>TELESTO: A Graph Neural Network Model for Anomaly Classification in Cloud Services</p>
+<p>  Dominik Scheinert and Alexander Acker</p>
+<p>  2020 AIOPS workshop</p>
+<p>  <strong>多维时间序列的异常分类任务</strong>，即不仅只识别正异常，还是被异常的种类</p>
+<p>  我们提出了一种通过训练分类模型来识别再次出现的异常的方法。利用系统度量数据，如CPU利用率、已分配内存或磁盘I/O统计数据，并将这些数据建模为多元时间序列，我们的模型能够识别异常类型特定的模式，并为它们分配各自的异常标签。</p>
+<p>  我们提出的模型架构TELESTO利用一种新颖的图神经网络架构，在空间和时间维度上利用多变量时间序列建模为图。它不受维度变化的影响，优于其他两种常用的图神经网络方法。</p>
+</li>
+</ul>
+<hr>
+<h2 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h2><ol>
+<li>ToN IoT-The role of heterogeneity and the need for standardization of features and attack types in IoT network intrusion datasets</li>
+</ol>
+<ol start="2">
+<li><p><a target="_blank" rel="noopener" href="https://zenodo.org/record/3549604#.YEGfWI5LiUk">https://zenodo.org/record/3549604#.YEGfWI5LiUk</a></p>
+<p> 一个公开数据集，里面包括AIOPS常见的三种数据</p>
+</li>
+<li><p>test bed搭建：</p>
+<p> framework：OpenStack, Kolla-Ansible(dockerized environment)/k8s<br> For the <strong>metrics</strong> collection across the physical nodes in the infrastructure, we utilize <a href="20">Glances</a>,</p>
+<p> OpenStack introduces a small but powerful library called <a href="21"><em>osprofiler</em></a> that is used by all OpenStack projects and their Python clients to generate <strong>traces</strong>.</p>
+<p> The <strong>log</strong> files are distributed over the infrastructure and they are grouped in directories by the OpenStack projects (e.g., nova, neutron, glance, etc.) at the wally nodes.</p>
+<p> anomaly injection: (ref) Multi-source Distributed System Data for AI-Powered Analytics</p>
+<p> To generate workloads and inject faults into the infrastructure we used <a href="25">Rally</a>    </p>
+</li>
+</ol>
+<h3 id="Trace-data"><a href="#Trace-data" class="headerlink" title="Trace data"></a>Trace data</h3><ol>
+<li><p>Azure Public dataset: composes of two datasets representing two representative traces of the virtual machine of Microsoft Azure</p>
+<p> <a href="5">link</a></p>
+</li>
+<li><p>Alibaba’s cluster data is a collection of two datasets from real-world production</p>
+<p> [link](2, 14, 28)</p>
+</li>
+<li><p>Google’s collection of two tracing datasets originates from parts of Google cluster management software and systems</p>
+<p> <a href="10">link</a></p>
+</li>
+</ol>
+<h3 id="metric-data"><a href="#metric-data" class="headerlink" title="metric data"></a>metric data</h3><ol>
+<li><p>A plethora of available collections of datasets containing metric data can be found in Stonybrook</p>
+<p> <a href="31">link</a></p>
+</li>
+<li><p><a href="1">Numenta</a> predominantly contains datasets<br>from streaming and real-time applications, while <a href="9">Harvard</a>, <a href="8">ELKI</a>, <a href="15">LMU</a> store network intrusion data.</p>
+</li>
+</ol>
+<h3 id="log-data"><a href="#log-data" class="headerlink" title="log data"></a>log data</h3><ol>
+<li><p>The <a href="3">CFDR resource</a> stores links or 19 log datasets grouped in 11 data collections.</p>
+</li>
+<li><p>The second resource is the <a href="35">loghub data resource</a>.</p>
+</li>
+</ol>
+<hr>
+<h2 id="没啥用的文章"><a href="#没啥用的文章" class="headerlink" title="没啥用的文章"></a>没啥用的文章</h2><ul>
+<li><p><strong>MicroMon: A Monitoring Framework for Tackling Distributed Heterogeneity</strong></p>
+<p>  Babar Khalid, Nolan Rudolph, Ramakrishnan Durairajan, Sudarsun Kannan</p>
+<p>  12th {USENIX} Workshop on Hot Topics in Storage and File Systems (HotStorage 20).</p>
+<p>  没啥用，描述了一种在微服务上运行的监视系统，主要应对的是微服务系统的软件/硬件异质性问题，提高监视系统的吞吐量</p>
+</li>
+<li><p><strong>Advancing Monitoring in Microservices Systems</strong></p>
+<p>  Marcello Cinque; Raffaele Della Corte; Antonio Pecchia</p>
+<p>  2019 IEEE International Symposium on Software Reliability Engineering Workshops (ISSREW)</p>
+<p>  没啥用，描述了一种在微服务上运行的监视系统</p>
+</li>
+<li><p><strong>学位论文：ANOMALY DETECTION IN CLOUD-NATIVE SYSTEMS</strong></p>
+<p>  Surace, Pino’ (2019)</p>
+<p>  没啥用，讲了一些云原生应用中的组件综述，以及如何用简单的ML方法利用微服务中的时间序列做异常检测</p>
+</li>
+<li><p>Artificial Intelligence for IT Operations (AIOPS) Workshop White Paper</p>
+<p>  Jasmin Bogatinovski, Sasho Nedelkoski, Alexander Acker, Florian Schmidt, Thorsten Wittkopp, Soeren Becker, Jorge Cardoso, Odej Kao</p>
+<p>  white paper for the AIOPS 2020 workshop at ICSOC 2020</p>
+</li>
+</ul>
+ 
+            </div>
+        </div>
+        
+        <div class="mt-3">
+            <!-- 前一页后一页 -->
+<div class="previous-next-links">
+     
+    <div class="previous-design-link">
+        <a href="../../paperlistfile/WWW2021/">
+            <i style="font-size:16px;" class="fa fa-arrow-left" aria-hidden="true"></i>
+            Related Papers in WWW 2021 (2021.04.19)
+        </a>
+    </div>
+     
+
+     
+    <div class="next-design-link">
+        <a href="../../notes/notes/">
+            Some Notes
+            <i style="font-size:16px;" class="fa fa-arrow-right" aria-hidden="true"></i>
+        </a>
+    </div>
+ 
+</div> 
+             
+        </div>
+
+    </div>
+    <div class="col-2">
+        <div class="d-none d-sm-none d-md-block sticky-top border-start">
+             
+    
+        <div>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">一些笔记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E8%AE%BA%E6%96%87"><span class="toc-number">2.</span> <span class="toc-text">相关论文</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E5%A4%9A%E6%BA%90%E6%95%B0%E6%8D%AE%E8%9E%8D%E5%90%88%E7%9A%84%E6%96%87%E7%AB%A0"><span class="toc-number">2.1.</span> <span class="toc-text">关于多源数据融合的文章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84%E4%B8%8B%E7%9A%84%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B"><span class="toc-number">2.2.</span> <span class="toc-text">微服务架构下的异常检测</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dataset"><span class="toc-number">3.</span> <span class="toc-text">Dataset</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Trace-data"><span class="toc-number">3.1.</span> <span class="toc-text">Trace data</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#metric-data"><span class="toc-number">3.2.</span> <span class="toc-text">metric data</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#log-data"><span class="toc-number">3.3.</span> <span class="toc-text">log data</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B2%A1%E5%95%A5%E7%94%A8%E7%9A%84%E6%96%87%E7%AB%A0"><span class="toc-number">4.</span> <span class="toc-text">没啥用的文章</span></a></li></ol> 
+        </div>
+    
+ 
+
+        </div>
+    </div>
+</div>
+</div>
+ 
+    </main>
+
+    <!-- 底部栏 -->
+    <footer class="bg-dark pt-1 pb-0 mt-5">
+    <div class="container pb-3 pt-3 text-center">
+        <p class="text-muted tag-hover">
+            All Rights Reserved <i class="fa fa-copyright"></i> 2017-2022 笑颜网 smileyan.cn <br> 
+            Powered by 
+             <a class="link-secondary text-decoration-none" target="_blank" rel="noopener" href="https://hexo.io">
+                 Hexo.io
+            </a> &  <a class="link-secondary text-decoration-none" target="_blank" rel="noopener" href="https://github.com/smile-yan/hexo-theme-heyan">
+               heyan
+            </a>
+            <br>
+            <a class="link-secondary text-decoration-none" target="_blank" rel="noopener" href="https://beian.miit.gov.cn/#/Integrated/index">
+                <img src="/police.png" style="width: 18px; height: 18px; margin-top: -4px" class="nofancybox">
+                湘ICP备 17012851号 
+            </a>
+        </p>
+    </div>
+</footer>
+</body> 
+</html>
