@@ -341,27 +341,6 @@
     
     
     <entry>
-      <title>Markdown常用语法</title>
-      <link href="/uncategorized/notes/markdown_notes/"/>
-      <url>/uncategorized/notes/markdown_notes/</url>
-      
-        <content type="html"><![CDATA[<p><a href="http://www.w3chtml.com/html/html-basic-grammar.html">Remark: HTML常用语法</a></p><span id="more"></span><ol><li>插入并调整图片大小</li></ol><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">align</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>center<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fig.png<span class="token punctuation">"</span></span> <span class="token attr-name">width</span> <span class="token attr-value"><span class="token punctuation attr-equals">=</span> <span class="token punctuation">"</span>70%<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><ol start="2"><li>设置页面支持latex公式，在页面头部插入以下内容</li></ol><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/x-mathjax-config<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">        MathJax<span class="token punctuation">.</span>Hub<span class="token punctuation">.</span><span class="token function">Config</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>            <span class="token literal-property property">tex2jax</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>            <span class="token literal-property property">skipTags</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'script'</span><span class="token punctuation">,</span> <span class="token string">'noscript'</span><span class="token punctuation">,</span> <span class="token string">'style'</span><span class="token punctuation">,</span> <span class="token string">'textarea'</span><span class="token punctuation">,</span> <span class="token string">'pre'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>            <span class="token literal-property property">inlineMath</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token punctuation">[</span><span class="token string">'$'</span><span class="token punctuation">,</span><span class="token string">'$'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"\\("</span><span class="token punctuation">,</span><span class="token string">"\\)"</span><span class="token punctuation">]</span> <span class="token punctuation">]</span><span class="token punctuation">,</span>            <span class="token punctuation">&#125;</span>        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ol start="3"><li><p>为文章加入锚点</p><ol><li>markdown的标题行本身自带锚点，直接使用<code>[some_text](#title)</code>即可实现页内跳转，注意，<code>title</code>中不可以包含符号，否则会跳转失败。</li><li>使用<code>&lt;a&gt;</code>标签，注意，包围在标签中的部分，不适用于markdown语法，以及公式语句。</li></ol></li></ol><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token comment">&lt;!-- HTML方法 --></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tag<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> 添加锚点 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#tag<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> 链接锚点 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token comment">&lt;!-- markdown方法 --></span><span class="token url">[<span class="token content">链接锚点</span>](<span class="token url">#tag</span>)</span><span class="token url">[<span class="token content">链接到另一个文章的锚点</span>](<span class="token url">other_file.md#tag</span>)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> note </tag>
-            
-            <tag> markdown </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>linux服务器常用配置</title>
       <link href="/uncategorized/notes/linux_server_notes/"/>
       <url>/uncategorized/notes/linux_server_notes/</url>
@@ -375,6 +354,27 @@
             <tag> note </tag>
             
             <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Markdown常用语法</title>
+      <link href="/uncategorized/notes/markdown_notes/"/>
+      <url>/uncategorized/notes/markdown_notes/</url>
+      
+        <content type="html"><![CDATA[<p><a href="http://www.w3chtml.com/html/html-basic-grammar.html">Remark: HTML常用语法</a></p><span id="more"></span><ol><li>插入并调整图片大小</li></ol><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">align</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>center<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fig.png<span class="token punctuation">"</span></span> <span class="token attr-name">width</span> <span class="token attr-value"><span class="token punctuation attr-equals">=</span> <span class="token punctuation">"</span>70%<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><ol start="2"><li>设置页面支持latex公式，在页面头部插入以下内容</li></ol><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/x-mathjax-config<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">        MathJax<span class="token punctuation">.</span>Hub<span class="token punctuation">.</span><span class="token function">Config</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>            <span class="token literal-property property">tex2jax</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>            <span class="token literal-property property">skipTags</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'script'</span><span class="token punctuation">,</span> <span class="token string">'noscript'</span><span class="token punctuation">,</span> <span class="token string">'style'</span><span class="token punctuation">,</span> <span class="token string">'textarea'</span><span class="token punctuation">,</span> <span class="token string">'pre'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>            <span class="token literal-property property">inlineMath</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token punctuation">[</span><span class="token string">'$'</span><span class="token punctuation">,</span><span class="token string">'$'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"\\("</span><span class="token punctuation">,</span><span class="token string">"\\)"</span><span class="token punctuation">]</span> <span class="token punctuation">]</span><span class="token punctuation">,</span>            <span class="token punctuation">&#125;</span>        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ol start="3"><li><p>为文章加入锚点</p><ol><li>markdown的标题行本身自带锚点，直接使用<code>[some_text](#title)</code>即可实现页内跳转，注意，<code>title</code>中不可以包含符号，否则会跳转失败。</li><li>使用<code>&lt;a&gt;</code>标签，注意，包围在标签中的部分，不适用于markdown语法，以及公式语句。</li></ol></li></ol><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token comment">&lt;!-- HTML方法 --></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tag<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> 添加锚点 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#tag<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> 链接锚点 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token comment">&lt;!-- markdown方法 --></span><span class="token url">[<span class="token content">链接锚点</span>](<span class="token url">#tag</span>)</span><span class="token url">[<span class="token content">链接到另一个文章的锚点</span>](<span class="token url">other_file.md#tag</span>)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> note </tag>
+            
+            <tag> markdown </tag>
             
         </tags>
       
@@ -412,9 +412,9 @@
       
         <tags>
             
-            <tag> survey </tag>
-            
             <tag> paper list </tag>
+            
+            <tag> survey </tag>
             
             <tag> causal discovery </tag>
             
@@ -458,9 +458,9 @@
             
             <tag> note </tag>
             
-            <tag> survey </tag>
-            
             <tag> paper list </tag>
+            
+            <tag> survey </tag>
             
             <tag> causal discovery </tag>
             
@@ -582,13 +582,13 @@
       
         <tags>
             
+            <tag> paper list </tag>
+            
             <tag> survey </tag>
             
             <tag> Quasi-periodic </tag>
             
             <tag> time series </tag>
-            
-            <tag> paper list </tag>
             
         </tags>
       
@@ -748,9 +748,9 @@
       
         <tags>
             
-            <tag> survey </tag>
-            
             <tag> paper list </tag>
+            
+            <tag> survey </tag>
             
             <tag> interpretability </tag>
             
@@ -771,9 +771,9 @@
       
         <tags>
             
-            <tag> survey </tag>
-            
             <tag> paper list </tag>
+            
+            <tag> survey </tag>
             
             <tag> interpretability </tag>
             
@@ -979,9 +979,9 @@
       
         <tags>
             
-            <tag> survey </tag>
-            
             <tag> paper list </tag>
+            
+            <tag> survey </tag>
             
             <tag> covid19 </tag>
             
@@ -1021,11 +1021,11 @@
       
         <tags>
             
+            <tag> paper list </tag>
+            
             <tag> survey </tag>
             
             <tag> time series </tag>
-            
-            <tag> paper list </tag>
             
             <tag> similarity learning </tag>
             
@@ -1158,31 +1158,6 @@
     
     
     <entry>
-      <title>Deep leanring or machine learning on time series with missing value</title>
-      <link href="/uncategorized/surveys/missvalue/"/>
-      <url>/uncategorized/surveys/missvalue/</url>
-      
-        <content type="html"><![CDATA[<p>近年来一些顶会文章或者是比较重要的文章，并列出与我的工作的异同点（NIPS20的投稿）</p><span id="more"></span><hr><ul><li><p>Recurrent Neural Networks for Multivariate Time Series with Missing Values</p><p>Che, Z., Purushotham, S., Cho, K., Sontag, D., &amp; Liu, Y. <em>(2018)</em>.<br>Recurrent neural networks for multivariate time series with missing values. <strong>Scientific reports</strong>, 8(1), 1-12. cite:550</p><p><strong>异：</strong></p><ol><li><p>利用历史值、预测缺失位置的值。预测值 = beta*上一个可观测值 + (1-beta)*历史均值，其中beta是一个可学习的参数。</p></li><li><p>没有利用到时间序列的动态信息（dynamic）。</p></li></ol><p><strong>同：</strong></p><ol><li>直接将处理缺失值的操作与后续的任务结合起来，即，并不是一个单独做缺失值填充的工作，而是建立一个用于分类与回归的网络，该网络能处理缺失值</li></ol></li></ul><hr><ul><li><p>BRITS: Bidirectional Recurrent Imputation for Time Series </p><p>NIPS 2018</p><p><strong>异：</strong></p><ol><li>利用历史值，预测缺失位置的值。预测值 = f(历史观测值)，对时间序列的性质不做任何假设，其中f是可学习的非线性映射。<ol><li>t时刻存在一个观测值的时候，直接将观测xt值用于后续任务，并对xt基于历史数据做一个预测，该预测用于监督缺失值的填充。</li><li>t时刻是缺失值的时候，网络直接基于历史值做预测x^t，并将该预测值用于后续任务。</li></ol></li></ol><p><strong>同：</strong></p><ol><li>直接将处理缺失值的操作与后续的任务结合起来（同上）。</li><li>在填充（或后续任务）的时候，考虑到了时间序列的动态信息（dynamic）。</li></ol></li></ul><hr><ul><li><p>Multivariate Time Series Imputation with Generative Adversarial Networks </p><p>NIPS 2018</p><p><strong>异：</strong></p><ol><li>从任务的角度出发，不是一个端到端的模型。例如：对于一个预测问题，需要先训练一个网络用于数据补全，再训练一个预测网络用于预测。</li><li>模型总的架构是一个GAN，其中G与D都是由GRUI在组成的（GRUI可以接收有缺失值的时间序列与一个标志着delay的变量，<br>并根据历史值输出对缺失位置进行补全）。<ul><li>G: 在一个正态分布中采集一个噪声向量z，然后送入G，输出的是一个完整的序列，G的架构应当是一个RNN</li><li>D: 使用网络将完整与非完整的序列压缩到隐空间，并判断其相似度</li></ul></li></ol><p><strong>同：</strong></p><ol><li>在填充（或后续任务）的时候，考虑到了时间序列的动态信息（dynamic）</li></ol></li></ul><hr><ul><li><p>E2GAN: End-to-End Generative Adversarial Network for Multivariate Time Series Imputation (IJCAI 2019)</p><p><strong>异：</strong></p><ol><li>从任务的角度出发，不是一个端到端的模型（同上）。</li><li>模型总的架构是一个GAN，其中G与D都是由GRUI在组成的（GRUI可以接收有缺失值的时间序列与一个标志着delay的变量，<br>并根据历史值输出对缺失位置进行补全）<ul><li>G：先在有缺失值的位置上填充一些噪音，然后送入G，输出的是一个经过补全后的时间序列，G的架构为seq2seq</li><li>D：使用网络将完整与非完整的序列压缩到隐空间，并判断其相似度</li></ul></li></ol><p><strong>同：</strong></p><ol><li>在填充（或后续任务）的时候，考虑到了时间序列的动态信息（dynamic）</li></ol></li></ul><hr><ul><li><p>Temporal Belief Memory: Imputing Missing Data during RNN Training </p><p>IJCAI 2018</p><p><strong>异：</strong></p><ol><li><p>提出了一种单元叫做TBM，TBM用于接收带有缺失值的序列，并对缺失位置进行填充。TBM是连接在LSTM cell之前的，<br>在有缺失值的时候，将TBM的输出送入LSTM，在没有缺失值的时候，将原始的时间序列送入LSTM</p></li><li><p>TBM中有两种门：missing gate(指示某个时刻是否存在缺失值), belief gate（指示是否使用上一时刻的值作为填充，<br>但是使用当前时刻的其他feature的均值作为填充）。</p><ol><li>当有一个观测值的时候，missing gate = 0，观测值直接进入LSTM</li><li>当没观测值的时候，missing gate = 1, 此时belief gate进行估算，指示是否让神经元放电(生物学的角度)<ol><li>神经元不放电：belief gate = 0，向LSTM输入上一时刻的值</li><li>神经元放电：belief gate = 1, 将当前时刻的其他feature的均值送入LSTM</li></ol></li></ol></li><li><p>BM在计算填充值的时候，没有使用时间序列的动态信息（dynamic），仅单纯使用了上一时刻的值/当前时刻的其他feature的均值作为填充.</p></li><li><p>他在选择填充策略的时候（选择向LSTM输入上一时刻的值 或将当前时刻的其他feature的均值送入LSTM），<br>仅考虑了空缺时刻与上一次观测值之间的差值，并没有考虑任何的历史数据与时间序列动态.</p></li></ol><p><strong>同：</strong></p><ol><li>直接将处理缺失值的操作与后续的任务结合起来.</li></ol></li></ul>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> survey </tag>
-            
-            <tag> time series </tag>
-            
-            <tag> paper list </tag>
-            
-            <tag> missing value </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Deep leanring or machine learning on time series with mixed sampling rate</title>
       <link href="/uncategorized/surveys/mixrate/"/>
       <url>/uncategorized/surveys/mixrate/</url>
@@ -1193,13 +1168,38 @@
       
         <tags>
             
+            <tag> paper list </tag>
+            
             <tag> survey </tag>
             
             <tag> time series </tag>
             
+            <tag> mixed sampling rate </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Deep leanring or machine learning on time series with missing value</title>
+      <link href="/uncategorized/surveys/missvalue/"/>
+      <url>/uncategorized/surveys/missvalue/</url>
+      
+        <content type="html"><![CDATA[<p>近年来一些顶会文章或者是比较重要的文章，并列出与我的工作的异同点（NIPS20的投稿）</p><span id="more"></span><hr><ul><li><p>Recurrent Neural Networks for Multivariate Time Series with Missing Values</p><p>Che, Z., Purushotham, S., Cho, K., Sontag, D., &amp; Liu, Y. <em>(2018)</em>.<br>Recurrent neural networks for multivariate time series with missing values. <strong>Scientific reports</strong>, 8(1), 1-12. cite:550</p><p><strong>异：</strong></p><ol><li><p>利用历史值、预测缺失位置的值。预测值 = beta*上一个可观测值 + (1-beta)*历史均值，其中beta是一个可学习的参数。</p></li><li><p>没有利用到时间序列的动态信息（dynamic）。</p></li></ol><p><strong>同：</strong></p><ol><li>直接将处理缺失值的操作与后续的任务结合起来，即，并不是一个单独做缺失值填充的工作，而是建立一个用于分类与回归的网络，该网络能处理缺失值</li></ol></li></ul><hr><ul><li><p>BRITS: Bidirectional Recurrent Imputation for Time Series </p><p>NIPS 2018</p><p><strong>异：</strong></p><ol><li>利用历史值，预测缺失位置的值。预测值 = f(历史观测值)，对时间序列的性质不做任何假设，其中f是可学习的非线性映射。<ol><li>t时刻存在一个观测值的时候，直接将观测xt值用于后续任务，并对xt基于历史数据做一个预测，该预测用于监督缺失值的填充。</li><li>t时刻是缺失值的时候，网络直接基于历史值做预测x^t，并将该预测值用于后续任务。</li></ol></li></ol><p><strong>同：</strong></p><ol><li>直接将处理缺失值的操作与后续的任务结合起来（同上）。</li><li>在填充（或后续任务）的时候，考虑到了时间序列的动态信息（dynamic）。</li></ol></li></ul><hr><ul><li><p>Multivariate Time Series Imputation with Generative Adversarial Networks </p><p>NIPS 2018</p><p><strong>异：</strong></p><ol><li>从任务的角度出发，不是一个端到端的模型。例如：对于一个预测问题，需要先训练一个网络用于数据补全，再训练一个预测网络用于预测。</li><li>模型总的架构是一个GAN，其中G与D都是由GRUI在组成的（GRUI可以接收有缺失值的时间序列与一个标志着delay的变量，<br>并根据历史值输出对缺失位置进行补全）。<ul><li>G: 在一个正态分布中采集一个噪声向量z，然后送入G，输出的是一个完整的序列，G的架构应当是一个RNN</li><li>D: 使用网络将完整与非完整的序列压缩到隐空间，并判断其相似度</li></ul></li></ol><p><strong>同：</strong></p><ol><li>在填充（或后续任务）的时候，考虑到了时间序列的动态信息（dynamic）</li></ol></li></ul><hr><ul><li><p>E2GAN: End-to-End Generative Adversarial Network for Multivariate Time Series Imputation (IJCAI 2019)</p><p><strong>异：</strong></p><ol><li>从任务的角度出发，不是一个端到端的模型（同上）。</li><li>模型总的架构是一个GAN，其中G与D都是由GRUI在组成的（GRUI可以接收有缺失值的时间序列与一个标志着delay的变量，<br>并根据历史值输出对缺失位置进行补全）<ul><li>G：先在有缺失值的位置上填充一些噪音，然后送入G，输出的是一个经过补全后的时间序列，G的架构为seq2seq</li><li>D：使用网络将完整与非完整的序列压缩到隐空间，并判断其相似度</li></ul></li></ol><p><strong>同：</strong></p><ol><li>在填充（或后续任务）的时候，考虑到了时间序列的动态信息（dynamic）</li></ol></li></ul><hr><ul><li><p>Temporal Belief Memory: Imputing Missing Data during RNN Training </p><p>IJCAI 2018</p><p><strong>异：</strong></p><ol><li><p>提出了一种单元叫做TBM，TBM用于接收带有缺失值的序列，并对缺失位置进行填充。TBM是连接在LSTM cell之前的，<br>在有缺失值的时候，将TBM的输出送入LSTM，在没有缺失值的时候，将原始的时间序列送入LSTM</p></li><li><p>TBM中有两种门：missing gate(指示某个时刻是否存在缺失值), belief gate（指示是否使用上一时刻的值作为填充，<br>但是使用当前时刻的其他feature的均值作为填充）。</p><ol><li>当有一个观测值的时候，missing gate = 0，观测值直接进入LSTM</li><li>当没观测值的时候，missing gate = 1, 此时belief gate进行估算，指示是否让神经元放电(生物学的角度)<ol><li>神经元不放电：belief gate = 0，向LSTM输入上一时刻的值</li><li>神经元放电：belief gate = 1, 将当前时刻的其他feature的均值送入LSTM</li></ol></li></ol></li><li><p>BM在计算填充值的时候，没有使用时间序列的动态信息（dynamic），仅单纯使用了上一时刻的值/当前时刻的其他feature的均值作为填充.</p></li><li><p>他在选择填充策略的时候（选择向LSTM输入上一时刻的值 或将当前时刻的其他feature的均值送入LSTM），<br>仅考虑了空缺时刻与上一次观测值之间的差值，并没有考虑任何的历史数据与时间序列动态.</p></li></ol><p><strong>同：</strong></p><ol><li>直接将处理缺失值的操作与后续的任务结合起来.</li></ol></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
             <tag> paper list </tag>
             
-            <tag> mixed sampling rate </tag>
+            <tag> survey </tag>
+            
+            <tag> time series </tag>
+            
+            <tag> missing value </tag>
             
         </tags>
       
@@ -1218,9 +1218,9 @@
       
         <tags>
             
-            <tag> survey </tag>
-            
             <tag> paper list </tag>
+            
+            <tag> survey </tag>
             
             <tag> data augmentation </tag>
             
