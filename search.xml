@@ -343,27 +343,6 @@
     
     
     <entry>
-      <title>Markdown常用语法</title>
-      <link href="/uncategorized/notes/markdown_notes/"/>
-      <url>/uncategorized/notes/markdown_notes/</url>
-      
-        <content type="html"><![CDATA[<p><a href="http://www.w3chtml.com/html/html-basic-grammar.html">Remark: HTML常用语法</a></p><span id="more"></span><ol><li>插入并调整图片大小</li></ol><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">align</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>center<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fig.png<span class="token punctuation">"</span></span> <span class="token attr-name">width</span> <span class="token attr-value"><span class="token punctuation attr-equals">=</span> <span class="token punctuation">"</span>70%<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><ol start="2"><li>设置页面支持latex公式，在页面头部插入以下内容</li></ol><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/x-mathjax-config<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">        MathJax<span class="token punctuation">.</span>Hub<span class="token punctuation">.</span><span class="token function">Config</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>            <span class="token literal-property property">tex2jax</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>            <span class="token literal-property property">skipTags</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'script'</span><span class="token punctuation">,</span> <span class="token string">'noscript'</span><span class="token punctuation">,</span> <span class="token string">'style'</span><span class="token punctuation">,</span> <span class="token string">'textarea'</span><span class="token punctuation">,</span> <span class="token string">'pre'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>            <span class="token literal-property property">inlineMath</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token punctuation">[</span><span class="token string">'$'</span><span class="token punctuation">,</span><span class="token string">'$'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"\\("</span><span class="token punctuation">,</span><span class="token string">"\\)"</span><span class="token punctuation">]</span> <span class="token punctuation">]</span><span class="token punctuation">,</span>            <span class="token punctuation">&#125;</span>        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ol start="3"><li><p>为文章加入锚点</p><ol><li>markdown的标题行本身自带锚点，直接使用<code>[some_text](#title)</code>即可实现页内跳转，注意，<code>title</code>中不可以包含符号，否则会跳转失败。</li><li>使用<code>&lt;a&gt;</code>标签，注意，包围在标签中的部分，不适用于markdown语法，以及公式语句。</li></ol></li></ol><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token comment">&lt;!-- HTML方法 --></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tag<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> 添加锚点 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#tag<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> 链接锚点 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token comment">&lt;!-- markdown方法 --></span><span class="token url">[<span class="token content">链接锚点</span>](<span class="token url">#tag</span>)</span><span class="token url">[<span class="token content">链接到另一个文章的锚点</span>](<span class="token url">other_file.md#tag</span>)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> note </tag>
-            
-            <tag> markdown </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>linux服务器常用配置</title>
       <link href="/uncategorized/notes/linux_server_notes/"/>
       <url>/uncategorized/notes/linux_server_notes/</url>
@@ -377,6 +356,27 @@
             <tag> note </tag>
             
             <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Markdown常用语法</title>
+      <link href="/uncategorized/notes/markdown_notes/"/>
+      <url>/uncategorized/notes/markdown_notes/</url>
+      
+        <content type="html"><![CDATA[<p><a href="http://www.w3chtml.com/html/html-basic-grammar.html">Remark: HTML常用语法</a></p><span id="more"></span><ol><li>插入并调整图片大小</li></ol><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">align</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>center<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fig.png<span class="token punctuation">"</span></span> <span class="token attr-name">width</span> <span class="token attr-value"><span class="token punctuation attr-equals">=</span> <span class="token punctuation">"</span>70%<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><ol start="2"><li>设置页面支持latex公式，在页面头部插入以下内容</li></ol><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/x-mathjax-config<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">        MathJax<span class="token punctuation">.</span>Hub<span class="token punctuation">.</span><span class="token function">Config</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>            <span class="token literal-property property">tex2jax</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>            <span class="token literal-property property">skipTags</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'script'</span><span class="token punctuation">,</span> <span class="token string">'noscript'</span><span class="token punctuation">,</span> <span class="token string">'style'</span><span class="token punctuation">,</span> <span class="token string">'textarea'</span><span class="token punctuation">,</span> <span class="token string">'pre'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>            <span class="token literal-property property">inlineMath</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token punctuation">[</span><span class="token string">'$'</span><span class="token punctuation">,</span><span class="token string">'$'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"\\("</span><span class="token punctuation">,</span><span class="token string">"\\)"</span><span class="token punctuation">]</span> <span class="token punctuation">]</span><span class="token punctuation">,</span>            <span class="token punctuation">&#125;</span>        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ol start="3"><li><p>为文章加入锚点</p><ol><li>markdown的标题行本身自带锚点，直接使用<code>[some_text](#title)</code>即可实现页内跳转，注意，<code>title</code>中不可以包含符号，否则会跳转失败。</li><li>使用<code>&lt;a&gt;</code>标签，注意，包围在标签中的部分，不适用于markdown语法，以及公式语句。</li></ol></li></ol><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token comment">&lt;!-- HTML方法 --></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tag<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> 添加锚点 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#tag<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> 链接锚点 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token comment">&lt;!-- markdown方法 --></span><span class="token url">[<span class="token content">链接锚点</span>](<span class="token url">#tag</span>)</span><span class="token url">[<span class="token content">链接到另一个文章的锚点</span>](<span class="token url">other_file.md#tag</span>)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> note </tag>
+            
+            <tag> markdown </tag>
             
         </tags>
       
@@ -458,8 +458,6 @@
       
         <tags>
             
-            <tag> note </tag>
-            
             <tag> paper list </tag>
             
             <tag> survey </tag>
@@ -469,6 +467,8 @@
             <tag> structural causal model </tag>
             
             <tag> toolbox </tag>
+            
+            <tag> note </tag>
             
         </tags>
       
@@ -525,9 +525,9 @@
       
         <tags>
             
-            <tag> note </tag>
-            
             <tag> AIOps </tag>
+            
+            <tag> note </tag>
             
         </tags>
       
@@ -647,9 +647,9 @@
       
         <tags>
             
-            <tag> AIOps </tag>
-            
             <tag> survey </tag>
+            
+            <tag> AIOps </tag>
             
             <tag> micro-service </tag>
             
