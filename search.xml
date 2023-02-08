@@ -343,27 +343,6 @@
     
     
     <entry>
-      <title>linux服务器常用配置</title>
-      <link href="/uncategorized/notes/linux_server_notes/"/>
-      <url>/uncategorized/notes/linux_server_notes/</url>
-      
-        <content type="html"><![CDATA[<p>仅记录不常用的命令，可能会不全哦👐🏻</p><span id="more"></span><ol><li>服务器<code>conda</code>切换北外镜像源</li></ol><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ conda config <span class="token parameter variable">--add</span> channels https://mirrors.bfsu.edu.cn/anaconda/pkgs/free/ $ conda config <span class="token parameter variable">--add</span> channels https://mirrors.bfsu.edu.cn/anaconda/pkgs/main/ $ conda config <span class="token parameter variable">--add</span> channels https://mirrors.bfsu.edu.cn/anaconda/cloud/conda-forge $ conda config <span class="token parameter variable">--add</span> channels https://mirrors.bfsu.edu.cn/anaconda/cloud/msys2/$ conda config <span class="token parameter variable">--set</span> show_channel_urls <span class="token function">yes</span> $ conda config <span class="token parameter variable">--add</span> channels https://mirrors.bfsu.edu.cn/anaconda/cloud/pytorch/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ol start="2"><li><p><code>kill -STOP 1234</code> 将进程暂停，如果要让它恢复到后台，用<code>kill -CONT 1234</code>。<a href="https://www.cnblogs.com/kexinxin/p/9939119.html">ref1</a>, <a href="https://www.jianshu.com/p/d4190447736e">ref2</a> </p></li><li><p>linux解压、安装rar文件</p></li></ol><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">wget</span> http://rarsoft.com/rar/rarlinux-x64-5.5.0.tar.gz$ <span class="token function">sudo</span> <span class="token function">tar</span> <span class="token parameter variable">-zxvf</span> rarlinux-x64-5.5.0.tar.gz<span class="token comment"># 编译</span>$ <span class="token builtin class-name">cd</span> <span class="token function">rar</span>$ <span class="token function">sudo</span> <span class="token function">make</span><span class="token comment"># 测试</span>$ <span class="token function">rar</span><span class="token comment"># 解压, 按压缩包内的文件结构解压</span>$ <span class="token function">rar</span> x <span class="token operator">&lt;</span>file_path<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ol start="4"><li>查看目录的文件大小使用<code>du -h &lt;dir_path&gt;</code>，<code>-h</code>代表human，将输出人类易读的文件单位（MB/GB/…）</li></ol>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> note </tag>
-            
-            <tag> linux </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Markdown常用语法</title>
       <link href="/uncategorized/notes/markdown_notes/"/>
       <url>/uncategorized/notes/markdown_notes/</url>
@@ -377,6 +356,27 @@
             <tag> note </tag>
             
             <tag> markdown </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>linux服务器常用配置</title>
+      <link href="/uncategorized/notes/linux_server_notes/"/>
+      <url>/uncategorized/notes/linux_server_notes/</url>
+      
+        <content type="html"><![CDATA[<p>仅记录不常用的命令，可能会不全哦👐🏻</p><span id="more"></span><ol><li>服务器<code>conda</code>切换北外镜像源</li></ol><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ conda config <span class="token parameter variable">--add</span> channels https://mirrors.bfsu.edu.cn/anaconda/pkgs/free/ $ conda config <span class="token parameter variable">--add</span> channels https://mirrors.bfsu.edu.cn/anaconda/pkgs/main/ $ conda config <span class="token parameter variable">--add</span> channels https://mirrors.bfsu.edu.cn/anaconda/cloud/conda-forge $ conda config <span class="token parameter variable">--add</span> channels https://mirrors.bfsu.edu.cn/anaconda/cloud/msys2/$ conda config <span class="token parameter variable">--set</span> show_channel_urls <span class="token function">yes</span> $ conda config <span class="token parameter variable">--add</span> channels https://mirrors.bfsu.edu.cn/anaconda/cloud/pytorch/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ol start="2"><li><p><code>kill -STOP 1234</code> 将进程暂停，如果要让它恢复到后台，用<code>kill -CONT 1234</code>。<a href="https://www.cnblogs.com/kexinxin/p/9939119.html">ref1</a>, <a href="https://www.jianshu.com/p/d4190447736e">ref2</a> </p></li><li><p>linux解压、安装rar文件</p></li></ol><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">wget</span> http://rarsoft.com/rar/rarlinux-x64-5.5.0.tar.gz$ <span class="token function">sudo</span> <span class="token function">tar</span> <span class="token parameter variable">-zxvf</span> rarlinux-x64-5.5.0.tar.gz<span class="token comment"># 编译</span>$ <span class="token builtin class-name">cd</span> <span class="token function">rar</span>$ <span class="token function">sudo</span> <span class="token function">make</span><span class="token comment"># 测试</span>$ <span class="token function">rar</span><span class="token comment"># 解压, 按压缩包内的文件结构解压</span>$ <span class="token function">rar</span> x <span class="token operator">&lt;</span>file_path<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ol start="4"><li>查看目录的文件大小使用<code>du -h &lt;dir_path&gt;</code>，<code>-h</code>代表human，将输出人类易读的文件单位（MB/GB/…）</li></ol>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> note </tag>
+            
+            <tag> linux </tag>
             
         </tags>
       
@@ -414,9 +414,9 @@
       
         <tags>
             
-            <tag> paper list </tag>
-            
             <tag> survey </tag>
+            
+            <tag> paper list </tag>
             
             <tag> causal discovery </tag>
             
@@ -458,17 +458,17 @@
       
         <tags>
             
-            <tag> note </tag>
+            <tag> survey </tag>
             
             <tag> paper list </tag>
-            
-            <tag> survey </tag>
             
             <tag> causal discovery </tag>
             
             <tag> structural causal model </tag>
             
             <tag> toolbox </tag>
+            
+            <tag> note </tag>
             
         </tags>
       
@@ -584,13 +584,13 @@
       
         <tags>
             
-            <tag> paper list </tag>
-            
             <tag> survey </tag>
             
             <tag> Quasi-periodic </tag>
             
             <tag> time series </tag>
+            
+            <tag> paper list </tag>
             
         </tags>
       
@@ -647,15 +647,15 @@
       
         <tags>
             
-            <tag> AIOps </tag>
-            
             <tag> survey </tag>
             
-            <tag> dataset </tag>
+            <tag> AIOps </tag>
             
             <tag> micro-service </tag>
             
             <tag> cloud native </tag>
+            
+            <tag> dataset </tag>
             
         </tags>
       
@@ -750,9 +750,9 @@
       
         <tags>
             
-            <tag> paper list </tag>
-            
             <tag> survey </tag>
+            
+            <tag> paper list </tag>
             
             <tag> interpretability </tag>
             
@@ -773,9 +773,9 @@
       
         <tags>
             
-            <tag> paper list </tag>
-            
             <tag> survey </tag>
+            
+            <tag> paper list </tag>
             
             <tag> interpretability </tag>
             
@@ -981,9 +981,9 @@
       
         <tags>
             
-            <tag> paper list </tag>
-            
             <tag> survey </tag>
+            
+            <tag> paper list </tag>
             
             <tag> covid19 </tag>
             
@@ -1023,11 +1023,11 @@
       
         <tags>
             
-            <tag> paper list </tag>
-            
             <tag> survey </tag>
             
             <tag> time series </tag>
+            
+            <tag> paper list </tag>
             
             <tag> similarity learning </tag>
             
@@ -1160,31 +1160,6 @@
     
     
     <entry>
-      <title>Deep leanring or machine learning on time series with mixed sampling rate</title>
-      <link href="/uncategorized/surveys/mixrate/"/>
-      <url>/uncategorized/surveys/mixrate/</url>
-      
-        <content type="html"><![CDATA[<ul><li><p>Autoregressive Convolutional Neural Networks for Asynchronous Time Series: <strong>ICML 2019</strong></p><p><strong>异：</strong></p><ol><li>处理的是多维时间序列数据</li><li>针对非同步数据，并未和我们一样，训练一个能够用于多种采样率的模型，而是将[多维时间序列，序列指示剂，采样间隔]合并成为多维时间序列，然后输入到网络中</li><li>使用类似自回归模型的算法，对时间序列模型进行预测</li><li>使用cnn进行序列学习</li></ol><p><strong>同：</strong></p><ol><li>没什么相同的</li></ol></li></ul><span id="more"></span><hr><ul><li><p>Hierarchical Deep Generative Models for Multi-Rate Multivariate Time Series: <strong>ICML 2018</strong></p><p><strong>异：</strong></p><ol><li>针对L种不同采样率的数据，并未和我们一样，训练一个能够用于多种采样率的模型，而是：</li><li>用RNN将不同采样率的时间序列中的每一个值，embedding到隐空间，h</li><li>基于深度马尔科夫模型，建模上述隐空间变量的生成模型</li><li>利用Auxiliary connections，提取不同采样率的时间序列的长程/短程记忆，即序列间的关系</li><li>该工作基于一种生成模型，通过模拟数据的生成过程，来建模若采样率数据之间的关系</li><li>针对非同步数据，并未和我们一样，训练一个能够用于多种采样率的模型</li></ol><p><strong>异：</strong></p><ol><li>都设置了某种机制，用于分别提取了时间序列中的long/short term dependency，该文章使用的方法类似于我们所采用的跳连机制</li></ol></li></ul><hr><ul><li><p>INTERPOLATION-PREDICTION NETWORKS FOR IRREGULARLY SAMPLED TIME SERIES: <strong>ICLR 2019</strong></p><p><strong>异：</strong></p><ol><li>对于D种不同采样率的时间序列，先设立一个均匀的参考时间线，然后利用插补网络（ INTERPOLATION NETWORKS ）在上述的参考时间线上进行插补，将不同采样率的时间序列插补成均匀采样的时间序列</li><li>再提取多维时间序列之间的关联关系（建模多维时间序列）</li><li>上一步的输出被送入后续的预测网络中进行进一步的训练（以预测、分类等任务为训练目标）</li><li>针对非同步数据，并未和我们一样，训练一个能够用于多种采样率的模型</li></ol><p><strong>异：</strong></p><ol><li>都设置了某种机制，用于分别提取了时间序列中的long/short term dependency</li></ol></li></ul>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> paper list </tag>
-            
-            <tag> survey </tag>
-            
-            <tag> time series </tag>
-            
-            <tag> mixed sampling rate </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Deep leanring or machine learning on time series with missing value</title>
       <link href="/uncategorized/surveys/missvalue/"/>
       <url>/uncategorized/surveys/missvalue/</url>
@@ -1195,13 +1170,38 @@
       
         <tags>
             
+            <tag> survey </tag>
+            
+            <tag> time series </tag>
+            
             <tag> paper list </tag>
+            
+            <tag> missing value </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Deep leanring or machine learning on time series with mixed sampling rate</title>
+      <link href="/uncategorized/surveys/mixrate/"/>
+      <url>/uncategorized/surveys/mixrate/</url>
+      
+        <content type="html"><![CDATA[<ul><li><p>Autoregressive Convolutional Neural Networks for Asynchronous Time Series: <strong>ICML 2019</strong></p><p><strong>异：</strong></p><ol><li>处理的是多维时间序列数据</li><li>针对非同步数据，并未和我们一样，训练一个能够用于多种采样率的模型，而是将[多维时间序列，序列指示剂，采样间隔]合并成为多维时间序列，然后输入到网络中</li><li>使用类似自回归模型的算法，对时间序列模型进行预测</li><li>使用cnn进行序列学习</li></ol><p><strong>同：</strong></p><ol><li>没什么相同的</li></ol></li></ul><span id="more"></span><hr><ul><li><p>Hierarchical Deep Generative Models for Multi-Rate Multivariate Time Series: <strong>ICML 2018</strong></p><p><strong>异：</strong></p><ol><li>针对L种不同采样率的数据，并未和我们一样，训练一个能够用于多种采样率的模型，而是：</li><li>用RNN将不同采样率的时间序列中的每一个值，embedding到隐空间，h</li><li>基于深度马尔科夫模型，建模上述隐空间变量的生成模型</li><li>利用Auxiliary connections，提取不同采样率的时间序列的长程/短程记忆，即序列间的关系</li><li>该工作基于一种生成模型，通过模拟数据的生成过程，来建模若采样率数据之间的关系</li><li>针对非同步数据，并未和我们一样，训练一个能够用于多种采样率的模型</li></ol><p><strong>异：</strong></p><ol><li>都设置了某种机制，用于分别提取了时间序列中的long/short term dependency，该文章使用的方法类似于我们所采用的跳连机制</li></ol></li></ul><hr><ul><li><p>INTERPOLATION-PREDICTION NETWORKS FOR IRREGULARLY SAMPLED TIME SERIES: <strong>ICLR 2019</strong></p><p><strong>异：</strong></p><ol><li>对于D种不同采样率的时间序列，先设立一个均匀的参考时间线，然后利用插补网络（ INTERPOLATION NETWORKS ）在上述的参考时间线上进行插补，将不同采样率的时间序列插补成均匀采样的时间序列</li><li>再提取多维时间序列之间的关联关系（建模多维时间序列）</li><li>上一步的输出被送入后续的预测网络中进行进一步的训练（以预测、分类等任务为训练目标）</li><li>针对非同步数据，并未和我们一样，训练一个能够用于多种采样率的模型</li></ol><p><strong>异：</strong></p><ol><li>都设置了某种机制，用于分别提取了时间序列中的long/short term dependency</li></ol></li></ul>]]></content>
+      
+      
+      
+        <tags>
             
             <tag> survey </tag>
             
             <tag> time series </tag>
             
-            <tag> missing value </tag>
+            <tag> paper list </tag>
+            
+            <tag> mixed sampling rate </tag>
             
         </tags>
       
@@ -1220,9 +1220,9 @@
       
         <tags>
             
-            <tag> paper list </tag>
-            
             <tag> survey </tag>
+            
+            <tag> paper list </tag>
             
             <tag> data augmentation </tag>
             
