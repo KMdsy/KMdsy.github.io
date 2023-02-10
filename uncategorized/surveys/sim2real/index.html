@@ -256,7 +256,7 @@ $$</p>
 </li>
 <li><p>$\mathcal{D}_{real}$：真实世界的数据集。</p>
 </li>
-<li><p>$\mathcal{D}<em>{x}$：合成数据集，生成该数据集的分布 $P</em>{\phi}$受控于$\phi$。 </p>
+<li><p>$\mathcal{D}<em>{x}$：合成数据集，生成该数据集的分布 $P</em>{\phi}$ 受控于 $\phi$ 。 </p>
 </li>
 </ul>
 <blockquote>
@@ -282,7 +282,13 @@ $$</p>
 <blockquote>
 <p>Suzuki, T., Hanaoka, S., &amp; Sato, I. (2022). Goldilocks-curriculum Domain Randomization and Fractal Perlin Noise with Application to Sim2Real Pneumonia Lesion Detection. <em>arXiv preprint arXiv:2204.13849</em>.</p>
 </blockquote>
-<p>该工作的内层函数为 $\theta^t={\arg \min }<em>{\theta} \sum</em>{i=1}^t L\left(\theta, S_{\phi^i}\right)$ ，即要求训练一个分类器，该分类器在所有模拟器参数上的平均性能达到最优。外层的优化目标是 $\phi^{t+1}={\arg \max }_{\phi \in \Phi}-\left|V\left(\theta^t, S_\phi\right)-k\right|$ ，这区别于其他工作，是一种curriculum-based method，它通过调整 $k$ 来获得对对给定的模型来说具有不同难度的任务，该方法试图找到一个sweet point，在该点上，模型可以最有效的进行学习（原文：Goldilocks principle suggests that there might be a <strong>sweet spot</strong> of task difficulty that <strong>is effective to successfully progress the training</strong> of the current model）。</p>
+<p>该工作的内外层优化目标分别为函数为 </p>
+<p>$$
+\phi^{t+1}=\arg \max_{\phi \in \Phi}-\left|V(\theta^t, S_\phi)-k\right| \\
+\theta^t=\arg \min_{\theta} \sum_{i=1}^t L(\theta, S_{\phi^i})
+$$</p>
+内层：求训练一个分类器，该分类器在所有模拟器参数上的平均性能达到最优。外层：区别于其他工作，是一种curriculum-based method，它通过调整 $k$ 来获得对对给定的模型来说具有不同难度的任务，该方法试图找到一个sweet point，在该点上，模型可以最有效的进行学习（原文：Goldilocks principle suggests that there might be a **sweet spot** of task difficulty that **is effective to successfully progress the training** of the current model）。
+
 <ol start="4">
 <li>基于Cross entropy method (CEM) 和proximal policy optimization (PPO)分别解决上述的外层和内层优化问题<strong>（dockerized code aviliable）</strong></li>
 </ol>
@@ -299,7 +305,7 @@ $$</p>
 </ol>
 <hr>
 <h2 id="4-提及bilevel-formulation但未给出解决方法的工作"><a href="#4-提及bilevel-formulation但未给出解决方法的工作" class="headerlink" title="4. 提及bilevel formulation但未给出解决方法的工作"></a>4. 提及bilevel formulation但未给出解决方法的工作</h2><p>还有一些文献没有提出具体的bilevel优化解决方法，但套用了该概念做了论文陈述，如:</p>
-<p>[1] 仅说明了 $S \sube R $​ 即：the feature space of synthetic dataset must encompass features from the real world data。</p>
+<p>[1] 仅说明了 $S \subseteq R $​ 即：the feature space of synthetic dataset must encompass features from the real world data。</p>
 <p>[1] Shamsuddin, A. F., Ragunathan, K., Abhijith, P., PM, D. R. S., &amp; Sankaran, P. (2022). From synthetic to natural—single natural image dehazing deep networks using synthetic dataset domain randomization. <em>Journal of Visual Communication and Image Representation</em>, <em>89</em>, 103636.</p>
  
             </div>
