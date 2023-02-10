@@ -284,8 +284,10 @@ $$</p>
 </blockquote>
 <p>该工作的内外层优化目标分别为函数为 </p>
 <p>$$
+\begin{array}{c}
 \phi^{t+1}=\arg \max_{\phi \in \Phi}-\left|V(\theta^t, S_\phi)-k\right| \\
 \theta^t=\arg \min_{\theta} \sum_{i=1}^t L(\theta, S_{\phi^i})
+\end{array}
 $$</p>
 内层：求训练一个分类器，该分类器在所有模拟器参数上的平均性能达到最优。外层：区别于其他工作，是一种curriculum-based method，它通过调整 $k$ 来获得对对给定的模型来说具有不同难度的任务，该方法试图找到一个sweet point，在该点上，模型可以最有效的进行学习（原文：Goldilocks principle suggests that there might be a **sweet spot** of task difficulty that **is effective to successfully progress the training** of the current model）。
 
