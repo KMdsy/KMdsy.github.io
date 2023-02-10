@@ -177,7 +177,7 @@
                 2023/02/06 16:10:00 
 
                 <i class="fa fa-pencil"> </i>
-                2023/02/10 18:10:00 
+                2023/02/10 20:10:00 
 
                 <!--
                 <i class="fa fa-folder-open p-1"> </i> 
@@ -195,10 +195,6 @@
                     
                         <a href="../../../tags/sim2real/" class="link-dark text-decoration-none"> 
                             sim2real 
-                        </a>
-                    
-                        <a href="../../../tags/transfer-learning/" class="link-dark text-decoration-none"> 
-                            transfer learning 
                         </a>
                     
                 </span>
@@ -235,16 +231,16 @@
 <p>Dimitropoulos, K., Hatzilygeroudis, I., &amp; Chatzilygeroudis, K. (2022). A brief survey of Sim2Real methods for robot learning. <em>Advances in Service and Industrial Robotics: RAAD 2022</em>, 133-140.</p>
 </blockquote>
 <ol>
-<li><p>Randomizing for Perception：这类方法主要描述了“给定一个简单编程的控制器，创建可以推广到物理世界的感知模型”。这类方法的随机化对象主要是环境因素。</p>
+<li><p><strong>Randomizing for Perception</strong>：这类方法主要描述了“给定一个简单编程的控制器，创建可以推广到物理世界的感知模型”。这类方法的随机化对象主要是环境因素。</p>
 </li>
-<li><p>Randomizing for Control：这类方法主要目标是训练一个灵巧的控制主体，其随机化包括但不限于：关节位置、相机位置、随机干扰物、质量、滚动和旋转摩擦系数、光线、物体摆放位置等。</p>
+<li><p><strong>Randomizing for Control</strong>：这类方法主要目标是训练一个灵巧的控制主体，其随机化包括但不限于：关节位置、相机位置、随机干扰物、质量、滚动和旋转摩擦系数、光线、物体摆放位置等。</p>
 </li>
 </ol>
 <p><strong>tax1.5 Learning with Disturbances (干扰)</strong></p>
 <p>Domain randomization 和 dynamics randomization侧重于在模拟环境中引入扰动，目的是使代理不易受模拟与现实之间不匹配的影响[30]、[38]、[40]。在其他作品中也扩展了相同的概念，其中引入了扰动以获得更鲁棒的代理。例如，在[72]中，作者考虑了嘈杂的奖励。虽然与模拟到真实的迁移没有直接关系，但嘈杂的奖励可以更好地模拟真实世界的代理训练。此外，在我们最近的一些作品中[8]，[73]，我们考虑了影响并行学习的不同代理的环境扰动。当要使用通用策略部署或训练多个真实代理时，这是需要考虑的一个方面。</p>
 <p><strong>tax1.6 Simulation Environments</strong></p>
 <p>sim2real的一个关键方面是<strong>模拟器</strong>的选择。独立于用于有效地将知识转移到真实机器人的技术，模拟器越逼真，预期的结果就越好。文献中使用最广泛的模拟器是 Gazebo [74]、Unity3D 和 PyBullet [75]或 MuJoCo [17]。Gazebo 具有与机器人操作系统 (ROS) 中间件广泛集成的优势，因此可以与真实机器人中存在的部分机器人堆栈一起使用。另一方面，PyBullet 和 MuJoCo 与 DL 和 RL 库以及体育馆环境进行了更广泛的集成。一般来说，Gazebo 适合更复杂的场景，而 PyBullet 和 MuJoCo 提供更快的训练。在以一次性传输的系统识别为目标的情况下，研究人员通常会构建或定制满足特定问题要求和约束的特定模拟[32]、[36]、[41]。</p>
-<h2 id="2-Domain-randomization优化问题表述，及相关工作"><a href="#2-Domain-randomization优化问题表述，及相关工作" class="headerlink" title="2. Domain randomization优化问题表述，及相关工作"></a>2. Domain randomization优化问题表述，及相关工作</h2><p>Domain randomization问题可以表述为以下的双层优化问题，</p>
+<h2 id="2-Domain-randomization优化问题表述"><a href="#2-Domain-randomization优化问题表述" class="headerlink" title="2. Domain randomization优化问题表述"></a>2. Domain randomization优化问题表述</h2><p>Domain randomization问题可以表述为以下的双层优化问题，</p>
 <p>$$
 \begin{array}{rl}
 \min & F(\phi, \theta) = \mathcal{L}(\theta^{*};\mathcal{D}_{real}) \\
@@ -264,15 +260,47 @@ $$</p>
 </li>
 </ul>
 <blockquote>
+<p>🌟 Franceschi, L., Frasconi, P., Salzo, S., Grazzi, R., &amp; Pontil, M. (2018, July). Bilevel programming for hyperparameter optimization and meta-learning. In <em>International Conference on Machine Learning</em> (pp. 1568-1577). PMLR.</p>
 <p>Marez, D., Borden, S., &amp; Nans, L. (2020, May). UAV detection with a dataset augmented by domain randomization. In <em>Geospatial Informatics X</em> (Vol. 11398, pp. 39-50). SPIE.</p>
 </blockquote>
 <h2 id="3-调研：基于bi-level-optimization的样本生成"><a href="#3-调研：基于bi-level-optimization的样本生成" class="headerlink" title="3. 调研：基于bi-level optimization的样本生成"></a>3. 调研：基于bi-level optimization的样本生成</h2><ol>
-<li>基于policy gradients解上述双层优化问题（无代码）</li>
+<li>基于policy gradients (RL, 3说的) 解上述双层优化问题（无代码）</li>
 </ol>
 <blockquote>
 <p>Ruiz, N., Schulter, S., &amp; Chandraker, M. Learning To Simulate. In <em>2019 International Conference on Learning Representations</em>.</p>
 </blockquote>
 <p>本文如第二节，将domain randomization问题表达为双层优化问题后，指出“基于梯度的方法是无法解该问题的（由于对内层问题的苛刻性质限制、数据生成函数受优化目标的影响、数据生成过程本身是不可微的）”，提出使用policy gradients解上述双层优化问题（见Sec. 2.2）。此外文章还讨论了simulator在实际场景下应该建模为一个Bayesian network或更复杂的网络，因为“actual data description (e.g., what objects are rendered in an image) is sampled from a distribution $S$ parametrized by the provided simulation parameters $\rho$ and specific rendering settings $\phi$ (e.g., lighting conditions) are sampled from a distribution $P$ also parameterized by $\psi$ , i.e. $G(x,y|\psi)=\mathcal{R}(S(\rho|\psi),P(\phi|\psi))$”</p>
+<ol start="2">
+<li>用贝叶斯优化来解决外层优化问题【待补充】</li>
+</ol>
+<blockquote>
+<p>Muratore, F., Eilers, C., Gienger, M., &amp; Peters, J. (2021). Data-efficient domain randomization with bayesian optimization. <em>IEEE Robotics and Automation Letters</em>, <em>6</em>(2), 911-918.</p>
+</blockquote>
+<ol start="3">
+<li>引入Goldilocks Principle：在curriculum learning的领域，以一种meaningful的order训练模型对模型学习策略是十分有效的，换言之，在学习过程中有一个学习任务的sweet point，在该点上持续学习，可以最大程度的提升模型性能（大概是这个意思，可能不准）。改工作的formulation不同于上一节。</li>
+</ol>
+<blockquote>
+<p>Suzuki, T., Hanaoka, S., &amp; Sato, I. (2022). Goldilocks-curriculum Domain Randomization and Fractal Perlin Noise with Application to Sim2Real Pneumonia Lesion Detection. <em>arXiv preprint arXiv:2204.13849</em>.</p>
+</blockquote>
+<p>该工作的内层函数为 $\theta^t={\arg \min }<em>{\theta} \sum</em>{i=1}^t L\left(\theta, S_{\phi^i}\right)$ ，即要求训练一个分类器，该分类器在所有模拟器参数上的平均性能达到最优。外层的优化目标是 $\phi^{t+1}={\arg \max }_{\phi \in \Phi}-\left|V\left(\theta^t, S_\phi\right)-k\right|$ ，这区别于其他工作，是一种curriculum-based method，它通过调整 $k$ 来获得对对给定的模型来说具有不同难度的任务，该方法试图找到一个sweet point，在该点上，模型可以最有效的进行学习（原文：Goldilocks principle suggests that there might be a <strong>sweet spot</strong> of task difficulty that <strong>is effective to successfully progress the training</strong> of the current model）。</p>
+<ol start="4">
+<li>基于Cross entropy method (CEM) 和proximal policy optimization (PPO)分别解决上述的外层和内层优化问题<strong>（dockerized code aviliable）</strong></li>
+</ol>
+<blockquote>
+<p>Vuong, Q., Vikram, S., Su, H., Gao, S., &amp; Christensen, H. I. (2019). How to pick the domain randomization parameters for sim-to-real transfer of reinforcement learning policies?. <em>arXiv preprint arXiv:1903.11774</em>.</p>
+</blockquote>
+<p>本文的内层优化问题是一个policy learning问题，本文的中心思想是借助少量优先的真实世界样本来矫正simulator。本文提出基于Cross entropy method (CEM) 和proximal policy optimization (PPO)分别解决上述的外层和内层优化问题，其中CEM作为解domain randomization问题的关键，是一种iterative gradient-free stochastic optimization method。</p>
+<hr>
+<p><strong>待整理的文献</strong></p>
+<ol>
+<li>Raparthy, S. C., Mehta, B., Golemo, F., &amp; Paull, L. (2020). Generating automatic curricula via self-supervised active domain randomization. <em>arXiv preprint arXiv:2002.07911</em>.</li>
+<li>Y. Chebotar et al., “Closing the Sim-to-Real Loop: Adapting Simulation Randomization with Real World Experience,” 2019 International Conference on Robotics and Automation (ICRA), Montreal, QC, Canada, 2019, pp. 8973-8979, doi: 10.1109/ICRA.2019.8793789.</li>
+<li>Muratore, F., Eilers, C., Gienger, M., &amp; Peters, J. (2021). Data-efficient domain randomization with bayesian optimization. <em>IEEE Robotics and Automation Letters</em>, <em>6</em>(2), 911-918.（已经列在上面）</li>
+</ol>
+<hr>
+<h2 id="4-提及bilevel-formulation但未给出解决方法的工作"><a href="#4-提及bilevel-formulation但未给出解决方法的工作" class="headerlink" title="4. 提及bilevel formulation但未给出解决方法的工作"></a>4. 提及bilevel formulation但未给出解决方法的工作</h2><p>还有一些文献没有提出具体的bilevel优化解决方法，但套用了该概念做了论文陈述，如:</p>
+<p>[1] 仅说明了 $S \sube R $​ 即：the feature space of synthetic dataset must encompass features from the real world data。</p>
+<p>[1] Shamsuddin, A. F., Ragunathan, K., Abhijith, P., PM, D. R. S., &amp; Sankaran, P. (2022). From synthetic to natural—single natural image dehazing deep networks using synthetic dataset domain randomization. <em>Journal of Visual Communication and Image Representation</em>, <em>89</em>, 103636.</p>
  
             </div>
         </div>
@@ -307,7 +335,7 @@ $$</p>
              
     
         <div>
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Sim2real-%E5%88%86%E7%B1%BB"><span class="toc-number">1.</span> <span class="toc-text">1. Sim2real 分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Domain-randomization%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98%E8%A1%A8%E8%BF%B0%EF%BC%8C%E5%8F%8A%E7%9B%B8%E5%85%B3%E5%B7%A5%E4%BD%9C"><span class="toc-number">2.</span> <span class="toc-text">2. Domain randomization优化问题表述，及相关工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%B0%83%E7%A0%94%EF%BC%9A%E5%9F%BA%E4%BA%8Ebi-level-optimization%E7%9A%84%E6%A0%B7%E6%9C%AC%E7%94%9F%E6%88%90"><span class="toc-number">3.</span> <span class="toc-text">3. 调研：基于bi-level optimization的样本生成</span></a></li></ol> 
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Sim2real-%E5%88%86%E7%B1%BB"><span class="toc-number">1.</span> <span class="toc-text">1. Sim2real 分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Domain-randomization%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98%E8%A1%A8%E8%BF%B0"><span class="toc-number">2.</span> <span class="toc-text">2. Domain randomization优化问题表述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%B0%83%E7%A0%94%EF%BC%9A%E5%9F%BA%E4%BA%8Ebi-level-optimization%E7%9A%84%E6%A0%B7%E6%9C%AC%E7%94%9F%E6%88%90"><span class="toc-number">3.</span> <span class="toc-text">3. 调研：基于bi-level optimization的样本生成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%8F%90%E5%8F%8Abilevel-formulation%E4%BD%86%E6%9C%AA%E7%BB%99%E5%87%BA%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E7%9A%84%E5%B7%A5%E4%BD%9C"><span class="toc-number">4.</span> <span class="toc-text">4. 提及bilevel formulation但未给出解决方法的工作</span></a></li></ol> 
         </div>
     
  
