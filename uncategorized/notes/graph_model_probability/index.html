@@ -205,7 +205,10 @@
             </div>
 
             <div class="border-bottom pb-2">
-                <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>本文主要梳理建立在概率图模型上的多种概念，及其相关的算法。目前包含的概念/算法如下：</p>
+                <p>本文主要梳理建立在概率图模型上的多种概念，及其相关的算法。</p>
+<span id="more"></span>
+
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p>目前包含的概念/算法如下：</p>
 <p><strong>概念</strong>：</p>
 <ul>
 <li>概率图模型<ul>
@@ -222,9 +225,7 @@
 </ul>
 </li>
 </ul>
-<span id="more"></span>
-
-<h2 id="概率图模型"><a href="#概率图模型" class="headerlink" title="概率图模型"></a>概率图模型</h2><p>概率图模型 (Probabilistic Graphical Model) 是一种表示随机变量之间条件依赖的结构。使用概率图模型的动机在于——利用基于图的表示对多维空间上的概率分布进行编码。对于特定分布中的一组独立性 (independency) ，图结构是这种独立性的<strong>紧凑</strong>表示、或<strong>分解</strong>表示<a href="#graphical_model">[1]</a>。</p>
+<h2 id="1-概率图模型"><a href="#1-概率图模型" class="headerlink" title="1. 概率图模型"></a>1. 概率图模型</h2><p>概率图模型 (Probabilistic Graphical Model) 是一种表示随机变量之间条件依赖的结构。使用概率图模型的动机在于——利用基于图的表示对多维空间上的概率分布进行编码。对于特定分布中的一组独立性 (independency) ，图结构是这种独立性的<strong>紧凑</strong>表示、或<strong>分解</strong>表示<a href="#graphical_model">[1]</a>。</p>
 <p>即：</p>
 <ul>
 <li>对于一个多元的分布，可以通过不同的诱导方式将其表征为图模型。</li>
@@ -244,7 +245,7 @@
 </li>
 <li>因子图 (Factor Graph) </li>
 </ul>
-<h3 id="贝叶斯网络-Bayesian-Model"><a href="#贝叶斯网络-Bayesian-Model" class="headerlink" title="贝叶斯网络 (Bayesian Model)"></a>贝叶斯网络 (Bayesian Model)</h3><p><strong>又名</strong>：Bayes network, Bayes net, belief network, or decision network</p>
+<h3 id="1-1-贝叶斯网络-Bayesian-Model"><a href="#1-1-贝叶斯网络-Bayesian-Model" class="headerlink" title="1.1 贝叶斯网络 (Bayesian Model)"></a>1.1 贝叶斯网络 (Bayesian Model)</h3><p><strong>又名</strong>：Bayes network, Bayes net, belief network, or decision network</p>
 <p><strong>贝叶斯网络</strong>是一种概率图形模型，它通过<strong>有向无环图</strong> (Directed Acyclic Graph) 表示一组变量及其条件依赖关系。</p>
 <p>贝叶斯网络非常适合用于获取已发生的事件并预测几种可能的已知原因中的任何一种是促成因素的可能性。例如，贝叶斯网络可以表示疾病和症状之间的概率关系。给定症状，该网络可用于计算各种疾病存在的概率<a href="#bayesian_model">[2]</a>。</p>
 <p>在形式上，贝叶斯网络是有向无环图，其节点与边的定义如下：</p>
@@ -255,10 +256,10 @@
 <li>未知的参数或者假设</li>
 </ul>
 <p><strong>边</strong>：代表条件依赖，未被连接的节点表示<strong>条件独立</strong>的变量 (两节点之间不存在任意路径) </p>
-<h3 id="马尔可夫随机场-Markov-Random-Field"><a href="#马尔可夫随机场-Markov-Random-Field" class="headerlink" title="马尔可夫随机场 (Markov Random Field)"></a>马尔可夫随机场 (Markov Random Field)</h3><p><strong>又名</strong>：Markov Network</p>
+<h3 id="1-2-马尔可夫随机场-Markov-Random-Field"><a href="#1-2-马尔可夫随机场-Markov-Random-Field" class="headerlink" title="1.2 马尔可夫随机场 (Markov Random Field)"></a>1.2 马尔可夫随机场 (Markov Random Field)</h3><p><strong>又名</strong>：Markov Network</p>
 <p><strong>马尔可夫随机场</strong>是一组具有由无向图描述的，具有<strong>马尔可夫性质</strong>的随机变量。换句话说，如果随机场满足马尔可夫性质，则称其为马尔可夫随机场。</p>
 <p>马尔可夫网络或 MRF 在其依赖关系的表示方面类似于贝叶斯网络；区别在于贝叶斯网络是有向无环的，而马尔可夫网络是<strong>无向</strong>的并且<strong>可能是循环的</strong>。因此，马尔可夫网络可以表示贝叶斯网络不能表示的某些依赖关系 (例如循环依赖关系，cyclic dependencies) ；另一方面，它不能表示贝叶斯网络可以表示的某些依赖关系 (例如诱导依赖关系，induced dependencies) 。马尔可夫随机场的基础图可能是<strong>有限的</strong>或<strong>无限的</strong>。</p>
-<h4 id="相关定义"><a href="#相关定义" class="headerlink" title="相关定义"></a>相关定义</h4><ol>
+<h4 id="1-2-1-定义"><a href="#1-2-1-定义" class="headerlink" title="1.2.1 定义"></a>1.2.1 定义</h4><ol>
 <li><p>马尔可夫性质</p>
 <p> 给定一个无向图$G=(V,E)$，一系列随机变量$X = (X_v)_{v \in V}$，当随机变量满足以下性质时，我们称他们相对于$G$形成了一个马尔可夫随机场。</p>
 <ol>
@@ -271,8 +272,8 @@
 <li><p>随机场：当给图中的每一个变量，都按照某种分布随机赋予相空间 (phase space) 的一个值之后，其构成的全体就叫做随机场。</p>
 </li>
 </ol>
-<h3 id="因子图-Factor-Graph"><a href="#因子图-Factor-Graph" class="headerlink" title="因子图 (Factor Graph)"></a>因子图 (Factor Graph)</h3><p>因子图 (Factor Graph) 是表示函数分解的二分图。在概率论及其应用中，因子图用于表示<strong>概率分布函数的因式分解</strong>，从而实现高效计算，例如通过sum-product 算法计算边缘分布。</p>
-<h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>因子图是一种二部图，用于表示联合概率分布的函数分解，以如下的联合概率为例：</p>
+<h3 id="1-3-因子图-Factor-Graph"><a href="#1-3-因子图-Factor-Graph" class="headerlink" title="1.3 因子图 (Factor Graph)"></a>1.3 因子图 (Factor Graph)</h3><p>因子图 (Factor Graph) 是表示函数分解的二分图。在概率论及其应用中，因子图用于表示<strong>概率分布函数的因式分解</strong>，从而实现高效计算，例如通过sum-product 算法计算边缘分布。</p>
+<h4 id="1-3-1-定义"><a href="#1-3-1-定义" class="headerlink" title="1.3.1 定义"></a>1.3.1 定义</h4><p>因子图是一种二部图，用于表示联合概率分布的函数分解，以如下的联合概率为例：</p>
 <p>$$
 g\left(X_{1}, X_{2}, \ldots, X_{n}\right)=\prod_{j=1}^{m} f_{j}\left(S_{j}\right)
 $$</p>
@@ -366,9 +367,8 @@ $$</p>
 g\left(X_{1}, X_{2}, X_{3}\right)=f_{1}\left(X_{1}\right) f_{2}\left(X_{1}, X_{2}\right) f_{3}\left(X_{1}, X_{2}\right) f_{4}\left(X_{2}, X_{3}\right)
 $$</p>
 
-
-<h4 id="联系"><a href="#联系" class="headerlink" title="联系"></a>联系</h4><p>无论是<strong>有向概率图模型</strong>还是<strong>无向概率图模型</strong>，他们都能使用因子图来描述。因为因子节点 (factor) 理论上可以描述变量之间的任何定义在实数域上的函数关系，还摆脱了probability function的取值必须为$[0,1]$的限制，因此使用因子图表示的概率图模型可以实现高效、统一的计算。</p>
-<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><h3 id="消息传递算法-Massage-Passing-Algorithm"><a href="#消息传递算法-Massage-Passing-Algorithm" class="headerlink" title="消息传递算法 (Massage Passing Algorithm)"></a>消息传递算法 (Massage Passing Algorithm)</h3><p><strong>推断</strong> (inference) 是概率图模型上的一个重要任务，简单来讲就是已知一系列条件概率函数，求每个随机变量的边缘概率。</p>
+<h4 id="1-3-2-联系"><a href="#1-3-2-联系" class="headerlink" title="1.3.2 联系"></a>1.3.2 联系</h4><p>无论是<strong>有向概率图模型</strong>还是<strong>无向概率图模型</strong>，他们都能使用因子图来描述。因为因子节点 (factor) 理论上可以描述变量之间的任何定义在实数域上的函数关系，还摆脱了probability function的取值必须为$[0,1]$的限制，因此使用因子图表示的概率图模型可以实现高效、统一的计算。</p>
+<h2 id="2-算法"><a href="#2-算法" class="headerlink" title="2. 算法"></a>2. 算法</h2><h3 id="2-1-消息传递算法-Massage-Passing-Algorithm"><a href="#2-1-消息传递算法-Massage-Passing-Algorithm" class="headerlink" title="2.1 消息传递算法 (Massage Passing Algorithm)"></a>2.1 消息传递算法 (Massage Passing Algorithm)</h3><p><strong>推断</strong> (inference) 是概率图模型上的一个重要任务，简单来讲就是已知一系列条件概率函数，求每个随机变量的边缘概率。</p>
 <p>直接地，解上述问题可以有两种思路：</p>
 <ol>
 <li>采用解析的方式，利用贝叶斯法则求边缘概率，但这种方法的复杂度随变量规模呈指数增加<a href="#belief_propagation">[3]</a>。</li>
@@ -376,10 +376,10 @@ $$</p>
 </ol>
 <p>后者由于简单的思路与计算复杂度，具有较高的实用性，因此被广泛使用，这类方法被称为消息传递算法。</p>
 <p>关于消息传递，<a target="_blank" rel="noopener" href="https://www.cnblogs.com/ironstark/p/5146818.html">这篇blog</a>做了详细的阐述，可以参考。</p>
-<h4 id="置信传播算法-Belief-propagation"><a href="#置信传播算法-Belief-propagation" class="headerlink" title="置信传播算法 (Belief propagation)"></a>置信传播算法 (Belief propagation)</h4><p><strong>又名</strong>：sum–product message passing</p>
+<h4 id="2-1-1-置信传播算法-Belief-propagation"><a href="#2-1-1-置信传播算法-Belief-propagation" class="headerlink" title="2.1.1 置信传播算法 (Belief propagation)"></a>2.1.1 置信传播算法 (Belief propagation)</h4><p><strong>又名</strong>：sum–product message passing</p>
 <p><strong>置信传播算法</strong> (Belief propagation) ，是一种消息传递算法 (message passing algorithm) ，用于对图模型 (例如贝叶斯网络和马尔可夫随机场) 进行推理。它以任何观察到的节点 (或变量) 为条件，计算每个未观察到的节点 (或变量) 的<strong>边缘分布</strong>。</p>
 <p>BP算法在贝叶斯网络与马尔可夫随机场上都有相关的变体，但由于上述两张图模型都可以使用因子图来描述，因此后文直接叙述BP算法在因子图上的计算方法。</p>
-<h5 id="算法描述"><a href="#算法描述" class="headerlink" title="算法描述"></a>算法描述</h5><p>给定因子图$G=(V, F, E)$，有联合质量函数$p(\mathbf{x})=\prod_{a \in F} f_{a}\left(\mathbf{x}<em>{a}\right)$，其中$\mathbf{x}</em>{a}$是因子节点$a$的所有邻居变量节点所构成的向量。注：联合质量函数 (Joint mass function) 是变量在每个可能的值上取得该值的概率，不同于概率密度函数，概率质量函数是在离散随机变量上定义的，而概率密度函数是在连续随机变量上定义的。</p>
+<h5 id="2-1-1-1-算法描述"><a href="#2-1-1-1-算法描述" class="headerlink" title="2.1.1.1 算法描述"></a>2.1.1.1 算法描述</h5><p>给定因子图$G=(V, F, E)$，有联合质量函数$p(\mathbf{x})=\prod_{a \in F} f_{a}\left(\mathbf{x}<em>{a}\right)$，其中$\mathbf{x}</em>{a}$是因子节点$a$的所有邻居变量节点所构成的向量。注：联合质量函数 (Joint mass function) 是变量在每个可能的值上取得该值的概率，不同于概率密度函数，概率质量函数是在离散随机变量上定义的，而概率密度函数是在连续随机变量上定义的。</p>
 <p>BP算法的原理在于，让被称为消息 (Message) 的实值函数沿着概率图中隐藏节点之间的边进行传递。具体而言包含两种情况，其中$\operatorname{Dom}(v)$表示变量$v$的定义域。</p>
 <ul>
 <li>从变量节点$v$到因子节点$a$的传递，记传递的消息为$\mu_{v \to a}$，$\mu_{v \rightarrow a}: \operatorname{Dom}(v) \rightarrow \mathbb{R}$。</li>
@@ -400,7 +400,7 @@ $$</p>
 </ul>
 <p>由上式可以看出，BP算法将完全边缘化计算 (complete marginalization) 简化为了更简单的项的乘积和，这也是BP算法被称为sum-product message passing或sum-product algorithm的原因。</p>
 <p>在典型的运行情况中，每条消息都将从相邻消息的先前值上迭代更新。可以使用不同的调度策略来更新消息。在图模型是树的情况下，最优调度允许在只计算每条消息一次后达到收敛。当因子图有循环时，这样的最优调度是不存在的，典型的选择是在每次迭代时同时更新所有消息。</p>
-<h5 id="收敛性"><a href="#收敛性" class="headerlink" title="收敛性"></a>收敛性</h5><p>当BP算法收敛时，每个节点的<strong>估计边际分布</strong>与来自相邻因子节点的所有消息的乘积成正比 (下式缺少归一化常数) </p>
+<h5 id="2-1-1-2-收敛性"><a href="#2-1-1-2-收敛性" class="headerlink" title="2.1.1.2 收敛性"></a>2.1.1.2 收敛性</h5><p>当BP算法收敛时，每个节点的<strong>估计边际分布</strong>与来自相邻因子节点的所有消息的乘积成正比 (下式缺少归一化常数) </p>
 <p>$$
 p_{X_{v}}\left(x_{v}\right) \propto \prod_{a \in N(v)} \mu_{a \rightarrow v}\left(x_{v}\right)
 $$</p>
@@ -449,7 +449,7 @@ $$</p>
              
     
         <div>
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">引言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E7%8E%87%E5%9B%BE%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text">概率图模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%BD%91%E7%BB%9C-Bayesian-Model"><span class="toc-number">2.1.</span> <span class="toc-text">贝叶斯网络 (Bayesian Model)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E9%9A%8F%E6%9C%BA%E5%9C%BA-Markov-Random-Field"><span class="toc-number">2.2.</span> <span class="toc-text">马尔可夫随机场 (Markov Random Field)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%A0%E5%AD%90%E5%9B%BE-Factor-Graph"><span class="toc-number">2.3.</span> <span class="toc-text">因子图 (Factor Graph)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B6%88%E6%81%AF%E4%BC%A0%E9%80%92%E7%AE%97%E6%B3%95-Massage-Passing-Algorithm"><span class="toc-number">3.1.</span> <span class="toc-text">消息传递算法 (Massage Passing Algorithm)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">4.</span> <span class="toc-text">Reference</span></a></li></ol> 
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-number">1.</span> <span class="toc-text">目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%A6%82%E7%8E%87%E5%9B%BE%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text">1. 概率图模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%BD%91%E7%BB%9C-Bayesian-Model"><span class="toc-number">2.1.</span> <span class="toc-text">1.1 贝叶斯网络 (Bayesian Model)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E9%9A%8F%E6%9C%BA%E5%9C%BA-Markov-Random-Field"><span class="toc-number">2.2.</span> <span class="toc-text">1.2 马尔可夫随机场 (Markov Random Field)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E5%9B%A0%E5%AD%90%E5%9B%BE-Factor-Graph"><span class="toc-number">2.3.</span> <span class="toc-text">1.3 因子图 (Factor Graph)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%AE%97%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">2. 算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E6%B6%88%E6%81%AF%E4%BC%A0%E9%80%92%E7%AE%97%E6%B3%95-Massage-Passing-Algorithm"><span class="toc-number">3.1.</span> <span class="toc-text">2.1 消息传递算法 (Massage Passing Algorithm)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">4.</span> <span class="toc-text">Reference</span></a></li></ol> 
         </div>
     
  

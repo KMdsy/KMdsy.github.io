@@ -225,14 +225,14 @@
 </ul>
 <span id="more"></span>
 
-<h2 id="因果三阶梯"><a href="#因果三阶梯" class="headerlink" title="因果三阶梯"></a>因果三阶梯</h2><p><strong>Causal discovery(CD)</strong> 包含三个层次 <a href="#ref1">[1]</a>: </p>
+<h2 id="1-因果三阶梯"><a href="#1-因果三阶梯" class="headerlink" title="1. 因果三阶梯"></a>1. 因果三阶梯</h2><p><strong>Causal discovery(CD)</strong> 包含三个层次 <a href="#ref1">[1]</a>: </p>
 <ul>
 <li>关联 <em>Association</em>: A、B相关</li>
 <li>干预 <em>Intervention</em>: 改变A的时候, B如何改变</li>
 <li>反事实 <em>Counterfactuals</em>: 要想改变B, 应该如何改变A</li>
 </ul>
 <p>事实上, 许多CD的方法都仅能做到<strong>前两个阶段</strong>。”反事实”通常是不可实现的, 因为”反事实”要求在与<u>历史完全相同的环境因素</u>下<strong>探究决策对个体的影响</strong>。</p>
-<h2 id="因果的本质、数学表达-与-因果结构学习"><a href="#因果的本质、数学表达-与-因果结构学习" class="headerlink" title="因果的本质、数学表达 与 因果结构学习"></a>因果的本质、数学表达 与 因果结构学习</h2><p>这一节的分析源自下面对三类causal structure learning方法挖掘的因果本质的思考。后文中已经分析得出，三类causal structure learning方法发现的因果都只停留在由“条件依赖”或者“回归”所刻画的“<strong>关联关系</strong>”，而非真正的因果关系，因此本节的主题是</p>
+<h2 id="2-因果的本质、数学表达-与-因果结构学习"><a href="#2-因果的本质、数学表达-与-因果结构学习" class="headerlink" title="2. 因果的本质、数学表达 与 因果结构学习"></a>2. 因果的本质、数学表达 与 因果结构学习</h2><p>这一节的分析源自下面对三类causal structure learning方法挖掘的因果本质的思考。后文中已经分析得出，三类causal structure learning方法发现的因果都只停留在由“条件依赖”或者“回归”所刻画的“<strong>关联关系</strong>”，而非真正的因果关系，因此本节的主题是</p>
 <ul>
 <li>调研casual discovery和causal structure learning之间的区别（这个问题和哲学上的因果定义有关）</li>
 <li>除了DAG表示的因果图外，还有哪些表征因果的模型范式（DAG因果图就是节点代表变量，边代表直接原因的图模型）</li>
@@ -244,7 +244,7 @@
 <li><p>那除了用模型定义的因果，还有哪些定义呢。</p>
 </li>
 </ul>
-<h3 id="因果的本质"><a href="#因果的本质" class="headerlink" title="因果的本质"></a>因果的本质</h3><p>文献<a href="#ref14">[14]</a>从哲学、社会学等层面探究了因果在AI领域的定义，在Section 6.5中提到了一个关键问题：“因果是<strong>确定性</strong>的还是<strong>概率性</strong>的？”，以下是一些结论：自古以来，因果这个概念都<strong>不具备一个统一的定义</strong>。自古以来，因果总是与决定论、物理必然性和逻辑必然性联系在一起（即：<strong>确定性</strong>）。但在现代科学所研究的因果理论几乎都是<strong>概率性</strong>的，即以概率论和统计学论为基础的。但也有部分确定性的表述，这种表述大多源自于工程学，是一种不证自明方法（这里我理解，在工程学里总有“改变A，基于设计原理，B就一定会改变，并且B只受A控制，因此AB是因果关系”的表述，这种工程学上的因果显然是确定性的）。</p>
+<h3 id="2-1-因果的本质"><a href="#2-1-因果的本质" class="headerlink" title="2.1 因果的本质"></a>2.1 因果的本质</h3><p>文献<a href="#ref14">[14]</a>从哲学、社会学等层面探究了因果在AI领域的定义，在Section 6.5中提到了一个关键问题：“因果是<strong>确定性</strong>的还是<strong>概率性</strong>的？”，以下是一些结论：自古以来，因果这个概念都<strong>不具备一个统一的定义</strong>。自古以来，因果总是与决定论、物理必然性和逻辑必然性联系在一起（即：<strong>确定性</strong>）。但在现代科学所研究的因果理论几乎都是<strong>概率性</strong>的，即以概率论和统计学论为基础的。但也有部分确定性的表述，这种表述大多源自于工程学，是一种不证自明方法（这里我理解，在工程学里总有“改变A，基于设计原理，B就一定会改变，并且B只受A控制，因此AB是因果关系”的表述，这种工程学上的因果显然是确定性的）。</p>
 <p>其实，因果在统计学上的定义也并未统一，文献<a href="#ref16">[16]</a>中列出了三种主要的观点，下文说明一种较常见的观点，来自于Good<a href="#ref17">[17]</a>：</p>
 <blockquote>
 <p>事件 $F$ 是事件 $E$ 的原因需要满足：</p>
@@ -276,7 +276,7 @@ $$</p>
 <li>因果在哲学上的定义一般都是确定性的，但在现代科学中，通常被定义为概率性的。之所以被如此定义，一方面是有部分前人的工作也如此定义；另一方面，经典的概率足以模拟人类推理的几乎所有方面<a href="#ref15">[15]</a>。从这个角度上来讲，<strong>概率性因果是对确定性因果的一个更广义的描述</strong>。</li>
 <li>站在概率性因果的角度，因果发现可以被称之为，在数据中发现概率结构的工作（即因素A的概率分布变化时，因素B的概率分布是否变化），其本质都是在拟合一个概率模型。从这个角度来说，<strong>概率模型</strong>也可以用于因果发现。</li>
 </ul>
-<h3 id="因果结构学习"><a href="#因果结构学习" class="headerlink" title="因果结构学习"></a>因果结构学习</h3><p>近三十年来, 因果学习的工作一般聚焦于”因果结构学习(casual structure learning)”, 所得到的<strong>结构因果模型(structural causal model, SCM)</strong> 对因果进行了概率、统计上的定义，并用恰当的模型来描述因果结构。SCM包含两个部分: </p>
+<h3 id="2-2-因果结构学习"><a href="#2-2-因果结构学习" class="headerlink" title="2.2 因果结构学习"></a>2.2 因果结构学习</h3><p>近三十年来, 因果学习的工作一般聚焦于”因果结构学习(casual structure learning)”, 所得到的<strong>结构因果模型(structural causal model, SCM)</strong> 对因果进行了概率、统计上的定义，并用恰当的模型来描述因果结构。SCM包含两个部分: </p>
 <ul>
 <li>Graphical models: 由图模型表示的因果关系, 其中节点表示随机变量, 有向边表示因果方向</li>
 <li>Structural equations: 在图模型中, 有向边上的因果效应, 由函数式表示</li>
@@ -302,7 +302,7 @@ $$</p>
 
 
 
-<h3 id="因果与统计模型的关联与区别"><a href="#因果与统计模型的关联与区别" class="headerlink" title="因果与统计模型的关联与区别"></a>因果与统计模型的关联与区别</h3><p>上文中提到，广义上讲，因果学习的本质是学习一个概率模型（概率模型可以被视为统计模型）。但<strong>概率模型 （或统计模型）与 因果 是两个完全不同的概念</strong>。</p>
+<h3 id="2-3-因果与统计模型的关联与区别"><a href="#2-3-因果与统计模型的关联与区别" class="headerlink" title="2.3 因果与统计模型的关联与区别"></a>2.3 因果与统计模型的关联与区别</h3><p>上文中提到，广义上讲，因果学习的本质是学习一个概率模型（概率模型可以被视为统计模型）。但<strong>概率模型 （或统计模型）与 因果 是两个完全不同的概念</strong>。</p>
 <p>首先，明确一个关系，即：根据因果三阶梯，从上到下分别为“关联”“干预”“反事实”，其中关联是上述两个概念的基础，而干预和反事实才是因果特有的层次。<a href="#ref20">[20]</a>对关联和因果给出了明确的分界线。</p>
 <ul>
 <li>关联：可以用分布函数来定义，例子：相关性、回归、依赖性、条件独立性等</li>
@@ -313,7 +313,7 @@ $$</p>
 <li>举例来说，概率相关的数学语言不允许我们表达“症状不导致疾病”这一简单事实，更不允许我们从这些事实中得出数学结论。我们只能说，两个事件是相互依赖的——这意味着，如果我们找到一个，我们就可以预期遇到另一个，但我们无法<strong>区分统计依赖性</strong>（由条件概率 P 量化的疾病症状）和<strong>因果依赖性</strong>，我们在标准概率演算中没有对此关系的表达式<a href="#ref20">[20]</a>。</li>
 </ul>
 <p>这是我们为因果关系建立一套新的数学表达的动机。</p>
-<h3 id="因果分析中的数学表示"><a href="#因果分析中的数学表示" class="headerlink" title="因果分析中的数学表示"></a>因果分析中的数学表示</h3><p><strong>Structural Causal Models</strong> </p>
+<h3 id="2-4-因果分析中的数学表示"><a href="#2-4-因果分析中的数学表示" class="headerlink" title="2.4 因果分析中的数学表示"></a>2.4 因果分析中的数学表示</h3><p><strong>Structural Causal Models</strong> </p>
 <ul>
 <li><p>Structure Equations：变量-下标形式 / 带 $do$ 操作符的形式：</p>
   <p>$$
@@ -367,7 +367,7 @@ $$</p>
 </ul>
 </li>
 </ul>
-<h3 id="反事实推理"><a href="#反事实推理" class="headerlink" title="反事实推理"></a>反事实推理</h3><p>从上文可以看出，因果区别与一般的统计模型，其中干预和反事实起到了决定性的作用。本节将先区别干预与反事实的区别，然后阐述反事实推理的基本步骤。</p>
+<h3 id="2-5-反事实推理"><a href="#2-5-反事实推理" class="headerlink" title="2.5 反事实推理"></a>2.5 反事实推理</h3><p>从上文可以看出，因果区别与一般的统计模型，其中干预和反事实起到了决定性的作用。本节将先区别干预与反事实的区别，然后阐述反事实推理的基本步骤。</p>
 <p>从目标的角度</p>
 <ul>
 <li>干预：回答“如果<strong>现在</strong>干预变量X，那么对Z会发生什么变化？”</li>
@@ -402,7 +402,7 @@ P N(x, y)=P\left(Y_{x^{\prime}}=y^{\prime} \mid X=x, Y=y\right) \\
 E T T=P\left(Y_x=y \mid X=x^{\prime}\right)
 $$</p>
 
-<h3 id="支撑材料"><a href="#支撑材料" class="headerlink" title="支撑材料"></a>支撑材料</h3><p>“结构学习本质上是一个模型选择问题，选择一个给定数据集上最能够描述数据依赖的模型。因果结构学习是结构学习中的一种特例，其学习了一个因果图”。这个观点是被普遍接受的。</p>
+<h3 id="2-6-支撑材料"><a href="#2-6-支撑材料" class="headerlink" title="2.6 支撑材料"></a>2.6 支撑材料</h3><p>“结构学习本质上是一个模型选择问题，选择一个给定数据集上最能够描述数据依赖的模型。因果结构学习是结构学习中的一种特例，其学习了一个因果图”。这个观点是被普遍接受的。</p>
 <p><strong>Remark</strong>：结构学习的三种方法（基于约束、基于分数、基于函数）本质上都可以细分为通过组合/搜索算法，来识别因果结构 <a href="#ref13">[13]</a></p>
 <blockquote>
 <p><strong>Structure learning is a model selection problem</strong> in which one estimates or learns a graph that best describes the dependence structure in a given data set (Drton &amp; Maathuis 2017). <strong>Causal structure learning is the special case</strong> in which one tries to learn the <strong>causal graph</strong> or certain aspects of it, and this is what we focus on in this article.</p>
@@ -426,7 +426,7 @@ $$</p>
 <li>大数据可能可以帮助我们进行反事实，例如对于一个周期系统，通过足够多周期的观察，我们也许可以找到一个时间点，只有一个原因变量发生变化，而其他所有变量都与历史保持一致，这种场景有利于推断因果反事实。</li>
 </ul>
 <p>此外，对比实验数据（即存在“干预-效果”结构的数据）以及观测数据（即只包含非主动干预以及被动观测的数据），观测数据可以提供更好的统计能力和可推广性 <a href="#ref13">[13]</a>。</p>
-<h2 id="Casual-Structure-Learning"><a href="#Casual-Structure-Learning" class="headerlink" title="Casual Structure Learning"></a>Casual Structure Learning</h2><h3 id="Casual-structure-learning的三类方法"><a href="#Casual-structure-learning的三类方法" class="headerlink" title="Casual structure learning的三类方法"></a>Casual structure learning的三类方法</h3><p>Casual structure learning的经典分类方法可分为三个<strong>主要类别</strong>：constrain-based, score-based, functional casual model <a href="#ref2">[2]</a>，还有一些hybird method，此处不列出。</p>
+<h2 id="3-Casual-Structure-Learning"><a href="#3-Casual-Structure-Learning" class="headerlink" title="3. Casual Structure Learning"></a>3. Casual Structure Learning</h2><h3 id="3-1-Casual-structure-learning的三类方法"><a href="#3-1-Casual-structure-learning的三类方法" class="headerlink" title="3.1 Casual structure learning的三类方法"></a>3.1 Casual structure learning的三类方法</h3><p>Casual structure learning的经典分类方法可分为三个<strong>主要类别</strong>：constrain-based, score-based, functional casual model <a href="#ref2">[2]</a>，还有一些hybird method，此处不列出。</p>
 <p><strong>Remark</strong>：也有文章<a href="#ref13">[13]</a>提出“constraint-based, score-based, those exploiting structural asymmetries, and those exploiting various forms of intervention”的分类方法，这种分类方法比较新，可能对近期（2022）工作有较好的适应性。</p>
 <ul>
 <li><p><strong>Constraint-based methods</strong>: 这类方法依赖随机变量间的<strong>条件独立性测试(conditional independency test)</strong> 探究变量间的因果结构</p>
@@ -487,9 +487,9 @@ $$</p>
 </div>
 
 
-<h3 id="从优化的角度分析三类方法"><a href="#从优化的角度分析三类方法" class="headerlink" title="从优化的角度分析三类方法"></a>从优化的角度分析三类方法</h3><p>为了理解三类Casual structure learning的方法, 这里从优化的角度对三类方法进行阐述。</p>
+<h3 id="3-2-从优化的角度分析三类方法"><a href="#3-2-从优化的角度分析三类方法" class="headerlink" title="3.2 从优化的角度分析三类方法"></a>3.2 从优化的角度分析三类方法</h3><p>为了理解三类Casual structure learning的方法, 这里从优化的角度对三类方法进行阐述。</p>
 <p>首先用$\mathcal{G}$表示$d$个节点所构成的有向图空间。对 $\forall G(\boldsymbol{M}) \in \mathcal{G}$ , 用 $\boldsymbol{M}$ 表示对应的邻接矩阵, 反过来, 用 $G(\boldsymbol{M})$ 表示以 $\boldsymbol{M}$ 为邻接矩阵的有向图。元素 $M_{i,j}=1$ 表示存在因果关系 $\boldsymbol{x}_i \rightarrow \boldsymbol{x}<em>j$ ，$M</em>{i,j}=0$ 表示不存在因果关系。 $\boldsymbol{X}=[\boldsymbol{x}_1, \cdots, \boldsymbol{x}_d] \in \mathbb{R}^{n \times d}$ 表示 $d$ 维的观测数据, 其中每个数据观测 $n$ 次。$\mathbb{D}$ 表示由 $d$ 个节点组成的有向无环图集合。</p>
-<h3 id="Constraint-based-Method"><a href="#Constraint-based-Method" class="headerlink" title="Constraint-based Method"></a>Constraint-based Method</h3><p>基于约束的算法利用 从一系列统计测试中获得的一组条件独立性结果 来恢复因果图。</p>
+<h3 id="3-2-1-Constraint-based-Method"><a href="#3-2-1-Constraint-based-Method" class="headerlink" title="3.2.1 Constraint-based Method"></a>3.2.1 Constraint-based Method</h3><p>基于约束的算法利用 从一系列统计测试中获得的一组条件独立性结果 来恢复因果图。</p>
 <p>当从数据 $\boldsymbol{X}$ 中已经学习到每一对变量间条件独立检验的最小测试统计量，如p-value，因此可以构造出测试统计量矩阵 $\boldsymbol{P}$ ，其中对角线上的元素均为0，元素 $P_{i,j}$ 表示 $\boldsymbol{x}_i , \boldsymbol{x}_j$ 间的条件独立性检验的测试统计量，假设检验的显著性水平为 $\alpha$ 。 $f$ 表示条件独立检验统计量的函数， $Q$ 表示用于评价得到的统计量矩阵与图 $G$ 的拟合程度的函数。</p>
 <p>该类方法的优化问题表述为: </p>
 <p>$$
@@ -508,7 +508,7 @@ Q(\boldsymbol{M}, f(\boldsymbol{P}, \alpha))=\sum_{i, j=1: \mathrm{d}} M_{i, j} 
 $$</p>
 表示从数据中得到的(条件)独立约束在图得到的(条件)独立约束集合中未出现的数量。
 
-<h3 id="Score-based-Method"><a href="#Score-based-Method" class="headerlink" title="Score-based Method"></a>Score-based Method</h3><p>基于得分的算法最大化图 $G$ 与观测数据 $\boldsymbol{X}$ 之间的适应度, 来构建因果结构。该类方法的优化问题表述为: </p>
+<h3 id="3-2-2-Score-based-Method"><a href="#3-2-2-Score-based-Method" class="headerlink" title="3.2.2 Score-based Method"></a>3.2.2 Score-based Method</h3><p>基于得分的算法最大化图 $G$ 与观测数据 $\boldsymbol{X}$ 之间的适应度, 来构建因果结构。该类方法的优化问题表述为: </p>
 <p>$$
 \begin{array}{ll}\max &S\left( \boldsymbol{M} ,\boldsymbol{X} \right)  \\ \text{s.t.} &G\left( \boldsymbol{M} \right)  \in \mathbb{D} \\ \text{var} &\boldsymbol{M} \in \left\{ 0,1\right\}^{d\times d}  \end{array}
 $$</p>
@@ -520,7 +520,7 @@ $$</p>
 $$</p>
 $\boldsymbol{x}_{t,:} \in \mathbb{R}^{1 \times d}$ 表示第 $t$ 个观测样本，$f$ 为生成模型
 
-<h3 id="Functional-Causal-Model"><a href="#Functional-Causal-Model" class="headerlink" title="Functional Causal Model"></a>Functional Causal Model</h3><p>基于FCM的算法假设变量间的因果关系满足函数 $\boldsymbol{x}_j=f(\boldsymbol{x}_i,\boldsymbol{e}<em>j;\boldsymbol{\theta}</em>{i,j})$  , 其中 $\boldsymbol{x}_i, \boldsymbol{x}_j$ 分别为直接原因变量、果变量， $\boldsymbol{e}_j \in \mathbb{R}^{n}$ 表示一些不可测量因素或噪音。 $\boldsymbol{\epsilon}=[\boldsymbol{e}_1, \cdots, \boldsymbol{e}_d]$ ， $\boldsymbol{\theta}$ 为模型参数。下式中用 $L(\cdot)$ 表示用于衡量参数 $\boldsymbol{\theta}$ 的模型的预测值与实际观测的数据 $\boldsymbol{x}_j$ 间的拟合程度的函数。该类方法的优化问题表述为: </p>
+<h3 id="3-2-3-Functional-Causal-Model"><a href="#3-2-3-Functional-Causal-Model" class="headerlink" title="3.2.3 Functional Causal Model"></a>3.2.3 Functional Causal Model</h3><p>基于FCM的算法假设变量间的因果关系满足函数 $\boldsymbol{x}_j=f(\boldsymbol{x}_i,\boldsymbol{e}<em>j;\boldsymbol{\theta}</em>{i,j})$  , 其中 $\boldsymbol{x}_i, \boldsymbol{x}_j$ 分别为直接原因变量、果变量， $\boldsymbol{e}_j \in \mathbb{R}^{n}$ 表示一些不可测量因素或噪音。 $\boldsymbol{\epsilon}=[\boldsymbol{e}_1, \cdots, \boldsymbol{e}_d]$ ， $\boldsymbol{\theta}$ 为模型参数。下式中用 $L(\cdot)$ 表示用于衡量参数 $\boldsymbol{\theta}$ 的模型的预测值与实际观测的数据 $\boldsymbol{x}_j$ 间的拟合程度的函数。该类方法的优化问题表述为: </p>
 <p>$$
 \begin{array}{}
 \min : & \sum_{i, j=1: \mathrm{d}} M_{i, j} \cdot\left(L\left(\boldsymbol{x}_j, f\left(\boldsymbol{x}_i, \theta_{i, j}\right)\right)+Q\left(\boldsymbol{x}_i, \boldsymbol{x}_j-f\left(\boldsymbol{x}_i, \theta_{i, j}\right)\right)\right) \\
@@ -670,7 +670,7 @@ $$</p>
              
     
         <div>
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%A0%E6%9E%9C%E4%B8%89%E9%98%B6%E6%A2%AF"><span class="toc-number">1.</span> <span class="toc-text">因果三阶梯</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%A0%E6%9E%9C%E7%9A%84%E6%9C%AC%E8%B4%A8%E3%80%81%E6%95%B0%E5%AD%A6%E8%A1%A8%E8%BE%BE-%E4%B8%8E-%E5%9B%A0%E6%9E%9C%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0"><span class="toc-number">2.</span> <span class="toc-text">因果的本质、数学表达 与 因果结构学习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%A0%E6%9E%9C%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="toc-number">2.1.</span> <span class="toc-text">因果的本质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%A0%E6%9E%9C%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0"><span class="toc-number">2.2.</span> <span class="toc-text">因果结构学习</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%A0%E6%9E%9C%E4%B8%8E%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%85%B3%E8%81%94%E4%B8%8E%E5%8C%BA%E5%88%AB"><span class="toc-number">2.3.</span> <span class="toc-text">因果与统计模型的关联与区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%A0%E6%9E%9C%E5%88%86%E6%9E%90%E4%B8%AD%E7%9A%84%E6%95%B0%E5%AD%A6%E8%A1%A8%E7%A4%BA"><span class="toc-number">2.4.</span> <span class="toc-text">因果分析中的数学表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E4%BA%8B%E5%AE%9E%E6%8E%A8%E7%90%86"><span class="toc-number">2.5.</span> <span class="toc-text">反事实推理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%AF%E6%92%91%E6%9D%90%E6%96%99"><span class="toc-number">2.6.</span> <span class="toc-text">支撑材料</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Casual-Structure-Learning"><span class="toc-number">3.</span> <span class="toc-text">Casual Structure Learning</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Casual-structure-learning%E7%9A%84%E4%B8%89%E7%B1%BB%E6%96%B9%E6%B3%95"><span class="toc-number">3.1.</span> <span class="toc-text">Casual structure learning的三类方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E%E4%BC%98%E5%8C%96%E7%9A%84%E8%A7%92%E5%BA%A6%E5%88%86%E6%9E%90%E4%B8%89%E7%B1%BB%E6%96%B9%E6%B3%95"><span class="toc-number">3.2.</span> <span class="toc-text">从优化的角度分析三类方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Constraint-based-Method"><span class="toc-number">3.3.</span> <span class="toc-text">Constraint-based Method</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Score-based-Method"><span class="toc-number">3.4.</span> <span class="toc-text">Score-based Method</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Functional-Causal-Model"><span class="toc-number">3.5.</span> <span class="toc-text">Functional Causal Model</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">4.</span> <span class="toc-text">Reference</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020-2022%E6%9C%80%E6%96%B0%E8%AE%BA%E6%96%87%E5%88%97%E8%A1%A8"><span class="toc-number">5.</span> <span class="toc-text">2020-2022最新论文列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%80%BC%E5%BE%97%E5%85%B3%E6%B3%A8%E7%9A%84%E6%9C%80%E6%96%B0%E5%B7%A5%E4%BD%9C"><span class="toc-number">6.</span> <span class="toc-text">值得关注的最新工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ToolBox"><span class="toc-number">7.</span> <span class="toc-text">ToolBox</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Related-work-with-code"><span class="toc-number">8.</span> <span class="toc-text">Related work with code</span></a></li></ol> 
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%9B%A0%E6%9E%9C%E4%B8%89%E9%98%B6%E6%A2%AF"><span class="toc-number">1.</span> <span class="toc-text">1. 因果三阶梯</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%9B%A0%E6%9E%9C%E7%9A%84%E6%9C%AC%E8%B4%A8%E3%80%81%E6%95%B0%E5%AD%A6%E8%A1%A8%E8%BE%BE-%E4%B8%8E-%E5%9B%A0%E6%9E%9C%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0"><span class="toc-number">2.</span> <span class="toc-text">2. 因果的本质、数学表达 与 因果结构学习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%9B%A0%E6%9E%9C%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 因果的本质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E5%9B%A0%E6%9E%9C%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 因果结构学习</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E5%9B%A0%E6%9E%9C%E4%B8%8E%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%85%B3%E8%81%94%E4%B8%8E%E5%8C%BA%E5%88%AB"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 因果与统计模型的关联与区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-%E5%9B%A0%E6%9E%9C%E5%88%86%E6%9E%90%E4%B8%AD%E7%9A%84%E6%95%B0%E5%AD%A6%E8%A1%A8%E7%A4%BA"><span class="toc-number">2.4.</span> <span class="toc-text">2.4 因果分析中的数学表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-%E5%8F%8D%E4%BA%8B%E5%AE%9E%E6%8E%A8%E7%90%86"><span class="toc-number">2.5.</span> <span class="toc-text">2.5 反事实推理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-%E6%94%AF%E6%92%91%E6%9D%90%E6%96%99"><span class="toc-number">2.6.</span> <span class="toc-text">2.6 支撑材料</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Casual-Structure-Learning"><span class="toc-number">3.</span> <span class="toc-text">3. Casual Structure Learning</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-Casual-structure-learning%E7%9A%84%E4%B8%89%E7%B1%BB%E6%96%B9%E6%B3%95"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 Casual structure learning的三类方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E4%BB%8E%E4%BC%98%E5%8C%96%E7%9A%84%E8%A7%92%E5%BA%A6%E5%88%86%E6%9E%90%E4%B8%89%E7%B1%BB%E6%96%B9%E6%B3%95"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 从优化的角度分析三类方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-1-Constraint-based-Method"><span class="toc-number">3.3.</span> <span class="toc-text">3.2.1 Constraint-based Method</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-2-Score-based-Method"><span class="toc-number">3.4.</span> <span class="toc-text">3.2.2 Score-based Method</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-3-Functional-Causal-Model"><span class="toc-number">3.5.</span> <span class="toc-text">3.2.3 Functional Causal Model</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">4.</span> <span class="toc-text">Reference</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020-2022%E6%9C%80%E6%96%B0%E8%AE%BA%E6%96%87%E5%88%97%E8%A1%A8"><span class="toc-number">5.</span> <span class="toc-text">2020-2022最新论文列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%80%BC%E5%BE%97%E5%85%B3%E6%B3%A8%E7%9A%84%E6%9C%80%E6%96%B0%E5%B7%A5%E4%BD%9C"><span class="toc-number">6.</span> <span class="toc-text">值得关注的最新工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ToolBox"><span class="toc-number">7.</span> <span class="toc-text">ToolBox</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Related-work-with-code"><span class="toc-number">8.</span> <span class="toc-text">Related work with code</span></a></li></ol> 
         </div>
     
  

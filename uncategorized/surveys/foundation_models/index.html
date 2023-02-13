@@ -209,11 +209,11 @@
             </div>
 
             <div class="border-bottom pb-2">
-                <p>这里列出一些近年来关于大模型的总结、调研，还有相关顶会论文。总结顶会论文主要因为，在我看来大模型（或基础模型）大多都是在工程领域的创新，如何利用工程创新，助力是科学创新。中间的桥梁应该被找到。</p>
-<p>注：有些调研直接截图了平日的工作汇报，注意与最新的工作进展及时同步。</p>
+                <p>这里列出一些近年来关于大模型的总结、调研，还有相关顶会论文。总结顶会论文的原因在于，在我看来大模型（或基础模型）大多都是在工程领域的创新，如何利用工程创新，助力是科学创新。中间的桥梁应该被找到。</p>
 <span id="more"></span>
 
-<h2 id="Big-Model-after-GPT-3"><a href="#Big-Model-after-GPT-3" class="headerlink" title="Big Model, after GPT-3"></a>Big Model, after GPT-3</h2><p>概括：<strong>超大参数规模</strong>的模型，并利用<strong>超大规模数据</strong>，大多以self-supervised方式进行训练，来学习数据的通用表征。后续通过prompt、fine-tune等迁移学习方法适应不同下游任务的通用模型范式。</p>
+<p>注：有些调研直接截图了平日的工作汇报，注意与最新的工作进展及时同步。</p>
+<h2 id="1-Big-Model-after-GPT-3"><a href="#1-Big-Model-after-GPT-3" class="headerlink" title="1. Big Model, after GPT-3"></a>1. Big Model, after GPT-3</h2><p>概括：<strong>超大参数规模</strong>的模型，并利用<strong>超大规模数据</strong>，大多以self-supervised方式进行训练，来学习数据的通用表征。后续通过prompt、fine-tune等迁移学习方法适应不同下游任务的通用模型范式。</p>
 <p><strong>目前foundation model的应用领域以及下游任务包括</strong></p>
 <ul>
 <li><p>NLP（成熟）</p>
@@ -254,7 +254,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="大模型调研"><a href="#大模型调研" class="headerlink" title="大模型调研"></a>大模型调研</h3><p><img src="https://raw.githubusercontent.com/KMdsy/figurebed/master/img/image-20221121143241729.png" alt="image-20221121143241729"></p>
+<h3 id="1-1-大模型调研"><a href="#1-1-大模型调研" class="headerlink" title="1.1 大模型调研"></a>1.1 大模型调研</h3><p><img src="https://raw.githubusercontent.com/KMdsy/figurebed/master/img/image-20221121143241729.png" alt="image-20221121143241729"></p>
 <p>上述模型的体量总结如下表</p>
 <table>
 <thead>
@@ -382,7 +382,7 @@
 <p>[1] Ding, M., Zhou, C., Chen, Q., Yang, H., &amp; Tang, J. (2019, July). Cognitive Graph for Multi-Hop Reading Comprehension at Scale. In <em>Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics</em> (pp. 2694-2703).</p>
 <p>[2] Liu, X., Yin, D., Zhang, X., Su, K., Wu, K., Yang, H., &amp; Tang, J. (2021). Oag-bert: Pre-train heterogeneous entity-augmented academic language models. <em>arXiv</em> <em>preprint arXiv:2103.02410</em>.</p>
 </blockquote>
-<h3 id="大模型复杂度分析"><a href="#大模型复杂度分析" class="headerlink" title="大模型复杂度分析"></a>大模型复杂度分析</h3><p>深度学习的保存模型里包含所有trainable variables的精确值。下文以sparse transformer为例，分析该模型的空间复杂度、计算复杂度。</p>
+<h3 id="1-2-大模型复杂度分析"><a href="#1-2-大模型复杂度分析" class="headerlink" title="1.2 大模型复杂度分析"></a>1.2 大模型复杂度分析</h3><p>深度学习的保存模型里包含所有trainable variables的精确值。下文以sparse transformer为例，分析该模型的空间复杂度、计算复杂度。</p>
 <ul>
 <li><p>Self-attention的隐空间维度为$d_{model}$，head数目为$n_{head}$，则每个head的维度为$d_{head}=d_{model}/n_{head} $。Feed-forward的隐空间维度为$d_{ff}$</p>
 </li>
@@ -392,7 +392,7 @@
 </li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/KMdsy/figurebed/master/img/image-20221121144017190.png" alt="image-20221121144017190"></p>
-<h2 id="How-to-train-a-big-model-from-zero-to-one"><a href="#How-to-train-a-big-model-from-zero-to-one" class="headerlink" title="How to train a big model, from zero to one"></a>How to train a big model, from zero to one</h2><p>在specific-domain构建一个大模型，首先需要</p>
+<h2 id="2-How-to-train-a-big-model-from-zero-to-one"><a href="#2-How-to-train-a-big-model-from-zero-to-one" class="headerlink" title="2. How to train a big model, from zero to one"></a>2. How to train a big model, from zero to one</h2><p>在specific-domain构建一个大模型，首先需要</p>
 <ol>
 <li><p>确定下游任务</p>
 <ul>
@@ -419,7 +419,7 @@
 
 
 <p><strong>主要参考文献</strong><br>Kalyan, K. S., Rajasekharan, A., &amp; Sangeetha, S. (2021). Ammus: A survey of transformer-based pretrained models in natural language processing. <em>arXiv preprint arXiv:2108.05542</em>.</p>
-<h2 id="Related-work-after-2020"><a href="#Related-work-after-2020" class="headerlink" title="Related work, after 2020"></a>Related work, after 2020</h2><p>这里列出了大模型的训练算法、应对大规模模型参数的解法，应对分布式数据、环境的训练方法。有标注会议名称的论文均为顶会/领域顶会论文。</p>
+<h2 id="3-Related-work-after-2020"><a href="#3-Related-work-after-2020" class="headerlink" title="3. Related work, after 2020"></a>3. Related work, after 2020</h2><p>这里列出了大模型的训练算法、应对大规模模型参数的解法，应对分布式数据、环境的训练方法。有标注会议名称的论文均为顶会/领域顶会论文。</p>
 <ul>
 <li><p>[ACL2022] BMInf: An Efficient Toolkit for Big Model Inference and Tuning</p>
 <p>Xu Han; Guoyang Zeng; Weilin Zhao; Zhiyuan Liu; Zhengyan Zhang; Jie Zhou; Jun Zhang; Jia Chao; Maosong Sun</p>
@@ -444,7 +444,7 @@
 <li>[MLSYS2021] Pipelined Backpropagation at Scale: Training Large Models without Batches</li>
 </ul>
 <p>​        Atli Kosson; Vitaliy Chiley; Abhinav Venigalla; Joel Hestness; Urs Koster</p>
-<h3 id="大模型在垂直领域（定义在文本领域）的构建"><a href="#大模型在垂直领域（定义在文本领域）的构建" class="headerlink" title="大模型在垂直领域（定义在文本领域）的构建"></a>大模型在垂直领域（定义在文本领域）的构建</h3><ul>
+<h3 id="3-1-大模型在垂直领域（定义在文本领域）的构建"><a href="#3-1-大模型在垂直领域（定义在文本领域）的构建" class="headerlink" title="3.1 大模型在垂直领域（定义在文本领域）的构建"></a>3.1 大模型在垂直领域（定义在文本领域）的构建</h3><ul>
 <li><p>[RECSYS2021] Large-Scale Modeling of Mobile User Click Behaviors Using Deep Learning</p>
 <p>Xin ZhouYang Li</p>
 </li>
@@ -459,7 +459,7 @@
 <li><p>Shen, J. T., Yamashita, M., Prihar, E., Heffernan, N., Wu, X., Graff, B., &amp; Lee, D. (2021). Mathbert: A pre-trained language model for general nlp tasks in mathematics education. <em>arXiv preprint arXiv:2106.07340</em>.【数学文本中的语言模型】</p>
 </li>
 </ul>
-<h3 id="大模型在垂直领域（定义在物理世界）的构建"><a href="#大模型在垂直领域（定义在物理世界）的构建" class="headerlink" title="大模型在垂直领域（定义在物理世界）的构建"></a>大模型在垂直领域（定义在物理世界）的构建</h3><ul>
+<h3 id="3-2-大模型在垂直领域（定义在物理世界）的构建"><a href="#3-2-大模型在垂直领域（定义在物理世界）的构建" class="headerlink" title="3.2 大模型在垂直领域（定义在物理世界）的构建"></a>3.2 大模型在垂直领域（定义在物理世界）的构建</h3><ul>
 <li>Zheng, Z., Lu, X. Z., Chen, K. Y., Zhou, Y. C., &amp; Lin, J. R. (2022). Pretrained domain-specific language model for natural language processing tasks in the AEC domain. <em>Computers in Industry</em>, <em>142</em>, 103733. 【建筑施工标准领域的语言模型】</li>
 <li>Zhou, Y. C., Zheng, Z., Lin, J. R., &amp; Lu, X. Z. (2022). Integrating NLP and context-free grammar for complex rule interpretation towards automated compliance checking. <em>Computers in Industry</em>, <em>142</em>, 103746.【上一篇的延续，从复杂合规标准中提取规则以做合规检验】</li>
 <li>Webersinke, N., Kraus, M., Bingler, J. A., &amp; Leippold, M. (2021). Climatebert: A pretrained language model for climate-related text. <em>arXiv preprint arXiv:2110.12010</em>.【气候数据上的语言模型，其中有一个很有趣的例子是：<em>Fact-Checking</em>，即针对某个证据，由模型给出“该证据支持什么声明”的判断。】</li>
@@ -500,7 +500,7 @@
              
     
         <div>
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Big-Model-after-GPT-3"><span class="toc-number">1.</span> <span class="toc-text">Big Model, after GPT-3</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%A7%E6%A8%A1%E5%9E%8B%E8%B0%83%E7%A0%94"><span class="toc-number">1.1.</span> <span class="toc-text">大模型调研</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90"><span class="toc-number">1.2.</span> <span class="toc-text">大模型复杂度分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#How-to-train-a-big-model-from-zero-to-one"><span class="toc-number">2.</span> <span class="toc-text">How to train a big model, from zero to one</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Related-work-after-2020"><span class="toc-number">3.</span> <span class="toc-text">Related work, after 2020</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%9C%A8%E5%9E%82%E7%9B%B4%E9%A2%86%E5%9F%9F%EF%BC%88%E5%AE%9A%E4%B9%89%E5%9C%A8%E6%96%87%E6%9C%AC%E9%A2%86%E5%9F%9F%EF%BC%89%E7%9A%84%E6%9E%84%E5%BB%BA"><span class="toc-number">3.1.</span> <span class="toc-text">大模型在垂直领域（定义在文本领域）的构建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%9C%A8%E5%9E%82%E7%9B%B4%E9%A2%86%E5%9F%9F%EF%BC%88%E5%AE%9A%E4%B9%89%E5%9C%A8%E7%89%A9%E7%90%86%E4%B8%96%E7%95%8C%EF%BC%89%E7%9A%84%E6%9E%84%E5%BB%BA"><span class="toc-number">3.2.</span> <span class="toc-text">大模型在垂直领域（定义在物理世界）的构建</span></a></li></ol></li></ol> 
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Big-Model-after-GPT-3"><span class="toc-number">1.</span> <span class="toc-text">1. Big Model, after GPT-3</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E8%B0%83%E7%A0%94"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 大模型调研</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 大模型复杂度分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-How-to-train-a-big-model-from-zero-to-one"><span class="toc-number">2.</span> <span class="toc-text">2. How to train a big model, from zero to one</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Related-work-after-2020"><span class="toc-number">3.</span> <span class="toc-text">3. Related work, after 2020</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%9C%A8%E5%9E%82%E7%9B%B4%E9%A2%86%E5%9F%9F%EF%BC%88%E5%AE%9A%E4%B9%89%E5%9C%A8%E6%96%87%E6%9C%AC%E9%A2%86%E5%9F%9F%EF%BC%89%E7%9A%84%E6%9E%84%E5%BB%BA"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 大模型在垂直领域（定义在文本领域）的构建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%9C%A8%E5%9E%82%E7%9B%B4%E9%A2%86%E5%9F%9F%EF%BC%88%E5%AE%9A%E4%B9%89%E5%9C%A8%E7%89%A9%E7%90%86%E4%B8%96%E7%95%8C%EF%BC%89%E7%9A%84%E6%9E%84%E5%BB%BA"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 大模型在垂直领域（定义在物理世界）的构建</span></a></li></ol></li></ol> 
         </div>
     
  

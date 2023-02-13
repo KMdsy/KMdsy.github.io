@@ -189,6 +189,10 @@
                 <i class="fa fa-tags p-1"> </i>
                 <span class="tag-hover">
                     
+                        <a href="../../../tags/note/" class="link-dark text-decoration-none"> 
+                            note 
+                        </a>
+                    
                         <a href="../../../tags/Bayesian/" class="link-dark text-decoration-none"> 
                             Bayesian 
                         </a>
@@ -205,9 +209,8 @@
             </div>
 
             <div class="border-bottom pb-2">
-                <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>撰写本篇笔记的动机来源于一个真实场景中的项目需求——<strong>用户行为模式研究</strong>。我们总希望能够使用数学的语言来描述用户行为，以便能够推断用户的未来动态，用于优化系统。因此本文首先将给出上述的motivation scenario，然后介绍用于建模场景中用户行为的数学模型——Markov switching Model，以及原因。最后介绍该建模方法背后的数学工具——Markov Chain Monte Carlo。</p>
-<p><strong>目录</strong>：</p>
-<ul>
+                <p>撰写本篇笔记的动机来源于一个真实场景中的项目需求——<strong>用户行为模式研究</strong>。我们总希望能够使用数学的语言来描述用户行为，以便能够推断用户的未来动态，用于优化系统。因此本文首先将给出上述的motivation scenario，然后介绍用于建模场景中用户行为的数学模型——Markov switching Model，以及原因。最后介绍该建模方法背后的数学工具——Markov Chain Monte Carlo。</p>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
 <li>Motivation</li>
 <li>Regime Switching Model &amp; Markov Switching Model</li>
 <li>Markov Chain Monte Carlo (MCMC)</li>
@@ -219,13 +222,13 @@
 </ul>
 <span id="more"></span>
 
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><p>本文的示例场景来源于“复杂移动接入网中，面向用户的体验优化与网络问题发现”。</p>
-<h3 id="示例场景"><a href="#示例场景" class="headerlink" title="示例场景"></a>示例场景</h3><p>设有用户A，该用户在移动接入网中的行为模式可以概括为以下几点：</p>
+<h2 id="1-Motivation"><a href="#1-Motivation" class="headerlink" title="1. Motivation"></a>1. Motivation</h2><p>本文的示例场景来源于“复杂移动接入网中，面向用户的体验优化与网络问题发现”。</p>
+<h3 id="1-1-示例场景"><a href="#1-1-示例场景" class="headerlink" title="1.1 示例场景"></a>1.1 示例场景</h3><p>设有用户A，该用户在移动接入网中的行为模式可以概括为以下几点：</p>
 <ol>
 <li>用户A可能会随节假日/工作日的规划，接入到不同区域的网络中，而这些区域的基站由于所处位置不同，所能提供的网络性能也有差异。例如：大型居民区/城市热点区域的基站一般具有较大的容量（重服务），而郊区/或非城市主干区域则相反（重覆盖）。因此用户在上述区域内体验到的网络服务质量也有所差异。</li>
 <li>用户A在节假日或工作日内，将随机接入用户所在地附近的小区，这些小区将综合自身的服务能力、用户的业务质量要求、用户数据量，提供差异化的网络服务。用户在此过程中可感知到的网络服务水平指标通常由“速率（DLUserThrpAvgwithoutLastTTI(Mbps)）”刻画。</li>
 </ol>
-<h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><p>分析用户的行为特征，目标在于借助单个用户的体验反馈，找到（频繁）影响用户网络体验的<strong>网络问题</strong>。这里，网络问题主要指“接入网”中可能存在的故障、告警、不恰当的组网策略等。</p>
+<h3 id="1-2-目标"><a href="#1-2-目标" class="headerlink" title="1.2 目标"></a>1.2 目标</h3><p>分析用户的行为特征，目标在于借助单个用户的体验反馈，找到（频繁）影响用户网络体验的<strong>网络问题</strong>。这里，网络问题主要指“接入网”中可能存在的故障、告警、不恰当的组网策略等。</p>
 <p>网络问题常常表征在<strong>用户级KPI的变化</strong>上，因此，分析用户级KPI上的<strong>异常链路</strong>，是帮助我们发现网络问题的必经途径。这里，异常链路指一系列时间、空间、因果上具有相关关系的指标异常。例如：用户TA异常——用户RSRP异常——MAC层指标异常——用户体验异常。在分析过程中，我们不仅<strong>关注用户的体验异常</strong>，也关注<strong>数传指标的异常</strong>，因为这两者都代表了潜在的网络问题。</p>
 <p>下图展示了在同一小区内，用户级指标之间的机理，其中左框中为资源型指标，右框中为数传指标。实线表示指标之间的相互影响关系，虚线则表示“数传指标差时，小区将调用更多的资源来完成用户的请求”。待发现的异常链路，即为下图中的KPI节点所连接起来的一条路径。</p>
 <div align="center">
@@ -233,33 +236,32 @@
 </div>
 
 
-
-<h3 id="建模思路"><a href="#建模思路" class="headerlink" title="建模思路"></a>建模思路</h3><p>如<a href="#%E7%A4%BA%E4%BE%8B%E5%9C%BA%E6%99%AF">2.1节</a>所述，用户的行为模式依照时间的粒度可以分为两种模式：</p>
+<h3 id="1-3-建模思路"><a href="#1-3-建模思路" class="headerlink" title="1.3 建模思路"></a>1.3 建模思路</h3><p>如<a href="#%E7%A4%BA%E4%BE%8B%E5%9C%BA%E6%99%AF">2.1节</a>所述，用户的行为模式依照时间的粒度可以分为两种模式：</p>
 <ul>
 <li>粗粒度模式：用户的行为模式可能随时在”节假日模式“与”工作模式“中切换。在每种模式在，用户的业务需求、业务类型、数据类型将有较大的差异。</li>
 <li>细粒度模式：用户在每种粗粒度模式下享受到的网络服务，也将受小区状态、小区能力、昼夜的影响，有较大的差异。</li>
 </ul>
 <p>因此，本研究使用马尔可夫机制转换模型（Markov regime switching model）与马尔可夫链模型（Markov Chain）来分别建模用户的粗粒度模式与细粒度模式。其中，用户的模式切换，以及所享受到的网络服务，都被视为随机变量，粗粒度模式被视为一种regime，其转换受Markov Chain所驱动。用户体验到的网络服务则被视为由参数不同的另一个Markov Chain驱动的随机变量。</p>
-<h2 id="Regime-Switching-Model-amp-Markov-Switching-Model"><a href="#Regime-Switching-Model-amp-Markov-Switching-Model" class="headerlink" title="Regime Switching Model &amp; Markov Switching Model"></a>Regime Switching Model &amp; Markov Switching Model</h2><h3 id="Why-regime-switching-model"><a href="#Why-regime-switching-model" class="headerlink" title="Why regime switching model"></a>Why regime switching model</h3><p>机制转换模型（Regime switching model）是对非平稳、非线性时间序列建模的一类常见模型。机制难以观测、由随机过程所驱动，而每一种机制下的时间序列可以视为独立的随机过程，具有不同的参数<strong>。</strong>机制转换模型常被用于建模经济中的周期性变化影响。</p>
+<h2 id="2-Regime-Switching-Model-amp-Markov-Switching-Model"><a href="#2-Regime-Switching-Model-amp-Markov-Switching-Model" class="headerlink" title="2. Regime Switching Model &amp; Markov Switching Model"></a>2. Regime Switching Model &amp; Markov Switching Model</h2><h3 id="2-1-Why-regime-switching-model"><a href="#2-1-Why-regime-switching-model" class="headerlink" title="2.1 Why regime switching model"></a>2.1 Why regime switching model</h3><p>机制转换模型（Regime switching model）是对非平稳、非线性时间序列建模的一类常见模型。机制难以观测、由随机过程所驱动，而每一种机制下的时间序列可以视为独立的随机过程，具有不同的参数<strong>。</strong>机制转换模型常被用于建模经济中的周期性变化影响。</p>
 <p>使用单一的随机过程（以马尔可夫过程为例）对数据在一段时间内的变化进行描述时，其概率转移矩阵通常是固定不变的。但是这个假设对于我们在现实世界数据中遇到的许多问题并不总是有效的，原因如下：</p>
 <ul>
 <li>实际时间序列数据在不同时间段，可能具有不同特征，例如均值和方差；</li>
 <li>对于具有不同特征的时间序列数据，其在不同特征时期的模型参数（状态空间、概率转移矩阵等）可能不一样，如股市在平稳期、震荡期（宽幅震荡、窄幅震荡）；</li>
 </ul>
 <p>因此，<strong>机制转换模型</strong>可以认为是<strong>最接近实际问题的理论模型</strong>，是对真实系统的一种近似，并且该理论模型的可以指导我们设计解决实际问题的方案。</p>
-<h3 id="Application-of-regime-switching-model-in-wireless-access-network"><a href="#Application-of-regime-switching-model-in-wireless-access-network" class="headerlink" title="Application of regime switching model in wireless access network"></a>Application of regime switching model in wireless access network</h3><p>在无线网络中，由于各小区环境及基站配置不同，系统性能指标的变化模式也不同，具有<strong>非平稳性</strong>，且用户的<strong>移动</strong>会导致小区切换、同时小区也存在<strong>状态间切换</strong>。相比传统模型，<strong>机制转换模型</strong>通过以下设定，可以更好地刻画非平稳的时间序列，并捕捉现实世界数据的真实行为。</p>
+<h3 id="2-2-Application-of-regime-switching-model-in-wireless-access-network"><a href="#2-2-Application-of-regime-switching-model-in-wireless-access-network" class="headerlink" title="2.2 Application of regime switching model in wireless access network"></a>2.2 Application of regime switching model in wireless access network</h3><p>在无线网络中，由于各小区环境及基站配置不同，系统性能指标的变化模式也不同，具有<strong>非平稳性</strong>，且用户的<strong>移动</strong>会导致小区切换、同时小区也存在<strong>状态间切换</strong>。相比传统模型，<strong>机制转换模型</strong>通过以下设定，可以更好地刻画非平稳的时间序列，并捕捉现实世界数据的真实行为。</p>
 <ul>
 <li>将数据描述为属于不同的、重复出现的状态（regime）</li>
 <li>允许时间序列数据的特征（例如均值、方差和模型参数等）在不同状态下发生改变</li>
 <li>假设在任何给定的时间段内，序列数据都可能处于任何一种状态并可能过渡到不同的状态</li>
 </ul>
-<h3 id="Markov-Switching-Model"><a href="#Markov-Switching-Model" class="headerlink" title="Markov Switching Model"></a>Markov Switching Model</h3><p>由上节可以知道，regime switching model也是受随机过程驱动的，如果这个过程是一个马尔可夫链，那么我们称之为 Markov switching model。</p>
+<h3 id="2-3-Markov-Switching-Model"><a href="#2-3-Markov-Switching-Model" class="headerlink" title="2.3 Markov Switching Model"></a>2.3 Markov Switching Model</h3><p>由上节可以知道，regime switching model也是受随机过程驱动的，如果这个过程是一个马尔可夫链，那么我们称之为 Markov switching model。</p>
 <p>综上，在本案例（即用户行为建模）中，我们利用两个层面的马尔可夫链来从用户级CHR数据建模用户行为：</p>
 <ul>
 <li>Markov Chain 1：驱动regime的随机变换。</li>
 <li>Markov Chain 2：驱动某个regime内的用户体验变化与数传指标变化。</li>
 </ul>
-<h2 id="Markov-Chain-Monte-Carlo-MCMC"><a href="#Markov-Chain-Monte-Carlo-MCMC" class="headerlink" title="Markov Chain Monte Carlo (MCMC)"></a>Markov Chain Monte Carlo (MCMC)</h2><p>MCMC由两个MC组成，即蒙特卡罗方法（Monte Carlo Simulation，简称MC）和马尔科夫链（Markov Chain ，也简称MC）。MCMC算法的目的在于“<strong>在概率空间，用随机采样的思路，估计概率后验分布</strong>”。</p>
+<h2 id="3-Markov-Chain-Monte-Carlo-MCMC"><a href="#3-Markov-Chain-Monte-Carlo-MCMC" class="headerlink" title="3. Markov Chain Monte Carlo (MCMC)"></a>3. Markov Chain Monte Carlo (MCMC)</h2><p>MCMC由两个MC组成，即蒙特卡罗方法（Monte Carlo Simulation，简称MC）和马尔科夫链（Markov Chain ，也简称MC）。MCMC算法的目的在于“<strong>在概率空间，用随机采样的思路，估计概率后验分布</strong>”。</p>
 <p>这里需要阐明实际问题中的几个概念：“先验分布（prior distribution）”、“可能性分布（likelihood distribution）”、“后验分布（Posterior distribution）”</p>
 <ul>
 <li>Prior：先验分布，代表了在未知真实数据的情况下，人们对于该数据分布做出的先行假设。先验分布也被称为信念（brief）分布，因为它指明了人们在未知真实数据的情况下，对数据分布的信念。</li>
@@ -275,7 +277,7 @@
 <p>上图中，红色的曲线代表后验分布。你可以把它看作先验分布和可能性分布的平均值。由于先验分布较短且分散，所以它反映了人们并不太确定人类的平均身高是多少。同时，可能性在相对较窄的范围内汇总了数据，因此它对真是参数值更加确定。</p>
 <p>当先验分布和可能性分布被合并时，数据（由可能性表示）支配了之前那个在巨人堆里长大的人的弱先验信念。尽管那一个体仍然认为人类平均身高比数据告诉他的稍高些，但他最相信的是数据。</p>
 </blockquote>
-<h3 id="目标-1"><a href="#目标-1" class="headerlink" title="目标"></a>目标</h3><p>在回顾了上述概念后，我们可以轻易的说明，MCMC算法如何服务于建模用户行为模式。</p>
+<h3 id="3-1-目标"><a href="#3-1-目标" class="headerlink" title="3.1 目标"></a>3.1 目标</h3><p>在回顾了上述概念后，我们可以轻易的说明，MCMC算法如何服务于建模用户行为模式。</p>
 <p>MCMC算法解决后验概率分布估计问题的思路为：</p>
 <ol>
 <li>对于复杂的问题，我们都采用<strong>蒙特卡洛法</strong>，即采用随机采样的策略，估计样本的后验分布$p(x)$ <a href="#ref_liu_montecarlo">[2]</a>。</li>
@@ -296,10 +298,10 @@
 </ol>
 </li>
 </ol>
-<h3 id="Monte-Carlo法"><a href="#Monte-Carlo法" class="headerlink" title="Monte Carlo法"></a>Monte Carlo法</h3><p>[To be continued]</p>
-<h3 id="Markov-Chain-amp-状态转移矩阵的性质"><a href="#Markov-Chain-amp-状态转移矩阵的性质" class="headerlink" title="Markov Chain &amp; 状态转移矩阵的性质"></a>Markov Chain &amp; 状态转移矩阵的性质</h3><p>[To be continued]</p>
-<h3 id="MCMC采样"><a href="#MCMC采样" class="headerlink" title="MCMC采样"></a>MCMC采样</h3><p>[To be continued]</p>
-<h2 id="案例分析与实现"><a href="#案例分析与实现" class="headerlink" title="案例分析与实现"></a>案例分析与实现</h2><h3 id="开源代码调研"><a href="#开源代码调研" class="headerlink" title="开源代码调研"></a>开源代码调研</h3><ol>
+<h3 id="3-2-Monte-Carlo法"><a href="#3-2-Monte-Carlo法" class="headerlink" title="3.2 Monte Carlo法"></a>3.2 Monte Carlo法</h3><p>[To be continued]</p>
+<h3 id="3-3-Markov-Chain-amp-状态转移矩阵的性质"><a href="#3-3-Markov-Chain-amp-状态转移矩阵的性质" class="headerlink" title="3.3 Markov Chain &amp; 状态转移矩阵的性质"></a>3.3 Markov Chain &amp; 状态转移矩阵的性质</h3><p>[To be continued]</p>
+<h3 id="3-4-MCMC采样"><a href="#3-4-MCMC采样" class="headerlink" title="3.4 MCMC采样"></a>3.4 MCMC采样</h3><p>[To be continued]</p>
+<h2 id="4-案例分析与实现"><a href="#4-案例分析与实现" class="headerlink" title="4. 案例分析与实现"></a>4. 案例分析与实现</h2><h3 id="4-1-开源代码调研"><a href="#4-1-开源代码调研" class="headerlink" title="4.1 开源代码调研"></a>4.1 开源代码调研</h3><ol>
 <li><strong>statsmodels.tsa</strong>（时间序列分析包，github 7k stars）<a href="#ref_tsa">[6]</a></li>
 </ol>
 <div align="left">
@@ -335,7 +337,7 @@
 <li>支持任意数量的regime设置与可解释变量；</li>
 </ul>
 <p>本节鸣谢Tongji DNA Lab的Chengbo Qiu同学。</p>
-<h3 id="案例分析"><a href="#案例分析" class="headerlink" title="案例分析"></a>案例分析</h3><p>[To be continued]</p>
+<h3 id="4-2-案例分析"><a href="#4-2-案例分析" class="headerlink" title="4.2 案例分析"></a>4.2 案例分析</h3><p>[To be continued]</p>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a id="ref1">[1]</a> <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/32982140">https://zhuanlan.zhihu.com/p/32982140</a></p>
 <p><a id="ref_liu_montecarlo">[2]</a> <a target="_blank" rel="noopener" href="https://www.cnblogs.com/pinard/p/6625739.html">https://www.cnblogs.com/pinard/p/6625739.html</a></p>
 <p><a id="ref_liu_markov">[3]</a> <a target="_blank" rel="noopener" href="https://www.cnblogs.com/pinard/p/6632399.html">https://www.cnblogs.com/pinard/p/6632399.html</a></p>
@@ -377,7 +379,7 @@
              
     
         <div>
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">引言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Motivation"><span class="toc-number">2.</span> <span class="toc-text">Motivation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%E5%9C%BA%E6%99%AF"><span class="toc-number">2.1.</span> <span class="toc-text">示例场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87"><span class="toc-number">2.2.</span> <span class="toc-text">目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BB%BA%E6%A8%A1%E6%80%9D%E8%B7%AF"><span class="toc-number">2.3.</span> <span class="toc-text">建模思路</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Regime-Switching-Model-amp-Markov-Switching-Model"><span class="toc-number">3.</span> <span class="toc-text">Regime Switching Model &amp; Markov Switching Model</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Why-regime-switching-model"><span class="toc-number">3.1.</span> <span class="toc-text">Why regime switching model</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Application-of-regime-switching-model-in-wireless-access-network"><span class="toc-number">3.2.</span> <span class="toc-text">Application of regime switching model in wireless access network</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markov-Switching-Model"><span class="toc-number">3.3.</span> <span class="toc-text">Markov Switching Model</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Markov-Chain-Monte-Carlo-MCMC"><span class="toc-number">4.</span> <span class="toc-text">Markov Chain Monte Carlo (MCMC)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87-1"><span class="toc-number">4.1.</span> <span class="toc-text">目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Monte-Carlo%E6%B3%95"><span class="toc-number">4.2.</span> <span class="toc-text">Monte Carlo法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markov-Chain-amp-%E7%8A%B6%E6%80%81%E8%BD%AC%E7%A7%BB%E7%9F%A9%E9%98%B5%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-number">4.3.</span> <span class="toc-text">Markov Chain &amp; 状态转移矩阵的性质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MCMC%E9%87%87%E6%A0%B7"><span class="toc-number">4.4.</span> <span class="toc-text">MCMC采样</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90%E4%B8%8E%E5%AE%9E%E7%8E%B0"><span class="toc-number">5.</span> <span class="toc-text">案例分析与实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81%E8%B0%83%E7%A0%94"><span class="toc-number">5.1.</span> <span class="toc-text">开源代码调研</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90"><span class="toc-number">5.2.</span> <span class="toc-text">案例分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">6.</span> <span class="toc-text">Reference</span></a></li></ol> 
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-number">1.</span> <span class="toc-text">目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Motivation"><span class="toc-number">2.</span> <span class="toc-text">1. Motivation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E7%A4%BA%E4%BE%8B%E5%9C%BA%E6%99%AF"><span class="toc-number">2.1.</span> <span class="toc-text">1.1 示例场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E7%9B%AE%E6%A0%87"><span class="toc-number">2.2.</span> <span class="toc-text">1.2 目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E5%BB%BA%E6%A8%A1%E6%80%9D%E8%B7%AF"><span class="toc-number">2.3.</span> <span class="toc-text">1.3 建模思路</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Regime-Switching-Model-amp-Markov-Switching-Model"><span class="toc-number">3.</span> <span class="toc-text">2. Regime Switching Model &amp; Markov Switching Model</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-Why-regime-switching-model"><span class="toc-number">3.1.</span> <span class="toc-text">2.1 Why regime switching model</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-Application-of-regime-switching-model-in-wireless-access-network"><span class="toc-number">3.2.</span> <span class="toc-text">2.2 Application of regime switching model in wireless access network</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-Markov-Switching-Model"><span class="toc-number">3.3.</span> <span class="toc-text">2.3 Markov Switching Model</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Markov-Chain-Monte-Carlo-MCMC"><span class="toc-number">4.</span> <span class="toc-text">3. Markov Chain Monte Carlo (MCMC)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E7%9B%AE%E6%A0%87"><span class="toc-number">4.1.</span> <span class="toc-text">3.1 目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-Monte-Carlo%E6%B3%95"><span class="toc-number">4.2.</span> <span class="toc-text">3.2 Monte Carlo法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-Markov-Chain-amp-%E7%8A%B6%E6%80%81%E8%BD%AC%E7%A7%BB%E7%9F%A9%E9%98%B5%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-number">4.3.</span> <span class="toc-text">3.3 Markov Chain &amp; 状态转移矩阵的性质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-MCMC%E9%87%87%E6%A0%B7"><span class="toc-number">4.4.</span> <span class="toc-text">3.4 MCMC采样</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90%E4%B8%8E%E5%AE%9E%E7%8E%B0"><span class="toc-number">5.</span> <span class="toc-text">4. 案例分析与实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81%E8%B0%83%E7%A0%94"><span class="toc-number">5.1.</span> <span class="toc-text">4.1 开源代码调研</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90"><span class="toc-number">5.2.</span> <span class="toc-text">4.2 案例分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">6.</span> <span class="toc-text">Reference</span></a></li></ol> 
         </div>
     
  
