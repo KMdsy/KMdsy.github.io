@@ -168,16 +168,16 @@
             <!-- ps-4 pe-4 pt-2 -->
             <p class="h2">
                 <span class="post-title">
-                    Deep leanring or machine learning on time series with mixed sampling rate
+                    Optimization for Nondifferentiable Problem
                 </span>   
             </p>
 
             <div class="pb-3 pt-1 pe-3">
                 <i class="fa fa-calendar p-1"></i>
-                2019/07/22 12:00:00 
+                2023/02/17 11:10:00 
 
                 <i class="fa fa-pencil"> </i>
-                2019/07/22 12:00:00 
+                2023/02/17 20:50:00 
 
                 <!--
                 <i class="fa fa-folder-open p-1"> </i> 
@@ -193,72 +193,65 @@
                             survey 
                         </a>
                     
-                        <a href="../../../tags/time-series/" class="link-dark text-decoration-none"> 
-                            time series 
-                        </a>
-                    
-                        <a href="../../../tags/paper-list/" class="link-dark text-decoration-none"> 
-                            paper list 
-                        </a>
-                    
-                        <a href="../../../tags/mixed-sampling-rate/" class="link-dark text-decoration-none"> 
-                            mixed sampling rate 
+                        <a href="../../../tags/optimization/" class="link-dark text-decoration-none"> 
+                            optimization 
                         </a>
                     
                 </span>
             </div>
 
             <div class="border-bottom pb-2">
-                <ul>
-<li><p>Autoregressive Convolutional Neural Networks for Asynchronous Time Series: <strong>ICML 2019</strong></p>
-<p><strong>异：</strong></p>
-<ol>
-<li>处理的是多维时间序列数据</li>
-<li>针对非同步数据，并未和我们一样，训练一个能够用于多种采样率的模型，而是将[多维时间序列，序列指示剂，采样间隔]合并成为多维时间序列，然后输入到网络中</li>
-<li>使用类似自回归模型的算法，对时间序列模型进行预测</li>
-<li>使用cnn进行序列学习</li>
-</ol>
-<p><strong>同：</strong></p>
-<ol>
-<li>没什么相同的</li>
-</ol>
-</li>
-</ul>
+                <p><a href="/uncategorized/surveys/bilevel_optimization">上篇</a>调研总结了双层优化问题的解决范式，并梳理了双层优化应用在Sim2real的domain randomization（DR）问题上时的难点在于<strong>“如何解不可微分的外层优化函数”</strong>，本文将对这一议题进行调研。</p>
+<p>此外本文也将简要介绍一下关于超参优化（hyperparameter optimization，HO）的内容，调研HO问题的原因是：domain randomization与HO问题具有相似的formulation，但二者又存在区别（最重要的区别在于一般的HO问题是differetiable的，而DR问题则不是），因此阅读了一些文献并做了简要总结。</p>
 <span id="more"></span>
-<hr>
+
+<h2 id="1-Formulation-of-Domain-Randomization"><a href="#1-Formulation-of-Domain-Randomization" class="headerlink" title="1. Formulation of Domain Randomization"></a>1. Formulation of Domain Randomization</h2><p><a href="uncategorized/surveys/sim2real">回顾</a>DR的formulation如下</p>
+<p>$$
+\begin{array}{rl}
+\min & F(\phi, \theta) = \mathcal{L}(\theta^{*};\mathcal{D}_{real}) \\
+s.t. & \theta^{*} = \arg\min_{\theta}f(\phi, \theta) = \mathbb{E}_{x \sim P_{\phi}(x)}[\mathcal{L}(\theta;\mathcal{D}_{x})]\\
+var. & \phi, \theta
+\end{array}
+$$</p>
+可以看到，外层优化问题可微但**内层优化函数不可微**，原因在于：
+
+<ol>
+<li>采样训练数据 $\mathcal{D}_{x}$ 的分布，其参数受控于优化变量$\phi$ 。</li>
+<li>一般来讲，从仿真器中生成仿真数据的过程（如从图形渲染引擎中生成图像）不单纯是一个分布采样问题，为保证问题的一般性，这个数据生成过程要被视为不可微。</li>
+</ol>
+<blockquote>
+<p>Ruiz, N., Schulter, S., &amp; Chandraker, M. Learning To Simulate. In International Conference on Learning Representations, 2019.</p>
+</blockquote>
+<h2 id="2-Solving-a-Nondifferential-Problem"><a href="#2-Solving-a-Nondifferential-Problem" class="headerlink" title="2. Solving a Nondifferential Problem"></a>2. Solving a Nondifferential Problem</h2><p>一般来说，不可微问题的解决方法有次<strong>梯度法（subgradient）</strong>、近端梯度法。</p>
+<h3 id="2-1-Subgradient（次梯度）"><a href="#2-1-Subgradient（次梯度）" class="headerlink" title="2.1 Subgradient（次梯度）"></a>2.1 Subgradient（次梯度）</h3><p>本节的主要参考材料为[1]，同时参考了博客<a target="_blank" rel="noopener" href="https://blog.csdn.net/zbwgycm/article/details/104507442">link</a></p>
+<blockquote>
+<p>[1] Polyak, B. T. (1978). Subgradient methods: a survey of Soviet research. <em>Nonsmooth optimization</em>, <em>3</em>, 5-29.</p>
+</blockquote>
+<p><strong>次梯度法适用于所有不可微的目标函数，但其收敛速度较慢</strong>。</p>
+<h4 id="2-1-1-Definition"><a href="#2-1-1-Definition" class="headerlink" title="2.1.1 Definition"></a>2.1.1 Definition</h4><p>对于定义在 $\mathbb{R}^n$ 的连续凸函数 $f(x)$ ，当向量 $\partial f(x) \in \mathbb{R}^n $ 满足以下条件时，可被称为函数 $f(x)$ 在 $x$ 点的次梯度</p>
+<p>$$
+f(x+y) \geq f(x)+(\partial f(x), y), \forall y \in R^{n}
+$$</p>
+注：这里的 $(\cdot,\cdot)$ 应该是向量积的意思，[参考](https://blog.csdn.net/zbwgycm/article/details/104507442)中 $f(y) \geq f(x)+g^{T}(y-x)$。可以看出，相比与梯度的定义（等号），上述条件更为松弛。一些次梯度的性质如下 [link](https://blog.csdn.net/zbwgycm/article/details/104507442)：
+
 <ul>
-<li><p>Hierarchical Deep Generative Models for Multi-Rate Multivariate Time Series: <strong>ICML 2018</strong></p>
-<p><strong>异：</strong></p>
-<ol>
-<li>针对L种不同采样率的数据，并未和我们一样，训练一个能够用于多种采样率的模型，而是：</li>
-<li>用RNN将不同采样率的时间序列中的每一个值，embedding到隐空间，h</li>
-<li>基于深度马尔科夫模型，建模上述隐空间变量的生成模型</li>
-<li>利用Auxiliary connections，提取不同采样率的时间序列的长程/短程记忆，即序列间的关系</li>
-<li>该工作基于一种生成模型，通过模拟数据的生成过程，来建模若采样率数据之间的关系</li>
-<li>针对非同步数据，并未和我们一样，训练一个能够用于多种采样率的模型</li>
-</ol>
-<p><strong>异：</strong></p>
-<ol>
-<li>都设置了某种机制，用于分别提取了时间序列中的long/short term dependency，该文章使用的方法类似于我们所采用的跳连机制</li>
-</ol>
-</li>
+<li>次梯度总是出现在定义域 $dom(f)$ 的内部。</li>
+<li>对于所有 $x \in \mathbb{R}^n$ ，次梯度都存在（但可能不是唯一的）。如果 $f(x)$ 是可微的，则次梯度是唯一的，并且与梯度。各种类型函数的次梯度计算规则是众所周知的。</li>
+<li>次梯度的定义可以推广到非凸函数中，但<strong>非凸函数的次梯度可能不存在</strong>。</li>
 </ul>
-<hr>
-<ul>
-<li><p>INTERPOLATION-PREDICTION NETWORKS FOR IRREGULARLY SAMPLED TIME SERIES: <strong>ICLR 2019</strong></p>
-<p><strong>异：</strong></p>
-<ol>
-<li>对于D种不同采样率的时间序列，先设立一个均匀的参考时间线，然后利用插补网络（ INTERPOLATION NETWORKS ）在上述的参考时间线上进行插补，将不同采样率的时间序列插补成均匀采样的时间序列</li>
-<li>再提取多维时间序列之间的关联关系（建模多维时间序列）</li>
-<li>上一步的输出被送入后续的预测网络中进行进一步的训练（以预测、分类等任务为训练目标）</li>
-<li>针对非同步数据，并未和我们一样，训练一个能够用于多种采样率的模型</li>
-</ol>
-<p><strong>异：</strong></p>
-<ol>
-<li>都设置了某种机制，用于分别提取了时间序列中的long/short term dependency</li>
-</ol>
-</li>
-</ul>
+<h4 id="2-1-2-Gradient-Decent"><a href="#2-1-2-Gradient-Decent" class="headerlink" title="2.1.2 Gradient Decent"></a>2.1.2 Gradient Decent</h4><p>类比于梯度下降法，次梯度法只是将其中的梯度替换为次梯度，其他步骤不变，其更新如下：</p>
+<p>$$
+x_{k+1} = x_{k} - \gamma_{k} \frac{\partial f(x_k)}{\| \partial f(x_k) \|}
+$$</p>
+其中 $\gamma_k$ 为 step size，上式的简洁写法为 $x_{k+1} = x_k - \gamma_k \cdot g_{k-1}$。梯度法和次梯度法之间的主要区别在于，一般来说，方向 $ \partial f(x_k)$ 不是 $x_k$ 处的下降方向（**并非严格下降**），即不可微函数的 $f(x_k)$ 的值**不会单调减小**。
+
+<h4 id="2-1-3-Convergence"><a href="#2-1-3-Convergence" class="headerlink" title="2.1.3 Convergence"></a>2.1.3 Convergence</h4><p>convergence rate $O(1/\epsilon^2)$，慢于梯度下降的 $O(1/\epsilon)$ 。</p>
+<h3 id="2-2-Proximal-Gradient（近端梯度）"><a href="#2-2-Proximal-Gradient（近端梯度）" class="headerlink" title="2.2 Proximal Gradient（近端梯度）"></a>2.2 Proximal Gradient（近端梯度）</h3><p>本节的主要参考材料为下文，以及博客<a target="_blank" rel="noopener" href="https://blog.csdn.net/zbwgycm/article/details/83060251">link</a></p>
+<blockquote>
+<p>TODO </p>
+</blockquote>
+<p>近端梯度法适用于“整体优化目标不可微分，但可以<strong>分解为部分可微、部分不可微”</strong>的目标函数。</p>
+<h4 id="2-2-1-Definition"><a href="#2-2-1-Definition" class="headerlink" title="2.2.1 Definition"></a>2.2.1 Definition</h4><p>TODO</p>
  
             </div>
         </div>
@@ -267,18 +260,11 @@
             <!-- 前一页后一页 -->
 <div class="previous-next-links">
      
-    <div class="previous-design-link">
-        <a href="../../paperlistfile/otherconf/">
-            <i style="font-size:16px;" class="fa fa-arrow-left" aria-hidden="true"></i>
-            Other Outstanding Papers
-        </a>
-    </div>
-     
 
      
     <div class="next-design-link">
-        <a href="../missvalue/">
-            Deep leanring or machine learning on time series with missing value
+        <a href="../bilevel_optimization/">
+            Paradigm of Bi-level Optimization
             <i style="font-size:16px;" class="fa fa-arrow-right" aria-hidden="true"></i>
         </a>
     </div>
@@ -291,6 +277,10 @@
     <div class="col-2">
         <div class="d-none d-sm-none d-md-block sticky-top border-start">
              
+    
+        <div>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Formulation-of-Domain-Randomization"><span class="toc-number">1.</span> <span class="toc-text">1. Formulation of Domain Randomization</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Solving-a-Nondifferential-Problem"><span class="toc-number">2.</span> <span class="toc-text">2. Solving a Nondifferential Problem</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-Subgradient%EF%BC%88%E6%AC%A1%E6%A2%AF%E5%BA%A6%EF%BC%89"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 Subgradient（次梯度）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-Proximal-Gradient%EF%BC%88%E8%BF%91%E7%AB%AF%E6%A2%AF%E5%BA%A6%EF%BC%89"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 Proximal Gradient（近端梯度）</span></a></li></ol></li></ol> 
+        </div>
     
  
 

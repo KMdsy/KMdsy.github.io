@@ -273,7 +273,11 @@ $$</p>
 
 <h3 id="2-3-Bilevel-algorithms-via-AID-or-ITD"><a href="#2-3-Bilevel-algorithms-via-AID-or-ITD" class="headerlink" title="2.3 Bilevel algorithms via AID or ITD"></a>2.3 Bilevel algorithms via AID or ITD</h3><img src="https://raw.githubusercontent.com/KMdsy/figurebed/master/img/image-20230216213116561.png" alt="image-20230216213116561" style="zoom:50%;" />
 
-<h2 id="3-利用双层优化解sim2real问题的难点"><a href="#3-利用双层优化解sim2real问题的难点" class="headerlink" title="3. 利用双层优化解sim2real问题的难点"></a>3. 利用双层优化解sim2real问题的难点</h2><p>简要梳理：AID ITD分别是两种借助超梯度进行内外层优化串联的方法，但在实际计算的过程中，仍存在 <strong>“外层优化问题不可微，因此无法求外层优化问题梯度”</strong> 的问题，即 $\nabla_{x} f(x, y)$ 。因此，利用双层优化问题解sim2real问题的难点在于——如何解决外层的不可微问题。这也是下一篇survey的调研重点。</p>
+<h2 id="3-利用双层优化解sim2real问题的难点"><a href="#3-利用双层优化解sim2real问题的难点" class="headerlink" title="3. 利用双层优化解sim2real问题的难点"></a>3. 利用双层优化解sim2real问题的难点</h2><p>简要梳理：AID ITD分别是两种借助超梯度进行内外层优化串联的方法，但在实际计算的过程中对<strong>内层优化问题</strong>仍有诸多限制，如：smoothness, twice differentiability and an invertible Hessian。对比domain randomization可以发现，DR问题的内层优化问题依然是不可微的。</p>
+<p>因此，利用双层优化问题解DR问题的难点在于——<strong>如何解不可微优化问题</strong>。这也是<a href="/uncategorized/surveys/nondiff_optimization">下一篇</a>survey的调研重点。</p>
+<blockquote>
+<p>Ruiz, N., Schulter, S., &amp; Chandraker, M. Learning To Simulate. In International Conference on Learning Representations, 2019.</p>
+</blockquote>
  
             </div>
         </div>
@@ -281,6 +285,13 @@ $$</p>
         <div class="mt-3">
             <!-- 前一页后一页 -->
 <div class="previous-next-links">
+     
+    <div class="previous-design-link">
+        <a href="../nondiff_optimization/">
+            <i style="font-size:16px;" class="fa fa-arrow-left" aria-hidden="true"></i>
+            Optimization for Nondifferentiable Problem
+        </a>
+    </div>
      
 
      
