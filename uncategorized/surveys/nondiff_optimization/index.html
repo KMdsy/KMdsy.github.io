@@ -213,7 +213,7 @@ s.t. & \theta^{*} = \arg\min_{\theta}f(\phi, \theta) = \mathbb{E}_{x \sim P_{\ph
 var. & \phi, \theta
 \end{array}
 $$</p>
-可以看到，外层优化问题可微但**内层优化函数不可微**，原因在于：
+可以看到，外层优化问题可微但 **内层优化函数不可微** ，原因在于：
 
 <ol>
 <li>采样训练数据 $\mathcal{D}_{x}$ 的分布，其参数受控于优化变量$\phi$ 。</li>
@@ -243,7 +243,7 @@ $$</p>
 <p>$$
 x_{k+1} = x_{k} - \gamma_{k} \frac{\partial f(x_k)}{\| \partial f(x_k) \|}
 $$</p>
-其中 $\gamma_k$ 为 step size，上式的简洁写法为 $x_{k+1} = x_k - \gamma_k \cdot g_{k-1}$。梯度法和次梯度法之间的主要区别在于，一般来说，方向 $ \partial f(x_k)$ 不是 $x_k$ 处的下降方向（**并非严格下降**），即不可微函数的 $f(x_k)$ 的值**不会单调减小**。
+其中 $\gamma_k$ 为 step size，上式的简洁写法为 $x_{k+1} = x_k - \gamma_k \cdot g_{k-1}$。梯度法和次梯度法之间的主要区别在于，一般来说，方向 $ \partial f(x_k)$ 不是 $x_k$ 处的下降方向（ **并非严格下降** ），即不可微函数的 $f(x_k)$ 的值 **不会单调减小** 。
 
 <h4 id="2-1-3-Convergence"><a href="#2-1-3-Convergence" class="headerlink" title="2.1.3 Convergence"></a>2.1.3 Convergence</h4><p>convergence rate $O(1/\epsilon^2)$，慢于梯度下降的 $O(1/\epsilon)$ 。</p>
 <h3 id="2-2-Proximal-Gradient（近端梯度）"><a href="#2-2-Proximal-Gradient（近端梯度）" class="headerlink" title="2.2 Proximal Gradient（近端梯度）"></a>2.2 Proximal Gradient（近端梯度）</h3><p>本节的主要参考材料为下文，以及博客<a target="_blank" rel="noopener" href="https://blog.csdn.net/zbwgycm/article/details/83060251">link</a></p>
@@ -252,6 +252,28 @@ $$</p>
 </blockquote>
 <p>近端梯度法适用于“整体优化目标不可微分，但可以<strong>分解为部分可微、部分不可微”</strong>的目标函数。</p>
 <h4 id="2-2-1-Definition"><a href="#2-2-1-Definition" class="headerlink" title="2.2.1 Definition"></a>2.2.1 Definition</h4><p>TODO</p>
+<h2 id="3-Hyperparameter-Optimization"><a href="#3-Hyperparameter-Optimization" class="headerlink" title="3. Hyperparameter Optimization"></a>3. Hyperparameter Optimization</h2><p>本节内容参考</p>
+<blockquote>
+<p>Bao, F., Wu, G., Li, C., Zhu, J., &amp; Zhang, B. (2021). Stability and generalization of bilevel programming in hyperparameter optimization. <em>Advances in Neural Information Processing Systems</em>, <em>34</em>, 4529-4541.</p>
+</blockquote>
+<p>HO 问题的formulation可以写为</p>
+<p>$$
+\begin{array}{rl}
+\hat{\lambda}\left(S^{t r}, S^{v a l}\right) & \approx \underset{\lambda \in \Lambda}{\arg \min } \hat{R}^{v a l}\left(\lambda, \hat{\theta}\left(\lambda, S^{t r}\right), S^{v a l}\right) \\
+\text{where} \quad \hat{\theta}\left(\lambda, S^{t r}\right) & \approx \underset{\theta \in \Theta}{\arg \min } \hat{R}^{t r}\left(\lambda, \theta, S^{t r}\right)
+\end{array}
+$$</p>
+上式采用约等于符号，是因为：在大多数情况下（例如，神经网络内层优化变量），上式中的内部和外部问题的**全局最优值是难以实现**的。通常情况下，以某种方式（例如，使用（随机）梯度下降）对其进行近似。
+
+<p>🌟注意：HO问题不存在DR问题中所提到的两个阶段，因此<strong>大多数可以认为是可微</strong>的。且大多数是带约束的优化（如整数约束等）。</p>
+<p><strong>HO的解决方法主要分为以下几种：</strong></p>
+<ul>
+<li>Unrolled differentiation：在内外层上执行有限步数的梯度下降。注意：<strong>这里的 $\theta$ 相对于 $\lambda$ 是可微的</strong>，因此可以使用梯度下降。具体的分析：将内层变量（神经网络参数）视为一个足够大的矩阵，则外层变量（超参）的变化导致的内层变量变化（如神经网络层数变化）可以被视为矩阵与mask的乘积。因此二者存在函数关系 $\theta = g(\lambda)$，这种函数关系是可微的。</li>
+<li>Cross-validation：CV是HO的经典方法。它首先通过 网格搜索 或 随机搜索 获得一组有限的超参数，通常是 $\Lambda$ 的子集。然后，它训练内层问题，以获得给定超参数的相应参数 $\theta$ 。最后，根据<strong>验证误差</strong>选择最佳 $(\theta^{\star}, \lambda^{\star})$ 对。</li>
+<li>Implicit gradient：隐式梯度方法直接估计外层问题的梯度，这通常涉及一个迭代过程，如共轭梯度、Neumann近似，以估计Hessian矩阵的逆。</li>
+<li>Bayesian optimization：贝叶斯优化将外层问题视为从高斯过程（GP）采样的<strong>黑箱函数</strong>，并在评估新的超参数时更新GP的后验。</li>
+<li>Hypernetworks：学习在给定超参数的情况下输出近似最优假设的代理函数。</li>
+</ul>
  
             </div>
         </div>
@@ -279,7 +301,7 @@ $$</p>
              
     
         <div>
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Formulation-of-Domain-Randomization"><span class="toc-number">1.</span> <span class="toc-text">1. Formulation of Domain Randomization</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Solving-a-Nondifferential-Problem"><span class="toc-number">2.</span> <span class="toc-text">2. Solving a Nondifferential Problem</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-Subgradient%EF%BC%88%E6%AC%A1%E6%A2%AF%E5%BA%A6%EF%BC%89"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 Subgradient（次梯度）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-Proximal-Gradient%EF%BC%88%E8%BF%91%E7%AB%AF%E6%A2%AF%E5%BA%A6%EF%BC%89"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 Proximal Gradient（近端梯度）</span></a></li></ol></li></ol> 
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Formulation-of-Domain-Randomization"><span class="toc-number">1.</span> <span class="toc-text">1. Formulation of Domain Randomization</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Solving-a-Nondifferential-Problem"><span class="toc-number">2.</span> <span class="toc-text">2. Solving a Nondifferential Problem</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-Subgradient%EF%BC%88%E6%AC%A1%E6%A2%AF%E5%BA%A6%EF%BC%89"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 Subgradient（次梯度）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-Proximal-Gradient%EF%BC%88%E8%BF%91%E7%AB%AF%E6%A2%AF%E5%BA%A6%EF%BC%89"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 Proximal Gradient（近端梯度）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Hyperparameter-Optimization"><span class="toc-number">3.</span> <span class="toc-text">3. Hyperparameter Optimization</span></a></li></ol> 
         </div>
     
  
