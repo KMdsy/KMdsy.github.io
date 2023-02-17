@@ -213,7 +213,7 @@ s.t. & \theta^{*} = \arg\min_{\theta}f(\phi, \theta) = \mathbb{E}_{x \sim P_{\ph
 var. & \phi, \theta
 \end{array}
 $$</p>
-可以看到，外层优化问题可微但 **内层优化函数不可微** ，原因在于：
+可以看到，外层优化问题可微但**内层优化函数不可微，** 原因在于：
 
 <ol>
 <li>采样训练数据 $\mathcal{D}_{x}$ 的分布，其参数受控于优化变量$\phi$ 。</li>
@@ -223,16 +223,17 @@ $$</p>
 <p>Ruiz, N., Schulter, S., &amp; Chandraker, M. Learning To Simulate. In International Conference on Learning Representations, 2019.</p>
 </blockquote>
 <h2 id="2-Solving-a-Nondifferential-Problem"><a href="#2-Solving-a-Nondifferential-Problem" class="headerlink" title="2. Solving a Nondifferential Problem"></a>2. Solving a Nondifferential Problem</h2><p>一般来说，不可微问题的解决方法有次 <strong>梯度法（subgradient）</strong>、<strong>近端梯度法（Proximal Gradient）</strong>。</p>
-<h3 id="2-1-Subgradient"><a href="#2-1-Subgradient" class="headerlink" title="2.1 Subgradient"></a>2.1 Subgradient</h3><p>本节的主要参考材料为[1]，同时参考了博客<a target="_blank" rel="noopener" href="https://blog.csdn.net/zbwgycm/article/details/104507442">link</a></p>
+<h3 id="2-1-Subgradient"><a href="#2-1-Subgradient" class="headerlink" title="2.1 Subgradient"></a>2.1 Subgradient</h3><p>本节的主要参考材料为[1]，同时参考了博客[2]</p>
 <blockquote>
 <p>[1] Polyak, B. T. (1978). Subgradient methods: a survey of Soviet research. <em>Nonsmooth optimization</em>, <em>3</em>, 5-29.</p>
+<p>[2] <a target="_blank" rel="noopener" href="https://blog.csdn.net/zbwgycm/article/details/104507442">https://blog.csdn.net/zbwgycm/article/details/104507442</a></p>
 </blockquote>
 <p><strong>次梯度法适用于所有不可微的目标函数，但其收敛速度较慢</strong>。</p>
 <h4 id="2-1-1-Definition"><a href="#2-1-1-Definition" class="headerlink" title="2.1.1 Definition"></a>2.1.1 Definition</h4><p>对于定义在 $\mathbb{R}^n$ 的连续凸函数 $f(x)$ ，当向量 $\partial f(x) \in \mathbb{R}^n $ 满足以下条件时，可被称为函数 $f(x)$ 在 $x$ 点的次梯度</p>
 <p>$$
 f(x+y) \geq f(x)+(\partial f(x), y), \forall y \in R^{n}
 $$</p>
-注：这里的 $(\cdot,\cdot)$ 应该是向量积的意思，[参考](https://blog.csdn.net/zbwgycm/article/details/104507442) 中 $f(y) \geq f(x)+g^{T}(y-x)$。可以看出，相比与梯度的定义（等号），上述条件更为松弛。一些次梯度的性质如下[link](https://blog.csdn.net/zbwgycm/article/details/104507442)
+注：这里的 $(\cdot,\cdot)$ 应该是向量积的意思，参考[2]中 $f(y) \geq f(x)+g^{T}(y-x)$。可以看出，相比与梯度的定义（等号），上述条件更为松弛。一些次梯度的性质如下[2]
 
 <ul>
 <li>次梯度总是出现在定义域 $dom(f)$ 的内部。</li>
@@ -243,9 +244,9 @@ $$</p>
 <p>$$
 x_{k+1} = x_{k} - \gamma_{k} \frac{\partial f(x_k)}{\| \partial f(x_k) \|}
 $$</p>
-其中 $\gamma_k$ 为 step size，上式的简洁写法为 $x_{k+1} = x_k - \gamma_k \cdot g_{k-1}$。梯度法和次梯度法之间的主要区别在于，一般来说，方向 $ \partial f(x_k)$ 不是 $x_k$ 处的下降方向**（并非严格下降）** ，即不可微函数的 $f(x_k)$ 的值 **不会单调减小。** 
+其中 $\gamma_k$ 为 step size，上式的简洁写法为 $x_{k+1} = x_k - \gamma_k \cdot g_{k-1}$。梯度法和次梯度法之间的主要区别在于，一般来说，方向 $ \partial f(x_k)$ 不是 $x_k$ 处的下降方向，即：**并非严格下降** ；不可微函数的 $f(x_k)$ 的值**不会单调减小**。 
 
-<h4 id="2-1-3-Convergence"><a href="#2-1-3-Convergence" class="headerlink" title="2.1.3 Convergence"></a>2.1.3 Convergence</h4><p>convergence rate $O(1/\epsilon^2)$，慢于梯度下降的 $O(1/\epsilon)$ 。</p>
+<h4 id="2-1-3-Convergence"><a href="#2-1-3-Convergence" class="headerlink" title="2.1.3 Convergence"></a>2.1.3 Convergence</h4><p>Convergence rate $O(1/\epsilon^2)$，慢于梯度下降的 $O(1/\epsilon)$ 。</p>
 <h3 id="2-2-Proximal-Gradient"><a href="#2-2-Proximal-Gradient" class="headerlink" title="2.2 Proximal Gradient"></a>2.2 Proximal Gradient</h3><p>本节的主要参考材料为下文，以及博客 <a target="_blank" rel="noopener" href="https://blog.csdn.net/zbwgycm/article/details/83060251">link</a></p>
 <blockquote>
 <p>TODO </p>
