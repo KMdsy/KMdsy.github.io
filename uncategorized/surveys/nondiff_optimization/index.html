@@ -177,7 +177,7 @@
                 2023/02/17 11:10:00 
 
                 <i class="fa fa-pencil"> </i>
-                2023/02/17 21:30:00 
+                2023/02/18 18:20:00 
 
                 <!--
                 <i class="fa fa-folder-open p-1"> </i> 
@@ -246,13 +246,40 @@ x_{k+1} = x_{k} - \gamma_{k} \frac{\partial f(x_k)}{\| \partial f(x_k) \|}
 $$</p>
 其中 $\gamma_k$ 为 step size，上式的简洁写法为 $x_{k+1} = x_k - \gamma_k \cdot g_{k-1}$。梯度法和次梯度法之间的主要区别在于，一般来说，方向 $ \partial f(x_k)$ 不是 $x_k$ 处的下降方向，即：**并非严格下降** ；不可微函数的 $f(x_k)$ 的值**不会单调减小**。 
 
-<h4 id="2-1-3-Convergence"><a href="#2-1-3-Convergence" class="headerlink" title="2.1.3 Convergence"></a>2.1.3 Convergence</h4><p>Convergence rate $O(1/\epsilon^2)$，慢于梯度下降的 $O(1/\epsilon)$ 。</p>
-<h3 id="2-2-Proximal-Gradient"><a href="#2-2-Proximal-Gradient" class="headerlink" title="2.2 Proximal Gradient"></a>2.2 Proximal Gradient</h3><p>本节的主要参考材料为下文，以及博客 <a target="_blank" rel="noopener" href="https://blog.csdn.net/zbwgycm/article/details/83060251">link</a></p>
+<h4 id="2-1-3-Error-and-Convergence"><a href="#2-1-3-Error-and-Convergence" class="headerlink" title="2.1.3 Error and Convergence"></a>2.1.3 Error and Convergence</h4><p>Convergence rate $O(1/\epsilon^2)$，慢于梯度下降的 $O(1/\epsilon)$ 。$k$ 次迭代后的error level为 $O(1/\sqrt{k})$。</p>
+<h3 id="2-2-Proximal-Gradient"><a href="#2-2-Proximal-Gradient" class="headerlink" title="2.2 Proximal Gradient"></a>2.2 Proximal Gradient</h3><p>本节的主要参考材料如下</p>
 <blockquote>
-<p>TODO </p>
+<p>[1] Schmidt, M., Roux, N., &amp; Bach, F. (2011). Convergence rates of inexact proximal-gradient methods for convex optimization. <em>Advances in neural information processing systems</em>, <em>24</em>.</p>
+<p>[2] <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/82622940">https://zhuanlan.zhihu.com/p/82622940</a></p>
 </blockquote>
-<p>近端梯度法适用于“整体优化目标不可微分，但可以<strong>分解为部分可微、部分不可微</strong>”的目标函数。</p>
-<h4 id="2-2-1-Definition"><a href="#2-2-1-Definition" class="headerlink" title="2.2.1 Definition"></a>2.2.1 Definition</h4><p>TODO</p>
+<p>近端梯度法适用于“整体优化目标不可微分，但可以<strong>分解为部分可微、部分不可微</strong>”的目标函数。对比次梯度法，该方法具有更快的收敛速度和误差。</p>
+<h4 id="2-2-1-Problem-Statement"><a href="#2-2-1-Problem-Statement" class="headerlink" title="2.2.1 Problem Statement"></a>2.2.1 Problem Statement</h4><p>近端梯度用于解决一类复合的不可微问题，可以表示如下</p>
+<p>$$
+\underset{x \in \mathbb{R}^d}{\operatorname{minimize}} f(x):=g(x)+h(x)
+$$</p>
+其中 $g,h$ 均为凸函数（convex），但 $g$ 是 smooth 的，$h$ 为不可微的非smooth项。
+
+<h4 id="2-2-2-Definition"><a href="#2-2-2-Definition" class="headerlink" title="2.2.2 Definition"></a>2.2.2 Definition</h4><p>近端梯度算法的基础是以下的近端算子（proximity operator），其定义如下</p>
+<p>$$
+\operatorname{prox}_L(y)=\underset{x \in \mathbb{R}^d}{\arg \min } \frac{L}{2}\|x-y\|^2+h(x)
+$$</p>
+其中 $L$ 是函数 $g$ 的  Lipschitz 常数。本质上，**近端算子用平滑项 $g$ 的二次近拟定义了变量向最小值的更新方向**。
+
+<p>上式解读：上式的自变量是 $y$，目标是给定一个 $y$，找到使得后面的式子最小化的 $x$。可以看出，由于后面的最小化问题其优化变量是 $x$，因此近端算子的形式与 $h$ 项密切相关。</p>
+<p>🌟 对于几种特殊的 $h$ 形式，例如 $l_1$-norm，上面的近端算子是存在解析解的（详见[1]中的参考文献[5, 6]以及知乎文章）。<strong>然而，在许多情况下，邻近算子可能没有解析解，或者精确计算该解可能非常昂贵。</strong></p>
+<h4 id="2-2-3-Proximal-Gradient-Descent"><a href="#2-2-3-Proximal-Gradient-Descent" class="headerlink" title="2.2.3 Proximal Gradient Descent"></a>2.2.3 Proximal Gradient Descent</h4><p>借助近端梯度做优化时的参数更新方法如下（generalized form）</p>
+<p>$$
+x_k=\operatorname{prox}_L\left[y_{k-1}-(1 / L)\left(\nabla g\left(y_{k-1}\right)+e_k\right)\right]
+$$</p>
+其中 $e_k$ 是计算梯度时引入的误差，此外，如果近端算子被不精确求解，$x_k$ 将还存在一个由此导致的误差项 $\epsilon_k$。
+
+<p>上式的一种更容易理解的写法为（basic gradient descent），其中 $t$ 为迭代的步长≥</p>
+<p>$$
+x_k=\operatorname{prox}_L\left[x_{k-1}-t\nabla g\left(x_{k-1}\right)\right]
+$$</p>
+相比 generalized form，basic gradient descent 取 $y_k = x_k$，在**accelerated proximal-gradient method**中，$y_k=x_k+\beta_k\left(x_k-x_{k-1}\right)$。
+
+<h4 id="2-2-4-Error"><a href="#2-2-4-Error" class="headerlink" title="2.2.4 Error"></a>2.2.4 Error</h4><p>$k$ 次迭代后的error level为 $O(1/k)$。accelerated proximal-gradient 的 error level 为 $O(k^2)$。</p>
 <h2 id="3-Hyperparameter-Optimization"><a href="#3-Hyperparameter-Optimization" class="headerlink" title="3. Hyperparameter Optimization"></a>3. Hyperparameter Optimization</h2><p>本节内容参考</p>
 <blockquote>
 <p>Bao, F., Wu, G., Li, C., Zhu, J., &amp; Zhang, B. (2021). Stability and generalization of bilevel programming in hyperparameter optimization. <em>Advances in Neural Information Processing Systems</em>, <em>34</em>, 4529-4541.</p>
