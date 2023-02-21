@@ -177,7 +177,7 @@
                 2023/02/06 16:10:00 
 
                 <i class="fa fa-pencil"> </i>
-                2023/02/13 15:30:00 
+                2023/02/21 20:51:00 
 
                 <!--
                 <i class="fa fa-folder-open p-1"> </i> 
@@ -206,6 +206,7 @@
 
             <div class="border-bottom pb-2">
                 <p>本文首先对Sim2real问题作出了简要介绍，并简单对其方法作出分类。接着，对于其中的domain randomization方法给出bilevel optimization的形式，最后调研了基于上述优化形式（或类似形式）下的优化问题求解方案。</p>
+<p>此外 <a target="_blank" rel="noopener" href="https://lilianweng.github.io/posts/2019-05-05-domain-randomization/">Lilian Weng (Open AI) 的博客</a> 对 DR 问题做了深入探讨，极具价值。</p>
 <span id="more"></span>
 
 <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>sim2real的全称是simulation to reality，是强化学习的一个分支，同时也属于transfer learning的一种。主要解决的问题是机器人领域中，直接让机器人或者机械臂在现实环境中与环境进行交互、采样时，会出现以下两个比较严重的问题：</p>
@@ -244,7 +245,7 @@
 <p>Domain randomization 和 dynamics randomization侧重于在模拟环境中引入扰动，目的是使代理不易受模拟与现实之间不匹配的影响[30]、[38]、[40]。在其他作品中也扩展了相同的概念，其中引入了扰动以获得更鲁棒的代理。例如，在[72]中，作者考虑了嘈杂的奖励。虽然与模拟到真实的迁移没有直接关系，但嘈杂的奖励可以更好地模拟真实世界的代理训练。此外，在我们最近的一些作品中[8]，[73]，我们考虑了影响并行学习的不同代理的环境扰动。当要使用通用策略部署或训练多个真实代理时，这是需要考虑的一个方面。</p>
 <p><strong>tax1.6 Simulation Environments</strong></p>
 <p>sim2real的一个关键方面是<strong>模拟器</strong>的选择。独立于用于有效地将知识转移到真实机器人的技术，模拟器越逼真，预期的结果就越好。文献中使用最广泛的模拟器是 Gazebo [74]、Unity3D 和 PyBullet [75]或 MuJoCo [17]。Gazebo 具有与机器人操作系统 (ROS) 中间件广泛集成的优势，因此可以与真实机器人中存在的部分机器人堆栈一起使用。另一方面，PyBullet 和 MuJoCo 与 DL 和 RL 库以及体育馆环境进行了更广泛的集成。一般来说，Gazebo 适合更复杂的场景，而 PyBullet 和 MuJoCo 提供更快的训练。在以一次性传输的系统识别为目标的情况下，研究人员通常会构建或定制满足特定问题要求和约束的特定模拟[32]、[36]、[41]。</p>
-<h2 id="2-Domain-randomization优化问题表述"><a href="#2-Domain-randomization优化问题表述" class="headerlink" title="2. Domain randomization优化问题表述"></a>2. Domain randomization优化问题表述</h2><p>Domain randomization问题可以表述为以下的双层优化问题，</p>
+<h2 id="2-Domain-randomization优化问题表述"><a href="#2-Domain-randomization优化问题表述" class="headerlink" title="2. Domain randomization优化问题表述"></a>2. Domain randomization优化问题表述</h2><p>Domain randomization问题可以表述为以下的双层优化问题</p>
 <p>$$
 \begin{array}{rl}
 \min & F(\phi, \theta) = \mathcal{L}(\theta^{*};\mathcal{D}_{real}) \\
@@ -267,8 +268,16 @@ $$</p>
 <p>🌟 Franceschi, L., Frasconi, P., Salzo, S., Grazzi, R., &amp; Pontil, M. (2018, July). Bilevel programming for hyperparameter optimization and meta-learning. In <em>International Conference on Machine Learning</em> (pp. 1568-1577). PMLR.</p>
 <p>Marez, D., Borden, S., &amp; Nans, L. (2020, May). UAV detection with a dataset augmented by domain randomization. In <em>Geospatial Informatics X</em> (Vol. 11398, pp. 39-50). SPIE.</p>
 </blockquote>
-<h2 id="3-调研：基于bi-level-optimization的样本生成"><a href="#3-调研：基于bi-level-optimization的样本生成" class="headerlink" title="3. 调研：基于bi-level optimization的样本生成"></a>3. 调研：基于bi-level optimization的样本生成</h2><ol>
-<li>基于<strong>policy gradients</strong> (RL, 4说的) 解上述双层优化问题（无代码）</li>
+<p>以上表达是对DR问题的直接表达，即寻找一组恰当的仿真器参数，该参数与现实分布相似。但上述方法是一个<strong>non-convex non-smooth</strong>问题，其形式并不利于优化，目前解决这种优化问题的思路包括：</p>
+<ul>
+<li>无需梯度的：贝叶斯优化、RL等无需求导运算的方法</li>
+<li>基于梯度的：借助对抗思想，将原问题转化为单层的min-max问题</li>
+</ul>
+<p>下图中是文献 “Goldilocks-curriculum Domain Randomization and Fractal Perlin Noise with Application to Sim2Real Pneumonia Lesion Detection” 中的方法总结。</p>
+<img src="https://raw.githubusercontent.com/KMdsy/figurebed/master/img/image-20230221203527418.png" style="zoom:50%;" />
+
+<h2 id="3-调研：基于Bi-level-Optimization的DR问题求解"><a href="#3-调研：基于Bi-level-Optimization的DR问题求解" class="headerlink" title="3. 调研：基于Bi-level Optimization的DR问题求解"></a>3. 调研：基于Bi-level Optimization的DR问题求解</h2><h3 id="3-1-Gradient-free"><a href="#3-1-Gradient-free" class="headerlink" title="3.1 Gradient-free"></a>3.1 Gradient-free</h3><ol>
+<li>基于<strong>policy gradients</strong> (RL) 解双层优化问题（无代码）</li>
 </ol>
 <blockquote>
 <p>Ruiz, N., Schulter, S., &amp; Chandraker, M. Learning To Simulate. In <em>2019 International Conference on Learning Representations</em>.</p>
@@ -293,7 +302,7 @@ $$</p>
 
 
 <ol start="3">
-<li>本文提出，借助少量的真实世界数据，让RL算法从真实有效的分布开始，<strong>渐进、迭代式的</strong>学习更广、更宽的分布上的策略。</li>
+<li>本文提出，借助少量的真实世界数据，让<strong>RL</strong>算法从真实有效的分布开始，<strong>渐进、迭代式的</strong>学习更广、更宽的分布上的策略。</li>
 </ol>
 <blockquote>
 <p>Y. Chebotar et al., “Closing the Sim-to-Real Loop: Adapting Simulation Randomization with Real World Experience,” 2019 International Conference on Robotics and Automation (ICRA), Montreal, QC, Canada, 2019, pp. 8973-8979, doi: 10.1109/ICRA.2019.8793789.</p>
@@ -317,6 +326,24 @@ $$</p>
 </blockquote>
 <p>本文的内层优化问题是一个policy learning问题，本文的中心思想是借助少量优先的真实世界样本来矫正simulator。本文提出基于Cross entropy method (CEM) 和proximal policy optimization (PPO)分别解决上述的外层和内层优化问题，其中CEM作为解domain randomization问题的关键，是一种iterative gradient-free stochastic optimization method。</p>
 <ol start="5">
+<li><strong>Active domain randomization (RL-based)<strong>：传统DR需要显式的给出一组随机参数、以及对应的取值空间，常用的经典做法是——在取值空间中做均匀采样，以生成不同类型的环境。但有工作证明，这样的均匀采样导致模型学习了过多不常出现的环境策略，从而导致低效学习。本文提出，</strong>将simulator变量取值空间中的变量生成问题也看作称一个RL问题，并使用学习算法来学习如何在空间中采样</strong>。该方法的外层优化目标也是一个RL问题。</li>
+</ol>
+<blockquote>
+<p>Raparthy, S. C., Mehta, B., Golemo, F., &amp; Paull, L. (2020). Generating automatic curricula via self-supervised active domain randomization. <em>arXiv preprint arXiv:2002.07911</em>.</p>
+</blockquote>
+<h3 id="3-2-Gradient-based"><a href="#3-2-Gradient-based" class="headerlink" title="3.2 Gradient-based"></a>3.2 Gradient-based</h3><ol>
+<li>引入对抗思想，将bilevel问题转化为单层的<strong>minmax问题</strong></li>
+</ol>
+<blockquote>
+<p>Zakharov, S., Kehl, W., Ilic, S.: Deceptionnet: Network-driven domain randomization. In: ICCV (2019)</p>
+</blockquote>
+<ol start="2">
+<li>这篇没有找到原文，应该有更新的版本</li>
+</ol>
+<blockquote>
+<p>Khirodkar, R., Yoo, D., Kitani, K.M.: VADRA: visual adversarial domain randomization and augmentation. CoRR abs/1812.00491 (2018)</p>
+</blockquote>
+<h3 id="3-3-others"><a href="#3-3-others" class="headerlink" title="3.3 others"></a>3.3 others</h3><ol>
 <li>引入<strong>Goldilocks Principle</strong>：在curriculum learning的领域，以一种meaningful的order训练模型对模型学习策略是十分有效的，换言之，在学习过程中有一个学习任务的sweet point，在该点上持续学习，可以最大程度的提升模型性能（大概是这个意思，可能不准）。改工作的formulation不同于上一节。</li>
 </ol>
 <blockquote>
@@ -331,17 +358,11 @@ $$</p>
 $$</p>
 内层：求训练一个分类器，该分类器在所有模拟器参数上的平均性能达到最优。外层：区别于其他工作，是一种curriculum-based method，它通过调整 $k$ 来获得对对给定的模型来说具有不同难度的任务，该方法试图找到一个sweet point，在该点上，模型可以最有效的进行学习（原文：Goldilocks principle suggests that there might be a **sweet spot** of task difficulty that **is effective to successfully progress the training** of the current model）。
 
-
-
-<ol start="6">
-<li><strong>Active domain randomization (RL-based)<strong>：传统DR需要显式的给出一组随机参数、以及对应的取值空间，常用的经典做法是——在取值空间中做均匀采样，以生成不同类型的环境。但有工作证明，这样的均匀采样导致模型学习了过多不常出现的环境策略，从而导致低效学习。本文提出，</strong>将simulator变量取值空间中的变量生成问题也看作称一个RL问题，并使用学习算法来学习如何在空间中采样</strong>。该方法的外层优化目标也是一个RL问题。</li>
-</ol>
-<blockquote>
-<p>Raparthy, S. C., Mehta, B., Golemo, F., &amp; Paull, L. (2020). Generating automatic curricula via self-supervised active domain randomization. <em>arXiv preprint arXiv:2002.07911</em>.</p>
-</blockquote>
 <h2 id="4-提及bilevel-formulation但未给出解决方法的工作"><a href="#4-提及bilevel-formulation但未给出解决方法的工作" class="headerlink" title="4. 提及bilevel formulation但未给出解决方法的工作"></a>4. 提及bilevel formulation但未给出解决方法的工作</h2><p>还有一些文献没有提出具体的bilevel优化解决方法，但套用了该概念做了论文陈述，如:</p>
 <p>[1] 仅说明了 $S \subseteq R $ 即：the feature space of synthetic dataset must encompass features from the real world data。</p>
+<blockquote>
 <p>[1] Shamsuddin, A. F., Ragunathan, K., Abhijith, P., PM, D. R. S., &amp; Sankaran, P. (2022). From synthetic to natural—single natural image dehazing deep networks using synthetic dataset domain randomization. <em>Journal of Visual Communication and Image Representation</em>, <em>89</em>, 103636.</p>
+</blockquote>
  
             </div>
         </div>
@@ -376,7 +397,7 @@ $$</p>
              
     
         <div>
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Sim2real-%E5%88%86%E7%B1%BB"><span class="toc-number">2.</span> <span class="toc-text">1. Sim2real 分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Domain-randomization%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98%E8%A1%A8%E8%BF%B0"><span class="toc-number">3.</span> <span class="toc-text">2. Domain randomization优化问题表述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%B0%83%E7%A0%94%EF%BC%9A%E5%9F%BA%E4%BA%8Ebi-level-optimization%E7%9A%84%E6%A0%B7%E6%9C%AC%E7%94%9F%E6%88%90"><span class="toc-number">4.</span> <span class="toc-text">3. 调研：基于bi-level optimization的样本生成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%8F%90%E5%8F%8Abilevel-formulation%E4%BD%86%E6%9C%AA%E7%BB%99%E5%87%BA%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E7%9A%84%E5%B7%A5%E4%BD%9C"><span class="toc-number">5.</span> <span class="toc-text">4. 提及bilevel formulation但未给出解决方法的工作</span></a></li></ol> 
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Sim2real-%E5%88%86%E7%B1%BB"><span class="toc-number">2.</span> <span class="toc-text">1. Sim2real 分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Domain-randomization%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98%E8%A1%A8%E8%BF%B0"><span class="toc-number">3.</span> <span class="toc-text">2. Domain randomization优化问题表述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%B0%83%E7%A0%94%EF%BC%9A%E5%9F%BA%E4%BA%8EBi-level-Optimization%E7%9A%84DR%E9%97%AE%E9%A2%98%E6%B1%82%E8%A7%A3"><span class="toc-number">4.</span> <span class="toc-text">3. 调研：基于Bi-level Optimization的DR问题求解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-Gradient-free"><span class="toc-number">4.1.</span> <span class="toc-text">3.1 Gradient-free</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-Gradient-based"><span class="toc-number">4.2.</span> <span class="toc-text">3.2 Gradient-based</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-others"><span class="toc-number">4.3.</span> <span class="toc-text">3.3 others</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%8F%90%E5%8F%8Abilevel-formulation%E4%BD%86%E6%9C%AA%E7%BB%99%E5%87%BA%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E7%9A%84%E5%B7%A5%E4%BD%9C"><span class="toc-number">5.</span> <span class="toc-text">4. 提及bilevel formulation但未给出解决方法的工作</span></a></li></ol> 
         </div>
     
  

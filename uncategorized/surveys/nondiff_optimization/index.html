@@ -177,7 +177,7 @@
                 2023/02/17 11:10:00 
 
                 <i class="fa fa-pencil"> </i>
-                2023/02/18 18:20:00 
+                2023/02/21 21:13:00 
 
                 <!--
                 <i class="fa fa-folder-open p-1"> </i> 
@@ -201,8 +201,13 @@
             </div>
 
             <div class="border-bottom pb-2">
-                <p><a href="/uncategorized/surveys/bilevel_optimization">上篇</a>调研总结了双层优化问题的解决范式，并梳理了双层优化应用在Sim2real的domain randomization（DR）问题上时的难点在于“<strong>如何解不可微分的外层优化函数</strong>”，本文将对这一议题进行调研。</p>
-<p>此外本文也将简要介绍一下关于超参优化（hyperparameter optimization，HO）的内容，调研HO问题的原因是：domain randomization与HO问题具有相似的formulation，但二者又存在区别（最重要的区别在于一般的HO问题是differetiable的，而DR问题则不是），因此阅读了一些文献并做了简要总结。</p>
+                <p><a href="/uncategorized/surveys/bilevel_optimization">上篇</a>调研总结了双层优化问题的解决范式，并梳理了双层优化应用在Sim2real的domain randomization（DR）问题上时的难点在于</p>
+<ul>
+<li>如何解不可微的外层优化问题</li>
+<li><strong>如何转换不可微的外层优化问题为smooth的</strong></li>
+</ul>
+<p>本文将对其中 “不可微问题的求解” 进行调研。</p>
+<p>此外本文也将简要介绍一下关于超参优化（hyperparameter optimization，HO）的内容，调研HO问题的原因是：domain randomization与HO问题具有相似的formulation，但二者又存在区别（最重要的区别在于一般的HO问题是differetiable的，DR问题在没有转换为smooth问题之前是不可微的），因此阅读了一些文献并做了简要总结。</p>
 <span id="more"></span>
 
 <h2 id="1-Formulation-of-Domain-Randomization"><a href="#1-Formulation-of-Domain-Randomization" class="headerlink" title="1. Formulation of Domain Randomization"></a>1. Formulation of Domain Randomization</h2><p><a href="uncategorized/surveys/sim2real">回顾</a>DR的formulation如下</p>
@@ -223,7 +228,7 @@ $$</p>
 <p>Ruiz, N., Schulter, S., &amp; Chandraker, M. Learning To Simulate. In International Conference on Learning Representations, 2019.</p>
 </blockquote>
 <h2 id="2-Solving-a-Nondifferential-Problem"><a href="#2-Solving-a-Nondifferential-Problem" class="headerlink" title="2. Solving a Nondifferential Problem"></a>2. Solving a Nondifferential Problem</h2><p>一般来说，不可微问题的解决方法有次 <strong>梯度法（subgradient）</strong>、<strong>近端梯度法（Proximal Gradient）</strong>。</p>
-<h3 id="2-1-Subgradient"><a href="#2-1-Subgradient" class="headerlink" title="2.1 Subgradient"></a>2.1 Subgradient</h3><p>本节的主要参考材料为[1]，同时参考了博客[2]</p>
+<h3 id="2-1-Subgradient"><a href="#2-1-Subgradient" class="headerlink" title="2.1 Subgradient"></a>2.1 Subgradient</h3><p><strong>次梯度法一般用于求解convex non-smooth问题</strong>，本节的主要参考材料为[1]，同时参考了博客[2]</p>
 <blockquote>
 <p>[1] Polyak, B. T. (1978). Subgradient methods: a survey of Soviet research. <em>Nonsmooth optimization</em>, <em>3</em>, 5-29.</p>
 <p>[2] <a target="_blank" rel="noopener" href="https://blog.csdn.net/zbwgycm/article/details/104507442">https://blog.csdn.net/zbwgycm/article/details/104507442</a></p>

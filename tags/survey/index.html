@@ -179,7 +179,7 @@
             -->
 
             <i class="fa fa-pencil"> </i>
-            2023/02/18 18:20:00 
+            2023/02/21 21:13:00 
 
             <!--
             <i class="fa fa-folder-open p-1"> </i> 
@@ -205,8 +205,13 @@
         <div class="pt-3 pe-1">
             <!-- 如果有摘要则显示摘要，没有就自己截取 -->
             
-                <p><a href="/uncategorized/surveys/bilevel_optimization">上篇</a>调研总结了双层优化问题的解决范式，并梳理了双层优化应用在Sim2real的domain randomization（DR）问题上时的难点在于“<strong>如何解不可微分的外层优化函数</strong>”，本文将对这一议题进行调研。</p>
-<p>此外本文也将简要介绍一下关于超参优化（hyperparameter optimization，HO）的内容，调研HO问题的原因是：domain randomization与HO问题具有相似的formulation，但二者又存在区别（最重要的区别在于一般的HO问题是differetiable的，而DR问题则不是），因此阅读了一些文献并做了简要总结。</p> 
+                <p><a href="/uncategorized/surveys/bilevel_optimization">上篇</a>调研总结了双层优化问题的解决范式，并梳理了双层优化应用在Sim2real的domain randomization（DR）问题上时的难点在于</p>
+<ul>
+<li>如何解不可微的外层优化问题</li>
+<li><strong>如何转换不可微的外层优化问题为smooth的</strong></li>
+</ul>
+<p>本文将对其中 “不可微问题的求解” 进行调研。</p>
+<p>此外本文也将简要介绍一下关于超参优化（hyperparameter optimization，HO）的内容，调研HO问题的原因是：domain randomization与HO问题具有相似的formulation，但二者又存在区别（最重要的区别在于一般的HO问题是differetiable的，DR问题在没有转换为smooth问题之前是不可微的），因此阅读了一些文献并做了简要总结。</p> 
              
         </div>
     </div>
@@ -226,7 +231,7 @@
             -->
 
             <i class="fa fa-pencil"> </i>
-            2023/02/16 21:50:00 
+            2023/02/21 21:08:00 
 
             <!--
             <i class="fa fa-folder-open p-1"> </i> 
@@ -253,7 +258,7 @@
             <!-- 如果有摘要则显示摘要，没有就自己截取 -->
             
                 <p>本文调研了双层优化问题的解决范式，对两种popular的<strong>基于梯度</strong>的方法——AID、ITD作出介绍与总结。最后，本文对如何利用bilevel optimization解决sim2real问题难点作出梳理。</p>
-<p>本调研的motivation来自于<a target="_blank" rel="noopener" href="//uncategorized/surveys/sim2real/">sim2real</a>问题——借助少量的仿真数据，如何找到一组仿真器参数$\phi$，在该组参数下的仿真数据上训练一个异常检测模型，将会在现实数据中有较好的效果——这可以类比于一个超参数调优问题。</p> 
+<p>本调研的motivation来自于<a href="/uncategorized/surveys/sim2real/">sim2real</a>问题——借助少量的仿真数据，如何找到一组仿真器参数$\phi$，在该组参数下的仿真数据上训练一个异常检测模型，将会在现实数据中有较好的效果——这可以类比于一个超参数调优问题。</p> 
              
         </div>
     </div>
@@ -273,7 +278,7 @@
             -->
 
             <i class="fa fa-pencil"> </i>
-            2023/02/13 15:30:00 
+            2023/02/21 20:51:00 
 
             <!--
             <i class="fa fa-folder-open p-1"> </i> 
@@ -303,7 +308,8 @@
         <div class="pt-3 pe-1">
             <!-- 如果有摘要则显示摘要，没有就自己截取 -->
             
-                <p>本文首先对Sim2real问题作出了简要介绍，并简单对其方法作出分类。接着，对于其中的domain randomization方法给出bilevel optimization的形式，最后调研了基于上述优化形式（或类似形式）下的优化问题求解方案。</p> 
+                <p>本文首先对Sim2real问题作出了简要介绍，并简单对其方法作出分类。接着，对于其中的domain randomization方法给出bilevel optimization的形式，最后调研了基于上述优化形式（或类似形式）下的优化问题求解方案。</p>
+<p>此外 <a target="_blank" rel="noopener" href="https://lilianweng.github.io/posts/2019-05-05-domain-randomization/">Lilian Weng (Open AI) 的博客</a> 对 DR 问题做了深入探讨，极具价值。</p> 
              
         </div>
     </div>
@@ -440,12 +446,12 @@
             <i class="fa fa-tag p-1"> </i>
             <span class="tag-hover">
                 
-                    <a href="" class="link-dark text-decoration-none title"> 
-                        survey 
-                    </a>
-                
                     <a href="../paper-list/" class="link-dark text-decoration-none title"> 
                         paper list 
+                    </a>
+                
+                    <a href="" class="link-dark text-decoration-none title"> 
+                        survey 
                     </a>
                 
                     <a href="../causal-discovery/" class="link-dark text-decoration-none title"> 
@@ -504,12 +510,12 @@
                         note 
                     </a>
                 
-                    <a href="" class="link-dark text-decoration-none title"> 
-                        survey 
-                    </a>
-                
                     <a href="../paper-list/" class="link-dark text-decoration-none title"> 
                         paper list 
+                    </a>
+                
+                    <a href="" class="link-dark text-decoration-none title"> 
+                        survey 
                     </a>
                 
                     <a href="../causal-discovery/" class="link-dark text-decoration-none title"> 
@@ -567,6 +573,10 @@
             <i class="fa fa-tag p-1"> </i>
             <span class="tag-hover">
                 
+                    <a href="../paper-list/" class="link-dark text-decoration-none title"> 
+                        paper list 
+                    </a>
+                
                     <a href="" class="link-dark text-decoration-none title"> 
                         survey 
                     </a>
@@ -577,10 +587,6 @@
                 
                     <a href="../time-series/" class="link-dark text-decoration-none title"> 
                         time series 
-                    </a>
-                
-                    <a href="../paper-list/" class="link-dark text-decoration-none title"> 
-                        paper list 
                     </a>
                 
             </span>
@@ -663,8 +669,8 @@
     <!-- 标题 -->
     <div class="pb-4 tag-hover">
         <p class="tag-hover h3">
-            <a href="../../uncategorized/surveys/interpretable_DNN/" class="link-dark text-decoration-none title">
-                Self-explaining DNN 
+            <a href="../../uncategorized/surveys/interpretability/" class="link-dark text-decoration-none title">
+                Post-hoc interpretability 
             </a>
         </p>
 
@@ -687,12 +693,12 @@
             <i class="fa fa-tag p-1"> </i>
             <span class="tag-hover">
                 
-                    <a href="" class="link-dark text-decoration-none title"> 
-                        survey 
-                    </a>
-                
                     <a href="../paper-list/" class="link-dark text-decoration-none title"> 
                         paper list 
+                    </a>
+                
+                    <a href="" class="link-dark text-decoration-none title"> 
+                        survey 
                     </a>
                 
                     <a href="../interpretability/" class="link-dark text-decoration-none title"> 
@@ -705,7 +711,7 @@
         <div class="pt-3 pe-1">
             <!-- 如果有摘要则显示摘要，没有就自己截取 -->
             
-                <p>key words: Self-explaining models</p> 
+                <h2 id="研究问题描述"><a href="#研究问题描述" class="headerlink" title="研究问题描述"></a>研究问题描述</h2><p>深度学习模型的事后（post-hoc）可解释方法：给定一个已训练的深度神经网络模型，如何对其输出进行解释。</p> 
              
         </div>
     </div>
