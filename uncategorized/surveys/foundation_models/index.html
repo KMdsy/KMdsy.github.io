@@ -177,7 +177,7 @@
                 2022/11/21 12:00:00 
 
                 <i class="fa fa-pencil"> </i>
-                2022/11/22 23:28:00 
+                2023/03/01 15:28:00 
 
                 <!--
                 <i class="fa fa-folder-open p-1"> </i> 
@@ -213,7 +213,7 @@
 <span id="more"></span>
 
 <p>注：有些调研直接截图了平日的工作汇报，注意与最新的工作进展及时同步。</p>
-<h2 id="1-Big-Model-after-GPT-3"><a href="#1-Big-Model-after-GPT-3" class="headerlink" title="1. Big Model, after GPT-3"></a>1. Big Model, after GPT-3</h2><p>概括：<strong>超大参数规模</strong>的模型，并利用<strong>超大规模数据</strong>，大多以self-supervised方式进行训练，来学习数据的通用表征。后续通过prompt、fine-tune等迁移学习方法适应不同下游任务的通用模型范式。</p>
+<h2 id="1-Large-Language-Model-after-GPT-3"><a href="#1-Large-Language-Model-after-GPT-3" class="headerlink" title="1. Large Language Model, after GPT-3"></a>1. Large Language Model, after GPT-3</h2><p>概括：<strong>超大参数规模</strong>的模型，并利用<strong>超大规模数据</strong>，大多以self-supervised方式进行训练，来学习数据的通用表征。后续通过prompt、fine-tune等迁移学习方法适应不同下游任务的通用模型范式。</p>
 <p><strong>目前foundation model的应用领域以及下游任务包括</strong></p>
 <ul>
 <li><p>NLP（成熟）</p>
@@ -233,7 +233,7 @@
 </ul>
 </li>
 </ul>
-<p><img src="https://raw.githubusercontent.com/KMdsy/figurebed/master/img/image-20221121142447307.png" alt="image-20221121142447307"></p>
+<p><img src="https://raw.githubusercontent.com/KMdsy/figurebed/master/img/image-20221121142447307.png" alt="Explode of LLM"></p>
 <p><strong>Foundation model的特点：emergence, homogenization</strong></p>
 <ul>
 <li><p>Emergence：除“隐生性”，即模型学习到的表征是隐性的，而非人类指定的。还有一种解释为“<strong>涌现性</strong>”，即：模型参数规模上，由量变引起质变的过程，一些模型的特性在小模型上不具备，而当参数规模扩大后才会显露的特性。</p>
@@ -254,7 +254,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="1-1-大模型调研"><a href="#1-1-大模型调研" class="headerlink" title="1.1 大模型调研"></a>1.1 大模型调研</h3><p><img src="https://raw.githubusercontent.com/KMdsy/figurebed/master/img/image-20221121143241729.png" alt="image-20221121143241729"></p>
+<h3 id="1-1-大模型调研"><a href="#1-1-大模型调研" class="headerlink" title="1.1 大模型调研"></a>1.1 大模型调研</h3><p><img src="https://raw.githubusercontent.com/KMdsy/figurebed/master/img/image-20221121143241729.png" alt="LLM-Timeline"></p>
 <p>上述模型的体量总结如下表</p>
 <table>
 <thead>
@@ -350,8 +350,50 @@
 <td align="center">Transformer     (like GLM)</td>
 </tr>
 </tbody></table>
-<p><strong>大模型基础架构</strong></p>
-<p>目前在NLP领域被成功训练并大规模应用的模型，都是基于Transformer的self-attention架构的：</p>
+<h4 id="1-1-1-大模型研究进展更新"><a href="#1-1-1-大模型研究进展更新" class="headerlink" title="1.1.1 大模型研究进展更新"></a>1.1.1 大模型研究进展更新</h4><h5 id="LLaMA-Meta-AI-2023-02-23"><a href="#LLaMA-Meta-AI-2023-02-23" class="headerlink" title="LLaMA [Meta AI, 2023.02.23]"></a>LLaMA [Meta AI, 2023.02.23]</h5><ol>
+<li><p><strong>模型亮点</strong></p>
+<ul>
+<li><p>着眼于<strong>高效推理</strong>的大模型，以<strong>小规模参数</strong>、<strong>大规模</strong> <strong>token</strong>，借助<strong>公开</strong>数据集，使用<strong>常规优化器</strong>训练的<strong>开源</strong>大模型</p>
+</li>
+<li><p>在不同规模的参数量上训练不同规模的模型</p>
+<ul>
+<li><p>LLaMA-13B 的性能优于 GPT3-130B，但仅有约0.1倍参数量</p>
+</li>
+<li><p>LLaMA-65B 的性能比肩 Chinchilla-70B、PaLM-540B</p>
+</li>
+</ul>
+</li>
+<li><p>重点评估了模型的 biases and toxicity</p>
+</li>
+</ul>
+</li>
+<li><p><strong>模型架构</strong></p>
+<ul>
+<li><p>骨架模型：Transformer</p>
+</li>
+<li><p>结构修改：</p>
+<ul>
+<li><p>[GPT3] 在每个 Transformer 子层，normalize (RMSNorm) 输入，而非输出</p>
+</li>
+<li><p>[PaLM] 用 SwiGLU 取代 ReLU；记 attention 层维度为 $d_{model}=d_{head}\times n_{head}$，feed-forward 层维度为 $d_{ff}=\frac{2}{3} 4d_{model}$ ，而非 $4d_{model}$</p>
+</li>
+<li><p>[GPTNeo] Embedding 方法采用 rotary positional embeddings (RoPE)，而非absolute positional embeddings</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>训练、推理空间</strong></p>
+<ul>
+<li><p>训练：2048 A100 GPU with 80GB of RAM</p>
+</li>
+<li><p>推理：LLaMA-13B可推理于<strong>一张</strong> V100 GPU</p>
+</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/KMdsy/figurebed/master/img/image-20230301154352127.png" alt="Model size"></p>
+<h4 id="1-1-2-大模型基础架构"><a href="#1-1-2-大模型基础架构" class="headerlink" title="1.1.2 大模型基础架构"></a>1.1.2 大模型基础架构</h4><p>目前在NLP领域被成功训练并大规模应用的模型，都是基于Transformer的self-attention架构的：</p>
 <ol>
 <li><p>Autoregressive（仅包含decoder）：自回归模型的代表是GPT。本质上是一个从左到右的语言模型，训练目标是从左到右的文本生成。</p>
 <ul>
@@ -391,7 +433,7 @@
 <li><p>记self-attention的层数为$n_{layer}$</p>
 </li>
 </ul>
-<p><img src="https://raw.githubusercontent.com/KMdsy/figurebed/master/img/image-20221121144017190.png" alt="image-20221121144017190"></p>
+<p><img src="https://raw.githubusercontent.com/KMdsy/figurebed/master/img/image-20221121144017190.png" alt="Complexity Analysis"></p>
 <h2 id="2-How-to-train-a-big-model-from-zero-to-one"><a href="#2-How-to-train-a-big-model-from-zero-to-one" class="headerlink" title="2. How to train a big model, from zero to one"></a>2. How to train a big model, from zero to one</h2><p>在specific-domain构建一个大模型，首先需要</p>
 <ol>
 <li><p>确定下游任务</p>
@@ -410,7 +452,7 @@
 </li>
 </ol>
 <p>在确定了以上要素后，在specific-domain foundation model中存在“词表与通用领域不同”的问题，即可能某些词语在通用语料库中不存在，或具有歧义，因此模型的word embedding层需要替换为specific domain的词表。如下图所示采用skip-gram学习embedding。</p>
-<img src="https://raw.githubusercontent.com/KMdsy/figurebed/master/img/image-20221123161546624.png" alt="image-20221123161546624" style="zoom: 33%;" />
+<img src="https://raw.githubusercontent.com/KMdsy/figurebed/master/img/image-20221123161546624.png" alt="" style="zoom: 33%;" />
 
 
 
@@ -500,7 +542,7 @@
              
     
         <div>
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Big-Model-after-GPT-3"><span class="toc-number">1.</span> <span class="toc-text">1. Big Model, after GPT-3</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E8%B0%83%E7%A0%94"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 大模型调研</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 大模型复杂度分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-How-to-train-a-big-model-from-zero-to-one"><span class="toc-number">2.</span> <span class="toc-text">2. How to train a big model, from zero to one</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Related-work-after-2020"><span class="toc-number">3.</span> <span class="toc-text">3. Related work, after 2020</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%9C%A8%E5%9E%82%E7%9B%B4%E9%A2%86%E5%9F%9F%EF%BC%88%E5%AE%9A%E4%B9%89%E5%9C%A8%E6%96%87%E6%9C%AC%E9%A2%86%E5%9F%9F%EF%BC%89%E7%9A%84%E6%9E%84%E5%BB%BA"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 大模型在垂直领域（定义在文本领域）的构建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%9C%A8%E5%9E%82%E7%9B%B4%E9%A2%86%E5%9F%9F%EF%BC%88%E5%AE%9A%E4%B9%89%E5%9C%A8%E7%89%A9%E7%90%86%E4%B8%96%E7%95%8C%EF%BC%89%E7%9A%84%E6%9E%84%E5%BB%BA"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 大模型在垂直领域（定义在物理世界）的构建</span></a></li></ol></li></ol> 
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Large-Language-Model-after-GPT-3"><span class="toc-number">1.</span> <span class="toc-text">1. Large Language Model, after GPT-3</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E8%B0%83%E7%A0%94"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 大模型调研</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 大模型复杂度分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-How-to-train-a-big-model-from-zero-to-one"><span class="toc-number">2.</span> <span class="toc-text">2. How to train a big model, from zero to one</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Related-work-after-2020"><span class="toc-number">3.</span> <span class="toc-text">3. Related work, after 2020</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%9C%A8%E5%9E%82%E7%9B%B4%E9%A2%86%E5%9F%9F%EF%BC%88%E5%AE%9A%E4%B9%89%E5%9C%A8%E6%96%87%E6%9C%AC%E9%A2%86%E5%9F%9F%EF%BC%89%E7%9A%84%E6%9E%84%E5%BB%BA"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 大模型在垂直领域（定义在文本领域）的构建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%9C%A8%E5%9E%82%E7%9B%B4%E9%A2%86%E5%9F%9F%EF%BC%88%E5%AE%9A%E4%B9%89%E5%9C%A8%E7%89%A9%E7%90%86%E4%B8%96%E7%95%8C%EF%BC%89%E7%9A%84%E6%9E%84%E5%BB%BA"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 大模型在垂直领域（定义在物理世界）的构建</span></a></li></ol></li></ol> 
         </div>
     
  
