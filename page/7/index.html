@@ -109,7 +109,7 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="..">
+        <a class="nav-link" href="../../archives">
            <big> <i class="fa fa-archive ps-1" ></i> Archives</big>
         </a>
     </li>
@@ -145,103 +145,268 @@
 
 
     <main class="container">
-        <!-- 归档页面 -->
+        <!-- 主页 -->
 <div class="row pt-1">
-    <div class="col-md-2 d-none d-sm-none d-md-block markdown-section">
-        <!-- 侧边栏 分类 -->
-<div class="card mb-3">
-    <div class="card-header card-header-dark">
-        <i class="fa fa-folder-open pe-2"></i> 分类
-    </div>
-    <nav class="nav flex-column">
-        
-        
-    </nav>
-</div>
+    <!-- 文章 -->
+    <div id="blog-content" class="col-md-8 col-sm-12" >
+        <div class="markdown-section">
+            <div class="">
+                <!-- 主页 -->
+ 
 
-    </div>
-    <div class="col-md-8 markdown-section">
 
-        <p class="h2 border-bottom"><i class="p-1 fa fa-archive"></i>
-            <a href=".." class="link-dark text-decoration-none">
-                归档
+    <!-- 标题 -->
+    <div class="pb-4 tag-hover">
+        <p class="tag-hover h3">
+            <a href="../../uncategorized/surveys/mixrate/" class="link-dark text-decoration-none title">
+                Deep leanring or machine learning on time series with mixed sampling rate 
             </a>
-            
-                <i class="fa fa-long-arrow-right ps-1 pe-1"></i> 2019 
-             
-        </p> 
-        <div class="tab-content">
-            <!-- 按照年份进行划分到map中再渲染 -->
-            
-            
-                <div class="pb-3">
-                    <h3 class="tag-hover"> 
-                        <a href="" class="link-dark text-decoration-none">
-                             2019
-                        </a>
-                    </h3>
-                    
-                    <li class="ps-3 p-1 tag-hover">
-                        <text class="text-secondary">
-                        2019/12/31 00:00
-                        </text> 
-                        <a href="../../uncategorized/paperlistfile/otherconf/ " class="link-dark text-decoration-none p-2">
-                            Other Outstanding Papers
-                        </a>
-                    </li>
-                    
-                    <li class="ps-3 p-1 tag-hover">
-                        <text class="text-secondary">
-                        2019/07/22 12:00
-                        </text> 
-                        <a href="../../uncategorized/surveys/missvalue/ " class="link-dark text-decoration-none p-2">
-                            Deep leanring or machine learning on time series with missing value
-                        </a>
-                    </li>
-                    
-                    <li class="ps-3 p-1 tag-hover">
-                        <text class="text-secondary">
-                        2019/07/22 12:00
-                        </text> 
-                        <a href="../../uncategorized/surveys/mixrate/ " class="link-dark text-decoration-none p-2">
-                            Deep leanring or machine learning on time series with mixed sampling rate
-                        </a>
-                    </li>
-                    
-                    <li class="ps-3 p-1 tag-hover">
-                        <text class="text-secondary">
-                        2019/04/12 12:00
-                        </text> 
-                        <a href="../../uncategorized/surveys/dataaug/ " class="link-dark text-decoration-none p-2">
-                            Data Augmentation
-                        </a>
-                    </li>
-                    
-                    <li class="ps-3 p-1 tag-hover">
-                        <text class="text-secondary">
-                        2019/01/01 00:00
-                        </text> 
-                        <a href="../../uncategorized/paperlistfile/other_papers/ " class="link-dark text-decoration-none p-2">
-                            Some Well-known Papers
-                        </a>
-                    </li>
-                    
-                </div>
-            
+        </p>
+
+        <div class="pb-0">
+            <!--
+            <i class="fa fa-calendar p-1"></i>
+            2019/07/22 12:00:00 
+            -->
+
+            <i class="fa fa-pencil"> </i>
+            2019/07/22 12:00:00 
+
+            <!--
+            <i class="fa fa-folder-open p-1"> </i> 
+            <span class="tag-hover">
+                 
+            </span>
+            -->
+
+            <i class="fa fa-tag p-1"> </i>
+            <span class="tag-hover">
+                
+                    <a href="../../tags/paper-list/" class="link-dark text-decoration-none title"> 
+                        paper list 
+                    </a>
+                
+                    <a href="../../tags/survey/" class="link-dark text-decoration-none title"> 
+                        survey 
+                    </a>
+                
+                    <a href="../../tags/time-series/" class="link-dark text-decoration-none title"> 
+                        time series 
+                    </a>
+                
+                    <a href="../../tags/mixed-sampling-rate/" class="link-dark text-decoration-none title"> 
+                        mixed sampling rate 
+                    </a>
+                
+            </span>
         </div>
-        
-        <!--  页码 -->
+
+        <div class="pt-3 pe-1">
+            <!-- 如果有摘要则显示摘要，没有就自己截取 -->
+            
+                <ul>
+<li><p>Autoregressive Convolutional Neural Networks for Asynchronous Time Series: <strong>ICML 2019</strong></p>
+<p><strong>异：</strong></p>
+<ol>
+<li>处理的是多维时间序列数据</li>
+<li>针对非同步数据，并未和我们一样，训练一个能够用于多种采样率的模型，而是将[多维时间序列，序列指示剂，采样间隔]合并成为多维时间序列，然后输入到网络中</li>
+<li>使用类似自回归模型的算法，对时间序列模型进行预测</li>
+<li>使用cnn进行序列学习</li>
+</ol>
+<p><strong>同：</strong></p>
+<ol>
+<li>没什么相同的</li>
+</ol>
+</li>
+</ul> 
+             
+        </div>
+    </div>
+
+    <!-- 标题 -->
+    <div class="pb-4 tag-hover">
+        <p class="tag-hover h3">
+            <a href="../../uncategorized/surveys/dataaug/" class="link-dark text-decoration-none title">
+                Data Augmentation 
+            </a>
+        </p>
+
+        <div class="pb-0">
+            <!--
+            <i class="fa fa-calendar p-1"></i>
+            2019/04/12 12:00:00 
+            -->
+
+            <i class="fa fa-pencil"> </i>
+            2019/04/12 12:00:00 
+
+            <!--
+            <i class="fa fa-folder-open p-1"> </i> 
+            <span class="tag-hover">
+                 
+            </span>
+            -->
+
+            <i class="fa fa-tag p-1"> </i>
+            <span class="tag-hover">
+                
+                    <a href="../../tags/paper-list/" class="link-dark text-decoration-none title"> 
+                        paper list 
+                    </a>
+                
+                    <a href="../../tags/survey/" class="link-dark text-decoration-none title"> 
+                        survey 
+                    </a>
+                
+                    <a href="../../tags/data-augmentation/" class="link-dark text-decoration-none title"> 
+                        data augmentation 
+                    </a>
+                
+            </span>
+        </div>
+
+        <div class="pt-3 pe-1">
+            <!-- 如果有摘要则显示摘要，没有就自己截取 -->
+            
+                <p>Data Augmentation (Specifically for rhythmic time series, e.g. ECG, EEG, etc..)</p>
+<p>一般来讲，针对ECG/EEG数据的分类、异常检测等任务，都存在严重的数据不平衡问题。这些数据增强方法一般用于丰富样本较少的类别。<br>大量的工作集中于使用GAN/VAE等生成模型建立数据的分布，然后从分布中生成采样。以下的方法是一些在显空间数据上进行数据增强的简单方法。</p> 
+             
+        </div>
+    </div>
+ 
+
+
+            </div>
+            <!--  页码 -->
 <nav class="pt-1 mt-1">
     <ul class="pagination justify-content-center new-pagination">
-        <span class="page-number current">1</span>
+        <a class="extend prev" rel="prev" href="../6/"><i class="fa fa-angle-double-left"></i></a><a class="page-number" href="../../">1</a><a class="page-number" href="../2/">2</a><a class="page-number" href="../3/">3</a><a class="page-number" href="../4/">4</a><a class="page-number" href="../5/">5</a><a class="page-number" href="../6/">6</a><span class="page-number current">7</span>
     </ul>
 </nav>
 
 
  
+        </div>
     </div>
-    <div class="col-md-2 d-none d-sm-none d-md-block markdown-section">
-        <!-- 侧边栏 标签 -->
+    <!-- 侧边栏 -->
+    <div class="col-md-4 d-none d-md-block ps-0" id='blog-siderbar'>
+        <div class="markdown-section ps-3 pb-3 pt-3 border-start">
+            <div class="card mb-3">
+    <div class="card-header card-header-dark">
+        <i class="fa fa-clock-o pe-2"></i> 最近文章
+    </div>
+    <div class="p-2 tag-hover">
+        <ul class="list-group border-0">
+            
+            
+                <a class="list-group-item border-0 pt-0 pb-0 ps-1 fs-6" href="../../uncategorized/notes/5G_NR/ ">
+                    <small> 5G NR（New Radio）规范 </small>
+                </a>
+            
+            
+                <a class="list-group-item border-0 pt-0 pb-0 ps-1 fs-6" href="../../uncategorized/notes/AIOps2021%E6%8C%91%E6%88%98%E8%B5%9B/ ">
+                    <small> AIOps 2021挑战赛答辩记录 </small>
+                </a>
+            
+            
+                <a class="list-group-item border-0 pt-0 pb-0 ps-1 fs-6" href="../../uncategorized/notes/3GPP%E4%BD%93%E7%B3%BB/ ">
+                    <small> 3GPP体系 </small>
+                </a>
+            
+            
+                <a class="list-group-item border-0 pt-0 pb-0 ps-1 fs-6" href="../../uncategorized/notes/NS3/ ">
+                    <small> NS3无线网络仿真器 </small>
+                </a>
+            
+            
+                <a class="list-group-item border-0 pt-0 pb-0 ps-1 fs-6" href="../../uncategorized/notes/alarm_in_4GWAN/ ">
+                    <small> 4GWAN中的告警（alarm）分析 </small>
+                </a>
+            
+            
+                <a class="list-group-item border-0 pt-0 pb-0 ps-1 fs-6" href="../../uncategorized/notes/hugging_face/ ">
+                    <small> Transformers in Hugging Face </small>
+                </a>
+            
+            
+                <a class="list-group-item border-0 pt-0 pb-0 ps-1 fs-6" href="../../uncategorized/notes/hexo_notes/ ">
+                    <small> 本站维护手册 </small>
+                </a>
+            
+            
+                <a class="list-group-item border-0 pt-0 pb-0 ps-1 fs-6" href="../../uncategorized/notes/linux_server_notes/ ">
+                    <small> linux服务器常用配置 </small>
+                </a>
+            
+            
+                <a class="list-group-item border-0 pt-0 pb-0 ps-1 fs-6" href="../../uncategorized/notes/graph_model_probability/ ">
+                    <small> Probabilistic Graphical Model </small>
+                </a>
+            
+            
+                <a class="list-group-item border-0 pt-0 pb-0 ps-1 fs-6" href="../../uncategorized/notes/markdown_notes/ ">
+                    <small> Markdown常用语法 </small>
+                </a>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+             
+        </ul>
+    </div>
+</div>
+
+
+
+            <!-- 侧边栏 标签 -->
 <div class="card mb-3">
     <div class="card-header card-header-dark">
         <i class="fa fa-tag pe-2"></i> 标签
@@ -586,9 +751,34 @@
             
         
     </nav>
-</div>
+</div> 
+            <!-- 友情链接 -->
+<div class="card">
+    <div class="card-header card-header-dark">
+        <i class="fa fa-link pe-2"></i> 友情链接
+    </div>
+    <div class="p-2 tag-hover">
+        <ul class="list-group border-0">
+            
+                <a class="list-group-item border-0 pt-0 pb-0 ps-1" target="_blank" rel="noopener" href="https://github.com/KMdsy ">
+                    <small> Shaoyu in Github </small>
+                </a>
+            
+                <a class="list-group-item border-0 pt-0 pb-0 ps-1" target="_blank" rel="noopener" href="https://hexo.io ">
+                    <small> Hexo </small>
+                </a>
+             
+        </ul>
     </div>
 </div>
+
+
+ 
+        </div>
+    </div>
+</div>
+
+
  
     </main>
 
