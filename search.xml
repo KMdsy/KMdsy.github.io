@@ -425,27 +425,6 @@
     
     
     <entry>
-      <title>linux服务器常用配置</title>
-      <link href="/uncategorized/notes/linux_server_notes/"/>
-      <url>/uncategorized/notes/linux_server_notes/</url>
-      
-        <content type="html"><![CDATA[<p>仅记录不常用的命令，可能会不全哦👐🏻</p><span id="more"></span><ol><li>服务器<code>conda</code>切换北外镜像源</li></ol><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ conda config <span class="token parameter variable">--add</span> channels https://mirrors.bfsu.edu.cn/anaconda/pkgs/free/ $ conda config <span class="token parameter variable">--add</span> channels https://mirrors.bfsu.edu.cn/anaconda/pkgs/main/ $ conda config <span class="token parameter variable">--add</span> channels https://mirrors.bfsu.edu.cn/anaconda/cloud/conda-forge $ conda config <span class="token parameter variable">--add</span> channels https://mirrors.bfsu.edu.cn/anaconda/cloud/msys2/$ conda config <span class="token parameter variable">--set</span> show_channel_urls <span class="token function">yes</span> $ conda config <span class="token parameter variable">--add</span> channels https://mirrors.bfsu.edu.cn/anaconda/cloud/pytorch/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ol start="2"><li><p><code>kill -STOP 1234</code> 将进程暂停，如果要让它恢复到后台，用<code>kill -CONT 1234</code>。<a href="https://www.cnblogs.com/kexinxin/p/9939119.html">ref1</a>, <a href="https://www.jianshu.com/p/d4190447736e">ref2</a> </p></li><li><p>linux解压、安装rar文件</p></li></ol><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">wget</span> http://rarsoft.com/rar/rarlinux-x64-5.5.0.tar.gz$ <span class="token function">sudo</span> <span class="token function">tar</span> <span class="token parameter variable">-zxvf</span> rarlinux-x64-5.5.0.tar.gz<span class="token comment"># 编译</span>$ <span class="token builtin class-name">cd</span> <span class="token function">rar</span>$ <span class="token function">sudo</span> <span class="token function">make</span><span class="token comment"># 测试</span>$ <span class="token function">rar</span><span class="token comment"># 解压, 按压缩包内的文件结构解压</span>$ <span class="token function">rar</span> x <span class="token operator">&lt;</span>file_path<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ol start="4"><li>查看目录的文件大小使用<code>du -h &lt;dir_path&gt;</code>，<code>-h</code>代表human，将输出人类易读的文件单位（MB/GB/…）</li></ol>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> note </tag>
-            
-            <tag> linux </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Markdown常用语法</title>
       <link href="/uncategorized/notes/markdown_notes/"/>
       <url>/uncategorized/notes/markdown_notes/</url>
@@ -459,6 +438,27 @@
             <tag> note </tag>
             
             <tag> markdown </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>linux服务器常用配置</title>
+      <link href="/uncategorized/notes/linux_server_notes/"/>
+      <url>/uncategorized/notes/linux_server_notes/</url>
+      
+        <content type="html"><![CDATA[<p>仅记录不常用的命令，可能会不全哦👐🏻</p><span id="more"></span><ol><li>服务器<code>conda</code>切换北外镜像源</li></ol><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ conda config <span class="token parameter variable">--add</span> channels https://mirrors.bfsu.edu.cn/anaconda/pkgs/free/ $ conda config <span class="token parameter variable">--add</span> channels https://mirrors.bfsu.edu.cn/anaconda/pkgs/main/ $ conda config <span class="token parameter variable">--add</span> channels https://mirrors.bfsu.edu.cn/anaconda/cloud/conda-forge $ conda config <span class="token parameter variable">--add</span> channels https://mirrors.bfsu.edu.cn/anaconda/cloud/msys2/$ conda config <span class="token parameter variable">--set</span> show_channel_urls <span class="token function">yes</span> $ conda config <span class="token parameter variable">--add</span> channels https://mirrors.bfsu.edu.cn/anaconda/cloud/pytorch/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ol start="2"><li><p><code>kill -STOP 1234</code> 将进程暂停，如果要让它恢复到后台，用<code>kill -CONT 1234</code>。<a href="https://www.cnblogs.com/kexinxin/p/9939119.html">ref1</a>, <a href="https://www.jianshu.com/p/d4190447736e">ref2</a> </p></li><li><p>linux解压、安装rar文件</p></li></ol><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">wget</span> http://rarsoft.com/rar/rarlinux-x64-5.5.0.tar.gz$ <span class="token function">sudo</span> <span class="token function">tar</span> <span class="token parameter variable">-zxvf</span> rarlinux-x64-5.5.0.tar.gz<span class="token comment"># 编译</span>$ <span class="token builtin class-name">cd</span> <span class="token function">rar</span>$ <span class="token function">sudo</span> <span class="token function">make</span><span class="token comment"># 测试</span>$ <span class="token function">rar</span><span class="token comment"># 解压, 按压缩包内的文件结构解压</span>$ <span class="token function">rar</span> x <span class="token operator">&lt;</span>file_path<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ol start="4"><li>查看目录的文件大小使用<code>du -h &lt;dir_path&gt;</code>，<code>-h</code>代表human，将输出人类易读的文件单位（MB/GB/…）</li></ol>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> note </tag>
+            
+            <tag> linux </tag>
             
         </tags>
       
@@ -496,9 +496,9 @@
       
         <tags>
             
-            <tag> survey </tag>
-            
             <tag> paper list </tag>
+            
+            <tag> survey </tag>
             
             <tag> causal discovery </tag>
             
@@ -542,9 +542,9 @@
             
             <tag> note </tag>
             
-            <tag> survey </tag>
-            
             <tag> paper list </tag>
+            
+            <tag> survey </tag>
             
             <tag> causal discovery </tag>
             
@@ -666,13 +666,13 @@
       
         <tags>
             
+            <tag> paper list </tag>
+            
             <tag> survey </tag>
             
             <tag> Quasi-periodic </tag>
             
             <tag> time series </tag>
-            
-            <tag> paper list </tag>
             
         </tags>
       
@@ -832,9 +832,9 @@
       
         <tags>
             
-            <tag> survey </tag>
-            
             <tag> paper list </tag>
+            
+            <tag> survey </tag>
             
             <tag> interpretability </tag>
             
@@ -855,9 +855,9 @@
       
         <tags>
             
-            <tag> survey </tag>
-            
             <tag> paper list </tag>
+            
+            <tag> survey </tag>
             
             <tag> interpretability </tag>
             
@@ -1063,9 +1063,9 @@
       
         <tags>
             
-            <tag> survey </tag>
-            
             <tag> paper list </tag>
+            
+            <tag> survey </tag>
             
             <tag> covid19 </tag>
             
@@ -1105,11 +1105,11 @@
       
         <tags>
             
+            <tag> paper list </tag>
+            
             <tag> survey </tag>
             
             <tag> time series </tag>
-            
-            <tag> paper list </tag>
             
             <tag> similarity learning </tag>
             
@@ -1252,11 +1252,11 @@
       
         <tags>
             
+            <tag> paper list </tag>
+            
             <tag> survey </tag>
             
             <tag> time series </tag>
-            
-            <tag> paper list </tag>
             
             <tag> missing value </tag>
             
@@ -1277,11 +1277,11 @@
       
         <tags>
             
+            <tag> paper list </tag>
+            
             <tag> survey </tag>
             
             <tag> time series </tag>
-            
-            <tag> paper list </tag>
             
             <tag> mixed sampling rate </tag>
             
@@ -1302,9 +1302,9 @@
       
         <tags>
             
-            <tag> survey </tag>
-            
             <tag> paper list </tag>
+            
+            <tag> survey </tag>
             
             <tag> data augmentation </tag>
             
