@@ -177,7 +177,7 @@
                 2023/02/16 16:10:00 
 
                 <i class="fa fa-pencil"> </i>
-                2023/02/21 21:08:00 
+                2023/04/13 15:08:00 
 
                 <!--
                 <i class="fa fa-folder-open p-1"> </i> 
@@ -246,6 +246,12 @@ $$</p>
 <p>Grazzi, R., Franceschi, L., Pontil, M., &amp; Salzo, S. (2020, November). On the iteration complexity of hypergradient computation. In <em>International Conference on Machine Learning</em> (pp. 3748-3758). PMLR.</p>
 </blockquote>
 <p>🌟 AID 和 ITD 的不同之处在于，他们计算超梯度的方法不同，因此使用了不同的近似方法</p>
+<p>⬇️ 一些有用的链接</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/JunjieYang97/stocBiO">https://github.com/JunjieYang97/stocBiO</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/prolearner/hypertorch">https://github.com/prolearner/hypertorch</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/gbaydin/hypergradient-descent">https://github.com/gbaydin/hypergradient-descent</a></p>
+</blockquote>
 <h3 id="2-1-Approximate-Implicit-Differentiation-AID"><a href="#2-1-Approximate-Implicit-Differentiation-AID" class="headerlink" title="2.1 Approximate Implicit Differentiation (AID)"></a>2.1 Approximate Implicit Differentiation (AID)</h3><p>AID方法的核心是：用一个近似值来代替隐微分（implicit differentitation），以构造超梯度。AID的超梯度计算公式为：</p>
 <p>$$
 \nabla \Phi\left(x_k\right)=\nabla_x f\left(x_k, y^{*}\left(x_k\right)\right)-\nabla_x \nabla_y g\left(x_k, y^{*}\left(x_k\right)\right) v_k^{*}
