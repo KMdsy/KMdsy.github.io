@@ -15,17 +15,17 @@
     <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
     
-<link rel="stylesheet" href="../../css/prism.css">
+<link rel="stylesheet" href="../../../../css/prism.css">
  
     
-<script src="../../js/prism.js"></script>
+<script src="../../../../js/prism.js"></script>
 
     
     
-<link rel="stylesheet" href="../../css/index.css">
+<link rel="stylesheet" href="../../../../css/index.css">
  
     
-<script src="../../js/search.js"></script>
+<script src="../../../../js/search.js"></script>
 
 
 
@@ -47,7 +47,7 @@
      
         <script src="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js"> </script>
         
-<script src="../../js/fancybox.js"></script>
+<script src="../../../../js/fancybox.js"></script>
 
     
 
@@ -85,37 +85,37 @@
  
 
     <li class="nav-item">
-        <a class="nav-link" href="../../">
+        <a class="nav-link" href="../../../../">
            <big> <i class="fa fa-home ps-1" ></i> Home</big>
         </a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="../../note">
+        <a class="nav-link" href="../../../../note">
            <big> <i class="fa fa-file-text-o ps-1" ></i> Notes</big>
         </a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="../../survey">
+        <a class="nav-link" href="../../../../survey">
            <big> <i class="fa fa-globe ps-1" ></i> Surveys</big>
         </a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="../../paperlist">
+        <a class="nav-link" href="../../../../paperlist">
            <big> <i class="fa fa-cc-discover ps-1" ></i> Paper Lists</big>
         </a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="../../archives">
+        <a class="nav-link" href="../../../../archives">
            <big> <i class="fa fa-archive ps-1" ></i> Archives</big>
         </a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="../../about">
+        <a class="nav-link" href="../../../../about">
            <big> <i class="fa fa-user ps-1" ></i> About</big>
         </a>
     </li>
@@ -156,7 +156,7 @@
     <!-- 文章 -->
     <div id="blog-content" class="col-md-8 col-sm-12">
         <p class="h3 border-bottom pb-2"><i class="p-1 fa fa-tag"></i>
-            Quasi-periodic
+            survey
         </p> 
         <div class="markdown-section">
             <div class="">
@@ -167,19 +167,19 @@
     <!-- 标题 -->
     <div class="pb-4 tag-hover">
         <p class="tag-hover h3">
-            <a href="../../uncategorized/surveys/QTS/" class="link-dark text-decoration-none title">
-                Quasi-periodic time series 
+            <a href="../../../../uncategorized/surveys/dataaug/" class="link-dark text-decoration-none title">
+                Data Augmentation 
             </a>
         </p>
 
         <div class="pb-0">
             <!--
             <i class="fa fa-calendar p-1"></i>
-            2021/05/22 12:00:00 
+            2019/04/12 12:00:00 
             -->
 
             <i class="fa fa-pencil"> </i>
-            2021/05/22 12:00:00 
+            2019/04/12 12:00:00 
 
             <!--
             <i class="fa fa-folder-open p-1"> </i> 
@@ -191,20 +191,16 @@
             <i class="fa fa-tag p-1"> </i>
             <span class="tag-hover">
                 
-                    <a href="../paper-list/" class="link-dark text-decoration-none title"> 
+                    <a href="../../../paper-list/" class="link-dark text-decoration-none title"> 
                         paper list 
                     </a>
                 
-                    <a href="../survey/" class="link-dark text-decoration-none title"> 
+                    <a href="../../" class="link-dark text-decoration-none title"> 
                         survey 
                     </a>
                 
-                    <a href="" class="link-dark text-decoration-none title"> 
-                        Quasi-periodic 
-                    </a>
-                
-                    <a href="../time-series/" class="link-dark text-decoration-none title"> 
-                        time series 
+                    <a href="../../../data-augmentation/" class="link-dark text-decoration-none title"> 
+                        data augmentation 
                     </a>
                 
             </span>
@@ -213,14 +209,8 @@
         <div class="pt-3 pe-1">
             <!-- 如果有摘要则显示摘要，没有就自己截取 -->
             
-                <h2 id="研究问题描述"><a href="#研究问题描述" class="headerlink" title="研究问题描述"></a>研究问题描述</h2><ul>
-<li><p>准周期时间序列的异常检测问题</p>
-<p>  该问题可以拆解为两部分：准周期时间序列建模、异常检测。本调研主要针对准周期时间序列建模进行调研</p>
-</li>
-<li><p>数学描述</p>
-<p>  给定一个准周期时间序列的一组周期样本${\bf{x}}_1, …, {\bf{x}}_N$，其中${\bf{x}}_i$为一个周期内的时间序列片段，如何对$\bf{x}_i$进行建模，<br>即如何从${\bf{x}}_i$中提取出表征向量${\bf{v}}_i$用于后续的任务（如：异常检测、分类、预测，等）</p>
-</li>
-</ul> 
+                <p>Data Augmentation (Specifically for rhythmic time series, e.g. ECG, EEG, etc..)</p>
+<p>一般来讲，针对ECG/EEG数据的分类、异常检测等任务，都存在严重的数据不平衡问题。这些数据增强方法一般用于丰富样本较少的类别。<br>大量的工作集中于使用GAN/VAE等生成模型建立数据的分布，然后从分布中生成采样。以下的方法是一些在显空间数据上进行数据增强的简单方法。</p> 
              
         </div>
     </div>
@@ -231,7 +221,7 @@
             <!--  页码 -->
 <nav class="pt-1 mt-1">
     <ul class="pagination justify-content-center new-pagination">
-        <span class="page-number current">1</span>
+        <a class="extend prev" rel="prev" href="../2/"><i class="fa fa-angle-double-left"></i></a><a class="page-number" href="../../">1</a><a class="page-number" href="../2/">2</a><span class="page-number current">3</span>
     </ul>
 </nav>
 
