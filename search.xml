@@ -148,9 +148,9 @@
             
             <tag> survey </tag>
             
-            <tag> sim2real </tag>
-            
             <tag> optimization </tag>
+            
+            <tag> sim2real </tag>
             
         </tags>
       
@@ -542,9 +542,9 @@
             
             <tag> causal discovery </tag>
             
-            <tag> survey </tag>
-            
             <tag> paper list </tag>
+            
+            <tag> survey </tag>
             
             <tag> correlation analysis </tag>
             
@@ -588,9 +588,9 @@
             
             <tag> causal discovery </tag>
             
-            <tag> survey </tag>
-            
             <tag> paper list </tag>
+            
+            <tag> survey </tag>
             
             <tag> structural causal model </tag>
             
@@ -710,13 +710,13 @@
       
         <tags>
             
+            <tag> paper list </tag>
+            
             <tag> survey </tag>
             
             <tag> Quasi-periodic </tag>
             
             <tag> time series </tag>
-            
-            <tag> paper list </tag>
             
         </tags>
       
@@ -866,29 +866,6 @@
     
     
     <entry>
-      <title>Post-hoc interpretability</title>
-      <link href="/uncategorized/surveys/interpretability/"/>
-      <url>/uncategorized/surveys/interpretability/</url>
-      
-        <content type="html"><![CDATA[<h2 id="研究问题描述"><a href="#研究问题描述" class="headerlink" title="研究问题描述"></a>研究问题描述</h2><p>深度学习模型的事后（post-hoc）可解释方法：给定一个已训练的深度神经网络模型，如何对其输出进行解释。</p><span id="more"></span><h2 id="领域现状"><a href="#领域现状" class="headerlink" title="领域现状"></a>领域现状</h2><h3 id="基于叠加的方法-Superimposition-based-explanation"><a href="#基于叠加的方法-Superimposition-based-explanation" class="headerlink" title="基于叠加的方法 (Superimposition-based explanation)"></a>基于叠加的方法 (Superimposition-based explanation)</h3><p>  这类方法将网络的输出归因到网络的输入上，显式的指出网络输入中的每个维度对网络输出的贡献程度，</p><ul><li><p>优点：直观</p></li><li><p>缺点：有时会生成令人误解的解释，如当网络将已知的无关输入视为重要判断依据时</p></li></ul><p>  [1]LIME：通过对输入施加轻微的扰动，以探测黑盒模型的输出变化，优化一个可解释模型（线性模型或tree-based model）局部近似黑盒模型的预测。</p><p>  [2]SHAP：基于博弈理论（shapley value, a game-theory based method），计算网络输入的每一维对网络输出的贡献（也是将黑盒模型做局部近拟，使其具有可解释性）</p><p>  [3]saliency map：训练一个遮罩模型（masking model）以识别最影响分类器决断的输入特征。</p><p>  [4]Integrated Gradients：以输入特征在某个路径上的梯度积分（ Integrated Gradients ）作为该特征的重要性得分。</p><h3 id="基于例子的方法-example-based-explanation"><a href="#基于例子的方法-example-based-explanation" class="headerlink" title="基于例子的方法 (example-based explanation)"></a>基于例子的方法 (example-based explanation)</h3><p>  这类方法针对某个待解释的案例，依照某种策略生成一组案例（a set of example），这组案例一般是支持网络对待解释案例做出判断的主要依据。通过人类直观的对比这组案例与待解释的案例，总结出的差异与共同点将被视为一种直接的解释。</p><ul><li><p>优点：易于理解</p></li><li><p>缺点：依赖于训练集的质量与数量</p><p>[10]: 通过在训练样本上施加一个微小的扰动，观察该扰动对所训练出的模型权重的影响，以此来确定网络在对给定样本进行预测时，是哪些训练样本起到了决定性作用。</p><p>[11]: 搜索给定样本在深度学习模型的每一层特征空间中的最近邻，其邻居构成的合集即为用于解释给定样本的训练集（给定样本与该集合中的样本共性即为他们获得相同标签的原因）。</p></li></ul><hr><h2 id="代表性论文10篇"><a href="#代表性论文10篇" class="headerlink" title="代表性论文10篇"></a>代表性论文10篇</h2><h3 id="基于叠加的方法"><a href="#基于叠加的方法" class="headerlink" title="基于叠加的方法"></a>基于叠加的方法</h3><p>  <strong>经典方法</strong></p><p>  [1]: Marco Túlio Ribeiro, Sameer Singh, and Carlos Guestrin. 2016. “Why Should I Trust You?”: Explaining the Predictions of Any Classifier. In SIGKDD. ACM, 1135–1144. (LIME)</p><p>  [2]: Scott M. Lundberg and Su-In Lee. 2017. A Unified Approach to Interpreting Model Predictions. In NeurIPS. 4765–4774. (SHAP)</p><p>  [3]: Piotr Dabkowski and Yarin Gal. 2017. Real Time Image Saliency for Black Box Classifiers. In NeurIPS. 6967–6976. (saliency map)</p><p>  [4]: Sundararajan, M., Taly, A., &amp; Yan, Q. (2017, August). Axiomatic attribution for deep networks. In Proceedings of the 34th International Conference on Machine Learning-Volume 70 (pp. 3319-3328).</p><p>  <strong>其他工作</strong></p><p>  [5]: Ismail, A., Gunady, M., Bravo, H., &amp; Feizi, S. (2020). Benchmarking Deep Learning Interpretability in Time Series Predictions. Advances in Neural Information Processing Systems Foundation (NeurIPS).</p><p>  [6]: Giurgiu, I., &amp; Schumann, A. (2019). Explainable failure predictions with rnn classifiers based on time series data. arXiv preprint arXiv:1901.08554.</p><p>  [7]: Mujkanovic, F., Doskoč, V., Schirneck, M., Schäfer, P., &amp; Friedrich, T. (2020). timeXplain–A Framework for Explaining the Predictions of Time Series Classifiers. arXiv preprint arXiv:2007.07606.</p><p>  [8]: Nguyen, T. T., Le Nguyen, T., &amp; Ifrim, G. (2020, September). A Model-Agnostic Approach to Quantifying the Informativeness of Explanation Methods for Time Series Classification. In International Workshop on Advanced Analytics and Learning on Temporal Data (pp. 77-94). Springer, Cham.</p><p>  [9]: Shankaranarayana, S. M., &amp; Runje, D. (2019, November). ALIME: Autoencoder based approach for local interpretability. In International Conference on Intelligent Data Engineering and Automated Learning (pp. 454-463). Springer, Cham.</p><h3 id="基于例子的方法"><a href="#基于例子的方法" class="headerlink" title="基于例子的方法"></a>基于例子的方法</h3><p>  <strong>经典方法</strong></p><p>  [10]: Koh, P. W., &amp; Liang, P. (2017, July). Understanding Black-box Predictions via Influence Functions. In International Conference on Machine Learning (pp. 1885-1894).</p><p>  [11]: Nicolas Papernot and Patrick McDaniel. Deep k-nearest neighbors: Towards confident, interpretable and robust deep learning. arXiv preprint arXiv:1803.04765, 2018.</p><p>  <strong>其他工作</strong></p><p>  [12]: Kim, B., Rudin, C., &amp; Shah, J. A. (2014). The bayesian case model: A generative approach for case-based reasoning and prototype classification. Advances in neural information processing systems, 27, 1952-1960.</p><p>  [13]: Jeyakumar, J. V., Noor, J., Cheng, Y. H., Garcia, L., &amp; Srivastava, M. (2020). How Can I Explain This to You? An Empirical Study of Deep Neural Network Explanation Methods. Advances in Neural Information Processing Systems, 33.</p><p>  [14]: Papernot, N., &amp; McDaniel, P. (2018). Deep k-nearest neighbors: Towards confident, interpretable and robust deep learning. arXiv preprint arXiv:1803.04765.</p><p>  [15]: Ming, Y., Xu, P., Qu, H., &amp; Ren, L. (2019, July). Interpretable and steerable sequence learning via prototypes. In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery &amp; Data Mining (pp. 903-913).</p><p>  [16]: Ma, D., Wang, Z., Xie, J., Guo, B., &amp; Yu, Z. (2020, November). Interpretable Multivariate Time Series Classification Based on Prototype Learning. In International Conference on Green, Pervasive, and Cloud Computing (pp. 205-216). Springer, Cham.</p><p>  [17]: Keane, M. T., &amp; Kenny, E. M. (2019, September). How case-based reasoning explains neural networks: A theoretical analysis of XAI using post-hoc explanation-by-example from a survey of ANN-CBR twin-systems. In International Conference on Case-Based Reasoning (pp. 155-171). Springer, Cham.</p><h2 id="经典论文or强相关论文"><a href="#经典论文or强相关论文" class="headerlink" title="经典论文or强相关论文"></a>经典论文or强相关论文</h2><p>  [11]: Nicolas Papernot and Patrick McDaniel. Deep k-nearest neighbors: Towards confident, interpretable and robust deep learning. arXiv preprint arXiv:1803.04765, 2018.</p><p>  [13]: Jeyakumar, J. V., Noor, J., Cheng, Y. H., Garcia, L., &amp; Srivastava, M. (2020). How Can I Explain This to You? An Empirical Study of Deep Neural Network Explanation Methods. Advances in Neural Information Processing Systems, 33.</p><p>  <strong>异同点</strong></p><p>  [11, 13]: 分析的是有监督分类模型中的基于案例的可解释问题，但仅能说明某样本为何被判定为某类，而不能做出反事实（counterfactual:）解释，即“某样本为何不是某类”。无法从中提取出可以用于分类的语义信息</p><p>  [11, 13]: 和我们的工作均从隐空间入手，分析待测样本的邻居，而我们进一步的分析了待测样本与其邻居、聚类中心样本 之间的差异，以帮助我们总结有助于区分正异常的语义信息。</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> survey </tag>
-            
-            <tag> paper list </tag>
-            
-            <tag> interpretability </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Self-explaining DNN</title>
       <link href="/uncategorized/surveys/interpretable_DNN/"/>
       <url>/uncategorized/surveys/interpretable_DNN/</url>
@@ -899,9 +876,32 @@
       
         <tags>
             
+            <tag> paper list </tag>
+            
             <tag> survey </tag>
             
+            <tag> interpretability </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Post-hoc interpretability</title>
+      <link href="/uncategorized/surveys/interpretability/"/>
+      <url>/uncategorized/surveys/interpretability/</url>
+      
+        <content type="html"><![CDATA[<h2 id="研究问题描述"><a href="#研究问题描述" class="headerlink" title="研究问题描述"></a>研究问题描述</h2><p>深度学习模型的事后（post-hoc）可解释方法：给定一个已训练的深度神经网络模型，如何对其输出进行解释。</p><span id="more"></span><h2 id="领域现状"><a href="#领域现状" class="headerlink" title="领域现状"></a>领域现状</h2><h3 id="基于叠加的方法-Superimposition-based-explanation"><a href="#基于叠加的方法-Superimposition-based-explanation" class="headerlink" title="基于叠加的方法 (Superimposition-based explanation)"></a>基于叠加的方法 (Superimposition-based explanation)</h3><p>  这类方法将网络的输出归因到网络的输入上，显式的指出网络输入中的每个维度对网络输出的贡献程度，</p><ul><li><p>优点：直观</p></li><li><p>缺点：有时会生成令人误解的解释，如当网络将已知的无关输入视为重要判断依据时</p></li></ul><p>  [1]LIME：通过对输入施加轻微的扰动，以探测黑盒模型的输出变化，优化一个可解释模型（线性模型或tree-based model）局部近似黑盒模型的预测。</p><p>  [2]SHAP：基于博弈理论（shapley value, a game-theory based method），计算网络输入的每一维对网络输出的贡献（也是将黑盒模型做局部近拟，使其具有可解释性）</p><p>  [3]saliency map：训练一个遮罩模型（masking model）以识别最影响分类器决断的输入特征。</p><p>  [4]Integrated Gradients：以输入特征在某个路径上的梯度积分（ Integrated Gradients ）作为该特征的重要性得分。</p><h3 id="基于例子的方法-example-based-explanation"><a href="#基于例子的方法-example-based-explanation" class="headerlink" title="基于例子的方法 (example-based explanation)"></a>基于例子的方法 (example-based explanation)</h3><p>  这类方法针对某个待解释的案例，依照某种策略生成一组案例（a set of example），这组案例一般是支持网络对待解释案例做出判断的主要依据。通过人类直观的对比这组案例与待解释的案例，总结出的差异与共同点将被视为一种直接的解释。</p><ul><li><p>优点：易于理解</p></li><li><p>缺点：依赖于训练集的质量与数量</p><p>[10]: 通过在训练样本上施加一个微小的扰动，观察该扰动对所训练出的模型权重的影响，以此来确定网络在对给定样本进行预测时，是哪些训练样本起到了决定性作用。</p><p>[11]: 搜索给定样本在深度学习模型的每一层特征空间中的最近邻，其邻居构成的合集即为用于解释给定样本的训练集（给定样本与该集合中的样本共性即为他们获得相同标签的原因）。</p></li></ul><hr><h2 id="代表性论文10篇"><a href="#代表性论文10篇" class="headerlink" title="代表性论文10篇"></a>代表性论文10篇</h2><h3 id="基于叠加的方法"><a href="#基于叠加的方法" class="headerlink" title="基于叠加的方法"></a>基于叠加的方法</h3><p>  <strong>经典方法</strong></p><p>  [1]: Marco Túlio Ribeiro, Sameer Singh, and Carlos Guestrin. 2016. “Why Should I Trust You?”: Explaining the Predictions of Any Classifier. In SIGKDD. ACM, 1135–1144. (LIME)</p><p>  [2]: Scott M. Lundberg and Su-In Lee. 2017. A Unified Approach to Interpreting Model Predictions. In NeurIPS. 4765–4774. (SHAP)</p><p>  [3]: Piotr Dabkowski and Yarin Gal. 2017. Real Time Image Saliency for Black Box Classifiers. In NeurIPS. 6967–6976. (saliency map)</p><p>  [4]: Sundararajan, M., Taly, A., &amp; Yan, Q. (2017, August). Axiomatic attribution for deep networks. In Proceedings of the 34th International Conference on Machine Learning-Volume 70 (pp. 3319-3328).</p><p>  <strong>其他工作</strong></p><p>  [5]: Ismail, A., Gunady, M., Bravo, H., &amp; Feizi, S. (2020). Benchmarking Deep Learning Interpretability in Time Series Predictions. Advances in Neural Information Processing Systems Foundation (NeurIPS).</p><p>  [6]: Giurgiu, I., &amp; Schumann, A. (2019). Explainable failure predictions with rnn classifiers based on time series data. arXiv preprint arXiv:1901.08554.</p><p>  [7]: Mujkanovic, F., Doskoč, V., Schirneck, M., Schäfer, P., &amp; Friedrich, T. (2020). timeXplain–A Framework for Explaining the Predictions of Time Series Classifiers. arXiv preprint arXiv:2007.07606.</p><p>  [8]: Nguyen, T. T., Le Nguyen, T., &amp; Ifrim, G. (2020, September). A Model-Agnostic Approach to Quantifying the Informativeness of Explanation Methods for Time Series Classification. In International Workshop on Advanced Analytics and Learning on Temporal Data (pp. 77-94). Springer, Cham.</p><p>  [9]: Shankaranarayana, S. M., &amp; Runje, D. (2019, November). ALIME: Autoencoder based approach for local interpretability. In International Conference on Intelligent Data Engineering and Automated Learning (pp. 454-463). Springer, Cham.</p><h3 id="基于例子的方法"><a href="#基于例子的方法" class="headerlink" title="基于例子的方法"></a>基于例子的方法</h3><p>  <strong>经典方法</strong></p><p>  [10]: Koh, P. W., &amp; Liang, P. (2017, July). Understanding Black-box Predictions via Influence Functions. In International Conference on Machine Learning (pp. 1885-1894).</p><p>  [11]: Nicolas Papernot and Patrick McDaniel. Deep k-nearest neighbors: Towards confident, interpretable and robust deep learning. arXiv preprint arXiv:1803.04765, 2018.</p><p>  <strong>其他工作</strong></p><p>  [12]: Kim, B., Rudin, C., &amp; Shah, J. A. (2014). The bayesian case model: A generative approach for case-based reasoning and prototype classification. Advances in neural information processing systems, 27, 1952-1960.</p><p>  [13]: Jeyakumar, J. V., Noor, J., Cheng, Y. H., Garcia, L., &amp; Srivastava, M. (2020). How Can I Explain This to You? An Empirical Study of Deep Neural Network Explanation Methods. Advances in Neural Information Processing Systems, 33.</p><p>  [14]: Papernot, N., &amp; McDaniel, P. (2018). Deep k-nearest neighbors: Towards confident, interpretable and robust deep learning. arXiv preprint arXiv:1803.04765.</p><p>  [15]: Ming, Y., Xu, P., Qu, H., &amp; Ren, L. (2019, July). Interpretable and steerable sequence learning via prototypes. In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery &amp; Data Mining (pp. 903-913).</p><p>  [16]: Ma, D., Wang, Z., Xie, J., Guo, B., &amp; Yu, Z. (2020, November). Interpretable Multivariate Time Series Classification Based on Prototype Learning. In International Conference on Green, Pervasive, and Cloud Computing (pp. 205-216). Springer, Cham.</p><p>  [17]: Keane, M. T., &amp; Kenny, E. M. (2019, September). How case-based reasoning explains neural networks: A theoretical analysis of XAI using post-hoc explanation-by-example from a survey of ANN-CBR twin-systems. In International Conference on Case-Based Reasoning (pp. 155-171). Springer, Cham.</p><h2 id="经典论文or强相关论文"><a href="#经典论文or强相关论文" class="headerlink" title="经典论文or强相关论文"></a>经典论文or强相关论文</h2><p>  [11]: Nicolas Papernot and Patrick McDaniel. Deep k-nearest neighbors: Towards confident, interpretable and robust deep learning. arXiv preprint arXiv:1803.04765, 2018.</p><p>  [13]: Jeyakumar, J. V., Noor, J., Cheng, Y. H., Garcia, L., &amp; Srivastava, M. (2020). How Can I Explain This to You? An Empirical Study of Deep Neural Network Explanation Methods. Advances in Neural Information Processing Systems, 33.</p><p>  <strong>异同点</strong></p><p>  [11, 13]: 分析的是有监督分类模型中的基于案例的可解释问题，但仅能说明某样本为何被判定为某类，而不能做出反事实（counterfactual:）解释，即“某样本为何不是某类”。无法从中提取出可以用于分类的语义信息</p><p>  [11, 13]: 和我们的工作均从隐空间入手，分析待测样本的邻居，而我们进一步的分析了待测样本与其邻居、聚类中心样本 之间的差异，以帮助我们总结有助于区分正异常的语义信息。</p>]]></content>
+      
+      
+      
+        <tags>
+            
             <tag> paper list </tag>
+            
+            <tag> survey </tag>
             
             <tag> interpretability </tag>
             
@@ -1107,9 +1107,9 @@
       
         <tags>
             
-            <tag> survey </tag>
-            
             <tag> paper list </tag>
+            
+            <tag> survey </tag>
             
             <tag> covid19 </tag>
             
@@ -1149,11 +1149,11 @@
       
         <tags>
             
+            <tag> paper list </tag>
+            
             <tag> survey </tag>
             
             <tag> time series </tag>
-            
-            <tag> paper list </tag>
             
             <tag> similarity learning </tag>
             
@@ -1286,31 +1286,6 @@
     
     
     <entry>
-      <title>Deep leanring or machine learning on time series with missing value</title>
-      <link href="/uncategorized/surveys/missvalue/"/>
-      <url>/uncategorized/surveys/missvalue/</url>
-      
-        <content type="html"><![CDATA[<p>近年来一些顶会文章或者是比较重要的文章，并列出与我的工作的异同点（NIPS20的投稿）</p><span id="more"></span><hr><ul><li><p>Recurrent Neural Networks for Multivariate Time Series with Missing Values</p><p>Che, Z., Purushotham, S., Cho, K., Sontag, D., &amp; Liu, Y. <em>(2018)</em>.<br>Recurrent neural networks for multivariate time series with missing values. <strong>Scientific reports</strong>, 8(1), 1-12. cite:550</p><p><strong>异：</strong></p><ol><li><p>利用历史值、预测缺失位置的值。预测值 = beta*上一个可观测值 + (1-beta)*历史均值，其中beta是一个可学习的参数。</p></li><li><p>没有利用到时间序列的动态信息（dynamic）。</p></li></ol><p><strong>同：</strong></p><ol><li>直接将处理缺失值的操作与后续的任务结合起来，即，并不是一个单独做缺失值填充的工作，而是建立一个用于分类与回归的网络，该网络能处理缺失值</li></ol></li></ul><hr><ul><li><p>BRITS: Bidirectional Recurrent Imputation for Time Series </p><p>NIPS 2018</p><p><strong>异：</strong></p><ol><li>利用历史值，预测缺失位置的值。预测值 = f(历史观测值)，对时间序列的性质不做任何假设，其中f是可学习的非线性映射。<ol><li>t时刻存在一个观测值的时候，直接将观测xt值用于后续任务，并对xt基于历史数据做一个预测，该预测用于监督缺失值的填充。</li><li>t时刻是缺失值的时候，网络直接基于历史值做预测x^t，并将该预测值用于后续任务。</li></ol></li></ol><p><strong>同：</strong></p><ol><li>直接将处理缺失值的操作与后续的任务结合起来（同上）。</li><li>在填充（或后续任务）的时候，考虑到了时间序列的动态信息（dynamic）。</li></ol></li></ul><hr><ul><li><p>Multivariate Time Series Imputation with Generative Adversarial Networks </p><p>NIPS 2018</p><p><strong>异：</strong></p><ol><li>从任务的角度出发，不是一个端到端的模型。例如：对于一个预测问题，需要先训练一个网络用于数据补全，再训练一个预测网络用于预测。</li><li>模型总的架构是一个GAN，其中G与D都是由GRUI在组成的（GRUI可以接收有缺失值的时间序列与一个标志着delay的变量，<br>并根据历史值输出对缺失位置进行补全）。<ul><li>G: 在一个正态分布中采集一个噪声向量z，然后送入G，输出的是一个完整的序列，G的架构应当是一个RNN</li><li>D: 使用网络将完整与非完整的序列压缩到隐空间，并判断其相似度</li></ul></li></ol><p><strong>同：</strong></p><ol><li>在填充（或后续任务）的时候，考虑到了时间序列的动态信息（dynamic）</li></ol></li></ul><hr><ul><li><p>E2GAN: End-to-End Generative Adversarial Network for Multivariate Time Series Imputation (IJCAI 2019)</p><p><strong>异：</strong></p><ol><li>从任务的角度出发，不是一个端到端的模型（同上）。</li><li>模型总的架构是一个GAN，其中G与D都是由GRUI在组成的（GRUI可以接收有缺失值的时间序列与一个标志着delay的变量，<br>并根据历史值输出对缺失位置进行补全）<ul><li>G：先在有缺失值的位置上填充一些噪音，然后送入G，输出的是一个经过补全后的时间序列，G的架构为seq2seq</li><li>D：使用网络将完整与非完整的序列压缩到隐空间，并判断其相似度</li></ul></li></ol><p><strong>同：</strong></p><ol><li>在填充（或后续任务）的时候，考虑到了时间序列的动态信息（dynamic）</li></ol></li></ul><hr><ul><li><p>Temporal Belief Memory: Imputing Missing Data during RNN Training </p><p>IJCAI 2018</p><p><strong>异：</strong></p><ol><li><p>提出了一种单元叫做TBM，TBM用于接收带有缺失值的序列，并对缺失位置进行填充。TBM是连接在LSTM cell之前的，<br>在有缺失值的时候，将TBM的输出送入LSTM，在没有缺失值的时候，将原始的时间序列送入LSTM</p></li><li><p>TBM中有两种门：missing gate(指示某个时刻是否存在缺失值), belief gate（指示是否使用上一时刻的值作为填充，<br>但是使用当前时刻的其他feature的均值作为填充）。</p><ol><li>当有一个观测值的时候，missing gate = 0，观测值直接进入LSTM</li><li>当没观测值的时候，missing gate = 1, 此时belief gate进行估算，指示是否让神经元放电(生物学的角度)<ol><li>神经元不放电：belief gate = 0，向LSTM输入上一时刻的值</li><li>神经元放电：belief gate = 1, 将当前时刻的其他feature的均值送入LSTM</li></ol></li></ol></li><li><p>BM在计算填充值的时候，没有使用时间序列的动态信息（dynamic），仅单纯使用了上一时刻的值/当前时刻的其他feature的均值作为填充.</p></li><li><p>他在选择填充策略的时候（选择向LSTM输入上一时刻的值 或将当前时刻的其他feature的均值送入LSTM），<br>仅考虑了空缺时刻与上一次观测值之间的差值，并没有考虑任何的历史数据与时间序列动态.</p></li></ol><p><strong>同：</strong></p><ol><li>直接将处理缺失值的操作与后续的任务结合起来.</li></ol></li></ul>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> survey </tag>
-            
-            <tag> time series </tag>
-            
-            <tag> paper list </tag>
-            
-            <tag> missing value </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Deep leanring or machine learning on time series with mixed sampling rate</title>
       <link href="/uncategorized/surveys/mixrate/"/>
       <url>/uncategorized/surveys/mixrate/</url>
@@ -1321,13 +1296,38 @@
       
         <tags>
             
+            <tag> paper list </tag>
+            
             <tag> survey </tag>
             
             <tag> time series </tag>
             
+            <tag> mixed sampling rate </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Deep leanring or machine learning on time series with missing value</title>
+      <link href="/uncategorized/surveys/missvalue/"/>
+      <url>/uncategorized/surveys/missvalue/</url>
+      
+        <content type="html"><![CDATA[<p>近年来一些顶会文章或者是比较重要的文章，并列出与我的工作的异同点（NIPS20的投稿）</p><span id="more"></span><hr><ul><li><p>Recurrent Neural Networks for Multivariate Time Series with Missing Values</p><p>Che, Z., Purushotham, S., Cho, K., Sontag, D., &amp; Liu, Y. <em>(2018)</em>.<br>Recurrent neural networks for multivariate time series with missing values. <strong>Scientific reports</strong>, 8(1), 1-12. cite:550</p><p><strong>异：</strong></p><ol><li><p>利用历史值、预测缺失位置的值。预测值 = beta*上一个可观测值 + (1-beta)*历史均值，其中beta是一个可学习的参数。</p></li><li><p>没有利用到时间序列的动态信息（dynamic）。</p></li></ol><p><strong>同：</strong></p><ol><li>直接将处理缺失值的操作与后续的任务结合起来，即，并不是一个单独做缺失值填充的工作，而是建立一个用于分类与回归的网络，该网络能处理缺失值</li></ol></li></ul><hr><ul><li><p>BRITS: Bidirectional Recurrent Imputation for Time Series </p><p>NIPS 2018</p><p><strong>异：</strong></p><ol><li>利用历史值，预测缺失位置的值。预测值 = f(历史观测值)，对时间序列的性质不做任何假设，其中f是可学习的非线性映射。<ol><li>t时刻存在一个观测值的时候，直接将观测xt值用于后续任务，并对xt基于历史数据做一个预测，该预测用于监督缺失值的填充。</li><li>t时刻是缺失值的时候，网络直接基于历史值做预测x^t，并将该预测值用于后续任务。</li></ol></li></ol><p><strong>同：</strong></p><ol><li>直接将处理缺失值的操作与后续的任务结合起来（同上）。</li><li>在填充（或后续任务）的时候，考虑到了时间序列的动态信息（dynamic）。</li></ol></li></ul><hr><ul><li><p>Multivariate Time Series Imputation with Generative Adversarial Networks </p><p>NIPS 2018</p><p><strong>异：</strong></p><ol><li>从任务的角度出发，不是一个端到端的模型。例如：对于一个预测问题，需要先训练一个网络用于数据补全，再训练一个预测网络用于预测。</li><li>模型总的架构是一个GAN，其中G与D都是由GRUI在组成的（GRUI可以接收有缺失值的时间序列与一个标志着delay的变量，<br>并根据历史值输出对缺失位置进行补全）。<ul><li>G: 在一个正态分布中采集一个噪声向量z，然后送入G，输出的是一个完整的序列，G的架构应当是一个RNN</li><li>D: 使用网络将完整与非完整的序列压缩到隐空间，并判断其相似度</li></ul></li></ol><p><strong>同：</strong></p><ol><li>在填充（或后续任务）的时候，考虑到了时间序列的动态信息（dynamic）</li></ol></li></ul><hr><ul><li><p>E2GAN: End-to-End Generative Adversarial Network for Multivariate Time Series Imputation (IJCAI 2019)</p><p><strong>异：</strong></p><ol><li>从任务的角度出发，不是一个端到端的模型（同上）。</li><li>模型总的架构是一个GAN，其中G与D都是由GRUI在组成的（GRUI可以接收有缺失值的时间序列与一个标志着delay的变量，<br>并根据历史值输出对缺失位置进行补全）<ul><li>G：先在有缺失值的位置上填充一些噪音，然后送入G，输出的是一个经过补全后的时间序列，G的架构为seq2seq</li><li>D：使用网络将完整与非完整的序列压缩到隐空间，并判断其相似度</li></ul></li></ol><p><strong>同：</strong></p><ol><li>在填充（或后续任务）的时候，考虑到了时间序列的动态信息（dynamic）</li></ol></li></ul><hr><ul><li><p>Temporal Belief Memory: Imputing Missing Data during RNN Training </p><p>IJCAI 2018</p><p><strong>异：</strong></p><ol><li><p>提出了一种单元叫做TBM，TBM用于接收带有缺失值的序列，并对缺失位置进行填充。TBM是连接在LSTM cell之前的，<br>在有缺失值的时候，将TBM的输出送入LSTM，在没有缺失值的时候，将原始的时间序列送入LSTM</p></li><li><p>TBM中有两种门：missing gate(指示某个时刻是否存在缺失值), belief gate（指示是否使用上一时刻的值作为填充，<br>但是使用当前时刻的其他feature的均值作为填充）。</p><ol><li>当有一个观测值的时候，missing gate = 0，观测值直接进入LSTM</li><li>当没观测值的时候，missing gate = 1, 此时belief gate进行估算，指示是否让神经元放电(生物学的角度)<ol><li>神经元不放电：belief gate = 0，向LSTM输入上一时刻的值</li><li>神经元放电：belief gate = 1, 将当前时刻的其他feature的均值送入LSTM</li></ol></li></ol></li><li><p>BM在计算填充值的时候，没有使用时间序列的动态信息（dynamic），仅单纯使用了上一时刻的值/当前时刻的其他feature的均值作为填充.</p></li><li><p>他在选择填充策略的时候（选择向LSTM输入上一时刻的值 或将当前时刻的其他feature的均值送入LSTM），<br>仅考虑了空缺时刻与上一次观测值之间的差值，并没有考虑任何的历史数据与时间序列动态.</p></li></ol><p><strong>同：</strong></p><ol><li>直接将处理缺失值的操作与后续的任务结合起来.</li></ol></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
             <tag> paper list </tag>
             
-            <tag> mixed sampling rate </tag>
+            <tag> survey </tag>
+            
+            <tag> time series </tag>
+            
+            <tag> missing value </tag>
             
         </tags>
       
@@ -1346,9 +1346,9 @@
       
         <tags>
             
-            <tag> survey </tag>
-            
             <tag> paper list </tag>
+            
+            <tag> survey </tag>
             
             <tag> data augmentation </tag>
             
